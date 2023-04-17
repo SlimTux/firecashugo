@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 .hugo_build.lock
 static/svelte/
-public
 .firebaserc
 firebase.json
 .firebase
