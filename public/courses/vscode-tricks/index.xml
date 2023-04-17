@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VS Code Magic Tricks Course on Fireship</title>
+    <link>https://fireship.io/courses/vscode-tricks/</link>
+    <description>Recent content in VS Code Magic Tricks Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Nov 2021 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/vscode-tricks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS Code in 100 Seconds</title>
+      <link>https://fireship.io/courses/vscode-tricks/vscode-100-seconds/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/vscode-100-seconds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CLI</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-cli/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-cli/</guid>
+      <description>When you install VS Code, it adds the code command to your terminal.
+⚠️ If you do not have access to the code command, follow the setup instructions for your machine here.
+✨ Trick - Open VS Code from the Terminal Use the CLI to launch a new VS Code window, or open a file in the current workspace.
+command line code . # current working dir code /path/to/dir # path code ~/.</description>
+    </item>
+    
+    <item>
+      <title>Tweak Settings</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-settings/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-settings/</guid>
+      <description>Tasks Customize your color theme like Atom One Dark Update your Icon Theme with VSCode-icons Add a custom font like Fira Code ✨ Trick - Ligatures Font ligatures are special symbols that combine multiple characters into a single symbol and arguably make your code more readable. Enable ligatures in VS Code by adding the following changes to your settings (note: you must install Fira Code font on your machine).
+file_type_config settings.</description>
+    </item>
+    
+    <item>
+      <title>Command Palette</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-cmd-palette/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-cmd-palette/</guid>
+      <description>Tasks Open the Command Palette with ctrl + shift + p ✨ Trick - Symbol Search From the command palette, type @ to quickly navigate to symbols within a file.</description>
+    </item>
+    
+    <item>
+      <title>File Explorer</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-explorer/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-explorer/</guid>
+      <description>Tasks Open the File Explorer with ctrl + b Close a file with ctrl + w Save a file with ctrl + s ✨ Trick - Collapse Folders In the file explorer, find the icon to collapse all folders and click it. This will save you the tedious task of closing them one-by-one.
+✨ Trick - Show hidden files VS code excludes certain hidden files from the file explorer by default, like .</description>
+    </item>
+    
+    <item>
+      <title>Keyboard Shortcuts</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-keyboard-shortcuts/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-keyboard-shortcuts/</guid>
+      <description>Tasks Open the keyboard shortcuts page by clicking the cog icon in the activity bar. ✨ Trick - VS Code Cheat Sheet Print out the VS Code cheat sheet and hang it on your wall. It&amp;rsquo;s a great reference until you have these shortcuts permanently burned into your brain.
+Windows Cheat Sheet MacOS Cheat Sheet Linux Cheat Sheet </description>
+    </item>
+    
+    <item>
+      <title>Intellisense</title>
+      <link>https://fireship.io/courses/vscode-tricks/basics-intellisense/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/basics-intellisense/</guid>
+      <description>Tasks Make sure you have the VS Code extension installed for your preferred language. TypeScript and JavaScript work out of the box. ✨ Trick - Dig into Intellisense Right click on any symbol in the editor and select Go to Definition or Peek Definition. The type definition file is used by VS Code to perform autocompletion.
+✨ Trick - Force Intellisense Use the ctrl + space key combination to force Intellisense to show up.</description>
+    </item>
+    
+    <item>
+      <title>Param Hints</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-hints/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-hints/</guid>
+      <description>✨ Trick - Parameter Hints When inside a method paranthesis, press ctrl+shift+space to trigger parameter hints.</description>
+    </item>
+    
+    <item>
+      <title>Auto-Directory</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-auto-dir/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-auto-dir/</guid>
+      <description>✨ Trick - Auto-create Multiple Directories Create a new file using the File Explorer. When typing the path, also include directories that do not exist and they will be created automatically, i.e somewhere/cool/myfile.txt.</description>
+    </item>
+    
+    <item>
+      <title>Move Quickly</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-move-fast/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-move-fast/</guid>
+      <description>Task - Don&amp;rsquo;t Touch the Mouse Invest some time practicing editing your code without using the mouse. This is one of the great secrets to coding faster.
+✨ Trick - Symbol Search Open the command palette with ctrl+p, then type an @ symbol to move around the code quickly.
+✨ Trick - Highlight Lines of Code Use the ctrl+l key to select lines of code quickly. For more precise selections, use shift + ← ↑ → ↓ to highlight individual characters.</description>
+    </item>
+    
+    <item>
+      <title>Move Lines</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-move-lines/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-move-lines/</guid>
+      <description>✨ Trick - Fast Cut or Copy Copy the line of code that you&amp;rsquo;re currently on by hitting ctrl+c or ctrl+x. It will copy the entire line, no need to highlight it with the mouse.
+✨ Trick - Line Movement Do move a line somewhere nearby, simply use alt + ← ↑ to move the line.
+To copy the same line of code over and over again, use shift + alt + ← ↑</description>
+    </item>
+    
+    <item>
+      <title>Folding</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-folding/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-folding/</guid>
+      <description>✨ Trick - Fold All Use the command palette for find the Fold All command. It will fold all the code in the document, then you can use ctrl+shift+] to unfold the parts you&amp;rsquo;re working on.</description>
+    </item>
+    
+    <item>
+      <title>Bracket Colorizer</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-colorizer/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-colorizer/</guid>
+      <description>✨ Trick - Bracket Colorizer Open VS Code settings with ctrl+,, then enable Bracket Pair Colorization. It&amp;rsquo;s especially useful when using a curly brace langauge like JavaScript, C, Dart, etc.</description>
+    </item>
+    
+    <item>
+      <title>Multi Cursor</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-multi-cursor/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-multi-cursor/</guid>
+      <description>✨ Trick - Set Multiple Cursors Use alt + click to set multiple cursors at the same time. This can be much faster than copy/paste when the value the same in every location.</description>
+    </item>
+    
+    <item>
+      <title>Linked Editing</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-linked-editing/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-linked-editing/</guid>
+      <description>✨ Trick - Enable Linked Editing From the settings, enable the Linked Editing option. VS code will now automatically match any opening and closing tags for simultaneous edits.</description>
+    </item>
+    
+    <item>
+      <title>Multiline Editing</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-multiline/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-multiline/</guid>
+      <description>✨ Trick - Multiline Editing Find a symbol in your code that&amp;rsquo;s used multiple times, like a variable name. Put your cursor on the symbol and press ctrl+d. It will find the next match and place an extra cursor on it, making name changes much faster.</description>
+    </item>
+    
+    <item>
+      <title>Emmet Snippets</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-emmet/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-emmet/</guid>
+      <description>✨ Trick - Emmet Cheat Sheet Find the emmet cheat sheet here. If you&amp;rsquo;re doing web development, print it out and use it.
+✨ Trick - Emmet Snippets for HTML Open an HTML file in VS code. Try typing characters like ul&amp;gt;li*3 followed by tab to create a list with 3 items.
+Bonus Video </description>
+    </item>
+    
+    <item>
+      <title>Emmet Wrap Abbreviation</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-emmet-wrap/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-emmet-wrap/</guid>
+      <description>✨ Trick - Balance Outward Put your cursor inside some HTML, then use the command Emmet: Balance Outward to select the outermost tag.
+✨ Trick - Wrap with Abbreviation Ever wanted to wrap a block of HTML with a new parent tag? Just select the block of HTML you want to wrap, then use the command Emmet: Wrap with Abbreviation to place a new tag around it.</description>
+    </item>
+    
+    <item>
+      <title>Snippets</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-snippets/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-snippets/</guid>
+      <description>✨ Trick - Custom Snippets Open the command palette and create a new Global Snippets file. Inside the file, you create custom snippets with JSON that can be inserted by typing the prefix in the editor.</description>
+    </item>
+    
+    <item>
+      <title>Github Copilot</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-copilot/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-copilot/</guid>
+      <description>✨ Trick - AI-driven Development Install the Github Copilot extension and let the magic happen!
+Bonus Video </description>
+    </item>
+    
+    <item>
+      <title>Find References</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-find-refs/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-find-refs/</guid>
+      <description>✨ Trick - Find References Right click on a symbol and select Peek References. This will show all other files that reference the symbol. This is generally more efficient than doing a global find.</description>
+    </item>
+    
+    <item>
+      <title>Safe Rename</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-safe-rename/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-safe-rename/</guid>
+      <description>✨ Trick - Rename Symbol First, find the original implementation of a function or variable.
+Next, right click on a symbol and select Rename Symbol. This will rename the symbol and all references to it.</description>
+    </item>
+    
+    <item>
+      <title>Code Actions</title>
+      <link>https://fireship.io/courses/vscode-tricks/tip-actions/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/tip-actions/</guid>
+      <description>✨ Trick - Refactor Tool When you see the 💡 in VS code, it means you can take action on it. Click it or use the ctrl + . shortcut to view the available actions.</description>
+    </item>
+    
+    <item>
+      <title>Integrated Terminal</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-terminal/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-terminal/</guid>
+      <description>✨ Trick - Organize the Terminal Open multiple terminal sessions, then right click it to customize its name, icon, and color.</description>
+    </item>
+    
+    <item>
+      <title>Tasks</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-tasks/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-tasks/</guid>
+      <description>✨ Trick - Run a Task When using a tool like NPM or Docker, VS code will automatically detect tasks you can run. Find them in the file explorer and run them with the play button.</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-git/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-git/</guid>
+      <description>🍴 If you&amp;rsquo;re new to Git, check out the Full Git Course.
+First, add a git repo to your project:
+command line git init ✨ Trick - Revert a Commit One the most useful git techniques is to revert a commit. Use the source control panel in to stage files, commit them, then revert the commit.</description>
+    </item>
+    
+    <item>
+      <title>Remote</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-remote/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-remote/</guid>
+      <description>✨ Trick - Github Command Palette Visit Github in the browser and use it&amp;rsquo;s command palette by hitting ctrl+k. Or open VS Code from GitHub by hitting . from a repo.
+✨ Trick - Remote Repos You can also connect your local VS Code to a remote git repo. Click on the blue icon in the bottom left corner of VS Code to open the remote repositories panel. Authorize your account to access your repositories and edit them remotely.</description>
+    </item>
+    
+    <item>
+      <title>Debugger</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-debugger/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-debugger/</guid>
+      <description>✨ Trick - Breakpoints &amp;amp; Logpoints Run your code with the debugger. Between the line numbers, click the red circles to create breakpoints to pause execution OR use logpoints to replace your typical console logs.
+Bonus Video </description>
+    </item>
+    
+    <item>
+      <title>HTTP Client</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-http/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-http/</guid>
+      <description>✨ Trick - Use VS Code as an HTTP Client Install the Thunder Client extension. You can now sent HTTP requests to your server or API and keep track of the history. This extension replaces tools like Postman.</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://fireship.io/courses/vscode-tricks/ide-docker/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/ide-docker/</guid>
+      <description>✨ Trick - Dockerized Environment Click the remote button in the bottom left corner, then select Reopen in Container. This will create a Dockerfile and run the container for you. It&amp;rsquo;s a great way to test your code in environments that match your production server runtime.</description>
+    </item>
+    
+    <item>
+      <title>Pitfalls</title>
+      <link>https://fireship.io/courses/vscode-tricks/bonus-vscode-pitfalls/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/bonus-vscode-pitfalls/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

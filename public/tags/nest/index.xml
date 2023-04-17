@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nest on Fireship</title>
+    <link>https://fireship.io/tags/nest/</link>
+    <description>Recent content in nest on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Aug 2019 10:26:16 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/nest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Nest on Cloud Functions</title>
+      <link>https://fireship.io/snippets/setup-nestjs-on-cloud-functions/</link>
+      <pubDate>Mon, 12 Aug 2019 10:26:16 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/setup-nestjs-on-cloud-functions/</guid>
+      <description>The following snippet demonstrates two different techniques for setting up NestJS on Firebase Cloud Functions.
+Option A - Point a Function to Nest The first setup modifies the functions configuration to use the Nest /dist output, as opposed to the default functions directory. This option is ideal if you have an existing Nest app.
+Step 1 - Create Nest App command line nest generate app server Step 2 - Add Functions Add functions, then delete the automatically generated directory.</description>
+    </item>
+    
+  </channel>
+</rss>

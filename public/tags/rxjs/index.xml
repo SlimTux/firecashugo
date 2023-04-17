@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rxjs on Fireship</title>
+    <link>https://fireship.io/tags/rxjs/</link>
+    <description>Recent content in rxjs on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Apr 2019 07:01:58 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/rxjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Svelte Realtime Todo List with Firebase</title>
+      <link>https://fireship.io/lessons/svelte-v3-overview-firebase/</link>
+      <pubDate>Wed, 24 Apr 2019 07:01:58 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/svelte-v3-overview-firebase/</guid>
+      <description>Svelte 3 was announced recently and it delivers a refreshing alternative to the big three component frameworks/libraries of React, Angular, and Vue. In fact, calling it a framework/library would not be very accurate, because Svelte is actually a compiler that turns your code into Vanilla JS, meaning it does not need to ship the entire framework in the JS bundle. Its focus on simplicity really stands out and makes for a very developer-friendly JavaScript experience.</description>
+    </item>
+    
+    <item>
+      <title>Custom Rxjs Operators by Example</title>
+      <link>https://fireship.io/lessons/custom-rxjs-operators-by-example/</link>
+      <pubDate>Sun, 26 Aug 2018 17:28:28 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/custom-rxjs-operators-by-example/</guid>
+      <description>Understanding how to build custom RxJS operators will provide a huge boost to your knowledge of reactive programming and Observables. Not to mention, they have a wide variety of practical use cases and provide excellent code reuse. The following lesson will show you how to build a handful of custom pipeable operators from scratch.
+What is an RxJS Operator? An operator is just a pure function that takes the source Observable as it&amp;rsquo;s input and returns an Observable as its output, usually modified in some way.</description>
+    </item>
+    
+    <item>
+      <title>Join Collections in Firestore</title>
+      <link>https://fireship.io/lessons/firestore-joins-similar-to-sql/</link>
+      <pubDate>Thu, 23 Aug 2018 17:30:50 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-joins-similar-to-sql/</guid>
+      <description>How do I perform a SQL JOIN in Firestore? - it&amp;rsquo;s a difficult question almost all developers will come across. The simple answer for ALL NoSQL databases is that it&amp;rsquo;s just not possible in an apples-to-apples way. We can&amp;rsquo;t perform this operation server-side, however, we can get clever with custom RxJS operators to solve similar problems - plus gain the added benefit of maintaining realtime listeners on all data.
+Our operators require AngularFire and will add some RxJS magic to its existing Observables to tackle the challenge of joining Firestore documents and collections together easily in Firestore.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Rxfire Rxjs for Firebase</title>
+      <link>https://fireship.io/lessons/introduction-to-rxfire-rxjs-for-firebase/</link>
+      <pubDate>Wed, 22 Aug 2018 15:22:49 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/introduction-to-rxfire-rxjs-for-firebase/</guid>
+      <description>Maintaining async callback-based code is one of the most challenging tasks a developer will face. Over the past few years, RxJS has become the leading tool for reactive programming in JavaScript, so it only makes sense that Firebase would leverage it to make realtime streams more developer-friendly. In the following lesson, you will take an early look at a new officially-supported library called RxFire.
+Principles Not a replacement for AngularFire2 in Angular projects.</description>
+    </item>
+    
+    <item>
+      <title>Testing RxJS Observables With Jest</title>
+      <link>https://fireship.io/snippets/testing-rxjs-observables-with-jest/</link>
+      <pubDate>Sat, 18 Aug 2018 18:39:19 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/testing-rxjs-observables-with-jest/</guid>
+      <description>The snippet below shows you how to test asynchronous RxJS Observables with Jest. It&amp;rsquo;s probably easier than you think.
+Testing a Single Emitted Value Let&amp;rsquo;s imagine we have an Observable that should emit a string, which we can create with the of helper. The key to making this test work is passing it the the done keyword, otherwise it will finish before the data is emitted.
+You can then write your expectations inside of the the subscribe callback, then call done() when you&amp;rsquo;re ready for the test to finish.</description>
+    </item>
+    
+    <item>
+      <title>Typeahead Autocomplete with Firestore</title>
+      <link>https://fireship.io/lessons/typeahead-autocomplete-with-firestore/</link>
+      <pubDate>Tue, 20 Feb 2018 14:40:30 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/typeahead-autocomplete-with-firestore/</guid>
+      <description>In this lesson, we will build a basic typeahead or autocomplete system using nothing but Firestore. It relies on an object/map data structure that exposes some of the more advanced query patterns available to us. The database contains a collection of movie documents, and our goal is to build a search form that will auto-populate results based on the movie&amp;rsquo;s title.
+Typeahead demo using only Firestore
+Method 1: Offset with the Magic uf8ff Character A few months ago I created a RealtimeDB Autocomplete lesson that uses &#39;\uf8ff&#39;, which is a very high Unicode point.</description>
+    </item>
+    
+    <item>
+      <title>Angular Reactive Forms Async Validation</title>
+      <link>https://fireship.io/lessons/async-form-validation-in-firebase-enforce-uniqueness/</link>
+      <pubDate>Sat, 10 Feb 2018 15:40:26 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/async-form-validation-in-firebase-enforce-uniqueness/</guid>
+      <description>Reactive form validation can be a complex and difficult feature to implement, especially if you need to validate fields asynchronously. Angular ships with a few built-in validators, but they can only take you so far&amp;hellip;
+Today, we are building a custom async validator that can verify username uniqueness in Firebase Firestore. My goal is to show you async validator for your reactive forms that you can apply to virtually any backend data source.</description>
+    </item>
+    
+  </channel>
+</rss>

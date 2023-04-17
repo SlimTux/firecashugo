@@ -1,0 +1,3232 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Firebase</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.08af547b.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+
+    
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/tags/tags/firebase/" />
+
+    <meta name="description" content="Firebase is a badass BaaS giving you functionality like analytics, databases, messaging, cloud functions, and crash reporting so you can develop quickly and focus on your user experience.">
+    <meta name="image" content="https://fireship.io/img/default-cover.png">
+
+    <meta property="og:title" content="Firebase" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/tags/tags/firebase/" />
+    <meta property="og:image" content="https://fireship.io/img/default-cover.png" />
+    <meta property="og:description" content="Firebase is a badass BaaS giving you functionality like analytics, databases, messaging, cloud functions, and crash reporting so you can develop quickly and focus on your user experience." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Firebase">
+    <meta name="twitter:description" content="Firebase is a badass BaaS giving you functionality like analytics, databases, messaging, cloud functions, and crash reporting so you can develop quickly and focus on your user experience.">
+    <meta name="twitter:image" content="https://fireship.io/img/default-cover.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/tags/tags/firebase/" 
+    vimeo=""
+    youtube=""
+    free=""
+    next="" 
+    prev="">
+  </global-data>
+
+    
+  <nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+
+    <main class="prose dark:prose-invert container">
+        <header>
+            <h1 class="tag tag-lg tag-firebase">Firebase</h1>
+        </header>
+
+
+        
+            <div class="mb-16">
+                    Firebase is a badass BaaS giving you functionality like analytics, databases, messaging, cloud functions, and crash reporting so you can develop quickly and focus on your user experience.
+                    <a href="https://firebase.google.com" class="">Firebase</a>
+            </div>
+        
+        
+        <section class="grid-list">
+            
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/react-next-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Next.js Firebase Full Course">
+
+        <section class="p-5">
+                <h5>Next.js Firebase Full Course</h5>
+                <p class="text-gray3 min-h-[100px]">Build a full-stack app with React, Firebase, and Next.js</p>
+                
+                    <span class="tag tag-react">
+                        #react
+                    </span>
+                
+                    <span class="tag tag-nextjs">
+                        #nextjs
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/flutter-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Flutter Firebase">
+
+        <section class="p-5">
+                <h5>Flutter Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Build a full-stack Flutter app with Firebase from scratch.</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/nuxt-3-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Realtime SSR with Nuxt3 and Firebase">
+
+        <section class="p-5">
+                <h5>Realtime SSR with Nuxt3 and Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">How to setup Firebase v9 for SSR and realtime hydration in Nuxt3</p>
+                
+                    <span class="tag tag-vue">
+                        #vue
+                    </span>
+                
+                    <span class="tag tag-nuxt">
+                        #nuxt
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/react/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="React - The full course">
+
+        <section class="p-5">
+                <h5>React - The full course</h5>
+                <p class="text-gray3 min-h-[100px]">Learn the fundamentals of React.js by building five apps from scratch.</p>
+                
+                    <span class="tag tag-react">
+                        #react
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+                    <span class="tag tag-nextjs">
+                        #nextjs
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/twitter-bot-oauth2-tutorial/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Twitter Bot Tutorial">
+
+        <section class="p-5">
+                <h5>Twitter Bot Tutorial</h5>
+                <p class="text-gray3 min-h-[100px]">Build a Twitter Bot from scratch using Oauth 2.0 to post tweets on behalf of a user.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-riverpod-flutter/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Riverpod with Firebase">
+
+        <section class="p-5">
+                <h5>Riverpod with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Use Flutter Riverpod to manage Firebase auth state and relational realtime data in Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/react-native-firebase-chat-demo/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/react-native-firebase-chat-demo/img/featured.webp" alt="React Native Firebase Chat Demo">
+
+        <section class="p-5">
+                <h5>React Native Firebase Chat Demo</h5>
+                <p class="text-gray3 min-h-[100px]">Build a mobile chat app with React Native, Firebase and Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-react">
+                        #react
+                    </span>
+                
+                    <span class="tag tag-react-native">
+                        #react-native
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-firebase-chat-demo/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/flutter-firebase-chat-demo/img/featured.webp" alt="Flutter Firebase Chat Demo">
+
+        <section class="p-5">
+                <h5>Flutter Firebase Chat Demo</h5>
+                <p class="text-gray3 min-h-[100px]">Build a chat app with Flutter, Firebase, and Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/realtime-charts-d3-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Realtime Charts with D3">
+
+        <section class="p-5">
+                <h5>Realtime Charts with D3</h5>
+                <p class="text-gray3 min-h-[100px]">Build an animated realtime data visualization with D3 and Firebase</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-d3">
+                        #d3
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-v9-migration/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase v9 Migration">
+
+        <section class="p-5">
+                <h5>Firebase v9 Migration</h5>
+                <p class="text-gray3 min-h-[100px]">How to migrate to the new Firebase V9 JavaScript SDK. A complete guide.</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/webrtc-firebase-video-chat/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/webrtc-firebase-video-chat/img/featured.webp" alt="WebRTC Video Chat on Firebase">
+
+        <section class="p-5">
+                <h5>WebRTC Video Chat on Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Build a Zoom-like video chat app using WebRTC and Firebase</p>
+                
+                    <span class="tag tag-webrtc">
+                        #webrtc
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/invite-only-firebase-phone-auth/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Invite-Only Firebase Phone Auth">
+
+        <section class="p-5">
+                <h5>Invite-Only Firebase Phone Auth</h5>
+                <p class="text-gray3 min-h-[100px]">Harness the power of FOMO by building an invite-only phone authentication system with Firebase &amp; React.</p>
+                
+                    <span class="tag tag-react">
+                        #react
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-authentication">
+                        #authentication
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/custom-usernames-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/custom-usernames-firebase/img/featured.webp" alt="Custom Usernames in Firebase">
+
+        <section class="p-5">
+                <h5>Custom Usernames in Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">How to implement and validate custom usernames for Firebase users with Cloud Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-authentication">
+                        #authentication
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/firebase-security/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase Security Course">
+
+        <section class="p-5">
+                <h5>Firebase Security Course</h5>
+                <p class="text-gray3 min-h-[100px]">Secure your Firebase app by mastering security rules</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-security">
+                        #security
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/react-firebase-chat-app-tutorial/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="React Firebase Chat App">
+
+        <section class="p-5">
+                <h5>React Firebase Chat App</h5>
+                <p class="text-gray3 min-h-[100px]">Learn the basics of React &amp; Firebase by building a simple group chat app from scratch.</p>
+                
+                    <span class="tag tag-react">
+                        #react
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-quickstart/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase Quickstart">
+
+        <section class="p-5">
+                <h5>Firebase Quickstart</h5>
+                <p class="text-gray3 min-h-[100px]">Start here! Learn the fundamentals of Firebase with vanilla JS to prepare you for other frameworks.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+                    <span class="tag tag-quickstart">
+                        #quickstart
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-emulator-advanced/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firebase-emulator-advanced/img/featured.webp" alt="Firebase Emulator Advanced Usage Guide">
+
+        <section class="p-5">
+                <h5>Firebase Emulator Advanced Usage Guide</h5>
+                <p class="text-gray3 min-h-[100px]">Advanced techniques for generating mock data and testing with the Firebase emulator suite</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-productivity">
+                        #productivity
+                    </span>
+                
+                    <span class="tag tag-testing">
+                        #testing
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/google-apis-node-tutorial/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/google-apis-node-tutorial/img/featured.webp" alt="Access Google APIs for Users with OAuth 2.0">
+
+        <section class="p-5">
+                <h5>Access Google APIs for Users with OAuth 2.0</h5>
+                <p class="text-gray3 min-h-[100px]">How to use Google APIs on behalf of users with Node.js Cloud Functions and Firebase</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-node">
+                        #node
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/secret-manager-with-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Google Secret Manager with Firebase">
+
+        <section class="p-5">
+                <h5>Google Secret Manager with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Use Secret Manager to handle sensitive data in Firebase Cloud Functions</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-gcp">
+                        #gcp
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/two-factor-auth-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/two-factor-auth-firebase/img/featured.webp" alt="Multifactor Auth with Firebase (2FA)">
+
+        <section class="p-5">
+                <h5>Multifactor Auth with Firebase (2FA)</h5>
+                <p class="text-gray3 min-h-[100px]">How to perform multifactor authentication (2FA) with SMS text verification using Firebase</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/firestore-automated-backups/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Automatic Backups for Firestore via Github Actions">
+
+        <section class="p-5">
+                <h5>Automatic Backups for Firestore via Github Actions</h5>
+                <p class="text-gray3 min-h-[100px]">How to implement a daily background job that exports your Firestore data to a storage bucket.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-github">
+                        #github
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/delete-firestore-collection/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Delete a Firestore Collection">
+
+        <section class="p-5">
+                <h5>Delete a Firestore Collection</h5>
+                <p class="text-gray3 min-h-[100px]">How to delete a Firestore Collection or Subcollection</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/how-to-rate-limit-writes-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/how-to-rate-limit-writes-firestore/img/featured.webp" alt="Firestore Rate Limiting">
+
+        <section class="p-5">
+                <h5>Firestore Rate Limiting</h5>
+                <p class="text-gray3 min-h-[100px]">Advanced security rules and techniques for rate-limiting Firestore writes.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-security">
+                        #security
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firestore-pagination-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firestore-pagination-guide/img/featured.webp" alt="Firestore Pagination Guide">
+
+        <section class="p-5">
+                <h5>Firestore Pagination Guide</h5>
+                <p class="text-gray3 min-h-[100px]">Pagination queries with Firestore that move forward and backward.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/firestore-increment-document-id-value/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firestore Order by Document ID or Field">
+
+        <section class="p-5">
+                <h5>Firestore Order by Document ID or Field</h5>
+                <p class="text-gray3 min-h-[100px]">How to auto-increment a document field or ID in Firestore</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-data-modeling">
+                        #data-modeling
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-tips-and-tricks/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firebase-tips-and-tricks/img/featured.webp" alt="Top 100 Firebase Tips and Tricks">
+
+        <section class="p-5">
+                <h5>Top 100 Firebase Tips and Tricks</h5>
+                <p class="text-gray3 min-h-[100px]">A collection of tips, tricks, and common mistakes you should know about when working with Firebase.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-analytics-web-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase Analytics for the Web">
+
+        <section class="p-5">
+                <h5>Firebase Analytics for the Web</h5>
+                <p class="text-gray3 min-h-[100px]">Customize your app&#39;s UI/UX with Firebase Analytics and Remote Config in a Progressive Web App</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-analytics">
+                        #analytics
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-custom-claims-role-based-auth/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firebase-custom-claims-role-based-auth/img/featured.webp" alt="Advanced Firebase Auth with Custom Claims">
+
+        <section class="p-5">
+                <h5>Advanced Firebase Auth with Custom Claims</h5>
+                <p class="text-gray3 min-h-[100px]">Implement role-based user authorization and security rules by adding custom claims to the Firebase Auth ID token.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/cloud-functions/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/courses/cloud-functions/img/featured.webp" alt="Cloud Functions Master Course">
+
+        <section class="p-5">
+                <h5>Cloud Functions Master Course</h5>
+                <p class="text-gray3 min-h-[100px]">Master the fundamentals of serverless with Firebase Cloud Functions where we build seven different microservices</p>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/ionic/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/courses/ionic/img/featured.webp" alt="Ionic 4 Firebase Master Course">
+
+        <section class="p-5">
+                <h5>Ionic 4 Firebase Master Course</h5>
+                <p class="text-gray3 min-h-[100px]">Build a cross-platform app from scratch with Ionic 4, Angular, and Firebase.</p>
+                
+                    <span class="tag tag-ionic">
+                        #ionic
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/angular/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="The Angular Firebase Project Course">
+
+        <section class="p-5">
+                <h5>The Angular Firebase Project Course</h5>
+                <p class="text-gray3 min-h-[100px]">Build a high-performance PWA with Angular and Firebase from scratch.</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/sql-firebase-typeorm/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="MySQL on Cloud Functions">
+
+        <section class="p-5">
+                <h5>MySQL on Cloud Functions</h5>
+                <p class="text-gray3 min-h-[100px]">Learn how to use a relational MySQL database with Firebase Cloud Functions and TypeORM</p>
+                
+                    <span class="tag tag-sql">
+                        #sql
+                    </span>
+                
+                    <span class="tag tag-typescript">
+                        #typescript
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-file-uploads-cloud-storage/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Flutter File Uploads">
+
+        <section class="p-5">
+                <h5>Flutter File Uploads</h5>
+                <p class="text-gray3 min-h-[100px]">Capture an image in Flutter and upload the file to a Firebase Cloud Storage bucket.</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-ios">
+                        #ios
+                    </span>
+                
+                    <span class="tag tag-android">
+                        #android
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/web-scraping-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Modern Web Scraping Guide">
+
+        <section class="p-5">
+                <h5>Modern Web Scraping Guide</h5>
+                <p class="text-gray3 min-h-[100px]">Build a web scraper from scratch with Firebase Cloud Functions, Puppeteer, and NodeJS</p>
+                
+                    <span class="tag tag-node">
+                        #node
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-puppeteer">
+                        #puppeteer
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/sendgrid-transactional-email-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="SendGrid Transactional Email Guide">
+
+        <section class="p-5">
+                <h5>SendGrid Transactional Email Guide</h5>
+                <p class="text-gray3 min-h-[100px]">Send emails from your app using SendGrid&#39;s transactional email API with Node and Cloud Functions</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-node">
+                        #node
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-push-notifications-fcm-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/flutter-push-notifications-fcm-guide/img/featured.webp" alt="FCM Push Notifications for Flutter">
+
+        <section class="p-5">
+                <h5>FCM Push Notifications for Flutter</h5>
+                <p class="text-gray3 min-h-[100px]">Send push notifications in Flutter using Firebase Cloud Messaging (FCM) to specific devices, topics, and user segments.</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-push-notifications">
+                        #push-notifications
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/collection-group-query-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Collection Group Query with Firestore">
+
+        <section class="p-5">
+                <h5>Collection Group Query with Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Query across multiple Firestore subcollections for hierarchical data structures, like threaded comments.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/advanced-flutter-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Flutter Provider with Firebase">
+
+        <section class="p-5">
+                <h5>Flutter Provider with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Advanced state management techniques when working with Firebase Auth &amp; Firestore in Flutter applications.</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-advanced">
+                        #advanced
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-performance-quickstart/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase Performance Quickstart">
+
+        <section class="p-5">
+                <h5>Firebase Performance Quickstart</h5>
+                <p class="text-gray3 min-h-[100px]">Learn how to get up and running with Firebase Performance in an Angular app.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-performance">
+                        #performance
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/svelte-v3-overview-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Svelte Realtime Todo List with Firebase">
+
+        <section class="p-5">
+                <h5>Svelte Realtime Todo List with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Build a realtime ToDo list with Svelte 3 and Firebase (RxFire)</p>
+                
+                    <span class="tag tag-svelte">
+                        #svelte
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-rxjs">
+                        #rxjs
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/cloud-functions-scheduled-time-trigger/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/cloud-functions-scheduled-time-trigger/img/featured.webp" alt="Dynamic Scheduled Background Jobs in Firebase">
+
+        <section class="p-5">
+                <h5>Dynamic Scheduled Background Jobs in Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Trigger Cloud Functions based on cron time intervals and create a task queue for dynamically scheduled jobs.</p>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-pubsub">
+                        #pubsub
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-microservices-with-cloud-run/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firebase Microservices With Cloud Run">
+
+        <section class="p-5">
+                <h5>Firebase Microservices With Cloud Run</h5>
+                <p class="text-gray3 min-h-[100px]">How to use Cloud Run on GCP to covert a Docker container into a serverless microservice.</p>
+                
+                    <span class="tag tag-cloud-run">
+                        #cloud-run
+                    </span>
+                
+                    <span class="tag tag-gcp">
+                        #gcp
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-vue">
+                        #vue
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/firestore-increment-tips/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="How to Use Firestore Increment">
+
+        <section class="p-5">
+                <h5>How to Use Firestore Increment</h5>
+                <p class="text-gray3 min-h-[100px]">Use the special Firestore Increment field value to increase or decrease numeric values atomically in the database.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-slider-like-reflectly/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Flutter Firestore Animated SlideShow">
+
+        <section class="p-5">
+                <h5>Flutter Firestore Animated SlideShow</h5>
+                <p class="text-gray3 min-h-[100px]">Build an animated and filterable slideshow with FlutterFire - inspired by the Reflectly app.</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-animation">
+                        #animation
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/stripe-elements-angular/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/stripe-elements-angular/img/featured.webp" alt="Stripe Elements and Checkout with Angular">
+
+        <section class="p-5">
+                <h5>Stripe Elements and Checkout with Angular</h5>
+                <p class="text-gray3 min-h-[100px]">Create a form that collects and validates credit card details in Angular with Stripe Elements &amp; Checkout.</p>
+                
+                    <span class="tag tag-stripe">
+                        #stripe
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-payments">
+                        #payments
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/github-actions-deploy-angular-to-firebase-hosting/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="GitHub Action deploying Angular App to Firebase Hosting">
+
+        <section class="p-5">
+                <h5>GitHub Action deploying Angular App to Firebase Hosting</h5>
+                <p class="text-gray3 min-h-[100px]">A step-by-step guide to create a GitHub Action to deploy your Angular App to Firebase Hosting.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-github">
+                        #github
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-devops">
+                        #devops
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/angular-firebase-storage-uploads-multi/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/angular-firebase-storage-uploads-multi/img/featured.webp" alt="Upload Multiple Files to Firebase Storage with Angular">
+
+        <section class="p-5">
+                <h5>Upload Multiple Files to Firebase Storage with Angular</h5>
+                <p class="text-gray3 min-h-[100px]">Build a dropzone file uploader in Angular that can send multiple files to Firebase storage simultaneously.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-cloud-storage">
+                        #cloud-storage
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-realtime-geolocation-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/flutter-realtime-geolocation-firebase/img/featured.webp" alt="Flutter Realtime Geolocation Firebase">
+
+        <section class="p-5">
+                <h5>Flutter Realtime Geolocation Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Build a basic realtime geolocation app that can query data within a radius using Flutter, Firestore, and Google Maps.</p>
+                
+                    <span class="tag tag-google-maps">
+                        #google-maps
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firestore-array-queries-guide/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firestore-array-queries-guide/img/featured.webp" alt="Working with Firestore Arrays">
+
+        <section class="p-5">
+                <h5>Working with Firestore Arrays</h5>
+                <p class="text-gray3 min-h-[100px]">Tips and tricks for Firestore array queries and writes</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/realtime-presence-angular-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/realtime-presence-angular-firebase/img/featured.webp" alt="Realtime Presence with Angular &#43; Firebase">
+
+        <section class="p-5">
+                <h5>Realtime Presence with Angular &#43; Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Build a realtime user presence system with AngularFire to detect when a user is online, offline, or away.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-realtimedb">
+                        #realtimedb
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/angular-universal-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/angular-universal-firebase/img/featured.webp" alt="Angular Universal SSR with Firebase">
+
+        <section class="p-5">
+                <h5>Angular Universal SSR with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">A comprehensive guide to server-side rendering with Angular Universal and Firebase</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-node">
+                        #node
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/flutter-firebase-google-oauth-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/flutter-firebase-google-oauth-firestore/img/featured.webp" alt="Flutter Firebase Google SignIn &#43; Firestore">
+
+        <section class="p-5">
+                <h5>Flutter Firebase Google SignIn &#43; Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Learn how to Setup GoogleSign and Firestore with Flutter from Scratch</p>
+                
+                    <span class="tag tag-flutter">
+                        #flutter
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/snippets/firestore-rules-recipes/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Firestore Security Rules Cookbook">
+
+        <section class="p-5">
+                <h5>Firestore Security Rules Cookbook</h5>
+                <p class="text-gray3 min-h-[100px]">Common Recipes for Firestore Security Rules</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/angularfire-google-oauth/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/angularfire-google-oauth/img/featured.webp" alt="Google OAuth with @angular/fire">
+
+        <section class="p-5">
+                <h5>Google OAuth with @angular/fire</h5>
+                <p class="text-gray3 min-h-[100px]">Build a Firebase Google signin user authentication flow with @angular/fire that saves custom user data to the Firestore.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/build-group-chat-with-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/build-group-chat-with-firestore/img/featured.webp" alt="Group Chat with Firestore">
+
+        <section class="p-5">
+                <h5>Group Chat with Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Design a Firestore group chat feature and build it from scratch with Angular.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/google-calendar-api-with-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/google-calendar-api-with-firebase/img/featured.webp" alt="Using the Google Calendar API">
+
+        <section class="p-5">
+                <h5>Using the Google Calendar API</h5>
+                <p class="text-gray3 min-h-[100px]">Authorize users to retrieve and create Google Calendar events.</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-google-calendar">
+                        #google-calendar
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/deploy-multiple-sites-to-firebase-hosting/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Deploy Multiple Sites to Firebase Hosting">
+
+        <section class="p-5">
+                <h5>Deploy Multiple Sites to Firebase Hosting</h5>
+                <p class="text-gray3 min-h-[100px]">Learn how manage multiple sites from a single Firebase project</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-i18n">
+                        #i18n
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firestore-joins-similar-to-sql/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Join Collections in Firestore">
+
+        <section class="p-5">
+                <h5>Join Collections in Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Leverage RxJS to perform SQL-like JOIN queries in Firestore</p>
+                
+                    <span class="tag tag-rxjs">
+                        #rxjs
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/introduction-to-rxfire-rxjs-for-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/introduction-to-rxfire-rxjs-for-firebase/img/featured.webp" alt="Introduction to Rxfire Rxjs for Firebase">
+
+        <section class="p-5">
+                <h5>Introduction to Rxfire Rxjs for Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Quick start for the official RxJS bindings for Firebase.</p>
+                
+                    <span class="tag tag-rxjs">
+                        #rxjs
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/geolocation-query-in-firestore-realtime/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/geolocation-query-in-firestore-realtime/img/featured.webp" alt="Realtime GeoQueries with Firestore">
+
+        <section class="p-5">
+                <h5>Realtime GeoQueries with Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Perform geospatial queries in Firestore based on a radius and visualize realtime updates with Angular Google Maps</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-google-maps">
+                        #google-maps
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/import-csv-json-or-excel-to-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/import-csv-json-or-excel-to-firestore/img/featured.webp" alt="CSV to Firestore">
+
+        <section class="p-5">
+                <h5>CSV to Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Build a Node CLI utility that imports data from a CSV file to Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-node">
+                        #node
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/using-passwordless-signup-with-firebase-on-the-web/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Passwordless Signup With Firebase on the Web">
+
+        <section class="p-5">
+                <h5>Passwordless Signup With Firebase on the Web</h5>
+                <p class="text-gray3 min-h-[100px]">How to implement passwordless email-link authentication with Firebase and Angular</p>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/the-ultimate-beginners-guide-to-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/the-ultimate-beginners-guide-to-firebase/img/featured.webp" alt="The Ultimate Beginners Guide to Firebase">
+
+        <section class="p-5">
+                <h5>The Ultimate Beginners Guide to Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Go back to the basics with Firebase using JavaScript</p>
+                
+                    <span class="tag tag-javascript">
+                        #javascript
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/async-form-validation-in-firebase-enforce-uniqueness/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/async-form-validation-in-firebase-enforce-uniqueness/img/featured.webp" alt="Angular Reactive Forms Async Validation">
+
+        <section class="p-5">
+                <h5>Angular Reactive Forms Async Validation</h5>
+                <p class="text-gray3 min-h-[100px]">Build a custom validator for Angular Reactive Forms that checks a username asynchronously in Firestore</p>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-rxjs">
+                        #rxjs
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firestore-nosql-data-modeling-by-example/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firestore-nosql-data-modeling-by-example/img/featured.webp" alt="Firestore NoSQL Relational Data Modeling">
+
+        <section class="p-5">
+                <h5>Firestore NoSQL Relational Data Modeling</h5>
+                <p class="text-gray3 min-h-[100px]">Get started in Firestore with practical real-world examples aimed at SQL Developers</p>
+                
+                    <span class="tag tag-sql">
+                        #sql
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/google-cloud-vision-with-ionic-and-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/google-cloud-vision-with-ionic-and-firebase/img/featured.webp" alt="Google Cloud Vision with Ionic - Not Hotdog App">
+
+        <section class="p-5">
+                <h5>Google Cloud Vision with Ionic - Not Hotdog App</h5>
+                <p class="text-gray3 min-h-[100px]">Build the Not Hotdog app (Silicon Valley) using Ionic, Firebase, and Google Cloud Vision.</p>
+                
+                    <span class="tag tag-ionic">
+                        #ionic
+                    </span>
+                
+                    <span class="tag tag-gcp">
+                        #gcp
+                    </span>
+                
+                    <span class="tag tag-ml">
+                        #ml
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/material-data-tables-with-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/material-data-tables-with-firestore/img/featured.webp" alt="Material Data Tables With Firestore">
+
+        <section class="p-5">
+                <h5>Material Data Tables With Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Build a realtime Angular Material data table with Firestore and edit data with a dialog modal.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/img/featured.webp" alt="Role Based Authorization With Firestore">
+
+        <section class="p-5">
+                <h5>Role Based Authorization With Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Implement role-based authorization with Firestore</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/multi-step-signup-firebase-email-password-auth-angular-reactive-forms/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/multi-step-signup-firebase-email-password-auth-angular-reactive-forms/img/featured.webp" alt="Multi-step Reactive Form for Email-Password Signup">
+
+        <section class="p-5">
+                <h5>Multi-step Reactive Form for Email-Password Signup</h5>
+                <p class="text-gray3 min-h-[100px]">Build a multi-step reactive form for email-password auth with Firebase</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firestore-cloud-functions-data-aggregation/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firestore-cloud-functions-data-aggregation/img/featured.webp" alt="Cloud Functions Data Aggregation">
+
+        <section class="p-5">
+                <h5>Cloud Functions Data Aggregation</h5>
+                <p class="text-gray3 min-h-[100px]">A complete demo of data aggregation with Firestore Cloud Functions</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-cloud-functions">
+                        #cloud-functions
+                    </span>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/star-ratings-system-with-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/star-ratings-system-with-firestore/img/featured.webp" alt="Star Ratings System With Firestore">
+
+        <section class="p-5">
+                <h5>Star Ratings System With Firestore</h5>
+                <p class="text-gray3 min-h-[100px]">Build a five-star rating system from scratch with Firestore</p>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/infinite-scroll-firestore-angular/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/img/default-cover.webp" alt="Infinite Scroll Firestore Angular">
+
+        <section class="p-5">
+                <h5>Infinite Scroll Firestore Angular</h5>
+                <p class="text-gray3 min-h-[100px]">Perform infinite scroll pagination, both downwards and upwards, with Firestore and Angular.</p>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/secure-firebase-cloud-functions/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/secure-firebase-cloud-functions/img/featured.webp" alt="Secure Firebase Cloud Functions for Authenticated Users">
+
+        <section class="p-5">
+                <h5>Secure Firebase Cloud Functions for Authenticated Users</h5>
+                <p class="text-gray3 min-h-[100px]">Run HTTP and Database Cloud Functions when a user is logged-in</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-security">
+                        #security
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/push-messages-with-firestore/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/push-messages-with-firestore/img/featured.webp" alt="Push Notifications on the Web">
+
+        <section class="p-5">
+                <h5>Push Notifications on the Web</h5>
+                <p class="text-gray3 min-h-[100px]">Send web push notifications to multiple devices with Firebase Cloud Messaging and Firestore</p>
+                
+                    <span class="tag tag-push-notifications">
+                        #push-notifications
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-fcm">
+                        #fcm
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/build-realtime-maps-in-angular-with-mapbox-gl/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/build-realtime-maps-in-angular-with-mapbox-gl/img/featured.webp" alt="Build Realtime Maps with Mapbox GL">
+
+        <section class="p-5">
+                <h5>Build Realtime Maps with Mapbox GL</h5>
+                <p class="text-gray3 min-h-[100px]">Build realtime map features with Angular, Firebase, and Mapbox</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-mapbox">
+                        #mapbox
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/firebase-phone-authentication-with-angular-4-tutorial/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/firebase-phone-authentication-with-angular-4-tutorial/img/featured.webp" alt="Firebase Phone Authentication">
+
+        <section class="p-5">
+                <h5>Firebase Phone Authentication</h5>
+                <p class="text-gray3 min-h-[100px]">Use the Firebase to implement Phone authentication on the web.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-auth">
+                        #auth
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/facebook-inspired-reactions-from-scratch-with-angular-and-firebase/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/facebook-inspired-reactions-from-scratch-with-angular-and-firebase/img/featured.webp" alt="Facebook-Inspired Reactions From Scratch">
+
+        <section class="p-5">
+                <h5>Facebook-Inspired Reactions From Scratch</h5>
+                <p class="text-gray3 min-h-[100px]">Build a Facebook-inspired reaction component to allow users to like or react to your content.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/angular-toast-message-notifications-from-scratch/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/angular-toast-message-notifications-from-scratch/img/featured.webp" alt="Angular Toast Message Notifications From Scratch">
+
+        <section class="p-5">
+                <h5>Angular Toast Message Notifications From Scratch</h5>
+                <p class="text-gray3 min-h-[100px]">Send toast notifications to users with Angular and Firebase.</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/twitter-inspired-follow-system-with-firebase-and-angular/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/twitter-inspired-follow-system-with-firebase-and-angular/img/featured.webp" alt="Twitter Inspired Follow System with Firebase">
+
+        <section class="p-5">
+                <h5>Twitter Inspired Follow System with Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Create a twitter-inspired follow unfollow system with Angular and Firebase</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/custom-usernames-with-firebase-authentication-and-angular/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/custom-usernames-with-firebase-authentication-and-angular/img/featured.webp" alt="Custom Usernames With Firebase Authentication and Angular">
+
+        <section class="p-5">
+                <h5>Custom Usernames With Firebase Authentication and Angular</h5>
+                <p class="text-gray3 min-h-[100px]">Give Firebase users custom usernames after and validate them asynchronously</p>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/reddit-style-upvoting-in-angular-4-and-firebase-nosql/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/reddit-style-upvoting-in-angular-4-and-firebase-nosql/img/featured.webp" alt="Reddit Style Upvoting in Angular 4 and Firebase">
+
+        <section class="p-5">
+                <h5>Reddit Style Upvoting in Angular 4 and Firebase</h5>
+                <p class="text-gray3 min-h-[100px]">Create a Reddit-Style Voting System from Scratch with Angular and Firebase</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/lessons/reactive-crud-app-with-angular-and-firebase-tutorial/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/lessons/reactive-crud-app-with-angular-and-firebase-tutorial/img/featured.webp" alt="Reactive Crud App With Angular and Firebase Tutorial">
+
+        <section class="p-5">
+                <h5>Reactive Crud App With Angular and Firebase Tutorial</h5>
+                <p class="text-gray3 min-h-[100px]">Build a CRUD app that manages a basic list of items - create, read, update, delete.</p>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-angular">
+                        #angular
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+                
+
+
+
+
+<article class="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
+    <a href="/courses/firestore-data-modeling/" class="no-underline">
+
+        
+        
+        
+        
+
+        <img class="w-full m-0 mb-1 rounded-t-xl" src="/courses/firestore-data-modeling/img/featured.webp" alt="Firestore Data Modeling">
+
+        <section class="p-5">
+                <h5>Firestore Data Modeling</h5>
+                <p class="text-gray3 min-h-[100px]">Learn how to query and model data in Firestore by example.</p>
+                
+                    <span class="tag tag-firestore">
+                        #firestore
+                    </span>
+                
+                    <span class="tag tag-firebase">
+                        #firebase
+                    </span>
+                
+                    <span class="tag tag-pro">
+                        #pro
+                    </span>
+                
+        </section>
+    </a>
+</article>
+
+            
+        </section>
+
+    </main>
+
+    
+	<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

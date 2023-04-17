@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fauna on Fireship</title>
+    <link>https://fireship.io/tags/fauna/</link>
+    <description>Recent content in fauna on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Oct 2020 07:14:44 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/fauna/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FaunaDB Basics</title>
+      <link>https://fireship.io/lessons/fauna-db-quickstart/</link>
+      <pubDate>Sun, 11 Oct 2020 07:14:44 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/fauna-db-quickstart/</guid>
+      <description>FaunaDB is a next-generation cloud database that combines the simplicity of NoSQL, without sacrificing the ability to model complex relationships. It&amp;rsquo;s completely serverless, fast, ACID-compliant, and has a generous free tier for small apps - basically everything you could possibly want in a fully-managed database.
+The following lesson demonstrates how to model a basic twitter-inspired social graph with FaunaDB and access it on the web with Node.js. It will introduce you to Fauna Query Language (FQL) and common patterns for reading and writing to the database.</description>
+    </item>
+    
+  </channel>
+</rss>

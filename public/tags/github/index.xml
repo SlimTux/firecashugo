@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Fireship</title>
+    <link>https://fireship.io/tags/github/</link>
+    <description>Recent content in github on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 May 2022 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git &amp; GitHub Full Course</title>
+      <link>https://fireship.io/courses/git/</link>
+      <pubDate>Sun, 15 May 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/</guid>
+      <description>The Git &amp;amp; GitHub Full Course teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands on approach to learn the basics of version control from the command line with around 1 hour of video content and exercises.
+🦄 What will I learn? This course will teach the basics of Git and GitHub - essential tools used by virtually every software engineer on the planet.</description>
+    </item>
+    
+    <item>
+      <title>Web Development Setup Guide for Windows with Linux (WSL)</title>
+      <link>https://fireship.io/lessons/windows-10-for-web-dev/</link>
+      <pubDate>Fri, 03 Apr 2020 13:22:42 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/windows-10-for-web-dev/</guid>
+      <description>Historically, Windows has not been been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched Windows Subsystem for Linux or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps.
+Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified ELF64 binaries.</description>
+    </item>
+    
+    <item>
+      <title>Five Useful Github Actions Examples</title>
+      <link>https://fireship.io/lessons/five-useful-github-actions-examples/</link>
+      <pubDate>Fri, 13 Mar 2020 09:26:48 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/five-useful-github-actions-examples/</guid>
+      <description>Github Actions make it easy to roll out a wide variety of DevOps automation tasks. The following lesson provides five examples of CI/CD and automation using Github Actions.
+Example 1: Continuous Integration Continuous Integration (CI) automates the process of testing and building your code before merging it. In practice, developers should commit or integrate their changes to the main shared repo once-per-day (or more).
+Workflow file_type_light_yaml .github/workflows/workflow.yml name: Node Continuous Integration on: pull_request: branches: [ master ] jobs: test_pull_request: runs-on: ubuntu-latest steps: - uses: actions/checkout@v2 - uses: actions/setup-node@v1 with: node-version: 12 - run: npm ci - run: npm test - run: npm run build Example 2: Continuous Deployment Continuous Deployment (CD) automatically releases new production code to users.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Backups for Firestore via Github Actions</title>
+      <link>https://fireship.io/snippets/firestore-automated-backups/</link>
+      <pubDate>Thu, 12 Mar 2020 17:20:51 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/firestore-automated-backups/</guid>
+      <description>As of today, Firestore does not support automatic backups, but it DOES support exports via the gcloud CLI or REST API. Although not technically a backup in database jargon, an automatic export is valuable to have for disaster recovery because it can be re-imported to replace lost data.
+The following snippet exports all Firestore data automatically every day at midnight using a scheduled Github Action.
+Generate a Service Key on GCP We need a service account to grant Github Actions permission to run the export command via the Google Cloud CLI.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Action deploying Angular App to Firebase Hosting</title>
+      <link>https://fireship.io/snippets/github-actions-deploy-angular-to-firebase-hosting/</link>
+      <pubDate>Tue, 19 Feb 2019 23:12:09 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/github-actions-deploy-angular-to-firebase-hosting/</guid>
+      <description>This snippet helps you to setup GitHub Actions in your Angular project to build and deploy your app to Firebase on git push.
+Step 1. Actions In your repository click on Actions.
+Step 2. New Workflow To create your first workflow click on Set up a workflow yourself
+Your first GitHub action looks like this:
+main.yml name: CI on: [push] jobs: build: runs-on: ubuntu-latest steps: - uses: actions/checkout@v1 - name: Run a one-line script run: echo Hello, world!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fcm on Fireship</title>
+    <link>https://fireship.io/tags/fcm/</link>
+    <description>Recent content in fcm on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Aug 2017 05:14:39 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/fcm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Push Notifications on the Web</title>
+      <link>https://fireship.io/lessons/push-messages-with-firestore/</link>
+      <pubDate>Tue, 01 Aug 2017 05:14:39 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/push-messages-with-firestore/</guid>
+      <description>A few months ago, I released a video covering Firebase Cloud Messaging (FCM) with the Realtime Database. Today, I am going to update this code with the following improvements:
+Save FCM tokens in Firestore. Send Firebase push messages to multiple devices simultaneously. Angular 5 firebase cloud messaging demo in angular
+Setting Up Firebase Cloud Messaging in Angular There are several steps you must take in Angular to get started with cloud messaging.</description>
+    </item>
+    
+  </channel>
+</rss>
