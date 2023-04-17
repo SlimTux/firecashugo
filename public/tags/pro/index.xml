@@ -369,16 +369,6 @@ Today, we are building a custom async validator that can verify username uniquen
     </item>
     
     <item>
-      <title>Advanced Data Modeling with Firestore by Example</title>
-      <link>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</link>
-      <pubDate>Mon, 05 Feb 2018 15:31:37 -0700</pubDate>
-      
-      <guid>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</guid>
-      <description>In the previous lesson, we learned the fundamentals of relational data modeling with Firestore. Today I want to push further and look at several more practical examples. In addition to data modeling, we will look at techniques like duplication, aggregation, composite keys, bucketing, and more.
-Keep in mind, Firestore is still in beta. Firebase engineers hinted at some really cool features on the roadmap (geo queries, query by array of ids) - I&#39;ll be sure to keep you posted :)</description>
-    </item>
-    
-    <item>
       <title>Extract Text from Images</title>
       <link>https://fireship.io/lessons/advanced-cloud-vision-ocr-text-extraction/</link>
       <pubDate>Fri, 02 Feb 2018 15:08:13 -0700</pubDate>

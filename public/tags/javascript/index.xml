@@ -38,16 +38,6 @@ What will I learn? 👨‍🎤 Everything you need to be productive with React �
     </item>
     
     <item>
-      <title>Cryptography Concepts for Node.js Developers</title>
-      <link>https://fireship.io/lessons/node-crypto-examples/</link>
-      <pubDate>Thu, 28 Oct 2021 13:29:12 -0700</pubDate>
-      
-      <guid>https://fireship.io/lessons/node-crypto-examples/</guid>
-      <description>The mysterious discipline of cryptography is the backbone of the internet. Without it, there would be no secrets and no privacy in the digital world. As a developer, you don’t need to understand the math that goes into cryptography, but it’s absolutely essential to know key concepts like hashes, salt, keypairs, encryption, and signing.
-The following tutorial explains essential cryptography concepts and implements them with the builtin Node.js crypto module.</description>
-    </item>
-    
-    <item>
       <title>API Monetization with Stripe Metered Billing</title>
       <link>https://fireship.io/lessons/api-monetization-stripe/</link>
       <pubDate>Sun, 24 Oct 2021 10:12:58 -0700</pubDate>

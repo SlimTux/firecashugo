@@ -4357,6 +4357,15 @@ command line gcloud config set project &amp;lt;PROJECT_ID&amp;gt; gcloud builds 
     </item>
     
     <item>
+      <title></title>
+      <link>https://fireship.io/lessons/pocketbase-chat-app/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://fireship.io/lessons/pocketbase-chat-app/</guid>
+      <description>Animal Farming (not the novel) Concerns of intensive animmal farming high density of animal increaeas the risk of rapid spread of disease the animal population Ethical Concern [Afeminate ( Like soydevs )] organism by consuming anti-biotics that have feminine hormones Use of antibiotics to prevent an &amp;ldquo;possible&amp;rdquo; future illnes, instead of to mitigate. It will create animals imunes to weak antibiotics, resulting in an positive feedback, insert stronger antibiotiks High concentration of organic waste matter produced that can pollute water systems Organic Farming GMO&amp;rsquo;s(Genetic modified organisms) proghibition, also, the prohibition of chemical fertilizers and restrict the use of chemical fertilizers</description>
+    </item>
+    
+    <item>
       <title>Carta de achamento da America Portuguesa</title>
       <link>https://fireship.io/lessons/ffmpeg-useful-techniques/</link>
       <pubDate>Wed, 01 Mar 2023 13:08:58 -0700</pubDate>
@@ -4366,13 +4375,23 @@ command line gcloud config set project &amp;lt;PROJECT_ID&amp;gt; gcloud builds 
     </item>
     
     <item>
-      <title>Pocketbase Chat App</title>
-      <link>https://fireship.io/lessons/pocketbase-chat-app/</link>
-      <pubDate>Sat, 17 Dec 2022 12:19:06 -0700</pubDate>
+      <title>Informatics</title>
+      <link>https://fireship.io/lessons/node-crypto-examples/</link>
+      <pubDate>Wed, 01 Mar 2023 13:08:58 -0700</pubDate>
       
-      <guid>https://fireship.io/lessons/pocketbase-chat-app/</guid>
-      <description>In the following tutorial we will build a chat app with Pocketbase and Svelte. Pocketbase is a backend (inspired by Firebase) structured as a single executable file. It provides a realtime DB based on SQLite and user authentication system that allows us to quickly prototype and deploy a chat app.
-Pocketbase Setup Serve it Locally First, download pocketbase then run the executable locally with ./pocketbase serve. You should have access to an admin dashboard that looks like this:</description>
+      <guid>https://fireship.io/lessons/node-crypto-examples/</guid>
+      <description>[Informatics] First draft :bulb:I cannot garantee that this project will turn out as i expect. This will be my first time in this type of activity. :sunglasses: Red-Piling classes Raise awareness over how people are being exploited ( without their knowlodge). This classes will be for general software and privacy knowlodge.
+:feet: Roadmap Ask class-mates what are they think about the project. Ask permission to be granted ( Ask the CAS&amp;rsquo;s counceilour) 1 Linux installation ) PopOS or Artix (with larbs) 2 Vim&amp;rsquo;s lecture ) touch ) make directories ) Basic VIM commands ) Write and save Documents 3 Microsoft is a Craphole 4 Why Whatsapp is crap and Signal is way supperior 5 Goals I don&#39;t even know.</description>
+    </item>
+    
+    <item>
+      <title>Rustling</title>
+      <link>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</link>
+      <pubDate>Wed, 01 Mar 2023 13:08:58 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</guid>
+      <description>Rustling&amp;rsquo;s progress (status)
+First day Heute, habe ich 5.3 perzent gemacht. Eu nao olhei nenhuma resposta. Apenas vi um pouco [deste vídeo](https://piped.video/watch?v=G3Vr-yswlaU) para poder situar-me. My solutions be like: 🤨📂 click in the folder</description>
     </item>
     
     <item>
@@ -4484,16 +4503,6 @@ In the following tutorial, we use Next.js and Redis Enterprise Cloud to build a 
 The following tutorial demonstrates how to use Riverpod to manage Firebase Auth state and relational realtime data in Firestore.
 Learning Objectives
 Riverpod Basics w/ Firebase Listen to the current user&amp;rsquo;s auth state Join realtime Firestore data based on current user&amp;rsquo;s UID Setup This tutorial assumes you have already installed Firebase into your app.</description>
-    </item>
-    
-    <item>
-      <title>Cryptography Concepts for Node.js Developers</title>
-      <link>https://fireship.io/lessons/node-crypto-examples/</link>
-      <pubDate>Thu, 28 Oct 2021 13:29:12 -0700</pubDate>
-      
-      <guid>https://fireship.io/lessons/node-crypto-examples/</guid>
-      <description>The mysterious discipline of cryptography is the backbone of the internet. Without it, there would be no secrets and no privacy in the digital world. As a developer, you don’t need to understand the math that goes into cryptography, but it’s absolutely essential to know key concepts like hashes, salt, keypairs, encryption, and signing.
-The following tutorial explains essential cryptography concepts and implements them with the builtin Node.js crypto module.</description>
     </item>
     
     <item>
@@ -6046,16 +6055,6 @@ Method 1: Offset with the Magic uf8ff Character A few months ago I created a Rea
       <guid>https://fireship.io/lessons/async-form-validation-in-firebase-enforce-uniqueness/</guid>
       <description>Reactive form validation can be a complex and difficult feature to implement, especially if you need to validate fields asynchronously. Angular ships with a few built-in validators, but they can only take you so far&amp;hellip;
 Today, we are building a custom async validator that can verify username uniqueness in Firebase Firestore. My goal is to show you async validator for your reactive forms that you can apply to virtually any backend data source.</description>
-    </item>
-    
-    <item>
-      <title>Advanced Data Modeling with Firestore by Example</title>
-      <link>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</link>
-      <pubDate>Mon, 05 Feb 2018 15:31:37 -0700</pubDate>
-      
-      <guid>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</guid>
-      <description>In the previous lesson, we learned the fundamentals of relational data modeling with Firestore. Today I want to push further and look at several more practical examples. In addition to data modeling, we will look at techniques like duplication, aggregation, composite keys, bucketing, and more.
-Keep in mind, Firestore is still in beta. Firebase engineers hinted at some really cool features on the roadmap (geo queries, query by array of ids) - I&#39;ll be sure to keep you posted :)</description>
     </item>
     
     <item>
