@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on Fireship</title>
+    <link>https://fireship.io/tags/devops/</link>
+    <description>Recent content in devops on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Feb 2019 23:12:09 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Action deploying Angular App to Firebase Hosting</title>
+      <link>https://fireship.io/snippets/github-actions-deploy-angular-to-firebase-hosting/</link>
+      <pubDate>Tue, 19 Feb 2019 23:12:09 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/github-actions-deploy-angular-to-firebase-hosting/</guid>
+      <description>This snippet helps you to setup GitHub Actions in your Angular project to build and deploy your app to Firebase on git push.
+Step 1. Actions In your repository click on Actions.
+Step 2. New Workflow To create your first workflow click on Set up a workflow yourself
+Your first GitHub action looks like this:
+main.yml name: CI on: [push] jobs: build: runs-on: ubuntu-latest steps: - uses: actions/checkout@v1 - name: Run a one-line script run: echo Hello, world!</description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration and Deployment with Google Cloud Build</title>
+      <link>https://fireship.io/lessons/ci-cd-with-google-cloud-build/</link>
+      <pubDate>Thu, 17 Jan 2019 04:17:11 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/ci-cd-with-google-cloud-build/</guid>
+      <description>Continuous Integration and Delivery, aka CI/CD, aka DevOps is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.</description>
+    </item>
+    
+  </channel>
+</rss>

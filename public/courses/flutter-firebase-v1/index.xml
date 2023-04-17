@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter Firebase - The Full Course on Fireship</title>
+    <link>https://fireship.io/courses/flutter-firebase-v1/</link>
+    <description>Recent content in Flutter Firebase - The Full Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2019 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/flutter-firebase-v1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/intro-resources/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/intro-resources/</guid>
+      <description>Course Resources QuizApp Source Code Quiz Questions Repo Flutter Docs FlutterFire Docs Social Slack Chat YouTube &amp;amp; Twitter Additional Resources Get it on the App Store Get it on Google Play Advanced Flutter Tutorials </description>
+    </item>
+    
+    <item>
+      <title>Flutter Overview</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/intro-how-flutter-works/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/intro-how-flutter-works/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installation and Setup</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/intro-flutter-setup/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/intro-flutter-setup/</guid>
+      <description>Tasks Install Flutter and run flutter doctor. Add Flutter to your Path Download Android Studio and configure an Emulator. Download XCode (MacOS) Dependencies The current version of this course uses the following dependencies. For the most reliable results, you should use the same versions.
+Flutter &amp;amp; Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk.
+file_type_dartlang pubspec.yaml dependencies: flutter: sdk: flutter cupertino_icons: ^0.</description>
+    </item>
+    
+    <item>
+      <title>Firebase setup</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/intro-firebase-setup/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/intro-firebase-setup/</guid>
+      <description>Tasks Create a Firebase Project Add an iOS app to your project Add an Android app to your project Use the keytool to generate an SHA Certificate. See my Flutter Firebase SHA guide if you get stuck at this part. Also reference the latest Official FlutterFire Setup Docs</description>
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/vs-code-pro-tips/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/vs-code-pro-tips/</guid>
+      <description>TIP! The Refactor Tool is your new best friend!</description>
+    </item>
+    
+    <item>
+      <title>Widgets</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-stateful-stateless/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-stateful-stateless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Platform Checking</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-platform-checking/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-platform-checking/</guid>
+      <description>Example Code file_type_dartlang main.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:flutter/cupertino.dart&amp;#39;; import &amp;#39;dart:io&amp;#39; show Platform; void main() =&amp;gt; runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: Center( child: Platform.isAndroid ? Switch(value: true, onChanged: (v) =&amp;gt; null) : CupertinoSwitch(value: true, onChanged: (v) =&amp;gt; null), ), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Material App &amp; Scaffold</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-scaffold/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-scaffold/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( appBar: AppBar(title: Text(&amp;#39;My Cool App&amp;#39;),), body: Center(child: Icon(Icons.cake),), floatingActionButton: FloatingActionButton(onPressed: () {}), drawer: Drawer(), bottomNavigationBar: BottomNavigationBar(items: [ BottomNavigationBarItem(label: &amp;#39;foo&amp;#39;, icon: Icon(Icons.call)), BottomNavigationBarItem(label: &amp;#39;bar&amp;#39;, icon: Icon(Icons.cached)) ]), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Single Widget Layout</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-single-layout/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-single-layout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Box Decoration</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-box-decoration/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-box-decoration/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: Center( child: Container( alignment: Alignment.center, decoration: BoxDecoration( color: Colors.blue, border: Border.all(width: 5), boxShadow: [ BoxShadow(offset: Offset(40, 40), color: Colors.pink), BoxShadow(offset: Offset(20, 20), color: Colors.yellow), ], gradient: RadialGradient(colors: [Colors.yellow, Colors.pink]) ), ) ), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Text</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-text/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-text/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: Center( child: Row( children: &amp;lt;Widget&amp;gt;[ Expanded( child: Container( height: 100, child: Text( &amp;#39;Hello World this is too long&amp;#39;, overflow: TextOverflow.ellipsis, style: TextStyle( fontSize: 50, fontWeight: FontWeight.bold, ), ), ), ), ], ), ), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Gestures</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-gestures/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-gestures/</guid>
+      <description>Example Code file_type_dartlang main.dart //... child: GestureDetector( onTapDown: (details) =&amp;gt; print(details.globalPosition.dx), child: Container( width: 100, height: 100, color: Colors.red ), ), //... </description>
+    </item>
+    
+    <item>
+      <title>Flex Layout</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-flex-layout/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-flex-layout/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: Container( color: Colors.blue, padding: EdgeInsets.all(16), child: Column( mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.stretch, children: &amp;lt;Widget&amp;gt;[ Icon(Icons.cake, color: Colors.white, size: 50,), Icon(Icons.cake, color: Colors.white, size: 100,), Icon(Icons.cake, color: Colors.white, size: 200,), ], ) ) ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Stack</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-stack/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-stack/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: SizedBox.expand( child: Stack( children: &amp;lt;Widget&amp;gt;[ Icon( Icons.camera, size: 100, color: Colors.red, ), Align( alignment: Alignment.center, child: Icon( Icons.camera, size: 100, color: Colors.blue, )), Positioned( bottom: 20, left: 100, child: Icon( Icons.camera, size: 100, color: Colors.green, )) ], ), ), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Scroll</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-scroll-list/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-scroll-list/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: ListView( scrollDirection: Axis.horizontal, children: _cards(), ) ), ); } List&amp;lt;Widget&amp;gt; _cards() { return [1,2,3,4,5,6,7,8,9].map((v) =&amp;gt; Container( color: Colors.blue, margin: EdgeInsets.all(20), height: 100, child: Text(&amp;#39;$v&amp;#39;), ) ).toList(); } </description>
+    </item>
+    
+    <item>
+      <title>Animated Widgets</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/widgets-animated/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/widgets-animated/</guid>
+      <description>Example Code file_type_dartlang main.dart import &amp;#39;dart:math&amp;#39;; class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: Scaffold( body: Center( child: CoolBox(), ) ), ); } } class CoolBox extends StatefulWidget { const CoolBox({ Key key, }) : super(key: key); @override _CoolBoxState createState() =&amp;gt; _CoolBoxState(); } class _CoolBoxState extends State&amp;lt;CoolBox&amp;gt; { double width = 100; double height = 100; Color color = Colors.green; @override Widget build(BuildContext context) { return AnimatedContainer( duration: Duration(seconds: 2), curve: Curves.</description>
+    </item>
+    
+    <item>
+      <title>Themes</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/concepts-themes/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/concepts-themes/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( theme: ThemeData( brightness: Brightness.light, primaryColor: Colors.lightGreen, textTheme: TextTheme( body1: TextStyle(color: Colors.red, fontSize: 30), headline: TextStyle(color: Colors.blue, fontSize: 70) ) ), home: HomeScreen(), ); } } class HomeScreen extends StatelessWidget { @override Widget build(BuildContext context) { return Scaffold( appBar: AppBar(), body: Center( child: Text(&amp;#39;Hello World&amp;#39;, style: Theme.of(context).textTheme.headline,), ) ); } } </description>
+    </item>
+    
+    <item>
+      <title>Navigation</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/concepts-routing/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/concepts-routing/</guid>
+      <description>Example Code file_type_dartlang main.dart class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( routes: { &amp;#39;/home&amp;#39;: (context) =&amp;gt; HomeScreen(), &amp;#39;/slideshow&amp;#39;: (context) =&amp;gt; SlideshowScreen() }, home: HomeScreen(), ); } } class HomeScreen extends StatelessWidget { @override Widget build(BuildContext context) { return Scaffold( appBar: AppBar(title: Text(&amp;#39;Home&amp;#39;), backgroundColor: Colors.red,), body: Center( child: Row( mainAxisAlignment: MainAxisAlignment.center, children: &amp;lt;Widget&amp;gt;[ FlatButton(child: Text(&amp;#39;push&amp;#39;), color: Colors.green, onPressed: () { // Navigator.push( // context, // MaterialPageRoute(builder: (context) =&amp;gt; SlideshowScreen(name: &amp;#39;Jeff&amp;#39;)) // ); // Navigator.</description>
+    </item>
+    
+    <item>
+      <title>Async Widgets</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/concepts-async/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/concepts-async/</guid>
+      <description>Example Code file_type_dartlang main.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:cloud_firestore/cloud_firestore.dart&amp;#39;; import &amp;#39;dart:async&amp;#39;; void main() =&amp;gt; runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( home: HomeScreen(), ); } } class HomeScreen extends StatelessWidget { final Firestore db = Firestore.instance; @override Widget build(BuildContext context) { return Scaffold( appBar: AppBar(title: Text(&amp;#39;Home&amp;#39;)), body: Center( child: StreamBuilder&amp;lt;DocumentSnapshot&amp;gt;( stream: db.collection(&amp;#39;users&amp;#39;).document(&amp;#39;mB6sGaFBczfIW50DJyvGDcQWOvW2&amp;#39;).snapshots(), builder: (context, snapshot) { if (snapshot.hasData) { var data = snapshot.data.data; return Column( crossAxisAlignment: CrossAxisAlignment.</description>
+    </item>
+    
+    <item>
+      <title>App Tour</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-demo-app-tour/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-demo-app-tour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>State Management</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/concepts-state/</link>
+      <pubDate>Fri, 23 Aug 2019 10:13:30 -0400</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/concepts-state/</guid>
+      <description>Note: The code below is updated for Provider version 3.1. The main change is that the stream param has been renamed to value.
+Example Code file_type_dartlang main.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:cloud_firestore/cloud_firestore.dart&amp;#39;; import &amp;#39;package:provider/provider.dart&amp;#39;; void main() =&amp;gt; runApp(MyApp()); class UserModel { String name = &amp;#39;Bob&amp;#39;; } var stream = Stream.fromIterable([UserModel()]); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return StreamProvider&amp;lt;UserModel&amp;gt;.value( value: stream, child: MaterialApp( home: HomeScreen(), ), ); } } class HomeScreen extends StatelessWidget { final Firestore db = Firestore.</description>
+    </item>
+    
+    <item>
+      <title>Project Organization</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-organization/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-organization/</guid>
+      <description> screens/ contains the app&amp;rsquo;s main UI features. shared/ contains the app&amp;rsquo;s shared UI, like navigation menus and loading indicators. services/ contains the app&amp;rsquo;s shared business logic, like user auth and database code. </description>
+    </item>
+    
+    <item>
+      <title>Routing &amp; Firebase Analytics</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-routing-analytics/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-routing-analytics/</guid>
+      <description>Firebase Analytics and Routing Add Firebase Analytics to keep track of the user&amp;rsquo;s navigation between screens.
+file_type_dartlang main.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:firebase_analytics/observer.dart&amp;#39;; import &amp;#39;package:firebase_analytics/firebase_analytics.dart&amp;#39;; void main() =&amp;gt; runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( // Firebase Analytics navigatorObservers: [ FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()), ], routes: { &amp;#39;/&amp;#39;: (context) =&amp;gt; LoginScreen(), &amp;#39;/topics&amp;#39;: (context) =&amp;gt; TopicsScreen(), &amp;#39;/profile&amp;#39;: (context) =&amp;gt; ProfileScreen(), &amp;#39;/about&amp;#39;: (context) =&amp;gt; AboutScreen(), }, // Theme theme: ThemeData( // your customizations here brightness: Brightness.</description>
+    </item>
+    
+    <item>
+      <title>Bottom Navigation Bar</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-bottom-nav/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-bottom-nav/</guid>
+      <description>About Screen Create a basic screen.
+file_type_dartlang about.dart import &amp;#39;package:flutter/material.dart&amp;#39;; class AboutScreen extends StatelessWidget { @override Widget build(BuildContext context) { return Scaffold( appBar: AppBar( title: Text(&amp;#39;about&amp;#39;), backgroundColor: Colors.blue, ), body: Center( child: Text(&amp;#39;About this app...&amp;#39;), ), ); } } Export the Widgets You can export all your screens together using the following pattern:
+file_type_dartlang screens.dart export &amp;#39;login.dart&amp;#39;; export &amp;#39;topics.dart&amp;#39;; export &amp;#39;quiz.dart&amp;#39;; export &amp;#39;profile.dart&amp;#39;; export &amp;#39;about.dart&amp;#39;; You can then use them in other project files like so: import &#39;screens/screens.</description>
+    </item>
+    
+    <item>
+      <title>Loading Indicator</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-loader/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-loader/</guid>
+      <description>Use the Loader when an individual UI element is loading, or LoadingScreen when an entire screen is loading.
+file_type_dartlang loader.dart import &amp;#39;package:flutter/material.dart&amp;#39;; class Loader extends StatelessWidget { @override Widget build(BuildContext context) { return Container( width: 250, height: 250, child: CircularProgressIndicator(), ); } } class LoadingScreen extends StatelessWidget { @override Widget build(BuildContext context) { return Scaffold( appBar: AppBar(), body: Center( child: Loader(), ), ); } } </description>
+    </item>
+    
+    <item>
+      <title>User Authentication (Google)</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-auth-service/</link>
+      <pubDate>Sun, 12 Apr 2020 10:13:30 -0400</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-auth-service/</guid>
+      <description>Note: If you experience issues with Google Auth, revisit the Firebase Setup section to ensure the SHA fingerprint has been setup on your local machine.
+Auth Service Create an auth service to isolate the business logic for Firebase authentication methods and user management.
+file_type_dartlang auth.dart import &amp;#39;package:firebase_auth/firebase_auth.dart&amp;#39;; import &amp;#39;package:google_sign_in/google_sign_in.dart&amp;#39;; import &amp;#39;package:cloud_firestore/cloud_firestore.dart&amp;#39;; import &amp;#39;dart:async&amp;#39;; class AuthService { final GoogleSignIn _googleSignIn = GoogleSignIn(); final FirebaseAuth _auth = FirebaseAuth.instance; final Firestore _db = Firestore.</description>
+    </item>
+    
+    <item>
+      <title>User Profile</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-user-profile/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-user-profile/</guid>
+      <description>User Profile Screen file_type_dartlang profile.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:firebase_auth/firebase_auth.dart&amp;#39;; import &amp;#39;../services/services.dart&amp;#39;; import &amp;#39;../shared/shared.dart&amp;#39;; import &amp;#39;package:provider/provider.dart&amp;#39;; class ProfileScreen extends StatelessWidget { final AuthService auth = AuthService(); @override Widget build(BuildContext context) { FirebaseUser user = Provider.of&amp;lt;FirebaseUser&amp;gt;(context); if (user != null) { return Scaffold( appBar: AppBar( backgroundColor: Colors.deepOrange, title: Text(user.displayName ?? &amp;#39;Guest&amp;#39;), ), body: Center( child: Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly, crossAxisAlignment: CrossAxisAlignment.center, children: [ if (user.photoUrl != null) Container( width: 100, height: 100, margin: EdgeInsets.</description>
+    </item>
+    
+    <item>
+      <title>Login Screen</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-login-screen/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-login-screen/</guid>
+      <description>Login Screen Create a login screen and a reusable button for multiple auth methods.
+file_type_dartlang login.dart import &amp;#39;package:flutter/material.dart&amp;#39;; import &amp;#39;package:font_awesome_flutter/font_awesome_flutter.dart&amp;#39;; import &amp;#39;../services/services.dart&amp;#39;; import &amp;#39;package:apple_sign_in/apple_sign_in.dart&amp;#39;; class LoginScreen extends StatefulWidget { createState() =&amp;gt; LoginScreenState(); } class LoginScreenState extends State&amp;lt;LoginScreen&amp;gt; { AuthService auth = AuthService(); @override void initState() { super.initState(); auth.getUser.then( (user) { if (user != null) { Navigator.pushReplacementNamed(context, &amp;#39;/topics&amp;#39;); } }, ); } @override Widget build(BuildContext context) { return Scaffold( body: Container( padding: EdgeInsets.</description>
+    </item>
+    
+    <item>
+      <title>Sign In with Apple</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-auth-apple-signin/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-auth-apple-signin/</guid>
+      <description>🚨 As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option. See the official guidance from Apple.
+Sign in with Apple Setup Follow the steps outlined below to implement Sign In with Apple in a Flutter iOS app.
+This section assumes that you are an Apple Developer member and have an existing team account linked to your iOS app.</description>
+    </item>
+    
+    <item>
+      <title>Basic Firestore</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-firestore/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-firestore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database Model</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-data-model/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-data-model/</guid>
+      <description>In order to build an app identical to the live demo, you need to populate Firestore with data.
+Populate your Database with Quiz Data I recommend cloning the Quiz Questions Repo. It is a node script that allows you to populate all the quiz data in your own database with a single command.
+Database Model You can also create your own data from scratch. Below you will find screenshots of sample quiz data for each collection.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Firestore</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-firestore-advanced/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-firestore-advanced/</guid>
+      <description>Data Models Model Firestore data as a Dart class.
+file_type_dartlang models.dart class Option { String value; String detail; bool correct; Option({ this.correct, this.value, this.detail }); Option.fromMap(Map data) { value = data[&amp;#39;value&amp;#39;]; detail = data[&amp;#39;detail&amp;#39;] ?? &amp;#39;&amp;#39;; correct = data[&amp;#39;correct&amp;#39;]; } } class Question { String text; List&amp;lt;Option&amp;gt; options; Question({ this.options, this.text }); Question.fromMap(Map data) { text = data[&amp;#39;text&amp;#39;] ?? &amp;#39;&amp;#39;; options = (data[&amp;#39;options&amp;#39;] as List ?? []).map((v) =&amp;gt; Option.fromMap(v)).toList(); } } ///// Database Collections class Quiz { String id; String title; String description; String video; String topic; List&amp;lt;Question&amp;gt; questions; Quiz({ this.</description>
+    </item>
+    
+    <item>
+      <title>Current User Data in Firestore</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-firestore-user/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-firestore-user/</guid>
+      <description>User Data Service Create a generic service that can connect a user to the Firestore related to their UID.
+file_type_dartlang db.dart class UserData&amp;lt;T&amp;gt; { final Firestore _db = Firestore.instance; final FirebaseAuth _auth = FirebaseAuth.instance; final String collection; UserData({ this.collection }); Stream&amp;lt;T&amp;gt; get documentStream { return _auth.onAuthStateChanged.switchMap((user) { if (user != null) { Document&amp;lt;T&amp;gt; doc = Document&amp;lt;T&amp;gt;(path: &amp;#39;$collection/${user.uid}&amp;#39;); return doc.streamData(); } else { return Stream&amp;lt;T&amp;gt;.value(null); } }); } Future&amp;lt;T&amp;gt; getDocument() async { FirebaseUser user = await _auth.</description>
+    </item>
+    
+    <item>
+      <title>Topics Screen</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-topic-screen/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-topic-screen/</guid>
+      <description>Reference the Topics Screen Source on Github</description>
+    </item>
+    
+    <item>
+      <title>Hero Animation</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-hero-animation/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-hero-animation/</guid>
+      <description>Hero Animation Example file_type_dartlang topics.dart class TopicScreen extends StatelessWidget { final Topic topic; TopicScreen({this.topic}); @override Widget build(BuildContext context) { return Scaffold( /// ... body: ListView(children: [ Hero( tag: topic.img, child: Image.asset(&amp;#39;assets/covers/${topic.img}&amp;#39;, width: MediaQuery.of(context).size.width), ), /// ... ]), ); } } </description>
+    </item>
+    
+    <item>
+      <title>Animated Progress Bar</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-animated-progressbar/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-animated-progressbar/</guid>
+      <description>Reference the Animated Progress Bar source</description>
+    </item>
+    
+    <item>
+      <title>Quiz State Management</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-quiz-state/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-quiz-state/</guid>
+      <description>State Management with Provider Manage the state of the quiz with the Provider ChangeNotifier.
+file_type_dartlang main.dart import &amp;#39;../services/services.dart&amp;#39;; import &amp;#39;package:provider/provider.dart&amp;#39;; // Shared Data class QuizState with ChangeNotifier { double _progress = 0; Option _selected; final PageController controller = PageController(); get progress =&amp;gt; _progress; get selected =&amp;gt; _selected; set progress(double newValue) { _progress = newValue; notifyListeners(); } set selected(Option newValue) { _selected = newValue; notifyListeners(); } void nextPage() async { await controller.</description>
+    </item>
+    
+    <item>
+      <title>Quiz PageView</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/project-quiz-pageview/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/project-quiz-pageview/</guid>
+      <description>Reference the Quiz.dart source</description>
+    </item>
+    
+    <item>
+      <title>Google Play</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/release-android/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/release-android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apple App Store</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/release-ios/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/release-ios/</guid>
+      <description>Official iOS Release Docs</description>
+    </item>
+    
+  </channel>
+</rss>

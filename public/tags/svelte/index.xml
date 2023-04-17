@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svelte on Fireship</title>
+    <link>https://fireship.io/tags/svelte/</link>
+    <description>Recent content in svelte on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://fireship.io/tags/svelte/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://fireship.io/lessons/pocketbase-chat-app/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://fireship.io/lessons/pocketbase-chat-app/</guid>
+      <description>Animal Farming (not the novel) Concerns of intensive animmal farming high density of animal increaeas the risk of rapid spread of disease the animal population Ethical Concern [Afeminate ( Like soydevs )] organism by consuming anti-biotics that have feminine hormones Use of antibiotics to prevent an &amp;ldquo;possible&amp;rdquo; future illnes, instead of to mitigate. It will create animals imunes to weak antibiotics, resulting in an positive feedback, insert stronger antibiotiks High concentration of organic waste matter produced that can pollute water systems Organic Farming GMO&amp;rsquo;s(Genetic modified organisms) proghibition, also, the prohibition of chemical fertilizers and restrict the use of chemical fertilizers</description>
+    </item>
+    
+    <item>
+      <title>Javascript 2020 Predictions</title>
+      <link>https://fireship.io/lessons/javascript-2020-predictions/</link>
+      <pubDate>Mon, 16 Dec 2019 07:27:03 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/javascript-2020-predictions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom Svelte Store Examples</title>
+      <link>https://fireship.io/snippets/custom-svelte-stores/</link>
+      <pubDate>Fri, 15 Nov 2019 07:41:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/custom-svelte-stores/</guid>
+      <description>A store provides a reactive stream of data that can change over time. Creating a custom store in Svelte is easy. It&amp;rsquo;s just a simple matter of creating a writable store in a function and returning its subscribe function on an object.
+Custom Store Use-Cases Use-case: Business logic An obvious use case is to create abstractions for your data. You can use writable as a low-level building block for more complex features.</description>
+    </item>
+    
+    <item>
+      <title>Stripe Payment Intents Tutorial</title>
+      <link>https://fireship.io/lessons/stripe-payment-intents-tutorial/</link>
+      <pubDate>Tue, 22 Oct 2019 18:05:34 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/stripe-payment-intents-tutorial/</guid>
+      <description>Stripe provides a huge API with everything you could ever want to build a complex payment system. Recent changes in the online payments landscape have resulted in significant changes to the API, most notably the Payment Intents API. The following lesson demonstrates two modern strategies for accepting one-time payments - (1) Checkout and (2) Stripe Elements with Payment Intents.
+As of September 2019, many European banks now require their customers to validate payments using 3D secure standard or Strong Customer Authentication SCA.</description>
+    </item>
+    
+    <item>
+      <title>Setup Google Maps With Svelte 3</title>
+      <link>https://fireship.io/snippets/setup-google-maps-with-svelte/</link>
+      <pubDate>Thu, 22 Aug 2019 13:31:18 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/setup-google-maps-with-svelte/</guid>
+      <description>The following guide will show you how to configure Google Maps with Svelte 3.
+Enable the Google Maps JS API First, you must enable Google Maps with a Google Cloud or Firebase project, then grab your API from the credentials tab.
+Enable the Google Maps JavaScript API from a GCP or Firebase project.
+Detect when Google Maps is Ready Google Maps will be loaded asynchronously and the script can notify us when it is ready by calling a callback function.</description>
+    </item>
+    
+    <item>
+      <title>Svelte Realtime Todo List with Firebase</title>
+      <link>https://fireship.io/lessons/svelte-v3-overview-firebase/</link>
+      <pubDate>Wed, 24 Apr 2019 07:01:58 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/svelte-v3-overview-firebase/</guid>
+      <description>Svelte 3 was announced recently and it delivers a refreshing alternative to the big three component frameworks/libraries of React, Angular, and Vue. In fact, calling it a framework/library would not be very accurate, because Svelte is actually a compiler that turns your code into Vanilla JS, meaning it does not need to ship the entire framework in the JS bundle. Its focus on simplicity really stands out and makes for a very developer-friendly JavaScript experience.</description>
+    </item>
+    
+  </channel>
+</rss>

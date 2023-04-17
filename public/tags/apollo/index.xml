@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apollo on Fireship</title>
+    <link>https://fireship.io/tags/apollo/</link>
+    <description>Recent content in apollo on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Oct 2019 09:38:50 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphql Basics Tutorial</title>
+      <link>https://fireship.io/lessons/graphql-basics-tutorial/</link>
+      <pubDate>Mon, 07 Oct 2019 09:38:50 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/graphql-basics-tutorial/</guid>
+      <description>GraphQL has been one of the fastest growing web technologies over the past few years. This lesson covers the basics of GraphQL and demonstrates how to build an Angular app that fetches data with Apollo via the public SpaceX API.
+🙏 Special thanks to Arjun for producing the code for this demo! Head over to github for the Full Lesson and give it a ⭐.</description>
+    </item>
+    
+  </channel>
+</rss>

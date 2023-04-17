@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>auth on Fireship</title>
+    <link>https://fireship.io/tags/auth/</link>
+    <description>Recent content in auth on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 May 2020 05:56:37 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/auth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authenticate a Firebase User on the Server</title>
+      <link>https://fireship.io/snippets/express-middleware-auth-token-firebase/</link>
+      <pubDate>Fri, 22 May 2020 05:56:37 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/express-middleware-auth-token-firebase/</guid>
+      <description>The following snippet demonstrates how to setup server-side authentication in Firebase on any node server using Express.js.
+Note. If using Firebase Cloud Functions, you can use Callable Functions to automatically handle this type of authentication.
+Client-side: Include the ID Token Your client-side code must attach the ID token to the authorization header when making a request to the server. The example below uses the browser&amp;rsquo;s built in fetch API.
+file_type_js frontend-app.</description>
+    </item>
+    
+    <item>
+      <title>Multifactor Auth with Firebase (2FA)</title>
+      <link>https://fireship.io/lessons/two-factor-auth-firebase/</link>
+      <pubDate>Sat, 04 Apr 2020 13:49:27 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/two-factor-auth-firebase/</guid>
+      <description>How do you handle two-step verification (2FA) or multifactor authentication (MFA) in Firebase? Until recently, the answer was you can&amp;rsquo;t. Thankfully, in 2020 we can implement multifactor auth flows in Firebase with Google Cloud Identity Platform. The following tutorial demonstrates an optional multifactor auth flow that works like this&amp;hellip;
+Sign up with email/password and require email verification. Opt-in to MFA and register phone number(s). Attempt login from a new device. Verify SMS text code verification.</description>
+    </item>
+    
+    <item>
+      <title>Sign In with Apple on Firebase</title>
+      <link>https://fireship.io/lessons/apple-signin-with-firebase-tutorial/</link>
+      <pubDate>Sun, 09 Feb 2020 08:41:24 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/apple-signin-with-firebase-tutorial/</guid>
+      <description>Sign in with Apple was announced in 2019 and allows users to authenticate into your Firebase app with an Apple ID. Users must have two-factor authentication (2FA) enabled on their Apple account AND be signed into iCloud.
+The following lesson demonstrates how to configure Apple SignIn with the Firebase JavaScript SDK (web).
+🚨 As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Firebase Auth with Custom Claims</title>
+      <link>https://fireship.io/lessons/firebase-custom-claims-role-based-auth/</link>
+      <pubDate>Mon, 23 Sep 2019 08:11:12 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-custom-claims-role-based-auth/</guid>
+      <description>Firebase allows developers to modify authentication ID tokens to provide fine-grained system access to authorized users. The follow lesson adds custom claims to the Firebase user record to build a role-based access control feature that is secured with Firestore rules.
+Set Custom Claims from the Command Line It is not possible (currently) to add custom claims from the Firebase Console. This means we need to write some code with Firebase Admin.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firebase Google SignIn &#43; Firestore</title>
+      <link>https://fireship.io/lessons/flutter-firebase-google-oauth-firestore/</link>
+      <pubDate>Mon, 14 Jan 2019 07:43:54 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/flutter-firebase-google-oauth-firestore/</guid>
+      <description>The following lesson will show you how to implement Google SignIn with Flutter and Firebase, then update a custom user profile in Firestore. We will demonstrate several key concepts related to building reactive UIs with realtime streaming data, including
+Global Streams and Observables with RxDart StatefulWidget StreamBuilder Step 0: Prerequisites Install FlutterFire Step 1: Build Out the UI First, let&amp;rsquo;s start with a basic UI. Notice we have placeholders for LoginButton() and UserProfile() - these will be created later in the lesson.</description>
+    </item>
+    
+    <item>
+      <title>Google OAuth with @angular/fire</title>
+      <link>https://fireship.io/lessons/angularfire-google-oauth/</link>
+      <pubDate>Sat, 29 Dec 2018 06:51:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/angularfire-google-oauth/</guid>
+      <description>A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I genernally focus on user auth first because so many other features depend the user&amp;rsquo;s auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user&amp;rsquo;s profile and/or query all users.</description>
+    </item>
+    
+    <item>
+      <title>Passwordless Signup With Firebase on the Web</title>
+      <link>https://fireship.io/lessons/using-passwordless-signup-with-firebase-on-the-web/</link>
+      <pubDate>Tue, 20 Mar 2018 17:25:50 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/using-passwordless-signup-with-firebase-on-the-web/</guid>
+      <description>Passwordless auth - or email-link signup - is a cool new user authentication option in the Firebase SDK that was released in v4.12.0 on March 20th, 2018. Rather than force a user to remember a password, we simply send them an email with a link that creates the JSON Web Token when they redirect back to the site. As a user of apps, I see this method quickly replacing traditional passwords and personally find it much more user-friendly.</description>
+    </item>
+    
+    <item>
+      <title>Multi-step Reactive Form for Email-Password Signup</title>
+      <link>https://fireship.io/lessons/multi-step-signup-firebase-email-password-auth-angular-reactive-forms/</link>
+      <pubDate>Sun, 12 Nov 2017 12:05:03 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/multi-step-signup-firebase-email-password-auth-angular-reactive-forms/</guid>
+      <description>Firebase password auth can be configured with a few lines of code, but what happens if you need additional custom user data before authorizing activity in your app? In this lesson, my goal is to show you several important concepts.
+Email/Password Auth Reactive Forms in Angular Security with custom Firebase user data What are we Building? This lesson is based off of the [Firstarter PWA starter app](https://firestarter-96e46.firebaseapp.com/), which is organized into NgModules.</description>
+    </item>
+    
+    <item>
+      <title>Firebase Phone Authentication</title>
+      <link>https://fireship.io/lessons/firebase-phone-authentication-with-angular-4-tutorial/</link>
+      <pubDate>Wed, 19 Jul 2017 04:34:42 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-phone-authentication-with-angular-4-tutorial/</guid>
+      <description>Signing up users with a phone number adds certain degree of trust or confidence to an app. In this lesson, we are going to use the new phone authentication paradigm from Firebase in our Angular 4 app. At this time, phone auth is not supported in AngularFire, so we will use the firebase JavaScript SDK directly. Phone auth can also be used to link accounts, providing an effective solution for two-factor authentication.</description>
+    </item>
+    
+  </channel>
+</rss>

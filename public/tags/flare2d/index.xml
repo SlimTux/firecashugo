@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flare2d on Fireship</title>
+    <link>https://fireship.io/tags/flare2d/</link>
+    <description>Recent content in flare2d on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2019 11:00:35 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/flare2d/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Flare 2D Animation Basics</title>
+      <link>https://fireship.io/lessons/animated-navigation-flutter-flare/</link>
+      <pubDate>Tue, 02 Apr 2019 11:00:35 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/animated-navigation-flutter-flare/</guid>
+      <description>Whenever I see an awesome UI element in a native app my first question is How do I make that in Flutter?. That&amp;rsquo;s exactly what I asked when I downloaded the Giphy Android app recently, which has runs a colorful and fun animation for each icon in the bottom navbar.
+These animations are complex. Hypothetically, they could be created in Flutter natively with a custom painter, but that would be very challenging and painful.</description>
+    </item>
+    
+  </channel>
+</rss>

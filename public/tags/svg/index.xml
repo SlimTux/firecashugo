@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svg on Fireship</title>
+    <link>https://fireship.io/tags/svg/</link>
+    <description>Recent content in svg on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Aug 2021 12:06:33 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/svg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wavy Backgrounds with CSS &amp; SVG</title>
+      <link>https://fireship.io/lessons/wavy-backgrounds/</link>
+      <pubDate>Thu, 19 Aug 2021 12:06:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/wavy-backgrounds/</guid>
+      <description>Wavy backgrounds have been all the rage in design for the last few years. The following tutorial demonstrates several different ways to create wavy backgrounds with CSS and SVG.
+CSS Versions Bubble Pattern CSS Bubble
+The bubble pattern creates an elliptical shape that stretches over the top of the content. It only requires CSS to create the effect.
+file_type_html index.html &amp;lt;section class=&amp;#34;bubble&amp;#34;&amp;gt; &amp;lt;!-- content here --&amp;gt; &amp;lt;/section&amp;gt; Use the pseudo-element ::after to style an eliptical border radius to the content.</description>
+    </item>
+    
+  </channel>
+</rss>

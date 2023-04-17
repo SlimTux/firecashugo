@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>puppeteer on Fireship</title>
+    <link>https://fireship.io/tags/puppeteer/</link>
+    <description>Recent content in puppeteer on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jul 2019 13:01:44 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/puppeteer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern Web Scraping Guide</title>
+      <link>https://fireship.io/lessons/web-scraping-guide/</link>
+      <pubDate>Wed, 17 Jul 2019 13:01:44 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/web-scraping-guide/</guid>
+      <description>In a perfect world, every website provides free access to data with an easy-to-use API&amp;hellip; but the world is far from perfect. However, it is possible to use web scraping techniques to manually extract data from websites by brute force. The following lesson examines two different types of web scrapers and implements them with NodeJS and Firebase Cloud Functions.
+Initial Setup Let&amp;rsquo;s start by initializing Firebase Cloud Functions with JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>Angular SEO with Rendertron</title>
+      <link>https://fireship.io/lessons/seo-angular-part-1-rendertron-meta-tags/</link>
+      <pubDate>Mon, 06 Nov 2017 11:43:06 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/seo-angular-part-1-rendertron-meta-tags/</guid>
+      <description>⚠️ As of 2020, SEO and SSR in Angular is much-improved. Consider Angular Universal as your first option before this approach.
+The single most common question I receive is How do I make Angular SEO friendly. Usually my answer is Well, it&amp;rsquo;s complicated&amp;hellip; no more. Today I bring you a simple solution to this very important problem.
+I am going to show you a novel SEO strategy to make an Angular5 (or any Progressive Web App for that matter) visible to search engine crawlers and social media link preview bots.</description>
+    </item>
+    
+  </channel>
+</rss>

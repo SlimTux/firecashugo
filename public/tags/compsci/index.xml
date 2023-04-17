@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compsci on Fireship</title>
+    <link>https://fireship.io/tags/compsci/</link>
+    <description>Recent content in compsci on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2019 11:59:07 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/compsci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Cloud Computing in 2020?</title>
+      <link>https://fireship.io/lessons/cloud-computing-in-2020/</link>
+      <pubDate>Tue, 10 Dec 2019 11:59:07 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/cloud-computing-in-2020/</guid>
+      <description>Data Sources Gartner Forecasts Forbes Enterprise Computing Flexera Report 2019 </description>
+    </item>
+    
+    <item>
+      <title>Build a Binary Clock with Flutter</title>
+      <link>https://fireship.io/lessons/build-a-binary-clock-flutter/</link>
+      <pubDate>Thu, 21 Nov 2019 12:40:31 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/build-a-binary-clock-flutter/</guid>
+      <description>The Flutter Clock Contest is currently running with a submission deadline of Jan 20th, 2020. The following lesson will teach you how to build a basic clock with Flutter.
+Binary Clock Basics We are building the binary clock shown in the demo video below. Notice how the clock ticks once-per-second and updates the highlighted boxes in the UI. The actual time is shown in big plain digits at the bottom, with the binary value for each number under it.</description>
+    </item>
+    
+  </channel>
+</rss>

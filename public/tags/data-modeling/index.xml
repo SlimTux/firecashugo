@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data-modeling on Fireship</title>
+    <link>https://fireship.io/tags/data-modeling/</link>
+    <description>Recent content in data-modeling on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Nov 2019 07:41:02 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/data-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firestore Order by Document ID or Field</title>
+      <link>https://fireship.io/snippets/firestore-increment-document-id-value/</link>
+      <pubDate>Mon, 18 Nov 2019 07:41:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/firestore-increment-document-id-value/</guid>
+      <description>The follow snippet contains strategies for ordering a collections sequentially. For example, you may want a field that increases by 1 after each new document is created. Cloud Firestore does not provide automatic ordering on the auto-generated docIDs, so we need be clever to solve this problem .
+Auto-ordering Techniques Timestamp Approach The easiest way to order by creation time is to use a server timestamp. This tells Firestore to add a date to the document based on Google Cloud&amp;rsquo;s backend time, so you&amp;rsquo;re not relying on the client&amp;rsquo;s clock (which is likely to be inaccurate).</description>
+    </item>
+    
+  </channel>
+</rss>

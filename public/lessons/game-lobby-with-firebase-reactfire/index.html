@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Lobby with ReactFire</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.9e4943d4.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/" />
+
+    <meta name="description" content="Build a game lobby with Firebase &amp; React Concurrent Mode">
+    <meta name="image" content="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/img/featured.png">
+
+    <meta property="og:title" content="Game Lobby with ReactFire" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/" />
+    <meta property="og:image" content="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/img/featured.png" />
+    <meta property="og:description" content="Build a game lobby with Firebase &amp; React Concurrent Mode" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Game Lobby with ReactFire">
+    <meta name="twitter:description" content="Build a game lobby with Firebase &amp; React Concurrent Mode">
+    <meta name="twitter:image" content="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/game-lobby-with-firebase-reactfire/" 
+    vimeo=""
+    youtube=""
+    free=""
+    next="https://fireship.io/lessons/vue-autosaving-forms-with-firestore/" 
+    prev="https://fireship.io/lessons/secret-manager-with-firebase/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2020-04-14 11:50:40 -0700 -0700" />
+			<meta itemprop="dateModified" content="2020-04-14 11:50:40 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jarrett Helton" href="/contributors/jarrett-helton/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jarrett-helton.webp" alt="Jarrett Helton avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jarrett Helton</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Apr 14, 2020</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/react"><span class="tag tag-react">#react</span></a>
+						
+							<a href="/tags/firebase"><span class="tag tag-firebase">#firebase</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/JayHelton/firebase-firelobby">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="game-lobby-with-reactfire" class="gradient-text">
+					Game Lobby with ReactFire
+				</h1>
+
+
+				<p>The following tutorial builds a simple game matchmaking feature from scratch, allowing users to login, join a <a href="https://en.wikipedia.org/wiki/Matchmaking_(video_games)">game lobby</a>, and set their status as &ldquo;ready&rdquo; or &ldquo;not ready&rdquo;. Our learning goal is to get familiar with React&rsquo;s new <a href="https://reactjs.org/docs/concurrent-mode-intro.html">Concurrent Mode</a> features and Firebase&rsquo;s <a href="https://github.com/FirebaseExtended/reactfire">ReactFire</a> package - both of which are brand new tools in 2020.</p>
+<p>In order to follow along, developers should have some prior experience with React, Firebase, and Firestore. You must have a Firebase project with <em>Firestore</em> and <em>Sign in with Google</em> enabled to work with your own live data.</p>
+<p>⚠️ <strong><em>Warning</em></strong>: At the time of creation, React Concurrent Mode is marked as experimental and is <em>not</em> suitable for production applications.</p>
+<figure><img src="img/reactfire-lobby-demo.png"
+         alt="Demo of the final game lobby result"/><figcaption>
+            <p>Demo of the final game lobby result</p>
+        </figcaption>
+</figure>
+
+<h2 id="initial-setup">Initial Setup</h2>
+<h3 id="1-generate-a-new-react-application">1. Generate a new React application</h3>
+<blockquote>
+<p>This can also be seen on the <a href="https://github.com/FirebaseExtended/reactfire">Reactfire quickstart guide</a>.
+Prerequisite: make sure you have <a href="https://nodejs.org/en/">Node.js</a> installed.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npx create-react-app firelobby
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> firelobby
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">npm start
+</span></span></code></pre></div><p>Install React Experimental Build</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install react@experimental react-dom@experimental
+</span></span></code></pre></div><h3 id="2-install-reactfire">2. Install ReactFire</h3>
+<p>Install the Firebase SDK and ReactFire, and optionally add Bulma for better UI styling.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install firebase reactfire bulma
+</span></span></code></pre></div><h3 id="3-enable-react-concurrent-mode">3. Enable React Concurrent Mode</h3>
+<blockquote>
+<p>Concurrent Mode is a set of new features that help React apps stay responsive and gracefully adjust to the user’s device capabilities and network speed.</p>
+</blockquote>
+<p>You are free to delete everything in the <code>./src</code> directory except <code>index.js</code>.
+In order to enable concurrent mode we must modify the way the React application is initialized. Concurrent mode makes use of <code>createRoot</code> from <code>react-dom</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;bulma/css/bulma.css&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRoot</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)).</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">App</span> <span class="p">/&gt;);</span>
+</span></span></code></pre></div><p>Using <code>createRoot</code>, React will render your Application on the element with the <code>root</code> id in <code>./public/index.html</code> which was generated with <code>create-react-app</code>.</p>
+<h2 id="firebase-users-with-react-suspense">Firebase Users with React Suspense</h2>
+<h3 id="4-create-the-firebaseconfigprovider">4. Create the FirebaseConfigProvider</h3>
+<p>Reactfire makes strong use of the React <a href="https://reactjs.org/docs/context.html">Context</a> and <a href="https://reactjs.org/docs/hooks-reference.html">Hooks</a> API in order to provide reusable features of the firebase API. <code>FirebaseAppProvider</code> is a <a href="https://reactjs.org/docs/context.html#contextprovider">React Provider</a> that will provide the firebase config to the component tree.</p>
+<p>Create a firebase config in <code>index.js</code> and surround our application with the <code>FirebaseAppProvider</code> component</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M252.179 298.061C275.179 298.061 293.824 279.416 293.824 256.417C293.824 233.417 275.179 214.772 252.179 214.772C229.18 214.772 210.535 233.417 210.535 256.417C210.535 279.416 229.18 298.061 252.179 298.061Z" fill="#61DAFB"/>
+<path d="M504 256.468C504 223.08 462.188 191.439 398.084 171.817C412.877 106.48 406.303 54.4982 377.332 37.8557C370.655 33.9519 362.847 32.1027 354.32 32.1027V55.0118C359.046 55.0118 362.847 55.9364 366.032 57.6828C380.003 65.6959 386.064 96.2071 381.339 135.45C380.209 145.107 378.36 155.278 376.099 165.653C355.964 160.722 333.98 156.921 310.865 154.456C296.996 135.45 282.614 118.192 268.129 103.09C301.619 71.9625 333.055 54.9091 354.423 54.9091V32C326.172 32 289.189 52.1354 251.795 87.064C214.4 52.3408 177.417 32.4109 149.166 32.4109V55.32C170.431 55.32 201.97 72.2707 235.46 103.193C221.078 118.294 206.696 135.45 193.032 154.456C169.815 156.921 147.83 160.722 127.695 165.756C125.332 155.483 123.586 145.518 122.353 135.964C117.525 96.7207 123.483 66.2095 137.352 58.0938C140.434 56.2446 144.44 55.4228 149.166 55.4228V32.5137C140.536 32.5137 132.729 34.3628 125.949 38.2666C97.0811 54.9091 90.6091 106.788 105.505 171.92C41.6062 191.645 0 223.183 0 256.468C0 289.856 41.8117 321.497 105.916 341.119C91.1227 406.456 97.6975 458.438 126.668 475.08C133.345 478.984 141.153 480.833 149.782 480.833C178.033 480.833 215.017 460.698 252.411 425.769C289.805 460.492 326.788 480.422 355.04 480.422C363.669 480.422 371.477 478.573 378.257 474.669C407.124 458.027 413.596 406.148 398.7 341.016C462.394 321.394 504 289.753 504 256.468ZM370.244 187.946C366.443 201.199 361.717 214.862 356.375 228.525C352.163 220.307 347.746 212.088 342.917 203.87C338.192 195.651 333.158 187.638 328.124 179.83C342.712 181.988 356.786 184.659 370.244 187.946ZM323.193 297.355C315.18 311.224 306.961 324.373 298.435 336.598C283.128 337.934 267.615 338.653 252 338.653C236.488 338.653 220.975 337.934 205.771 336.701C197.244 324.476 188.923 311.429 180.91 297.663C173.102 284.205 166.014 270.542 159.542 256.776C165.911 243.01 173.102 229.244 180.807 215.786C188.82 201.918 197.039 188.768 205.565 176.543C220.872 175.207 236.385 174.488 252 174.488C267.512 174.488 283.025 175.208 298.229 176.44C306.756 188.665 315.077 201.712 323.09 215.478C330.898 228.936 337.986 242.599 344.458 256.365C337.986 270.131 330.898 283.897 323.193 297.355ZM356.375 284C361.923 297.766 366.648 311.532 370.552 324.887C357.094 328.174 342.917 330.948 328.227 333.106C333.261 325.195 338.294 317.079 343.02 308.758C347.746 300.54 352.163 292.218 356.375 284ZM252.206 393.614C242.651 383.752 233.097 372.76 223.646 360.74C232.892 361.151 242.343 361.459 251.897 361.459C261.554 361.459 271.108 361.254 280.457 360.74C271.211 372.76 261.657 383.752 252.206 393.614ZM175.773 333.106C161.185 330.948 147.111 328.277 133.653 324.99C137.455 311.737 142.18 298.074 147.522 284.411C151.734 292.629 156.152 300.848 160.98 309.066C165.808 317.285 170.74 325.298 175.773 333.106ZM251.692 119.322C261.246 129.184 270.8 140.176 280.251 152.196C271.005 151.785 261.554 151.477 252 151.477C242.343 151.477 232.789 151.682 223.441 152.196C232.687 140.176 242.241 129.184 251.692 119.322ZM175.671 179.83C170.637 187.741 165.603 195.857 160.877 204.178C156.152 212.396 151.734 220.615 147.522 228.833C141.975 215.067 137.249 201.301 133.345 187.946C146.803 184.762 160.98 181.988 175.671 179.83ZM82.6988 308.45C46.3319 292.938 22.8064 272.597 22.8064 256.468C22.8064 240.339 46.3319 219.896 82.6988 204.486C91.5337 200.685 101.19 197.295 111.155 194.11C117.011 214.245 124.716 235.203 134.27 256.673C124.819 278.042 117.216 298.896 111.464 318.929C101.293 315.744 91.6364 312.251 82.6988 308.45ZM137.968 455.253C123.997 447.24 117.936 416.729 122.661 377.486C123.791 367.829 125.64 357.658 127.901 347.282C148.036 352.214 170.02 356.015 193.135 358.48C207.004 377.486 221.386 394.744 235.871 409.846C202.381 440.973 170.945 458.027 149.577 458.027C144.954 457.924 141.05 457 137.968 455.253ZM381.647 376.972C386.475 416.215 380.517 446.726 366.648 454.842C363.566 456.691 359.56 457.513 354.834 457.513C333.569 457.513 302.03 440.563 268.54 409.64C282.922 394.539 297.305 377.383 310.968 358.378C334.185 355.912 356.17 352.111 376.305 347.077C378.668 357.453 380.517 367.418 381.647 376.972ZM421.199 308.45C412.364 312.251 402.707 315.641 392.742 318.826C386.886 298.691 379.181 277.733 369.627 256.263C379.079 234.894 386.681 214.04 392.434 194.007C402.604 197.192 412.261 200.685 421.301 204.486C457.668 219.998 481.194 240.339 481.194 256.468C481.091 272.597 457.565 293.04 421.199 308.45Z" fill="#61DAFB"/>
+</svg>
+</span> index.js
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">FirebaseAppProvider</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;reactfire&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">firebaseConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Retrieved from the firebase console
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p>Now our component tree within <code>FirebaseAppProvider</code> will have access to the hooks created in ReactFire.</p>
+<h3 id="5-authentication">5. Authentication</h3>
+<p>First, we will create an <code>AuthenticationButtons</code> component that will be responsible for enabling users to sign-in and sign-out of the application.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">firebase</span> <span class="nx">from</span> <span class="s1">&#39;firebase/app&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRoot</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthCheck</span><span class="p">,</span> <span class="nx">FirebaseAppProvider</span><span class="p">,</span> <span class="nx">useAuth</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;reactfire&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">AuthenticationButtons</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">useAuth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">signIn</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">signInWithPopup</span><span class="p">(</span><span class="k">new</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">GoogleAuthProvider</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">signOut</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">signOut</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// When authenticated, show the Sign out button, else Sign in
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">AuthCheck</span>
+</span></span><span class="line"><span class="cl">      <span class="na">fallback</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">signIn</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Sign</span> <span class="nx">In</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-info&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">signOut</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Sign</span> <span class="nx">Out</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">AuthCheck</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p><code>useAuth</code> is a hook provided by ReactFire which, when called within <code>FirebaseAppProvider</code>, will lazy load the Auth feature from Firebase.</p>
+<p><code>AuthCheck</code> is a component that will render its children whenever the user is authenticated, otherwise it will render JSX passed into the <code>fallback</code> prop. This is the same pattern used by the React Concurrent mode feature called <code>Suspense</code>, which will be used momentarily.</p>
+<p>Next, we will add our new component to a navbar and add that navbar to the main App function.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Navbar</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar-brand&#39;</span><span class="p">&gt;</span><span class="nx">Fire</span> <span class="nx">Lobby</span> <span class="err">🔥</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar-menu&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar-start&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar-end&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;navbar-item&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;buttons&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">AuthenticationButtons</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p>Add the navbar to the App.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Navbar</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p>Now run the app with <code>npm start</code>. The application should fail to render, throwing this error in the console.</p>
+<pre tabindex="0"><code>Uncaught Error: AuthenticationButtons suspended while rendering, but no fallback UI was specified.
+
+Add a &lt;Suspense fallback=...&gt; component higher in the tree to provide a loading indicator or placeholder to display.
+</code></pre><h3 id="6-suspense">6. Suspense</h3>
+<p>Arguably one of the more exciting features of React&rsquo;s Concurrent Mode is <a href="https://reactjs.org/docs/concurrent-mode-suspense.html">Suspense</a>.</p>
+<blockquote>
+<p>Disclaimer, there are a lot of nuances and concepts behind Concurrent Mode and Suspense that are not exclusive to React and could be considered advanced topics. I highly recommend <a href="https://www.swyx.io/writing/react-outside/">this article</a> and the React Suspense <a href="https://www.swyx.io/speaking/react-suspense/">presentation</a> linked within it.</p>
+</blockquote>
+<p>ReactFire uses the Suspense API in order to make &ldquo;contracts&rdquo; with React to provided an asynchronous friendly experience.</p>
+<p>Suspense allows developers to easily specify a &ldquo;loading&rdquo; state while waiting on asynchronous tasks. In other words, when we have an action that is considered &ldquo;blocking&rdquo;, such as a request for data, we must provide a &ldquo;non-blocking&rdquo; version. This non-blocking version is called a &ldquo;fallback&rdquo; in Suspense.</p>
+<p>The error above tells us that the <code>AuthenticationButtons</code> component was suspended (or &ldquo;blocked&rdquo;) while rendering and that a fallback (or &ldquo;non-blocking&rdquo; path) was not provided.</p>
+<p>We will add <code>Suspense</code> with a fallback to our component tree.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M252.179 298.061C275.179 298.061 293.824 279.416 293.824 256.417C293.824 233.417 275.179 214.772 252.179 214.772C229.18 214.772 210.535 233.417 210.535 256.417C210.535 279.416 229.18 298.061 252.179 298.061Z" fill="#61DAFB"/>
+<path d="M504 256.468C504 223.08 462.188 191.439 398.084 171.817C412.877 106.48 406.303 54.4982 377.332 37.8557C370.655 33.9519 362.847 32.1027 354.32 32.1027V55.0118C359.046 55.0118 362.847 55.9364 366.032 57.6828C380.003 65.6959 386.064 96.2071 381.339 135.45C380.209 145.107 378.36 155.278 376.099 165.653C355.964 160.722 333.98 156.921 310.865 154.456C296.996 135.45 282.614 118.192 268.129 103.09C301.619 71.9625 333.055 54.9091 354.423 54.9091V32C326.172 32 289.189 52.1354 251.795 87.064C214.4 52.3408 177.417 32.4109 149.166 32.4109V55.32C170.431 55.32 201.97 72.2707 235.46 103.193C221.078 118.294 206.696 135.45 193.032 154.456C169.815 156.921 147.83 160.722 127.695 165.756C125.332 155.483 123.586 145.518 122.353 135.964C117.525 96.7207 123.483 66.2095 137.352 58.0938C140.434 56.2446 144.44 55.4228 149.166 55.4228V32.5137C140.536 32.5137 132.729 34.3628 125.949 38.2666C97.0811 54.9091 90.6091 106.788 105.505 171.92C41.6062 191.645 0 223.183 0 256.468C0 289.856 41.8117 321.497 105.916 341.119C91.1227 406.456 97.6975 458.438 126.668 475.08C133.345 478.984 141.153 480.833 149.782 480.833C178.033 480.833 215.017 460.698 252.411 425.769C289.805 460.492 326.788 480.422 355.04 480.422C363.669 480.422 371.477 478.573 378.257 474.669C407.124 458.027 413.596 406.148 398.7 341.016C462.394 321.394 504 289.753 504 256.468ZM370.244 187.946C366.443 201.199 361.717 214.862 356.375 228.525C352.163 220.307 347.746 212.088 342.917 203.87C338.192 195.651 333.158 187.638 328.124 179.83C342.712 181.988 356.786 184.659 370.244 187.946ZM323.193 297.355C315.18 311.224 306.961 324.373 298.435 336.598C283.128 337.934 267.615 338.653 252 338.653C236.488 338.653 220.975 337.934 205.771 336.701C197.244 324.476 188.923 311.429 180.91 297.663C173.102 284.205 166.014 270.542 159.542 256.776C165.911 243.01 173.102 229.244 180.807 215.786C188.82 201.918 197.039 188.768 205.565 176.543C220.872 175.207 236.385 174.488 252 174.488C267.512 174.488 283.025 175.208 298.229 176.44C306.756 188.665 315.077 201.712 323.09 215.478C330.898 228.936 337.986 242.599 344.458 256.365C337.986 270.131 330.898 283.897 323.193 297.355ZM356.375 284C361.923 297.766 366.648 311.532 370.552 324.887C357.094 328.174 342.917 330.948 328.227 333.106C333.261 325.195 338.294 317.079 343.02 308.758C347.746 300.54 352.163 292.218 356.375 284ZM252.206 393.614C242.651 383.752 233.097 372.76 223.646 360.74C232.892 361.151 242.343 361.459 251.897 361.459C261.554 361.459 271.108 361.254 280.457 360.74C271.211 372.76 261.657 383.752 252.206 393.614ZM175.773 333.106C161.185 330.948 147.111 328.277 133.653 324.99C137.455 311.737 142.18 298.074 147.522 284.411C151.734 292.629 156.152 300.848 160.98 309.066C165.808 317.285 170.74 325.298 175.773 333.106ZM251.692 119.322C261.246 129.184 270.8 140.176 280.251 152.196C271.005 151.785 261.554 151.477 252 151.477C242.343 151.477 232.789 151.682 223.441 152.196C232.687 140.176 242.241 129.184 251.692 119.322ZM175.671 179.83C170.637 187.741 165.603 195.857 160.877 204.178C156.152 212.396 151.734 220.615 147.522 228.833C141.975 215.067 137.249 201.301 133.345 187.946C146.803 184.762 160.98 181.988 175.671 179.83ZM82.6988 308.45C46.3319 292.938 22.8064 272.597 22.8064 256.468C22.8064 240.339 46.3319 219.896 82.6988 204.486C91.5337 200.685 101.19 197.295 111.155 194.11C117.011 214.245 124.716 235.203 134.27 256.673C124.819 278.042 117.216 298.896 111.464 318.929C101.293 315.744 91.6364 312.251 82.6988 308.45ZM137.968 455.253C123.997 447.24 117.936 416.729 122.661 377.486C123.791 367.829 125.64 357.658 127.901 347.282C148.036 352.214 170.02 356.015 193.135 358.48C207.004 377.486 221.386 394.744 235.871 409.846C202.381 440.973 170.945 458.027 149.577 458.027C144.954 457.924 141.05 457 137.968 455.253ZM381.647 376.972C386.475 416.215 380.517 446.726 366.648 454.842C363.566 456.691 359.56 457.513 354.834 457.513C333.569 457.513 302.03 440.563 268.54 409.64C282.922 394.539 297.305 377.383 310.968 358.378C334.185 355.912 356.17 352.111 376.305 347.077C378.668 357.453 380.517 367.418 381.647 376.972ZM421.199 308.45C412.364 312.251 402.707 315.641 392.742 318.826C386.886 298.691 379.181 277.733 369.627 256.263C379.079 234.894 386.681 214.04 392.434 194.007C402.604 197.192 412.261 200.685 421.301 204.486C457.668 219.998 481.194 240.339 481.194 256.468C481.091 272.597 457.565 293.04 421.199 308.45Z" fill="#61DAFB"/>
+</svg>
+</span> index.js
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Suspense</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Suspense</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Navbar</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Suspense</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p>The application should start and allow a user to login and logout.</p>
+<h3 id="7-suspensewithperf">7. SuspenseWithPerf</h3>
+<p>ReactFire provides an abstraction of Firebase Performance with the <code>SuspenseWithPerf</code> component.</p>
+<blockquote>
+<p>SuspenseWithPerf starts a Firebase Performance Monitoring trace and ends it when suspense stops suspending.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">SuspenseWithPerf</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span> <span class="na">traceId</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loading-app-status&#39;</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Navbar</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">SuspenseWithPerf</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><h2 id="firestore-game-lobby">Firestore Game Lobby</h2>
+<h3 id="8-firestore-react-hooks">8. Firestore React Hooks</h3>
+<p>Our next challenge is to create a Firestore collection for the game lobby, then add and remove users.</p>
+<p>Create a new function for the lobby and use ReactFire to subscribe to a document reference. It should also wrap our lobby component in an <code>AuthCheck</code>, like we did with the <code>AuthenticationButtons</code> component.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">AuthCheck</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">FirebaseAppProvider</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SuspenseWithPerf</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useAuth</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useFirestore</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useFirestoreCollectionData</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;reactfire&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Lobby</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobbyCollection</span> <span class="o">=</span> <span class="nx">useFirestore</span><span class="p">().</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;lobby&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobby</span> <span class="o">=</span> <span class="nx">useFirestoreCollectionData</span><span class="p">(</span><span class="nx">lobbyCollection</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;container is-fluid&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">lobby</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">article</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">email</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;tile is-child notification&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;title&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">displayName</span><span class="p">}</span> <span class="o">-</span> <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">ready</span> <span class="o">?</span> <span class="s1">&#39;Ready 🎮&#39;</span> <span class="o">:</span> <span class="s1">&#39;Not Ready ❌&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">SuspenseWithPerf</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span> <span class="na">traceId</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loading-app-status&#39;</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Navbar</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">AuthCheck</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Not</span> <span class="nx">Logged</span> <span class="nx">In</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Lobby</span><span class="p">&gt;&lt;/</span><span class="nt">Lobby</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">AuthCheck</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">SuspenseWithPerf</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p><code>useFirestore</code> allows us to lazily load the firestore feature from firebase using the config provided by <code>FirebaseAppProvider</code>. This returns <code>firebase.firestore</code>.</p>
+<p><code>useFirestoreCollectionData</code> is a hook that allows components to subscribe to the changes within the firestore collection.</p>
+<p>Once we create a subscription to the firestore collection, we map the list of documents to some UI for our component to render dynamically.</p>
+<h3 id="9-update-user-status-in-the-lobby">9. Update User Status in the Lobby</h3>
+<p>Now that we have a list of users in the lobby, it&rsquo;s time to implement action buttons to join and leave the lobby, as well as a function to change the readiness of our user within the lobby. A variable is needed to determine if our user is currently in the lobby, which will determine which buttons we show and hide.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">AuthCheck</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">FirebaseAppProvider</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SuspenseWithPerf</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useAuth</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useFirestore</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useFirestoreCollectionData</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useUser</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;reactfire&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Lobby</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">displayName</span><span class="p">,</span> <span class="nx">uid</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useUser</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobbyCollection</span> <span class="o">=</span> <span class="nx">useFirestore</span><span class="p">().</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;lobby&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobby</span> <span class="o">=</span> <span class="nx">useFirestoreCollectionData</span><span class="p">(</span><span class="nx">lobbyCollection</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userInLobby</span> <span class="o">=</span> <span class="nx">lobby</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">email</span> <span class="o">===</span> <span class="nx">email</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">joinLobby</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="nx">set</span><span class="p">({</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">displayName</span><span class="p">,</span> <span class="nx">ready</span><span class="o">:</span> <span class="kc">false</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">leaveLobby</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="k">delete</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">toggleReadiness</span> <span class="o">=</span> <span class="kr">async</span> <span class="nx">newReadiness</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="nx">set</span><span class="p">({</span> <span class="nx">ready</span><span class="o">:</span> <span class="nx">newReadiness</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">merge</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;container is-fluid&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">lobby</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">article</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">email</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;tile is-child notification&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;title&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">displayName</span><span class="p">}</span> <span class="o">-</span> <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">ready</span> <span class="o">?</span> <span class="s1">&#39;Ready 🎮&#39;</span> <span class="o">:</span> <span class="s1">&#39;Not Ready ❌&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;columns&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">userInLobby</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;column is-1&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">toggleReadiness</span><span class="p">(</span><span class="o">!</span><span class="nx">userInLobby</span><span class="p">.</span><span class="nx">ready</span><span class="p">)}&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="nx">userInLobby</span><span class="p">.</span><span class="nx">ready</span> <span class="o">?</span> <span class="s1">&#39;Not Ready!&#39;</span> <span class="o">:</span> <span class="s1">&#39;Ready!&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;column is-1&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span><span class="nx">userInLobby</span> <span class="o">?</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">leaveLobby</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">Leave</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">)</span> <span class="o">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">joinLobby</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">Join</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p><code>useUser</code> is the only new ReactFire method used here. It allows the component to subscribe to the authenticated user data in the <code>firebase.auth</code> feature.</p>
+<p>It is now possible for a user to join and leave the lobby, as well as mark their status as &ldquo;ready&rdquo; or &ldquo;not ready&rdquo;, all while reliably handling blocking actions with non-blocking alternatives.</p>
+<h2 id="extra-credit">Extra Credit</h2>
+<h3 id="10-refactor-using-the-context-api">10. Refactor using the Context API</h3>
+<p>In this extra step, we will refactor our methods and data for the lobby using the Context API. This is one way to centralize our lobby data and the methods for interacting with the lobby. This refactor would allow us to split our lobby component up without having to pass props down the tree.</p>
+<p>First, we create a LobbyContext using <a href="https://reactjs.org/docs/context.html#reactcreatecontext"><code>createContext</code></a> and a component to provide that context.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">LobbyContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">LobbyProvider</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">displayName</span><span class="p">,</span> <span class="nx">uid</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useUser</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobbyCollection</span> <span class="o">=</span> <span class="nx">useFirestore</span><span class="p">().</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;lobby&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">lobby</span> <span class="o">=</span> <span class="nx">useFirestoreCollectionData</span><span class="p">(</span><span class="nx">lobbyCollection</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userInLobby</span> <span class="o">=</span> <span class="nx">lobby</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">email</span> <span class="o">===</span> <span class="nx">email</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">joinLobby</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="nx">set</span><span class="p">({</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">displayName</span><span class="p">,</span> <span class="nx">ready</span><span class="o">:</span> <span class="kc">false</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">leaveLobby</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="k">delete</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">toggleReadiness</span> <span class="o">=</span> <span class="kr">async</span> <span class="nx">newReadiness</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">lobbyCollection</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="nx">uid</span><span class="p">).</span><span class="nx">set</span><span class="p">({</span> <span class="nx">ready</span><span class="o">:</span> <span class="nx">newReadiness</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">merge</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">LobbyContext.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{{</span> <span class="nx">userInLobby</span><span class="p">,</span> <span class="nx">lobby</span><span class="p">,</span> <span class="nx">joinLobby</span><span class="p">,</span> <span class="nx">leaveLobby</span><span class="p">,</span> <span class="nx">toggleReadiness</span> <span class="p">}}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">LobbyContext.Provider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Next, we will use the <a href="https://reactjs.org/docs/hooks-reference.html#usecontext"><code>useContext</code></a> hook and split our lobby component into two components. Here, I have explored a different pattern for dynamically adding components to the <code>LobbyActions</code> component.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Lobby</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">lobby</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">LobbyContext</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;container is-fluid&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">lobby</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">article</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">email</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;tile is-child notification&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;title&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">displayName</span><span class="p">}</span> <span class="o">-</span> <span class="p">{</span><span class="nx">m</span><span class="p">.</span><span class="nx">ready</span> <span class="o">?</span> <span class="s1">&#39;Ready 🎮&#39;</span> <span class="o">:</span> <span class="s1">&#39;Not Ready ❌&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">LobbyActions</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">userInLobby</span><span class="p">,</span> <span class="nx">joinLobby</span><span class="p">,</span> <span class="nx">leaveLobby</span><span class="p">,</span> <span class="nx">toggleReadiness</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">LobbyContext</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">components</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">userInLobby</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">components</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="o">=</span><span class="s">&#39;readyButton&#39;</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;column is-1&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">key</span><span class="o">=</span><span class="s">&#39;readyButton&#39;</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">toggleReadiness</span><span class="p">(</span><span class="o">!</span><span class="nx">userInLobby</span><span class="p">.</span><span class="nx">ready</span><span class="p">)}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span><span class="nx">userInLobby</span><span class="p">.</span><span class="nx">ready</span> <span class="o">?</span> <span class="s1">&#39;Not Ready!&#39;</span> <span class="o">:</span> <span class="s1">&#39;Ready!&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">components</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="o">=</span><span class="s">&#39;leaveButton&#39;</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;column is-1&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">leaveLobby</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Leave</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">components</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="o">=</span><span class="s">&#39;joinButton&#39;</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;column is-1&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;button is-primary&#39;</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">joinLobby</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Join</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;container is-fluid&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;columns&#39;</span><span class="p">&gt;{</span><span class="nx">components</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">FirebaseAppProvider</span> <span class="na">firebaseConfig</span><span class="o">=</span><span class="p">{</span><span class="nx">firebaseConfig</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">SuspenseWithPerf</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span> <span class="na">traceId</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loading-app-status&#39;</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Navbar</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">AuthCheck</span> <span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Not</span> <span class="nx">Logged</span> <span class="nx">In</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">LobbyProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">Lobby</span><span class="p">&gt;&lt;/</span><span class="nt">Lobby</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">LobbyActions</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">LobbyProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">AuthCheck</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">SuspenseWithPerf</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">FirebaseAppProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Omitted
+</span></span></span></code></pre></div><p>Previously, we used ternaries and expressions to determine what UI to render, but this refactoring creates a component array and conditionally adds JSX to the array - React&rsquo;s rendering can be very flexible and powerful.</p>
+<h2 id="the-end">The End!</h2>
+<p>We have successfully built a small application using ReactFire and React&rsquo;s experimental concurrent mode. Thanks to the React Hook API, all of the ReactFire hooks will cause our components to re-render whenever there are changes in the observable data from Firebase. There is no need to define logic in our components lifecycle hooks to trigger rendering.</p>
+<p>I highly recommend checking our ReactFire&rsquo;s <a href="https://github.com/FirebaseExtended/reactfire/blob/master/docs/reference.md">API reference</a> and exploring more ways to complete the above goals.</p>
+
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#initial-setup">Initial Setup</a>
+      <ul>
+        <li><a href="#1-generate-a-new-react-application">1. Generate a new React application</a></li>
+        <li><a href="#2-install-reactfire">2. Install ReactFire</a></li>
+        <li><a href="#3-enable-react-concurrent-mode">3. Enable React Concurrent Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#firebase-users-with-react-suspense">Firebase Users with React Suspense</a>
+      <ul>
+        <li><a href="#4-create-the-firebaseconfigprovider">4. Create the FirebaseConfigProvider</a></li>
+        <li><a href="#5-authentication">5. Authentication</a></li>
+        <li><a href="#6-suspense">6. Suspense</a></li>
+        <li><a href="#7-suspensewithperf">7. SuspenseWithPerf</a></li>
+      </ul>
+    </li>
+    <li><a href="#firestore-game-lobby">Firestore Game Lobby</a>
+      <ul>
+        <li><a href="#8-firestore-react-hooks">8. Firestore React Hooks</a></li>
+        <li><a href="#9-update-user-status-in-the-lobby">9. Update User Status in the Lobby</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra-credit">Extra Credit</a>
+      <ul>
+        <li><a href="#10-refactor-using-the-context-api">10. Refactor using the Context API</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-end">The End!</a></li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

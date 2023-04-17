@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Fireship</title>
+    <link>https://fireship.io/tags/database/</link>
+    <description>Recent content in database on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jun 2021 19:13:02 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Sheets as a Database</title>
+      <link>https://fireship.io/lessons/google-sheets-database-nextjs/</link>
+      <pubDate>Tue, 22 Jun 2021 19:13:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/google-sheets-database-nextjs/</guid>
+      <description>Choosing the right database for your app is difficult. If you have a small project or are just prototyping, Google Sheets actually works quite nicely as a primary database. It is especially practical for JAM-stack web apps that use server-side rendering. The following tutorial will teach you how to use Google Sheets as a database for Next.js.
+⚠️ Be warned&amp;hellip; Google Sheets does not scale like a true production database (because that&amp;rsquo;s not what it is for).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firestore on Fireship</title>
+    <link>https://fireship.io/tags/firestore/</link>
+    <description>Recent content in Firestore on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Jan 2021 11:51:52 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/firestore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom Usernames in Firebase</title>
+      <link>https://fireship.io/lessons/custom-usernames-firebase/</link>
+      <pubDate>Sat, 23 Jan 2021 11:51:52 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/custom-usernames-firebase/</guid>
+      <description>Firebase assigns each user a unique ID upon signing up, but many apps require users to choose their own custom unique username, which is not an out-of-box feature in Firebase. Think of apps like Twitter or Medium, where each user’s profile can be visited on a user like example.com/{username}. The following lesson demonstrates how to securely create and validate custom usernames for Firebase users by combining Cloud Firestore.
+Demo of custom usernames in Firebase</description>
+    </item>
+    
+    <item>
+      <title>React Firebase Chat App</title>
+      <link>https://fireship.io/lessons/react-firebase-chat-app-tutorial/</link>
+      <pubDate>Fri, 25 Sep 2020 07:55:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/react-firebase-chat-app-tutorial/</guid>
+      <description>The following tutorial demonstrates how to build a simple group chat app with React and Firebase. The goal of this lesson is to showcase important beginner concepts when working with the ⚛️🔥 React Firebase stack, including user authentication, firestore, and security rules.
+React Firebase Chat Demo
+Important Links
+Live Demo Source Code React Firebase Hooks Initial Setup Firebase Project Create a free Firebase project. Make sure to enable Google SignIn and and activate Cloud Firestore.</description>
+    </item>
+    
+    <item>
+      <title>Seven Database Paradigms</title>
+      <link>https://fireship.io/lessons/top-seven-database-paradigms/</link>
+      <pubDate>Tue, 01 Sep 2020 16:09:39 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/top-seven-database-paradigms/</guid>
+      <description>Choose the right database for the job 🔨
+Database Paradigms Explained Visually Key-Value Popular Key-Value Databases: Redis, Memcached, Etcd
+key value database diagram
+Wide Column Popular Wide-Column Databases: Cassandra, Apache HBase
+wide column database diagram
+Document Oriented Popular Document Databases: MongoDB, Firestore, CouchDB
+document database diagram
+Relational Popular Relational Databases: MySQL, Postgres, SQL Server, CockroachDB
+Graph Popular Graph Databases: Neo4j, DGraph, Janus Graph
+Search Engine Popular Search Databases: ElasticSearch, Algolia, MeiliSearch</description>
+    </item>
+    
+    <item>
+      <title>Fulltext Search on Firebase with Meilisearch</title>
+      <link>https://fireship.io/lessons/meilisearch-firebase-google-cloud/</link>
+      <pubDate>Fri, 28 Aug 2020 08:14:16 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/meilisearch-firebase-google-cloud/</guid>
+      <description>A common issue that developers face with NoSQL databases (and SQL to a lesser extent) is a lack of full-text search capabilities. If you want to build a performant typeahead search box or handle multi-property filtering on a collection, you’ll find it frustratingly difficult to implement in Firestore - it’s just not the right database for the job. There are many good solutions, like Algolia and ElasticSearch, but they can be expensive and/or complex to manage.</description>
+    </item>
+    
+    <item>
+      <title>Autosave Vue Forms with Firestore</title>
+      <link>https://fireship.io/lessons/vue-autosaving-forms-with-firestore/</link>
+      <pubDate>Tue, 07 Apr 2020 15:14:17 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/vue-autosaving-forms-with-firestore/</guid>
+      <description>Modern applications that accept complex user inputs often provide an automatic save action that runs in the background, such as Google Docs and Microsoft Office:
+Microsoft Office files are auto-saved
+The following lesson builds a reactive Vue form that automatically syncs the user&amp;rsquo;s input to a backend database - Firestore. It keeps track of the state of the form, and when modified, waits for a short debounce before writing the changes to the backend database.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Backups for Firestore via Github Actions</title>
+      <link>https://fireship.io/snippets/firestore-automated-backups/</link>
+      <pubDate>Thu, 12 Mar 2020 17:20:51 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/firestore-automated-backups/</guid>
+      <description>As of today, Firestore does not support automatic backups, but it DOES support exports via the gcloud CLI or REST API. Although not technically a backup in database jargon, an automatic export is valuable to have for disaster recovery because it can be re-imported to replace lost data.
+The following snippet exports all Firestore data automatically every day at midnight using a scheduled Github Action.
+Generate a Service Key on GCP We need a service account to grant Github Actions permission to run the export command via the Google Cloud CLI.</description>
+    </item>
+    
+    <item>
+      <title>Delete a Firestore Collection</title>
+      <link>https://fireship.io/snippets/delete-firestore-collection/</link>
+      <pubDate>Tue, 11 Feb 2020 14:29:28 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/delete-firestore-collection/</guid>
+      <description>Deleting an entire collection from Firestore should be handled on a backend server. Collections can grow infinitely large, so deleting a millions of documents can be an excessively large workload to put on a clientside web or mobile app.
+Option A - Use the CLI or Console You can manually delete a collection or subcollection from the Firebase Console OR by using the CLI.
+command line firebase firestore:delete path-to-delete Option B - Use a Cloud Function It is possible to interact with Firebase Tools from a Cloud Function.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Rate Limiting</title>
+      <link>https://fireship.io/lessons/how-to-rate-limit-writes-firestore/</link>
+      <pubDate>Sat, 30 Nov 2019 08:11:12 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/how-to-rate-limit-writes-firestore/</guid>
+      <description>Rate limiting is the process of blocking access to cloud resources after a certain threshold has been reached. Firestore bills based on the quantity of reads and writes, but does not currently provide a way to block IPs or set explicit rate limits with Security Rules. So how do you prevent a DDoS attack or a disgruntled user from spamming the app with unnecessary records.
+The following examples are based on an app that needs to&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Firestore Pagination Guide</title>
+      <link>https://fireship.io/lessons/firestore-pagination-guide/</link>
+      <pubDate>Tue, 26 Nov 2019 09:17:06 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-pagination-guide/</guid>
+      <description>Pagination is the process of dividing data into discrete pages. In Firestore, it is achieved by ordering a collection by a field, limiting it to a consistent page size, then offsetting the query. The Firebase Web SDK v7.3.0 introduced a new limitToLast(n) method that makes the process much easier. The following lesson demonstrates how to paginate Firestore data in both a forward and backward direction and discusses advanced serverside techniques.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Order by Document ID or Field</title>
+      <link>https://fireship.io/snippets/firestore-increment-document-id-value/</link>
+      <pubDate>Mon, 18 Nov 2019 07:41:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/firestore-increment-document-id-value/</guid>
+      <description>The follow snippet contains strategies for ordering a collections sequentially. For example, you may want a field that increases by 1 after each new document is created. Cloud Firestore does not provide automatic ordering on the auto-generated docIDs, so we need be clever to solve this problem .
+Auto-ordering Techniques Timestamp Approach The easiest way to order by creation time is to use a server timestamp. This tells Firestore to add a date to the document based on Google Cloud&amp;rsquo;s backend time, so you&amp;rsquo;re not relying on the client&amp;rsquo;s clock (which is likely to be inaccurate).</description>
+    </item>
+    
+    <item>
+      <title>Algolia Fulltext Search Cloud Functions</title>
+      <link>https://fireship.io/lessons/algolia-cloud-functions/</link>
+      <pubDate>Sun, 25 Aug 2019 10:43:13 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/algolia-cloud-functions/</guid>
+      <description>One of the most commonly encountered limitations of Cloud Firestore (and GCP) is full-text search. This functionality is essential if you need to query complex text patterns in a database or filter results by multiple dynamic properties. My favorite solution to this limitation is Algolia, which provides a powerful, developer-friendly, search &amp;amp; discovery API. In the following lesson you will learn how to sync your Firestore data to an Algolia index via Cloud Functions.</description>
+    </item>
+    
+    <item>
+      <title>Collection Group Query with Firestore</title>
+      <link>https://fireship.io/lessons/collection-group-query-firestore/</link>
+      <pubDate>Mon, 20 May 2019 08:43:13 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/collection-group-query-firestore/</guid>
+      <description>At Google I/O 2019, Firebase launched a new query type, Collection Group Queries, which can have a major impact on your data modeling decisions. It allows you to combine all subcollections that share the same name, then query them together. Prior to this feature release, it was common to model one-to-many relationships with root collections that contained a field (or foreign key if you will) pointing to the parent document. Root collections are still fine, but this new feature makes it far more practical to organize your data in a natural hierarchy.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Provider with Firebase</title>
+      <link>https://fireship.io/lessons/advanced-flutter-firebase/</link>
+      <pubDate>Sat, 11 May 2019 13:59:08 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/advanced-flutter-firebase/</guid>
+      <description>The following article discusses patterns that I have found exceptionally useful when implementing Firebase User Authentication and Firestore in Flutter. In particular, the Provider provides an excellent solution for sharing and managing streams with minimal boilerplate. However, to take full advantage of this package you must deserialize your raw data to a Dart class.
+If you are building a major project with Flutter &amp;amp; Firebase, consider enrolling in the Full Flutter Firebase Course.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firestore Animated SlideShow</title>
+      <link>https://fireship.io/lessons/flutter-slider-like-reflectly/</link>
+      <pubDate>Wed, 20 Mar 2019 10:18:59 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/flutter-slider-like-reflectly/</guid>
+      <description>One of the best examples of a well-designed UI in Flutter is Reflectly - an AI-powered journal app for iOS and Android. The following lesson will show you how to build an animated slideshow carousel inspired by the work of Reflectly. In addition, we will wire it up to Firestore to make it filterable and able to scale to an infinite number of pages.
+PageView Widget Intro The most import widget in this lesson is the PageView, which makes it possible to easily build sliding pages.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Realtime Geolocation Firebase</title>
+      <link>https://fireship.io/lessons/flutter-realtime-geolocation-firebase/</link>
+      <pubDate>Wed, 13 Feb 2019 06:22:01 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/flutter-realtime-geolocation-firebase/</guid>
+      <description>Looking to build a realtime geolocation app like Lyft, Postmates, or Waze? It is easier than you might think when you combine the power of Flutter, Google Maps, and Firebase. The following lesson will show you how use Google Maps in Flutter, then listen to a realtime feed of geolocation data in Firestore queried by its distance from a centerpoint - made possible by the GeoFlutterFire package.
+Special thanks to Darshan Gowda for creating the GeoFlutterFire library and providing the example code for this lesson.</description>
+    </item>
+    
+    <item>
+      <title>Working with Firestore Arrays</title>
+      <link>https://fireship.io/lessons/firestore-array-queries-guide/</link>
+      <pubDate>Tue, 12 Feb 2019 14:46:47 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-array-queries-guide/</guid>
+      <description>Have you ever wanted to make a query to Firestore for all documents with an array containing a certain value? Array queries are possible as of Firebase JS SDK v5.3.0. In addition, the SDK also added support for the atomic addition and removal of elements on an array field.
+Firestore Arrays Queries Firebase introduced an array-contains operator that can be used with where to query array fields. It will return all documents that contain a the provided value in the array.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firebase Google SignIn &#43; Firestore</title>
+      <link>https://fireship.io/lessons/flutter-firebase-google-oauth-firestore/</link>
+      <pubDate>Mon, 14 Jan 2019 07:43:54 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/flutter-firebase-google-oauth-firestore/</guid>
+      <description>The following lesson will show you how to implement Google SignIn with Flutter and Firebase, then update a custom user profile in Firestore. We will demonstrate several key concepts related to building reactive UIs with realtime streaming data, including
+Global Streams and Observables with RxDart StatefulWidget StreamBuilder Step 0: Prerequisites Install FlutterFire Step 1: Build Out the UI First, let&amp;rsquo;s start with a basic UI. Notice we have placeholders for LoginButton() and UserProfile() - these will be created later in the lesson.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Security Rules Cookbook</title>
+      <link>https://fireship.io/snippets/firestore-rules-recipes/</link>
+      <pubDate>Wed, 02 Jan 2019 09:35:09 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/firestore-rules-recipes/</guid>
+      <description>The purpose of this reference is to demonstrate common Firestore security rules patterns. Many of the rules below are extracted into functions to maximize code reuse.
+Basic Recipes Let&amp;rsquo;s start with some common Firestore security use cases needed by almost every app.
+At runtime, Firebase rules look for the first valid allow == true rule and NOT vice-versa. This is very important to keep in mind, as you might think you secured a path, only for it to be allowed somewhere else.</description>
+    </item>
+    
+    <item>
+      <title>Google OAuth with @angular/fire</title>
+      <link>https://fireship.io/lessons/angularfire-google-oauth/</link>
+      <pubDate>Sat, 29 Dec 2018 06:51:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/angularfire-google-oauth/</guid>
+      <description>A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I genernally focus on user auth first because so many other features depend the user&amp;rsquo;s auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user&amp;rsquo;s profile and/or query all users.</description>
+    </item>
+    
+    <item>
+      <title>Testing Firestore Security Rules With the Emulator</title>
+      <link>https://fireship.io/lessons/testing-firestore-security-rules-with-the-emulator/</link>
+      <pubDate>Wed, 31 Oct 2018 18:20:34 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/testing-firestore-security-rules-with-the-emulator/</guid>
+      <description>🔥 Deep dive with the Firestore Security Rules Master Course.
+The most exciting announcement (in my opinion) at Firebase Summit 2018 was the local emulator for Firestore and RTDB, making it possible to test security rules locally or on a CI server. If you&amp;rsquo;re brand new to Firebase security, make sure to watch the Firestore Security Rules Guide.
+Project Setup The following lesson creates an isolated testing environment solely for testing rules logic.</description>
+    </item>
+    
+    <item>
+      <title>Join Collections in Firestore</title>
+      <link>https://fireship.io/lessons/firestore-joins-similar-to-sql/</link>
+      <pubDate>Thu, 23 Aug 2018 17:30:50 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-joins-similar-to-sql/</guid>
+      <description>How do I perform a SQL JOIN in Firestore? - it&amp;rsquo;s a difficult question almost all developers will come across. The simple answer for ALL NoSQL databases is that it&amp;rsquo;s just not possible in an apples-to-apples way. We can&amp;rsquo;t perform this operation server-side, however, we can get clever with custom RxJS operators to solve similar problems - plus gain the added benefit of maintaining realtime listeners on all data.
+Our operators require AngularFire and will add some RxJS magic to its existing Observables to tackle the challenge of joining Firestore documents and collections together easily in Firestore.</description>
+    </item>
+    
+    <item>
+      <title>Realtime GeoQueries with Firestore</title>
+      <link>https://fireship.io/lessons/geolocation-query-in-firestore-realtime/</link>
+      <pubDate>Tue, 10 Jul 2018 05:59:29 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/geolocation-query-in-firestore-realtime/</guid>
+      <description>The ability to query by geographic coordinates in Firestore is a highly requested feature because many successful apps - like Uber, Pokemon Go, Instagram, etc - use realtime maps as part of the core user experience. Today you will learn how to build a realtime Google map using Firestore as the data source.
+Fingers-crossed: It&#39;s possible that Firestore will have native support for Geolcation queries in the future, but there is no public timeline for this feature that I&#39;m aware of</description>
+    </item>
+    
+    <item>
+      <title>Auto-save Reactive Form with Firestore</title>
+      <link>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</link>
+      <pubDate>Mon, 28 May 2018 14:17:17 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</guid>
+      <description>Forms are one of the most critical, yet most cumbersome aspects of app development. They require a ton of HTML markup and require complex validation rules for a good user experience. Almost all forms must be synced to a backend database, leaving us faced a state management conundrum that is not always easy to solve. In this lesson, my goal is to provide you with a reliable solution for syncing your frontend forms to any backend database.</description>
+    </item>
+    
+    <item>
+      <title>CSV to Firestore</title>
+      <link>https://fireship.io/lessons/import-csv-json-or-excel-to-firestore/</link>
+      <pubDate>Sun, 25 Mar 2018 17:34:22 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/import-csv-json-or-excel-to-firestore/</guid>
+      <description>If you want to migrate your existing database to Firestore, you might be wondering&amp;hellip; How do I import JSON or CSV to Firestore?. In this lesson, I will provide you with a reliable pipeline for reading raw data and parsing it to a writable format for Firestore.
+Everybody has different data modeling needs, so I will teach you how to quickly roll out your own NodeJS CSV-to-Firestore command line import tool.</description>
+    </item>
+    
+    <item>
+      <title>Firestore NoSQL Relational Data Modeling</title>
+      <link>https://fireship.io/lessons/firestore-nosql-data-modeling-by-example/</link>
+      <pubDate>Mon, 05 Feb 2018 15:20:23 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-nosql-data-modeling-by-example/</guid>
+      <description>Looking for advanced data modeling concepts and examples? Take the Firestore Data Modeling Course.
+Data modeling in a NoSQL environment is tricky - especially if you come from a RDBMS background (MySQL, Postgres, etc) because you will need to unlearn many of the core principles already solidified in your brain. Firestore uses a document-oriented NoSQL model, similar to MongoDB and CouchDB, which leads to fundamentally different data structuring decisions.
+The goal of this lesson is to examine data modeling principles in Firestore with comparisons to SQL.</description>
+    </item>
+    
+    <item>
+      <title>Material Data Tables With Firestore</title>
+      <link>https://fireship.io/lessons/material-data-tables-with-firestore/</link>
+      <pubDate>Tue, 12 Dec 2017 05:49:37 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/material-data-tables-with-firestore/</guid>
+      <description>In this lesson, I will show you how to build an Angular Material data datable that is sortable and filterable, while maintaining a realtime connection with Firestore. A dialog modal will be used share data between material components and update documents in Firestore.
+This tutorial also makes suggestions for performance optimization when dealing with hundreds rows in the view. The end result is a table that&amp;hellip;
+Uses Firebase/Firestore as the data source.</description>
+    </item>
+    
+    <item>
+      <title>Role Based Authorization With Firestore</title>
+      <link>https://fireship.io/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/</link>
+      <pubDate>Thu, 07 Dec 2017 05:39:29 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/</guid>
+      <description>Learn more about data modeling in Firestore in the full course.
+In this lesson, I will show you how to assign roles to users with the Firestore NoSQL database, then secure them on both the frontend and backend. This feature is known as role-based access control and is commonly used in forums, social media, etc - Stack Overflow Privileges is an excellent specimen of this feature in the wild (minus the ranking system).</description>
+    </item>
+    
+    <item>
+      <title>Cloud Functions Data Aggregation</title>
+      <link>https://fireship.io/lessons/firestore-cloud-functions-data-aggregation/</link>
+      <pubDate>Sun, 29 Oct 2017 11:27:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firestore-cloud-functions-data-aggregation/</guid>
+      <description>The following lesson demonstrates how to make Firestore queries faster and more cost-effective by aggregating data from a subcollection to its parent. Aggregation is simply the process of totaling up a bunch of documents and calculating combined or cumulative information about them.
+A Firebase Cloud Function configured with a Firestore database trigger makes it possible to perform this task automatically whenever a document changes. This demo simulates the relationship between blog posts and a subcollection of comments.</description>
+    </item>
+    
+    <item>
+      <title>Star Ratings System With Firestore</title>
+      <link>https://fireship.io/lessons/star-ratings-system-with-firestore/</link>
+      <pubDate>Tue, 17 Oct 2017 11:17:30 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/star-ratings-system-with-firestore/</guid>
+      <description>In this lesson, we will build a five-star rating system from scratch with Angular and Firebase.
+Knowing how to implement star reviews in Angular is an important skill for a developer because the same concepts are used for likes, hearts, votes, and many other common UX features.
+Firestore Data Structure How do we model star-ratings in a NoSQL database like firestore? In the SQL world, this is known as a many-to-many-through` relationship where Users have many Movies through Reviews AND Movies have many Users through Reviews</description>
+    </item>
+    
+    <item>
+      <title>Infinite Scroll Firestore Angular</title>
+      <link>https://fireship.io/lessons/infinite-scroll-firestore-angular/</link>
+      <pubDate>Wed, 11 Oct 2017 05:26:11 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/infinite-scroll-firestore-angular/</guid>
+      <description>A few months ago, I showed you how to create a basic infinite scroll feature using Realtime Database. Today, we will create a more sophisticated and flexible pagination service with Firestore to facilitate infinite scroll.
+As an added bonus, the feature will be able to scroll upwards, which is useful when scrolling back in time through a text feed - think Facebook Messenger or Slack.
+Get the [Firestore Pagination source code](https://github.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Data Modeling</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/</link>
+      <pubDate>Thu, 16 May 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/</guid>
+      <description>The Firestore Data Modeling Course provides a foundation for modeling data relationships in NoSQL, while optimizing queries for performance, cost, and complexity. Determining the the optimal data model in Cloud Firestore is not an easy task because you need to anticipate your app&amp;rsquo;s UI/UX requirements in advance. Failure to consider the tradeoffs between various data models could lead to poor app performance and/or unnecessary cloud computing expenses. The goal of this course is to teach you the concepts necessary to make good decisions related to data modeling that minimize costs and maximize read performance.</description>
+    </item>
+    
+  </channel>
+</rss>

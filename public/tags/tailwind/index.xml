@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tailwind on Fireship</title>
+    <link>https://fireship.io/tags/tailwind/</link>
+    <description>Recent content in Tailwind on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 08:11:26 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/tailwind/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailwind Tips &amp; Tricks</title>
+      <link>https://fireship.io/lessons/tailwind-tutorial/</link>
+      <pubDate>Tue, 19 Oct 2021 08:11:26 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/tailwind-tutorial/</guid>
+      <description>The following tutorial will get you up and running with Tailwind CSS, empowering you to build a beautiful, responsive, and animated websites quickly. We will build a side navigation menu inspired by Discord.
+Setup Install the Tailwind VS Code extension Install the Tailwind VS Code extension.
+Use a JS Framework Feel free to use the JS framework of your choice. This tutorial uses Create React App.
+Discord-Inspired Icon Navbar Make the App a Flexible Container Create a flexbox row by simply adding the flex utility to the parent element.</description>
+    </item>
+    
+  </channel>
+</rss>
