@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Stripe Payment Intents Tutorial</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.c4f46d65.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/stripe-payment-intents-tutorial/" />
+
+    <meta name="description" content="Learn how to work with the Stripe Payment Intents API and validate cards with 3D Secure.">
+    <meta name="image" content="https://fireship.io/lessons/stripe-payment-intents-tutorial/img/featured.png">
+
+    <meta property="og:title" content="Stripe Payment Intents Tutorial" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/stripe-payment-intents-tutorial/" />
+    <meta property="og:image" content="https://fireship.io/lessons/stripe-payment-intents-tutorial/img/featured.png" />
+    <meta property="og:description" content="Learn how to work with the Stripe Payment Intents API and validate cards with 3D Secure." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Stripe Payment Intents Tutorial">
+    <meta name="twitter:description" content="Learn how to work with the Stripe Payment Intents API and validate cards with 3D Secure.">
+    <meta name="twitter:image" content="https://fireship.io/lessons/stripe-payment-intents-tutorial/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/stripe-payment-intents-tutorial/" 
+    vimeo=""
+    youtube="1XKRxeo9414"
+    free=""
+    next="https://fireship.io/lessons/firebase-tips-and-tricks/" 
+    prev="https://fireship.io/lessons/deckgl-google-maps-tutorial/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-10-22 18:05:34 -0700 -0700" />
+			<meta itemprop="dateModified" content="2019-10-22 18:05:34 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/1XKRxeo9414"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/1XKRxeo9414" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="Learn how to work with the Stripe Payment Intents API and validate cards with 3D Secure." />
+					<meta itemprop="uploadDate" content="2019-10-22 18:05:34 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Oct 22, 2019</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/stripe"><span class="tag tag-stripe">#stripe</span></a>
+						
+							<a href="/tags/svelte"><span class="tag tag-svelte">#svelte</span></a>
+						
+							<a href="/tags/node"><span class="tag tag-node">#node</span></a>
+						
+							<a href="/tags/cloud-functions"><span class="tag tag-cloud-functions">#cloud-functions</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/fireship-io/212-stripe-svelte">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="stripe-payment-intents-tutorial" class="gradient-text">
+					Stripe Payment Intents Tutorial
+				</h1>
+
+
+				<p>Stripe provides a huge API with everything you could ever want to build a complex payment system. Recent changes in the online payments landscape have resulted in significant changes to the API, most notably the <a href="https://stripe.com/docs/payments/payment-intents">Payment Intents API</a>.  The following lesson demonstrates two modern strategies for accepting one-time payments - (1) Checkout and (2) Stripe Elements with Payment Intents.</p>
+<p>As of September 2019, many European banks now require their customers to validate payments using <a href="https://stripe.com/guides/3d-secure-2">3D secure standard</a> or Strong Customer Authentication SCA. As a developer, this means some users may be required to authenticate on their bank&rsquo;s website to validate a purchase. Both strategies outlined below are compatible with 3D secure authentication.</p>
+<h2 id="strategy-1---stripe-checkout">Strategy 1 - Stripe Checkout</h2>
+<p>Stripe Checkout is a service that makes it possible to accept payments without any backend code and just a few lines of frontend code. It works by linking your product SKUs to a hosted checkout page.</p>
+<ul>
+<li>🟢 Super easy to implement and works with 3D secure.</li>
+<li>🔻 Limited UI customization options.</li>
+</ul>
+<h3 id="create-a-product">Create a Product</h3>
+<p>Head over the Stripe dashboard and create a product. Make a note of the SKU.</p>
+<figure><img src="img/stripe-new-product.png"/>
+</figure>
+
+<h3 id="add-stripejs-to-svelte">Add Stripe.js to Svelte</h3>
+<p>Create a new <a href="https://svelte.dev/">Svelte</a> app and add the Stripe.js script tag to the head of the main HTML file.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">npx degit sveltejs/my-svelte-store
+</span></span></code></pre></div>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_html</title><polygon points="5.902 27.201 3.655 2 28.345 2 26.095 27.197 15.985 30 5.902 27.201" style="fill:#e44f26"/><polygon points="16 27.858 24.17 25.593 26.092 4.061 16 4.061 16 27.858" style="fill:#f1662a"/><polygon points="16 13.407 11.91 13.407 11.628 10.242 16 10.242 16 7.151 15.989 7.151 8.25 7.151 8.324 7.981 9.083 16.498 16 16.498 16 13.407" style="fill:#ebebeb"/><polygon points="16 21.434 15.986 21.438 12.544 20.509 12.324 18.044 10.651 18.044 9.221 18.044 9.654 22.896 15.986 24.654 16 24.65 16 21.434" style="fill:#ebebeb"/><polygon points="15.989 13.407 15.989 16.498 19.795 16.498 19.437 20.507 15.989 21.437 15.989 24.653 22.326 22.896 22.372 22.374 23.098 14.237 23.174 13.407 22.341 13.407 15.989 13.407" style="fill:#fff"/><polygon points="15.989 7.151 15.989 9.071 15.989 10.235 15.989 10.242 23.445 10.242 23.445 10.242 23.455 10.242 23.517 9.548 23.658 7.981 23.732 7.151 15.989 7.151" style="fill:#fff"/></svg></span> public/index.html
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://js.stripe.com/v3/&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;/bundle.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="product-component">Product Component</h3>
+<p>Stripe can handle payment for a product (or multiple products and subscriptions) with the <code>redirectToCheckout</code> method. This will redirect the user to a page hosted by Stripe with a credit card for to pay for your products. The user can be directed back to a URL you specify  when the payment is finished or canceled.</p>
+<figure><img src="img/stripe-api-keys.png"
+         alt="Initialize Stripe in Svelte with the publishable key"/><figcaption>
+            <p>Initialize Stripe in Svelte with the publishable key</p>
+        </figcaption>
+</figure>
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg viewBox="0 0 445 535" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M416.629 70.6913C366.97 -0.318732 268.894 -21.364 197.986 23.7808L73.4569 103.094C56.6494 113.645 42.2276 127.582 31.1121 144.015C19.9966 160.449 12.4317 179.018 8.90021 198.538C2.94525 231.484 8.15412 265.473 23.7024 295.127C13.0462 311.283 5.78481 329.435 2.35859 348.48C-1.19812 368.431 -0.728165 388.892 3.74082 408.659C8.2098 428.426 16.5876 447.1 28.3818 463.585C78.0408 534.595 176.117 555.64 247.025 510.495L371.554 431.516C388.342 420.943 402.749 407 413.862 390.57C424.975 374.14 432.552 355.582 436.111 336.072C442.044 303.137 436.818 269.165 421.261 239.531C431.912 223.367 439.188 205.22 442.653 186.178C446.198 166.227 445.723 145.768 441.255 126.003C436.786 106.237 428.414 87.5625 416.629 71.0731" fill="#FF3E00"/>
+<path d="M185.813 470.817C166.209 475.907 145.517 474.857 126.529 467.808C107.54 460.759 91.1697 448.051 79.6263 431.398C72.5386 421.476 67.506 410.234 64.8247 398.336C62.1434 386.438 61.8676 374.124 64.0134 362.117C64.7177 358.212 65.7071 354.363 66.9736 350.602L69.3132 343.435L75.7111 348.213C90.4172 358.957 106.835 367.132 124.269 372.39L129.043 373.776L128.613 378.554C128.154 385.105 129.995 391.611 133.818 396.949C137.301 401.958 142.234 405.78 147.954 407.898C153.673 410.017 159.904 410.331 165.807 408.798C168.507 408.072 171.082 406.945 173.447 405.454L297.777 326.043C300.83 324.121 303.448 321.58 305.463 318.585C307.477 315.59 308.844 312.206 309.474 308.652C310.111 305.029 310.016 301.315 309.196 297.729C308.376 294.143 306.847 290.757 304.7 287.772C301.216 282.762 296.283 278.941 290.564 276.822C284.844 274.704 278.613 274.39 272.71 275.922C270.008 276.639 267.431 277.767 265.071 279.267L217.325 309.607C209.516 314.562 201 318.3 192.067 320.692C172.496 325.752 151.846 324.691 132.896 317.652C113.945 310.614 97.6043 297.934 86.0719 281.322C79.0056 271.389 73.993 260.145 71.3283 248.248C68.6636 236.351 68.4006 224.041 70.5546 212.041C72.663 200.262 77.2044 189.053 83.8884 179.131C90.5724 169.209 99.2519 160.792 109.372 154.418L234.084 75.008C241.847 70.063 250.314 66.3255 259.198 63.9231C278.794 58.8291 299.481 59.8777 318.463 66.9272C337.444 73.9767 353.806 86.6873 365.337 103.341C372.433 113.261 377.474 124.5 380.163 136.398C382.853 148.296 383.136 160.613 380.997 172.622C380.252 176.55 379.264 180.428 378.037 184.233L375.65 191.4L369.3 186.622C354.563 175.796 338.095 167.556 320.599 162.254L315.824 160.868L316.254 156.09C316.806 149.507 315.013 142.94 311.193 137.552C307.688 132.628 302.768 128.89 297.088 126.833C291.408 124.776 285.236 124.498 279.394 126.037C276.692 126.754 274.115 127.882 271.755 129.382L147.186 208.648C144.144 210.573 141.534 213.107 139.52 216.093C137.507 219.078 136.134 222.449 135.489 225.992C134.865 229.623 134.965 233.342 135.785 236.934C136.604 240.526 138.126 243.92 140.263 246.92C143.731 251.884 148.624 255.676 154.295 257.792C159.966 259.909 166.145 260.249 172.014 258.769C174.71 258.033 177.284 256.907 179.654 255.425L227.399 225.132C235.202 220.123 243.741 216.367 252.705 214C272.296 208.894 292.981 209.932 311.964 216.973C330.947 224.014 347.311 236.719 358.843 253.37C365.934 263.292 370.973 274.531 373.662 286.429C376.351 298.326 376.638 310.641 374.504 322.651C372.396 334.43 367.854 345.638 361.17 355.561C354.486 365.483 345.807 373.9 335.687 380.274L211.118 459.684C203.294 464.655 194.762 468.408 185.813 470.817" fill="white"/>
+</svg>
+</span> Product.svelte
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// REPLACE with your Publishable Key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">stripe</span> <span class="o">=</span> <span class="nx">Stripe</span><span class="p">(</span><span class="s1">&#39;pk_test_...&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">sku</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Basic Checkout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">startCheckout</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">{</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">stripe</span><span class="p">.</span><span class="nx">redirectToCheckout</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">items</span><span class="o">:</span> <span class="p">[{</span> <span class="nx">sku</span><span class="p">,</span> <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nx">successUrl</span><span class="o">:</span> <span class="s1">&#39;https://fireship.io/success&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">cancelUrl</span><span class="o">:</span> <span class="s1">&#39;https://fireship.io/canceled&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;our payment system is broken!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Stripe Checkout<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>⌚<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">on:click</span><span class="o">=</span><span class="s">{startCheckout}</span><span class="p">&gt;</span> Buy me ${amount / 100} <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Now you can use this component in your Svelte app like so:</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg viewBox="0 0 445 535" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M416.629 70.6913C366.97 -0.318732 268.894 -21.364 197.986 23.7808L73.4569 103.094C56.6494 113.645 42.2276 127.582 31.1121 144.015C19.9966 160.449 12.4317 179.018 8.90021 198.538C2.94525 231.484 8.15412 265.473 23.7024 295.127C13.0462 311.283 5.78481 329.435 2.35859 348.48C-1.19812 368.431 -0.728165 388.892 3.74082 408.659C8.2098 428.426 16.5876 447.1 28.3818 463.585C78.0408 534.595 176.117 555.64 247.025 510.495L371.554 431.516C388.342 420.943 402.749 407 413.862 390.57C424.975 374.14 432.552 355.582 436.111 336.072C442.044 303.137 436.818 269.165 421.261 239.531C431.912 223.367 439.188 205.22 442.653 186.178C446.198 166.227 445.723 145.768 441.255 126.003C436.786 106.237 428.414 87.5625 416.629 71.0731" fill="#FF3E00"/>
+<path d="M185.813 470.817C166.209 475.907 145.517 474.857 126.529 467.808C107.54 460.759 91.1697 448.051 79.6263 431.398C72.5386 421.476 67.506 410.234 64.8247 398.336C62.1434 386.438 61.8676 374.124 64.0134 362.117C64.7177 358.212 65.7071 354.363 66.9736 350.602L69.3132 343.435L75.7111 348.213C90.4172 358.957 106.835 367.132 124.269 372.39L129.043 373.776L128.613 378.554C128.154 385.105 129.995 391.611 133.818 396.949C137.301 401.958 142.234 405.78 147.954 407.898C153.673 410.017 159.904 410.331 165.807 408.798C168.507 408.072 171.082 406.945 173.447 405.454L297.777 326.043C300.83 324.121 303.448 321.58 305.463 318.585C307.477 315.59 308.844 312.206 309.474 308.652C310.111 305.029 310.016 301.315 309.196 297.729C308.376 294.143 306.847 290.757 304.7 287.772C301.216 282.762 296.283 278.941 290.564 276.822C284.844 274.704 278.613 274.39 272.71 275.922C270.008 276.639 267.431 277.767 265.071 279.267L217.325 309.607C209.516 314.562 201 318.3 192.067 320.692C172.496 325.752 151.846 324.691 132.896 317.652C113.945 310.614 97.6043 297.934 86.0719 281.322C79.0056 271.389 73.993 260.145 71.3283 248.248C68.6636 236.351 68.4006 224.041 70.5546 212.041C72.663 200.262 77.2044 189.053 83.8884 179.131C90.5724 169.209 99.2519 160.792 109.372 154.418L234.084 75.008C241.847 70.063 250.314 66.3255 259.198 63.9231C278.794 58.8291 299.481 59.8777 318.463 66.9272C337.444 73.9767 353.806 86.6873 365.337 103.341C372.433 113.261 377.474 124.5 380.163 136.398C382.853 148.296 383.136 160.613 380.997 172.622C380.252 176.55 379.264 180.428 378.037 184.233L375.65 191.4L369.3 186.622C354.563 175.796 338.095 167.556 320.599 162.254L315.824 160.868L316.254 156.09C316.806 149.507 315.013 142.94 311.193 137.552C307.688 132.628 302.768 128.89 297.088 126.833C291.408 124.776 285.236 124.498 279.394 126.037C276.692 126.754 274.115 127.882 271.755 129.382L147.186 208.648C144.144 210.573 141.534 213.107 139.52 216.093C137.507 219.078 136.134 222.449 135.489 225.992C134.865 229.623 134.965 233.342 135.785 236.934C136.604 240.526 138.126 243.92 140.263 246.92C143.731 251.884 148.624 255.676 154.295 257.792C159.966 259.909 166.145 260.249 172.014 258.769C174.71 258.033 177.284 256.907 179.654 255.425L227.399 225.132C235.202 220.123 243.741 216.367 252.705 214C272.296 208.894 292.981 209.932 311.964 216.973C330.947 224.014 347.311 236.719 358.843 253.37C365.934 263.292 370.973 274.531 373.662 286.429C376.351 298.326 376.638 310.641 374.504 322.651C372.396 334.43 367.854 345.638 361.17 355.561C354.486 365.483 345.807 373.9 335.687 380.274L211.118 459.684C203.294 464.655 194.762 468.408 185.813 470.817" fill="white"/>
+</svg>
+</span> App.svelte
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My Svelte Store<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Product</span> <span class="na">amount</span><span class="o">=</span><span class="s">{1999}</span> <span class="na">name</span><span class="o">=</span><span class="s">{&#39;Jello&#39;}</span> <span class="na">sku</span><span class="o">=</span><span class="s">{&#39;sku_...&#39;}</span> <span class="p">/&gt;</span>
+</span></span></code></pre></div><h2 id="strategy-2---payment-intents-with-stripe-elements">Strategy 2 - Payment Intents with Stripe Elements</h2>
+<p>Some apps need additional control over the UX. <a href="https://stripe.com/payments/elements">Stripe Elements</a> provides customizable widgets that collect and validate payment information, which can be used with a custom payment flow on the backend.</p>
+<ul>
+<li>🟢 More control over the payment flow and UX.</li>
+<li>🔻 Requires additional work on both the frontend and backend.</li>
+</ul>
+<p>This demo handle a one-time charge using a Payment Intent. Here&rsquo;s what the  flow looks like in five small steps.</p>
+<ol>
+<li>Your server creates a Payment Intent.</li>
+<li>The Frontend app shows a payment form with the <code>client_secret</code> returned from the server.</li>
+<li>The user enters card details and submits the form.</li>
+<li>Stripe&rsquo;s server charges the card and handles 3D secure auth if necessary.</li>
+<li>Your backend fulfills the purchase via a webhook.</li>
+</ol>
+<h3 id="cloud-functions-setup">Cloud Functions Setup</h3>
+<p>The backend Cloud Functions use TypeScript to provide better intellisense with the Stripe SDK. When working with Stripe over HTTP, I also recommend using Express.js or similar to provide multiple endpoints with shared middleware for CORS and user authorization.</p>
+<p>💡 Tip: If using Firebase in your frontend app, it may be easier to implement <em>Callable</em> Cloud Functions, which you can learn more about in the <a href="/courses/stripe-payments">Stripe Payments Master Course</a>.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firebase init functions # with TypeScript
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cd functions
+</span></span><span class="line"><span class="cl">npm i stripe express cors
+</span></span><span class="line"><span class="cl">npm i @types/stripe @types/cors -D
+</span></span></code></pre></div><p>Grab your Stripe <em>secret</em> key and use it to initialize the Stripe Node SDK.</p>
+<figure><img src="img/stripe-api-keys.png"
+         alt="Initialize Stripe in your Cloud Functions with the secret key"/><figcaption>
+            <p>Initialize Stripe in your Cloud Functions with the secret key</p>
+        </figcaption>
+</figure>
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">functions</span> <span class="kr">from</span> <span class="s1">&#39;firebase-functions&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">admin</span> <span class="kr">from</span> <span class="s1">&#39;firebase-admin&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">admin</span><span class="p">.</span><span class="nx">initializeApp</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">Stripe</span> <span class="kr">from</span> <span class="s1">&#39;stripe&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">stripe</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stripe</span><span class="p">(</span><span class="s1">&#39;sk_test_xxxxxxxx&#39;</span><span class="p">);</span> <span class="c1">// TODO Set as Firebase environment variable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">express</span> <span class="kr">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">cors</span> <span class="kr">from</span> <span class="s1">&#39;cors&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">({</span> <span class="nx">origin</span>: <span class="kt">true</span> <span class="p">}));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/intents&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/webhook&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// TODO
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">payments</span> <span class="o">=</span> <span class="nx">functions</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">onRequest</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="create-a-payment-intent">Create a Payment Intent</h3>
+<p>Before the user can submit a payment, your server must create an intent. It needs to specify an amount and currency.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/intents&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">amount</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">paymentIntent</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">stripe</span><span class="p">.</span><span class="nx">paymentIntents</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">amount</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">currency</span><span class="o">:</span> <span class="s1">&#39;usd&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">payment_method_types</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;card&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">metadata</span><span class="o">:</span> <span class="p">{</span> <span class="nx">uid</span><span class="o">:</span> <span class="s1">&#39;some_userID&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">paymentIntent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><p>Serve the API endpoint locally.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firebase serve --only functions
+</span></span></code></pre></div><h3 id="stripe-elements-in-svelte">Stripe Elements in Svelte</h3>
+<p>(1) When the Svelte component is mounted, we hit our backend for a Payment Intent - you should only create one of these per user payment session. It contains the <em>client_secret</em> that Stripe will eventually need to charge the card.</p>
+<p>(2) Next, we mount Stripe Elements to a div to create a credit card form. The submit button will remain disabled until the user has entered valid card details.</p>
+<p>(3) When the card is valid, we submit the tokenized payment details and client secret to Stripe for processing.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg viewBox="0 0 445 535" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M416.629 70.6913C366.97 -0.318732 268.894 -21.364 197.986 23.7808L73.4569 103.094C56.6494 113.645 42.2276 127.582 31.1121 144.015C19.9966 160.449 12.4317 179.018 8.90021 198.538C2.94525 231.484 8.15412 265.473 23.7024 295.127C13.0462 311.283 5.78481 329.435 2.35859 348.48C-1.19812 368.431 -0.728165 388.892 3.74082 408.659C8.2098 428.426 16.5876 447.1 28.3818 463.585C78.0408 534.595 176.117 555.64 247.025 510.495L371.554 431.516C388.342 420.943 402.749 407 413.862 390.57C424.975 374.14 432.552 355.582 436.111 336.072C442.044 303.137 436.818 269.165 421.261 239.531C431.912 223.367 439.188 205.22 442.653 186.178C446.198 166.227 445.723 145.768 441.255 126.003C436.786 106.237 428.414 87.5625 416.629 71.0731" fill="#FF3E00"/>
+<path d="M185.813 470.817C166.209 475.907 145.517 474.857 126.529 467.808C107.54 460.759 91.1697 448.051 79.6263 431.398C72.5386 421.476 67.506 410.234 64.8247 398.336C62.1434 386.438 61.8676 374.124 64.0134 362.117C64.7177 358.212 65.7071 354.363 66.9736 350.602L69.3132 343.435L75.7111 348.213C90.4172 358.957 106.835 367.132 124.269 372.39L129.043 373.776L128.613 378.554C128.154 385.105 129.995 391.611 133.818 396.949C137.301 401.958 142.234 405.78 147.954 407.898C153.673 410.017 159.904 410.331 165.807 408.798C168.507 408.072 171.082 406.945 173.447 405.454L297.777 326.043C300.83 324.121 303.448 321.58 305.463 318.585C307.477 315.59 308.844 312.206 309.474 308.652C310.111 305.029 310.016 301.315 309.196 297.729C308.376 294.143 306.847 290.757 304.7 287.772C301.216 282.762 296.283 278.941 290.564 276.822C284.844 274.704 278.613 274.39 272.71 275.922C270.008 276.639 267.431 277.767 265.071 279.267L217.325 309.607C209.516 314.562 201 318.3 192.067 320.692C172.496 325.752 151.846 324.691 132.896 317.652C113.945 310.614 97.6043 297.934 86.0719 281.322C79.0056 271.389 73.993 260.145 71.3283 248.248C68.6636 236.351 68.4006 224.041 70.5546 212.041C72.663 200.262 77.2044 189.053 83.8884 179.131C90.5724 169.209 99.2519 160.792 109.372 154.418L234.084 75.008C241.847 70.063 250.314 66.3255 259.198 63.9231C278.794 58.8291 299.481 59.8777 318.463 66.9272C337.444 73.9767 353.806 86.6873 365.337 103.341C372.433 113.261 377.474 124.5 380.163 136.398C382.853 148.296 383.136 160.613 380.997 172.622C380.252 176.55 379.264 180.428 378.037 184.233L375.65 191.4L369.3 186.622C354.563 175.796 338.095 167.556 320.599 162.254L315.824 160.868L316.254 156.09C316.806 149.507 315.013 142.94 311.193 137.552C307.688 132.628 302.768 128.89 297.088 126.833C291.408 124.776 285.236 124.498 279.394 126.037C276.692 126.754 274.115 127.882 271.755 129.382L147.186 208.648C144.144 210.573 141.534 213.107 139.52 216.093C137.507 219.078 136.134 222.449 135.489 225.992C134.865 229.623 134.965 233.342 135.785 236.934C136.604 240.526 138.126 243.92 140.263 246.92C143.731 251.884 148.624 255.676 154.295 257.792C159.966 259.909 166.145 260.249 172.014 258.769C174.71 258.033 177.284 256.907 179.654 255.425L227.399 225.132C235.202 220.123 243.741 216.367 252.705 214C272.296 208.894 292.981 209.932 311.964 216.973C330.947 224.014 347.311 236.719 358.843 253.37C365.934 263.292 370.973 274.531 373.662 286.429C376.351 298.326 376.638 310.641 374.504 322.651C372.396 334.43 367.854 345.638 361.17 355.561C354.486 365.483 345.807 373.9 335.687 380.274L211.118 459.684C203.294 464.655 194.762 468.408 185.813 470.817" fill="white"/>
+</svg>
+</span> Product.svelte
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">stripe</span> <span class="o">=</span> <span class="nx">Stripe</span><span class="p">(</span><span class="s1">&#39;pk_test_m3a5moXVKgThpdfwzKILvnbG&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// REPLACE with your Firebase Project ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:5000/awesomeapp-dev/us-central1/payments&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="kd">let</span> <span class="nx">sku</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Payment Intents
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">onMount</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;svelte&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nx">stripe</span><span class="p">.</span><span class="nx">elements</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">card</span><span class="p">;</span> <span class="c1">// HTML div to mount card
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">cardElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">complete</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">paymentIntent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">clientSecret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">onMount</span><span class="p">(</span><span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">paymentIntent</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">createIntent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">clientSecret</span> <span class="o">=</span> <span class="nx">paymentIntent</span><span class="p">.</span><span class="nx">client_secret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createCardForm</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Step 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">createIntent</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">api</span> <span class="o">+</span> <span class="s1">&#39;/intents&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">amount</span><span class="p">,</span> <span class="nx">name</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span> <span class="p">).</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">paymentIntent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Step 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">createCardForm</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cardElement</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;card&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cardElement</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="nx">card</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">cardElement</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">complete</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">complete</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Step 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">submitPayment</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">stripe</span><span class="p">.</span><span class="nx">handleCardPayment</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">clientSecret</span><span class="p">,</span> <span class="nx">cardElement</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">payment_method_data</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">paymentIntent</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">paymentIntent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">paymentIntent</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;fudge!&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Payment Intents with Stripe Elements<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>⌚<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;elements&#34;</span> <span class="na">bind:this</span><span class="o">=</span><span class="s">{card}</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">on:click</span><span class="o">=</span><span class="s">{submitPayment}</span> <span class="na">disabled</span><span class="o">=</span><span class="s">{!paymentIntent</span> <span class="err">||</span> <span class="err">!</span><span class="na">complete</span><span class="err">}</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    Submit Payment for ${amount / 100}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="fulfill-purchases-with-a-webhook">Fulfill Purchases with a Webhook</h2>
+<p>Now that the app can accept payments, we need to do our part an fulfill the actual product. The implementation details will vary widely based on the app&rsquo;s business logic, but a digital product can be delivered with a <a href="https://en.wikipedia.org/wiki/Webhook">webhook</a>. Stripe will send data about the payment to this endpoint immediately after the charge is processed, which can be used to update a database, send an email, push notification, and so on.</p>
+<figure><img src="img/stripe-webhook-setup.png"
+         alt="Create a webhook that points to your deploy Cloud Function endpoint"/><figcaption>
+            <p>Create a webhook that points to your deploy Cloud Function endpoint</p>
+        </figcaption>
+</figure>
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/webhook&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sig</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;stripe-signature&#39;</span><span class="p">]</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">endpointSecret</span> <span class="o">=</span> <span class="s1">&#39;whsec_...&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">event</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">event</span> <span class="o">=</span> <span class="nx">stripe</span><span class="p">.</span><span class="nx">webhooks</span><span class="p">.</span><span class="nx">constructEvent</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">rawBody</span><span class="p">,</span> <span class="nx">sig</span><span class="p">,</span> <span class="nx">endpointSecret</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">end</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Handle Type of webhook
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">intent</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="kt">object</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="kr">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;payment_intent.succeeded&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Update database
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// Send email
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// Notify shipping department
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Succeeded:&#34;</span><span class="p">,</span> <span class="nx">intent</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;payment_intent.payment_failed&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">intent</span><span class="p">.</span><span class="nx">last_payment_error</span> <span class="o">&amp;&amp;</span> <span class="nx">intent</span><span class="p">.</span><span class="nx">last_payment_error</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Failed:&#39;</span><span class="p">,</span> <span class="nx">intent</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div>
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#strategy-1---stripe-checkout">Strategy 1 - Stripe Checkout</a>
+      <ul>
+        <li><a href="#create-a-product">Create a Product</a></li>
+        <li><a href="#add-stripejs-to-svelte">Add Stripe.js to Svelte</a></li>
+        <li><a href="#product-component">Product Component</a></li>
+      </ul>
+    </li>
+    <li><a href="#strategy-2---payment-intents-with-stripe-elements">Strategy 2 - Payment Intents with Stripe Elements</a>
+      <ul>
+        <li><a href="#cloud-functions-setup">Cloud Functions Setup</a></li>
+        <li><a href="#create-a-payment-intent">Create a Payment Intent</a></li>
+        <li><a href="#stripe-elements-in-svelte">Stripe Elements in Svelte</a></li>
+      </ul>
+    </li>
+    <li><a href="#fulfill-purchases-with-a-webhook">Fulfill Purchases with a Webhook</a></li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

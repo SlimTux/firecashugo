@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Vue Firebase Project Course on Fireship</title>
+    <link>https://fireship.io/courses/vue/</link>
+    <description>Recent content in The Vue Firebase Project Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Apr 2020 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/vue/intro-resources/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/intro-resources/</guid>
+      <description>Course Resources VueFire Walkie-Talkie Source Code Vue Docs VueFire Docs Firebase Web Docs Social Slack Chat YouTube Twitter To start things off, I first want to talk about how to be successful in this course. You can find the full source code for the project on GitHub. I recommend cloning this remote to your local system and you&amp;rsquo;ll find instructions in the read me on how to run it. But to really get the most out of this course, I recommend starting a brand new Vue project from scratch and following along with the videos by writing every single line of code that I do or better yet modify and experiment with my code to make it do something unique for you now in the videos, you&amp;rsquo;ll see me working through the code and Bs code and if you&amp;rsquo;re doing the same Recommend installing the Vue extension for vs code.</description>
+    </item>
+    
+    <item>
+      <title>Vue Setup</title>
+      <link>https://fireship.io/courses/vue/intro-vue/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/intro-vue/</guid>
+      <description>Install the Vue CLI Globally CLI Docs
+command line npm install -g @vue/cli Run the Vue UI App command line vue ui Add Bulma for Better Styling file_type_html public/index.html &amp;lt;head&amp;gt; &amp;lt;!-- add this line --&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Firebase Setup</title>
+      <link>https://fireship.io/courses/vue/intro-vuefirebase/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/intro-vuefirebase/</guid>
+      <description>Install the Vuefire &amp;amp; Firebase command line npm i vuefire firebase Install the Vuefire &amp;amp; Firebase file_type_js main.js import { firestorePlugin } from &amp;#39;vuefire&amp;#39; Vue.use(firestorePlugin) Initialize Firebase file_type_js firebase.js import firebase from &amp;#39;firebase/app&amp;#39;; import &amp;#39;firebase/firestore&amp;#39;; import &amp;#39;firebase/auth&amp;#39;; import &amp;#39;firebase/storage&amp;#39;; const firebaseConfig = { // Add your config here }; firebase.initializeApp(firebaseConfig); export const db = firebase.firestore(); export const auth = firebase.auth(); export const storage = firebase.storage(); </description>
+    </item>
+    
+    <item>
+      <title>Your First Component</title>
+      <link>https://fireship.io/courses/vue/intro-routing/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/intro-routing/</guid>
+      <description>Install the Vue Router Routing Docs
+command line npm install vue-router Configure a Basic Route file_type_js main.js import VueRouter from &amp;#39;vue-router&amp;#39; Vue.use(VueRouter) import Home from &amp;#39;./components/Home&amp;#39; const router = new VueRouter({ routes: [ { path: &amp;#39;/&amp;#39;, component: Home }, ] }) new Vue({ router, render: h =&amp;gt; h(App), }).$mount(&amp;#39;#app&amp;#39;) Create the Home Page App.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;Home.vue&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Anonymous Auth</title>
+      <link>https://fireship.io/courses/vue/auth-anonymous/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/auth-anonymous/</guid>
+      <description>Login Component Login.vue &amp;lt;template&amp;gt; &amp;lt;aside class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;Sign in Anonymously&amp;lt;/h3&amp;gt; &amp;lt;button class=&amp;#34;button&amp;#34; @click=&amp;#34;auth.signInAnonymously()&amp;#34;&amp;gt;Sign In&amp;lt;/button&amp;gt; &amp;lt;/aside&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { auth } from &amp;#39;../firebase&amp;#39;; export default { data() { return { auth, } }, } &amp;lt;/script&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Realtime Auth State</title>
+      <link>https://fireship.io/courses/vue/auth-state/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/auth-state/</guid>
+      <description>Opt-in to the Composition API command line npm i @vue/composition-api Register it as a plugin
+file_type_js main.js import VueCompositionApi from &amp;#39;@vue/composition-api&amp;#39; Vue.use(VueCompositionApi) User Component User.vue &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;slot name=&amp;#34;user&amp;#34; :user=&amp;#34;user&amp;#34;&amp;gt;&amp;lt;/slot&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { auth } from &amp;#39;../firebase&amp;#39;; import { ref } from &amp;#39;@vue/composition-api&amp;#39;; export default { setup() { const user = ref(null); const unsubscribe = auth.onAuthStateChanged( firebaseUser =&amp;gt; user.value = firebaseUser ); return { user, unsubscribe, } }, unmounted() { this.</description>
+    </item>
+    
+    <item>
+      <title>User Profile</title>
+      <link>https://fireship.io/courses/vue/auth-signout/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/auth-signout/</guid>
+      <description>User Profile Component UserProfile.vue &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; Logged in as {{ user.uid }}&amp;lt;br&amp;gt; &amp;lt;button @click=&amp;#34;auth.signOut()&amp;#34; class=&amp;#34;button&amp;#34;&amp;gt;Sign Out&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { auth } from &amp;#39;../firebase&amp;#39;; export default { data() { return { auth } }, props: [&amp;#39;user&amp;#39;] } &amp;lt;/script&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Email Password Authentication</title>
+      <link>https://fireship.io/courses/vue/auth-email-password/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/auth-email-password/</guid>
+      <description>Login Component Login.vue &amp;lt;template&amp;gt; &amp;lt;aside class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;Sign in Anonymously&amp;lt;/h3&amp;gt; &amp;lt;button class=&amp;#34;button&amp;#34; @click=&amp;#34;auth.signInAnonymously()&amp;#34;&amp;gt;Sign In&amp;lt;/button&amp;gt; &amp;lt;div v-if=&amp;#34;newUser&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;Sign Up for a New Account&amp;lt;/h3&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34; @click=&amp;#34;newUser = false&amp;#34;&amp;gt;Returning User?&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div v-else&amp;gt; &amp;lt;h3&amp;gt;Sign In with Email&amp;lt;/h3&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34; @click=&amp;#34;newUser = true&amp;#34;&amp;gt;New user?&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;label for=&amp;#34;email&amp;#34;&amp;gt;Email&amp;lt;/label&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;input v-model=&amp;#34;email&amp;#34; placeholder=&amp;#34;email&amp;#34; type=&amp;#34;email&amp;#34; class=&amp;#34;input&amp;#34; /&amp;gt; &amp;lt;label for=&amp;#34;password&amp;#34;&amp;gt;Password&amp;lt;/label&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;input v-model=&amp;#34;password&amp;#34; type=&amp;#34;password&amp;#34; class=&amp;#34;input&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;button class=&amp;#34;button is-info&amp;#34; :class=&amp;#34;{ &amp;#39;is-loading&amp;#39;: loading }&amp;#34; @click=&amp;#34;signInOrCreateUser()&amp;#34; &amp;gt;{{ newUser ?</description>
+    </item>
+    
+    <item>
+      <title>Create Chat Rooms</title>
+      <link>https://fireship.io/courses/vue/firestore-create-chat/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/firestore-create-chat/</guid>
+      <description>Chat List Component ChatList.vue &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;button @click=&amp;#34;createChatRoom()&amp;#34; class=&amp;#34;button&amp;#34;&amp;gt;Create New Chat Room&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { db } from &amp;#39;../firebase&amp;#39;; export default { data() { return { chats: [] } }, firestore() { return { chats: db.collection(&amp;#39;chats&amp;#39;).where(&amp;#39;owner&amp;#39;, &amp;#39;==&amp;#39;, this.uid) } }, methods: { async createChatRoom() { const newChat = await db.collection(&amp;#39;chats&amp;#39;).add({ createdAt: Date.now(), owner: this.uid, members: [this.uid] }) console.log(newChat) } }, props: [&amp;#39;uid&amp;#39;] }; &amp;lt;/script&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Query Chat Rooms</title>
+      <link>https://fireship.io/courses/vue/firestore-query-chat/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/firestore-query-chat/</guid>
+      <description>Chat List Component ChatList.vue &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;chat of chats&amp;#34; :key=&amp;#34;chat.id&amp;#34;&amp;gt; &amp;lt;router-link :to=&amp;#34;{ name: &amp;#39;chat&amp;#39;, params: { id: chat.id } }&amp;#34;&amp;gt;{{ chat.id }}&amp;lt;/router-link&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;button @click=&amp;#34;createChatRoom()&amp;#34; class=&amp;#34;button&amp;#34;&amp;gt;Create New Chat Room&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { db } from &amp;#39;../firebase&amp;#39;; export default { data() { return { chats: [] } }, firestore() { return { chats: db.collection(&amp;#39;chats&amp;#39;).where(&amp;#39;owner&amp;#39;, &amp;#39;==&amp;#39;, this.uid) } }, methods: { async createChatRoom() { const newChat = await db.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Routing</title>
+      <link>https://fireship.io/courses/vue/firestore-dynamic-routing/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/firestore-dynamic-routing/</guid>
+      <description>Router Config file_type_js main.js import ChatRoom from &amp;#39;./components/ChatRoom&amp;#39; const router = new VueRouter({ routes: [ { path: &amp;#39;/chats/:id&amp;#39;, component: ChatRoom, name: &amp;#39;chat&amp;#39; } ] }) Router Link &amp;lt;router-link :to=&amp;#34;{ name: &amp;#39;chat&amp;#39;, params: { id: chat.id } }&amp;#34;&amp;gt;{{ chat.id }}&amp;lt;/router-link&amp;gt; ChatRoom Component ChatRoom.vue &amp;lt;template&amp;gt; &amp;lt;main class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;Welcome to ChatRoom.vue {{ chatId }}&amp;lt;/h3&amp;gt; &amp;lt;router-link to=&amp;#34;/&amp;#34;&amp;gt;Back&amp;lt;/router-link&amp;gt; &amp;lt;/main&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { computed: { chatId() { return this.$route.params.id; }, }, }; &amp;lt;/script&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Query Messages</title>
+      <link>https://fireship.io/courses/vue/firestore-messages-query/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/firestore-messages-query/</guid>
+      <description>ChatRoom Component ChatRoom.vue &amp;lt;template&amp;gt; &amp;lt;main class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;Welcome to ChatRoom.vue {{ chatId }}&amp;lt;/h3&amp;gt; &amp;lt;User #user=&amp;#34;{ user }&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;user&amp;#34;&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;message of messages&amp;#34; :key=&amp;#34;message.id&amp;#34;&amp;gt; {{ message.text }} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;input v-model=&amp;#34;newMessageText&amp;#34; class=&amp;#34;input&amp;#34; /&amp;gt; &amp;lt;button :disabled=&amp;#34;!newMessageText || loading&amp;#34; class=&amp;#34;button is-success&amp;#34; type=&amp;#34;text&amp;#34; @click=&amp;#34;addMessage(user.uid)&amp;#34; &amp;gt;Send&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;Login v-else /&amp;gt; &amp;lt;/User&amp;gt; &amp;lt;/main&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import User from &amp;#39;./User.vue&amp;#39;; import Login from &amp;#39;./Login.vue&amp;#39;; import { db, storage } from &amp;#39;../firebase&amp;#39;; export default { components: { User, Login }, data() { return { newMessageText: &amp;#39;&amp;#39;, loading: false, messages: [], } }, computed: { chatId() { return this.</description>
+    </item>
+    
+    <item>
+      <title>Message UI</title>
+      <link>https://fireship.io/courses/vue/firestore-message-ui/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/firestore-message-ui/</guid>
+      <description>ChatRoom Component ChatMessage.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;message&amp;#34; :class=&amp;#34;{ &amp;#39;from-user&amp;#39;: owner }&amp;#34;&amp;gt; {{ message.text }} &amp;lt;br /&amp;gt; &amp;lt;audio v-if=&amp;#34;message.audioURL&amp;#34; :src=&amp;#34;message.audioURL&amp;#34; controls&amp;gt;&amp;lt;/audio&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;span class=&amp;#34;sender&amp;#34;&amp;gt;from UID {{ message.sender }}&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;#39;message&amp;#39;, &amp;#39;owner&amp;#39;] }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .message { background: #dddddd; color: black; margin-left: 10px; margin-right: auto; border-radius: 5px; padding: 12px; display: inline-block; } .from-user { margin-right: 10px; margin-left: auto; background: #91bbff; } .sender { font-size: 0.5rem; } &amp;lt;/style&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Capture Audio</title>
+      <link>https://fireship.io/courses/vue/storage-record-voice/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/storage-record-voice/</guid>
+      <description>ChatRoom Component Add a voice recorder.
+ChatRoom.vue &amp;lt;template&amp;gt; &amp;lt;main class=&amp;#34;section&amp;#34;&amp;gt; &amp;lt;!-- omitted... --&amp;gt; &amp;lt;h5&amp;gt;Record Audio&amp;lt;/h5&amp;gt; &amp;lt;button v-if=&amp;#34;!recorder&amp;#34; @click=&amp;#34;record()&amp;#34; class=&amp;#34;button is-info&amp;#34;&amp;gt;Record Voice&amp;lt;/button&amp;gt; &amp;lt;button v-else @click=&amp;#34;stop()&amp;#34; class=&amp;#34;button is-danger&amp;#34;&amp;gt;Stop&amp;lt;/button&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;audio v-if=&amp;#34;newAudio&amp;#34; :src=&amp;#34;newAudioURL&amp;#34; controls&amp;gt;&amp;lt;/audio&amp;gt; &amp;lt;hr /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;Login v-else /&amp;gt; &amp;lt;/User&amp;gt; &amp;lt;/main&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import User from &amp;#39;./User.vue&amp;#39;; import ChatMessage from &amp;#39;./ChatMessage.vue&amp;#39;; import Login from &amp;#39;./Login.vue&amp;#39;; import { db, storage } from &amp;#39;../firebase&amp;#39;; export default { components: { User, Login, ChatMessage, }, data() { return { newMessageText: &amp;#39;&amp;#39;, loading: false, messages: [], newAudio: null, recorder: null, } }, computed: { // omitted.</description>
+    </item>
+    
+    <item>
+      <title>Upload</title>
+      <link>https://fireship.io/courses/vue/storage-upload-file/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/storage-upload-file/</guid>
+      <description>Chat Room Component Add file uploads.
+ChatRoom.vue &amp;lt;script&amp;gt; import { db, storage } from &amp;#39;../firebase&amp;#39;; export default { data() { return { newMessageText: &amp;#39;&amp;#39;, loading: false, messages: [], newAudio: null, recorder: null, } }, computed: { messagesCollection() { return db.doc(`chats/${this.chatId}`).collection(&amp;#39;messages&amp;#39;); }, newAudioURL() { return URL.createObjectURL(this.newAudio); } }, methods: { // omitted ... async addMessage(uid) { this.loading = true; let audioURL = null; const { id: messageId } = this.messagesCollection.doc(); if (this.</description>
+    </item>
+    
+    <item>
+      <title>Wrap up</title>
+      <link>https://fireship.io/courses/vue/storage-final-thoughts/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/storage-final-thoughts/</guid>
+      <description> Firestore Security Rules Cookbook </description>
+    </item>
+    
+  </channel>
+</rss>

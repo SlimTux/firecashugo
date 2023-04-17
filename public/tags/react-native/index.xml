@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React Native on Fireship</title>
+    <link>https://fireship.io/tags/react-native/</link>
+    <description>Recent content in React Native on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Sep 2021 13:18:57 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/react-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Native Firebase Chat Demo</title>
+      <link>https://fireship.io/lessons/react-native-firebase-chat-demo/</link>
+      <pubDate>Thu, 30 Sep 2021 13:18:57 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/react-native-firebase-chat-demo/</guid>
+      <description>React Native is one of the most productive ways to build a cross-platform mobile app, especially for developers with a background in JavaScript. It has provides excellent support for Firebase with the React Native Firebase package
+In the following lesson, we will build a basic chat app with React Native and Firebase. It allows a user to sign in with Google and then access a group chat room. The user can read a realtime feed of recent chat messages via Firestore and post new messages into the chat.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Trusted Web Activity - PWA to Play Store Guide</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.c4f46d65.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/pwa-to-play-store/" />
+
+    <meta name="description" content="A step-by-step guide for publishing your PWA as a native app in the Google Play Store via a trusted web activity (TWA).">
+    <meta name="image" content="https://fireship.io/lessons/pwa-to-play-store/img/featured.png">
+
+    <meta property="og:title" content="Trusted Web Activity - PWA to Play Store Guide" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/pwa-to-play-store/" />
+    <meta property="og:image" content="https://fireship.io/lessons/pwa-to-play-store/img/featured.png" />
+    <meta property="og:description" content="A step-by-step guide for publishing your PWA as a native app in the Google Play Store via a trusted web activity (TWA)." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Trusted Web Activity - PWA to Play Store Guide">
+    <meta name="twitter:description" content="A step-by-step guide for publishing your PWA as a native app in the Google Play Store via a trusted web activity (TWA).">
+    <meta name="twitter:image" content="https://fireship.io/lessons/pwa-to-play-store/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/pwa-to-play-store/" 
+    vimeo=""
+    youtube="7JDFjeMvxos"
+    free=""
+    next="https://fireship.io/lessons/angular-firebase-storage-uploads-multi/" 
+    prev="https://fireship.io/lessons/flutter-radial-menu-staggered-animations/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-02-20 10:27:58 -0700 -0700" />
+			<meta itemprop="dateModified" content="2019-02-20 10:27:58 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/7JDFjeMvxos"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/7JDFjeMvxos" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="A step-by-step guide for publishing your PWA as a native app in the Google Play Store via a trusted web activity (TWA)." />
+					<meta itemprop="uploadDate" content="2019-02-20 10:27:58 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Feb 20, 2019</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/pwa"><span class="tag tag-pwa">#pwa</span></a>
+						
+							<a href="/tags/twa"><span class="tag tag-twa">#twa</span></a>
+						
+							<a href="/tags/android"><span class="tag tag-android">#android</span></a>
+						
+							<a href="/tags/javascript"><span class="tag tag-javascript">#javascript</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/fireship-io/169-pwa-trusted-web-activity">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="trusted-web-activity---pwa-to-play-store-guide" class="gradient-text">
+					Trusted Web Activity - PWA to Play Store Guide
+				</h1>
+
+
+				<p>Web developers already have a variety of interesting options for using JavaScript to write native mobile apps with tools like React Native, Cordova/Ionic, NativeScript, just to name a few. I&rsquo;ve spent many hours brainstorming with clients on this topic and recently summed up my thoughts about <a href="https://itnext.io/should-you-use-ionic-4-fa04daebaffd">Hybrid App</a> development, but there&rsquo;s a brand new strategy to add to the list&hellip; <a href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a> (TWA). The following guide will show you how to covert any progressive web app to an Android App on the Google Play Store.</p>
+<figure><img src="img/googleplay-badge.png"/>
+</figure>
+
+<p>Special thanks to Sven Budak for writing <a href="https://svenbudak.medium.com/this-twa-stuff-rocks-finally-i-got-my-pwa-on-google-play-store-b92fe8dae31f">This TWA stuff rocks! Finally I got my PWA on Google Play Store</a>.</p>
+<h2 id="wait-what-is-a-trusted-web-activity">Wait, what is a Trusted Web Activity?</h2>
+<p><strong>TL;DR</strong> A Trusted Web Activity allows Chrome (v72 or later) to run a website in fullscreen mode <em>without a browser toolbar</em> within an APK (Android Package).</p>
+<p><strong>How?</strong> The underlying technology is based on the <a href="https://developer.chrome.com/multidevice/android/customtabs">Custom Tabs</a> protocol, which is already used to embed web content within native apps. For example, you might click a link in the Twitter app, but never actually leave the app to view the content. A TWA allows a developer to verify ownership of first-party web content by uploading a special file called a trusted asset link to the hosting server. It can then be easily packaged for Android making it indistinguishable from a true native app and discoverable on the Play Store.</p>
+<p><strong>Why?</strong> While this approach is very new on the scene, it offers a promising alternative to webview-based hybrid apps (Ionic/Cordova). Many hybrid apps are just PWAs wrapped up as a native package, but the webview environment is sandboxed, so TWAs offer the following benefits:</p>
+<ul>
+<li>OAuth requests not blocked (this is awesome).</li>
+<li>Always up-to-date content, no need to cut a new release when content changes.</li>
+<li>Share cookies, local storage, saved settings and all PWA features with the preferred browser.</li>
+</ul>
+<p>But there are also some drawbacks that come to mind&hellip;</p>
+<ul>
+<li>Unclear how to handle in-app purchases.</li>
+<li>Cannot share Android Activities with TWAs on the same screen.</li>
+</ul>
+<p>I highly recommend watching the video below for a detailed overview of webviews versus TWAs:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/TCgT8dzSiU8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="step-0---prerequisites">Step 0 - Prerequisites</h2>
+<p>You&rsquo;re building a native mobile app so you need to think like an Android developer, but thankfully, you won&rsquo;t need to author any custom Java code.</p>
+<h3 id="install-android-studio">Install Android Studio</h3>
+<figure><img src="img/android-studio.png"
+         alt="install android studio on your system"/>
+</figure>
+
+<p>Install <a href="https://developer.android.com/studio/">Android Studio</a> on your system.</p>
+<h3 id="register-a-google-play-developer-account">Register a Google Play Developer Account</h3>
+<p>Publishing an app on the Google Play Store means registering a <a href="https://developer.android.com/distribute/">paid developer account</a>. This will cost you $25.</p>
+<h2 id="step-1---build-a-progressive-web-app">Step 1 - Build a Progressive Web App</h2>
+<p>You will need to build a web app that meets modern <a href="https://developers.google.com/web/progressive-web-apps/checklist">PWA</a> standards. It&rsquo;s beyond the scope of this guide, but your web app must&hellip;</p>
+<ul>
+<li>Be compliant with Google Play Policies</li>
+<li>Be an installable PWA</li>
+<li>Achieve a lighthouse performance of 80+</li>
+<li>Recommended: Have a privacy policy</li>
+</ul>
+<p>If you have an existing app, it should produce results similar to those below when running in production.</p>
+<figure><img src="img/lighthouse-twa.png"
+         alt="lighthouse score of 80&#43; for TWA on Google Play store"/>
+</figure>
+
+<h2 id="step-3---make-it-native">Step 3 - Make it Native</h2>
+<h3 id="clone-the-twa-starter-android-app">Clone the TWA Starter Android App</h3>
+<p>There are several modifcations that need to be made to the Android app to support a TWA, all of which are <a href="https://developers.google.com/web/updates/2019/02/using-twa#establish_an_association_from_the_website_to_the_app">well documented here</a>. However, an easier apporach is to just clone the repo for this lesson</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">git clone https://github.com/fireship-io/169-pwa-trusted-web-activity.git twa
+</span></span><span class="line"><span class="cl">cd twa
+</span></span></code></pre></div><p>Go ahead and open this app in Android Studio and modify the values below based on your app config. The <code>applicationId</code> should follow a format of <code>&lt;com&gt;.&lt;your-brand&gt;.&lt;your-app&gt;</code>.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_gradle</title><path d="M29.16,7.083A4.62,4.62,0,0,0,25.143,4.7c-1.535-.027-2.8.836-2.563,1.412A9.092,9.092,0,0,0,23.1,7.138c.26.384.713.082.877,0a2.552,2.552,0,0,1,1.576-.274,2.352,2.352,0,0,1,1.782,1.384c1.165,2.289-2.426,6.991-6.922,3.729A11.606,11.606,0,0,0,9.558,10.456c-1.974.658-2.892,1.316-2.111,2.838a31.6,31.6,0,0,0,1.741,3.153c1.631,2.728,5.223-1.261,5.223-1.261C11.737,19.2,9.448,18.228,8.571,16.83A21.64,21.64,0,0,1,7.159,14.1C.4,16.542,2.224,27.22,2.224,27.22l3.358.014c.85-3.962,3.92-3.8,4.441.014l2.563.014c2.262-7.731,8.005.027,8.005.027l3.345.014c-.932-5.277,1.878-6.936,3.646-10.02C29.379,14.184,31.065,10.4,29.16,7.083Zm-10.4,10.336A1.691,1.691,0,0,1,17.7,15.2s.411.137,1.1.356a.648.648,0,0,0-.11.48.771.771,0,0,0,.85.672.787.787,0,0,0,.7-.672q.411.144.864.288A1.91,1.91,0,0,1,18.755,17.419Z" style="fill:#136a7d"/></svg></span> app/build.gradle
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gradle" data-lang="gradle"><span class="line"><span class="cl"><span class="n">android</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">defaultConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">applicationId</span> <span class="s2">&#34;io.fireship.app&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">manifestPlaceholders</span> <span class="o">=</span> <span class="o">[</span>
+</span></span><span class="line"><span class="cl">                <span class="nl">hostName:</span> <span class="s2">&#34;fireship.io&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nl">defaultUrl:</span> <span class="s2">&#34;https://fireship.io&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nl">launcherName:</span> <span class="s2">&#34;Fireship&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nl">assetStatements:</span> <span class="s1">&#39;[{ &#34;relation&#34;: [&#34;delegate_permission/common.handle_all_urls&#34;], &#39;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s1">&#39;&#34;target&#34;: {&#34;namespace&#34;: &#34;web&#34;, &#34;site&#34;: &#34;https://fireship.io&#34;}}]&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">resValue</span> <span class="s2">&#34;color&#34;</span><span class="o">,</span> <span class="s2">&#34;colorPrimary&#34;</span><span class="o">,</span> <span class="s2">&#34;#272838&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// omitted...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><h3 id="obtain-the-sha256-app-signing-certificate">Obtain the SHA256 App Signing Certificate</h3>
+<p>The next step is to <a href="https://developer.android.com/studio/publish/app-signing#generate-key">create a keystore</a> and extract its SHA256 fingerprint. This is used to sign the APK release and verify ownership of your web content. Make note the alias and password - and do not forget the password!</p>
+<p>First, open Android Studio and create a keystore by navigating to <em>Build → Generate Signed Bundle/APK</em>.</p>
+<figure><img src="img/create-keystore.png"
+         alt="Create a keystore in Android Studio"/>
+</figure>
+
+<p>Then run the following command to extract the SHA256 fingerprint from the keystore you just created.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">keytool -list -v -keystore ~/my-keystore.ks -alias twa -storepass your-password  -keypass your-password
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Entry type: PrivateKeyEntry
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">Certificate fingerprints:
+</span></span><span class="line"><span class="cl">         SHA1: ...
+</span></span><span class="line"><span class="cl">         SHA256: 2A:9B:A8:64:32:0A:69:99...: 👈 copy this line
+</span></span></code></pre></div><h2 id="step-3---setup-the-digital-asset-link">Step 3 - Setup the Digital Asset Link</h2>
+<p>A digital asset link is how you verify ownership of your web content so it can be linked to the APK.</p>
+<h3 id="generate-the-digital-asset-statement-file">Generate the Digital Asset Statement File</h3>
+<p>Take the SHA fingerprint from the previous step and generate a statement with the <a href="https://developers.google.com/digital-asset-links/tools/generator">digital asset links tool</a>.</p>
+<h3 id="deploy-to-your-web-host">Deploy to your Web Host</h3>
+<p>Create a file that contains the contents from the digital asset tool that is publicly accessible from your PWA&rsquo;s web host at the following path: <em>.well-known/assetlinks.json</em></p>
+<p>The correct location of this file is completely dependent on the build process of your web app, but the end result should be this file living in the deployed files, usually <em>public</em> or <em>dist</em>. Deploy your webapp when complete:</p>
+<figure><img src="img/well-known-asset.png"
+         alt="Well know asset deployed to firebase hosting"/>
+</figure>
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svgterminal  "><path fill="currentColor" d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z" ></path></svg></span> command line
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firebase deploy --only hosting
+</span></span></code></pre></div><h2 id="step-4---build-and-release-on-google-play">Step 4 - Build and Release on Google Play</h2>
+<p>Go to the <a href="https://play.google.com/apps/">Google Play Console</a> and click <em>All Applications → Create Application</em></p>
+<h3 id="create-an-internal-release">Create an Internal Release</h3>
+<p>Now navigate to <em>App releases → Internal Test Track → Create release</em> and create the release track.</p>
+<figure><img src="img/android-test-track.png"
+         alt="Android test track streen"/>
+</figure>
+
+<h3 id="build-a-signed-apk">Build a Signed APK</h3>
+<p>In Android Studio, go back to <em>Build → Generate Signed Bundle/APK</em> and use the same keystore we created earlier. Generate a signed release and make sure the checkboxes for both signature versions are selected.</p>
+<figure><img src="img/signed-apk.png"
+         alt="Signed APK"/>
+</figure>
+
+<h3 id="upload-the-apk">Upload the APK</h3>
+<p>On the Google Play Store, upload your APK at <em>App Releases → Internal Test Track → Edit Release</em>, then review and roll-out. At this point you should see an error that <em>no testers are assigned yet</em>, this likely means you need to finish the store listing.</p>
+<h3 id="complete-the-store-listing">Complete the Store Listing</h3>
+<figure><img src="img/google-play-store-listing.png"
+         alt="Update the store listing on google play"/>
+</figure>
+
+<p>You are must fill out ALL required information for the store listing, content rating, and pricing details. You should see four green checkmarks on the sidebar ✔️ when this process is complete. After you create the release, your app will be in <em>pending publication</em> status - just wait a few hours for it to be approved.</p>
+<p>And finally, you can install your app from the Play Store by using the opt-in URL under the <em>Manage testers</em> , then finish up the day a well-deserved refreshment 🍺.</p>
+<h2 id="the-end">The End</h2>
+<p>That was a lot of small steps 😅 but this process will become more streamlined in the future. Let&rsquo;s recap the entire checklist</p>
+<ol>
+<li>Build a good PWA</li>
+<li>Install Android Studio</li>
+<li>Sign up for Google Play, pay $25</li>
+<li>Clone the Android TWA starter app</li>
+<li>Update app/build.gradle</li>
+<li>Create a keystore</li>
+<li>Create a digital asset link file and deploy it</li>
+<li>Generate a signed APK</li>
+<li>Create an Internal Track Release</li>
+<li>Upload the signed APK to Google play</li>
+<li>Finish the Google Play Store Listing</li>
+<li>Release and wait</li>
+</ol>
+
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#wait-what-is-a-trusted-web-activity">Wait, what is a Trusted Web Activity?</a></li>
+    <li><a href="#step-0---prerequisites">Step 0 - Prerequisites</a>
+      <ul>
+        <li><a href="#install-android-studio">Install Android Studio</a></li>
+        <li><a href="#register-a-google-play-developer-account">Register a Google Play Developer Account</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-1---build-a-progressive-web-app">Step 1 - Build a Progressive Web App</a></li>
+    <li><a href="#step-3---make-it-native">Step 3 - Make it Native</a>
+      <ul>
+        <li><a href="#clone-the-twa-starter-android-app">Clone the TWA Starter Android App</a></li>
+        <li><a href="#obtain-the-sha256-app-signing-certificate">Obtain the SHA256 App Signing Certificate</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3---setup-the-digital-asset-link">Step 3 - Setup the Digital Asset Link</a>
+      <ul>
+        <li><a href="#generate-the-digital-asset-statement-file">Generate the Digital Asset Statement File</a></li>
+        <li><a href="#deploy-to-your-web-host">Deploy to your Web Host</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-4---build-and-release-on-google-play">Step 4 - Build and Release on Google Play</a>
+      <ul>
+        <li><a href="#create-an-internal-release">Create an Internal Release</a></li>
+        <li><a href="#build-a-signed-apk">Build a Signed APK</a></li>
+        <li><a href="#upload-the-apk">Upload the APK</a></li>
+        <li><a href="#complete-the-store-listing">Complete the Store Listing</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-end">The End</a></li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

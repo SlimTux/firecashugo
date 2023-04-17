@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Flutter for JavaScript Developers</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.c4f46d65.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/flutter-for-js-developers/" />
+
+    <meta name="description" content="A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic">
+    <meta name="image" content="https://fireship.io/lessons/flutter-for-js-developers/img/featured.png">
+
+    <meta property="og:title" content="Flutter for JavaScript Developers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/flutter-for-js-developers/" />
+    <meta property="og:image" content="https://fireship.io/lessons/flutter-for-js-developers/img/featured.png" />
+    <meta property="og:description" content="A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Flutter for JavaScript Developers">
+    <meta name="twitter:description" content="A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic">
+    <meta name="twitter:image" content="https://fireship.io/lessons/flutter-for-js-developers/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/flutter-for-js-developers/" 
+    vimeo=""
+    youtube="7sJZi0grFR4"
+    free=""
+    next="https://fireship.io/lessons/ci-cd-with-google-cloud-build/" 
+    prev="https://fireship.io/lessons/angular-universal-firebase/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-01-20 12:28:17 -0700 -0700" />
+			<meta itemprop="dateModified" content="2019-01-20 12:28:17 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/7sJZi0grFR4"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/7sJZi0grFR4" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic" />
+					<meta itemprop="uploadDate" content="2019-01-20 12:28:17 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Jan 20, 2019</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/dart"><span class="tag tag-dart">#dart</span></a>
+						
+							<a href="/tags/flutter"><span class="tag tag-flutter">#flutter</span></a>
+						
+							<a href="/tags/javascript"><span class="tag tag-javascript">#javascript</span></a>
+						
+							<a href="/tags/typescript"><span class="tag tag-typescript">#typescript</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://gist.github.com/codediodeio/8d59623a3ccac79e9168122b21c4a766">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="flutter-for-javascript-developers" class="gradient-text">
+					Flutter for JavaScript Developers
+				</h1>
+
+
+				<p>So you&rsquo;re a web developer working with JavaScript and curious about <a href="https://flutter.io/docs/get-started/flutter-for/web-devs">Flutter</a>? That was me about one-year ago, and at the time, learning an uncommon language like Dart seemed ridiculous because there are existing hybrid app frameworks in JS. Then I tried it&hellip; To my surprise, I was able to write productive code right out of the gate. The following lesson will compare Dart/Flutter to JS/ReactNative.</p>
+<p><figure><img src="img/js-dart-reddit.png"
+         alt="Post comparing Dart and JS from reddit"/>
+</figure>
+
+Source: <a href="https://www.reddit.com/r/FlutterDev/comments/92d995/what_do_you_like_or_not_like_about_the_dart/">FlutterDev subreddit</a></p>
+<p>Throughout this lesson, you will see the 👉 emoji. Dart will always be on the left, and JS on the right. These are not always perfect 1-to-1 comparisons, but you get the idea.</p>
+<h2 id="the-tradeoffs">The Tradeoffs</h2>
+<blockquote>
+<p>There are no solutions; there are only trade-offs. - Thomas Sowell</p>
+</blockquote>
+<h3 id="flutter-is-awesome--because-it">Flutter is awesome 🐦🤟 because it&hellip;</h3>
+<ul>
+<li>has amazing docs &amp; tooling</li>
+<li>performs faster because it has no JavaScript bridge</li>
+<li>can integrate native code</li>
+<li>hot reloads</li>
+<li>small code footprint and no import/export/bundling headaches</li>
+<li>it positions you for future development with <a href="https://en.wikipedia.org/wiki/Google_Fuchsia">Fuchsia</a></li>
+</ul>
+<h3 id="flutter-is-meh--because-it">Flutter is meh 😒 because it&hellip;</h3>
+<ul>
+<li>has a steeper learning curve with Dart</li>
+<li>cannot be debugged in the browser</li>
+<li>has a small ecosystem of developers and plugins relative to JS</li>
+</ul>
+<h2 id="dart-vs-js---syntax">Dart vs JS - Syntax</h2>
+<p>Dart is a strongly-typed compiled language, while JS is a weakly-typed scripting language. Despite being polar opposites in these ways, they share many of the same convetions, so most JS devs will be productive on day one.</p>
+<p>Want to write some Dart code right now? Head over to the <a href="https://dartpad.dartlang.org/">DartPad</a> playground.</p>
+<h3 id="variables">Variables</h3>
+<ul>
+<li><code>SomeType foo;</code> 👉 <code>let foo</code></li>
+<li><code>final</code> 👉 <code>const</code></li>
+<li><code>const</code> 👉 <code>Object.freeze(obj)</code></li>
+</ul>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+// Reassignable variables
+let person: string;
+person = &lsquo;jeff&rsquo;;
+person = &lsquo;bob&rsquo;;</p>
+<p>// Single assignment variables
+const lucky: number = 23;</p>
+<p>// Implicit
+const implicit = { name: &lsquo;Jeff&rsquo; };</p>
+<p>// Any
+const whoKnows: any = getSomethingDynamic();</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+// Reassignable variables
+String person;
+person = &#39;Jeff&#39;;
+person = &#39;Bob&#39;;
+
+// Single Assignment
+final int lucky = 23;
+
+// Single Assignment &amp; Immutable
+const Map person = &#39;Jeff&#39;;
+
+// Implicit
+var implicit = { &#39;name&#39;: &#39;Jeff&#39; }; // Map&lt;String, String&gt;
+
+// Any type
+dynamic whoKnows = getSomethingDynamic();
+</code></pre><h3 id="importsexports">Imports/Exports</h3>
+<p>In JS, you have several ways to import/export values, so let&rsquo;s just look at the modern ES6 way.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> globals.ts
+</div> ```typescript
+export default const = &lsquo;JS&rsquo;;
+// or
+export const lang = &lsquo;JS&rsquo;;</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+import lang from &#39;globals&#39;;
+// or
+import { lang } from &#39;globals&#39;;
+</code></pre><p>When you import a file in Dart, you will have access to everything declared that file. It looks trivial here, but it eliminates the <strong>import hell 😠</strong> that you find in basically every big JS project.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> globals.dart
+</div> ```dart
+final String lang = &lsquo;Dart!&rsquo;;</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+import &#39;globals.dart&#39;;
+
+main() {
+  print(lang)
+}
+</code></pre><h3 id="logging">Logging</h3>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+console.log(&lsquo;howdy!&rsquo;);</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+print(&#39;howdy!&#39;);
+</code></pre><h3 id="entry-point">Entry Point</h3>
+<p>JS doesn&rsquo;t have a required entry point to start executing our code, but it&rsquo;s common to export a function.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+export const app = () =&gt; {
+// init app
+};</p>
+<p>app();</p>
+<pre tabindex="0"><code>
+In dart, a main function is required. 
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+main() {
+
+}
+</code></pre><h3 id="maps-and-objects">Maps and Objects</h3>
+<ul>
+<li>Map 👉 cross between Object and Map</li>
+</ul>
+<p>Dart has a <a href="https://www.dartlang.org/guides/language/language-tour#maps">Map</a> class used to represent key-value pairs. It combines some of the features from in the JS <code>Object</code> &amp; <code>Map</code>.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+const state = { lucky: 23 }
+state[&lsquo;unlucky&rsquo;] = 11;</p>
+<p>const state = new Map([[&rsquo;lucky&rsquo;, 23]]);
+state.set(&lsquo;unlucky&rsquo;, 11);</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+Map state = { &#39;lucky&#39;: 23 };
+state[&#39;unlucky&#39;] = 11;
+</code></pre><h3 id="lists-and-arrays">Lists and Arrays</h3>
+<ul>
+<li>List 👉 Array</li>
+</ul>
+<p>A Dart <a href="https://www.dartlang.org/guides/language/language-tour#lists">List</a> is similar to a JS Array, containing most of the same instance and class methods (and beyond).</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+const things: number[] = [1, 2, 3]</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+List&lt;int&gt; things = [1, 2, 3];
+
+things.forEach()
+things.reduce()
+things.last;
+</code></pre><h3 id="functions">Functions</h3>
+<p>Functions in Dart should feel very familiar to the JS dev - it supports named, anonymous, arrow, and higher-order functions. The main difference is that you don&rsquo;t need the <code>function</code> keyword.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+function addOne(val: number) {
+return val + 1;
+}</p>
+<p>// Higher Order
+function callme(cb: Function) {
+return cb(&lsquo;Hello?&rsquo;);
+}</p>
+<p>callme((v) =&gt; console.log(v));</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+addOne(int val) {
+    return val + 1;
+} 
+
+// Higher Order
+callme(Function cb) {
+    return cb(&#39;Hello?&#39;);
+}
+
+callme((v) =&gt; print(v));
+</code></pre><h3 id="classes">Classes</h3>
+<p>You will be using <a href="https://www.dartlang.org/guides/language/language-tour#classes">Classes</a> frequently in Dart and they are very powerful. The language supports <strong>mixin-based inheritance</strong>, which provides excellent code reuse with <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composition</a>. In JS, classes are just syntatic sugar for functions and prototypal inheritance.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+export const main = () =&gt; {
+const myComponent = new Component()
+}</p>
+<p>class Component { }</p>
+<pre tabindex="0"><code>
+Defining and instantiating a class is nearly identical, but Dart does not require the `new` keyword. 
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+main() {
+  var myWidget = Widget();
+}
+
+class Widget { }
+</code></pre><h3 id="class-constructors">Class Constructors</h3>
+<p>In Dart, you can construct a class by calling its name like a Function. In addition, you can use <strong>named constructors</strong> to instantiate the same with different logic.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+export const main = () =&gt; {
+const bar = new Component(1,2);
+}</p>
+<p>class Component {
+constructor(private a, public b) {
+// non-ts version
+// this.a = a
+// this.b = b
+}
+}</p>
+<pre tabindex="0"><code>
+
+Starting any variable or property with `_` in Dart will make it private to its library or class. 
+
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+main() {
+  Widget foo = Widget.withStrings(&#39;1&#39;, &#39;2&#39;);
+}
+
+class Widget { 
+
+  // Default Constructor
+  Widget(_a, b);
+
+  // Named Constructor
+  Widget.withStrings(_a, b);
+  
+}
+</code></pre><h2 id="async-programming">Async Programming</h2>
+<h3 id="futures-and-promises">Futures and Promises</h3>
+<ul>
+<li>Future 👉 Promise</li>
+</ul>
+<p>A Dart <code>Future</code> is almost identical to a JS <code>Promise</code>, which is really nice because this is one of the more complex concepts master.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+async function howdy() {
+return &lsquo;partner 🤠&rsquo;;
+}</p>
+<p>async function greet() {
+await howdy();
+}</p>
+<p>greet().then(console.log).catch()</p>
+<pre tabindex="0"><code>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+Future howdy() async {
+    return &#39;partner 🤠&#39;;
+}
+
+greet() async {
+    await howdy();
+}
+
+greet().then(print).catchError();
+</code></pre><h3 id="streams-and-observables">Streams and Observables</h3>
+<ul>
+<li>Stream 👉 Observable</li>
+</ul>
+<p>JavaScript does not have a <em>native</em> stream-like data structure <a href="https://github.com/tc39/proposal-observable">yet</a>, but they are commonly provided via supporting packages like RxJS, Mobx, and others. A stream is similar to a Promise (Future), except that is</p>
+<p>A <code>Stream</code> is like a Future that emits multiple values over time and we can even use it with async/await 😍.</p>
+<p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+main() async {</p>
+<p>var items = Stream.fromIterable([1,2,3]);</p>
+<p>await for (int i in items) {
+// do something
+}</p>
+<p>// Or setup a listener
+items.listen(print);
+}</p>
+<pre tabindex="0"><code>
+There is one big concept to keep in mind, single subscription streams (default) will throw an error if multiple subscribers try to listen. 
+
+- Single-subscription streams 👉 Cold observable
+- Broadcast streams 👉 Hot Observable
+
+Even though streams are available in Dart, I often find myself using [RxDart](https://pub.dartlang.org/packages/rxdart) in Flutter. The beauty of RxDart is that it builds on top of streams, rather than try to reinvent the wheel, so anything that uses a stream in Flutter can also use an Rx observable. Also, if you&#39;re coming from the Angular world you can keep the operators you know and love like `switchMap`, `takeUntil`, `scan`, and so on. 
+
+
+## Flutter vs Frameworks
+
+Flutter is inspired by JavaScript frameworks like React/Angular/Vue that enable components to reactively update the UI when data changes. In fact, Flutter provides a `setState` method that works exactly like it does in [ReactJS](https://reactjs.org/docs/react-component.html#setstate).
+
+Overall, it is not very opinionated about how architect the app. You can use composition to build a bunch of tiny widgets in their own files, or create a few big widgets in a single file.  
+
+### Dependency Management
+
+- pubspec.yaml 👉 package.json
+- [Pub](https://pub.dartlang.org/)  👉 [NPM](https://www.npmjs.com/)
+
+Dependencies are registered in the **pubspec.yaml** and should auto-update on save. 
+
+### Widgets and Components
+
+- Widget 👉  Component
+- `build` 👉 `render`
+
+As you may have guessed, Flutter has components similar to those in React, with a build method that can be called when state changes. 
+
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_typescript</title><path d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" style="fill:#007acc"/></svg></span> index.ts
+</div> ```typescript
+import React from &#39;react&#39;;
+import { StyleSheet, Text, View } from &#39;react-native&#39;;
+
+export default class MyApp extends React.Component {
+  render() {
+    return (
+      &lt;View&gt;
+        &lt;Text&gt;Hello world!&lt;/Text&gt;
+      &lt;/View&gt;
+    );
+  }
+}
+</code></pre><p>
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div> ```dart
+import &lsquo;package:flutter/material.dart&rsquo;;</p>
+<p>void main() =&gt; runApp(MyApp());</p>
+<p>class MyApp extends StatelessWidget {
+@override
+build(context) {
+return Center(
+child: Text(&lsquo;Hello World&rsquo;),
+);
+}
+}</p>
+<pre tabindex="0"><code>
+### Full React Native Comparison
+
+Let&#39;s go ahead and recreate this [styled component](https://facebook.github.io/react-native/docs/state) from the react native docs. You&#39;ll notice the Flutter version on the left has about 65% of the code footprint, with a guarantee of type-safety. Also see the [other examples in this gist](https://gist.github.com/codediodeio/8d59623a3ccac79e9168122b21c4a766). 
+
+<figure><img src="img/flutter-v-react-styles.png"
+         alt="comparison of code footprint between react native and flutter"/>
+</figure>
+
+
+Flutter provides several ways to manage component state. You can use `setState` just like React does, but there are some additional built-in techniques. My personal favorite is to represent stateful data as a `Stream` or Rx `Observable`, then use the `StreamBuilder` widget to conditionally paint the UI. As you can see, this does not require any explicit calls to render the UI, rather it&#39;s based on the most recent value emitted from the stream. The code footprint is improved slightly, but this gains really add up if you find yourself setting the state frequently. 
+
+<figure><img src="img/state-flutter-v-react.png"
+         alt="comparison of code footprint between react native and flutter for managing component state"/>
+</figure>
+
+</code></pre>
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-tradeoffs">The Tradeoffs</a>
+      <ul>
+        <li><a href="#flutter-is-awesome--because-it">Flutter is awesome 🐦🤟 because it&hellip;</a></li>
+        <li><a href="#flutter-is-meh--because-it">Flutter is meh 😒 because it&hellip;</a></li>
+      </ul>
+    </li>
+    <li><a href="#dart-vs-js---syntax">Dart vs JS - Syntax</a>
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#importsexports">Imports/Exports</a></li>
+        <li><a href="#logging">Logging</a></li>
+        <li><a href="#entry-point">Entry Point</a></li>
+        <li><a href="#maps-and-objects">Maps and Objects</a></li>
+        <li><a href="#lists-and-arrays">Lists and Arrays</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#class-constructors">Class Constructors</a></li>
+      </ul>
+    </li>
+    <li><a href="#async-programming">Async Programming</a>
+      <ul>
+        <li><a href="#futures-and-promises">Futures and Promises</a></li>
+        <li><a href="#streams-and-observables">Streams and Observables</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

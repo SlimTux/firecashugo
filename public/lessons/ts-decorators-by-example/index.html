@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>TypeScript Decorators by Example</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.c4f46d65.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/ts-decorators-by-example/" />
+
+    <meta name="description" content="Learn how to use TypeScript decorators to create elegant abstractions with JavaScript code.">
+    <meta name="image" content="https://fireship.io/lessons/ts-decorators-by-example/img/featured.png">
+
+    <meta property="og:title" content="TypeScript Decorators by Example" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/ts-decorators-by-example/" />
+    <meta property="og:image" content="https://fireship.io/lessons/ts-decorators-by-example/img/featured.png" />
+    <meta property="og:description" content="Learn how to use TypeScript decorators to create elegant abstractions with JavaScript code." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="TypeScript Decorators by Example">
+    <meta name="twitter:description" content="Learn how to use TypeScript decorators to create elegant abstractions with JavaScript code.">
+    <meta name="twitter:image" content="https://fireship.io/lessons/ts-decorators-by-example/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/ts-decorators-by-example/" 
+    vimeo=""
+    youtube="O6A-u_FoEX8"
+    free=""
+    next="https://fireship.io/lessons/flutter-widget-positioning-guide/" 
+    prev="https://fireship.io/lessons/angular-router-animations/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-02-03 09:39:23 -0700 -0700" />
+			<meta itemprop="dateModified" content="2019-02-03 09:39:23 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/O6A-u_FoEX8"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/O6A-u_FoEX8" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="Learn how to use TypeScript decorators to create elegant abstractions with JavaScript code." />
+					<meta itemprop="uploadDate" content="2019-02-03 09:39:23 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Feb 3, 2019</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/typescript"><span class="tag tag-typescript">#typescript</span></a>
+						
+							<a href="/tags/react"><span class="tag tag-react">#react</span></a>
+						
+							<a href="/tags/angular"><span class="tag tag-angular">#angular</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/fireship-io/163-typescript-decorators-examples">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="typescript-decorators-by-example" class="gradient-text">
+					TypeScript Decorators by Example
+				</h1>
+
+
+				<p>One of coolest, yet least approachable features in TypeScript is the <a href="https://www.typescriptlang.org/docs/handbook/decorators.html">Decorator</a>. We see Decorators implemented by the Angular Framework for classes like <code>@Component</code>, properties like <code>@ViewChild</code>, and methods like <code>@HostListener</code>, but have you ever considered building your own from scratch? They seem magical 🍄 in practice, but they are just JavaScript functions that allow us to annotate our code or hook into its behavior - this is known as <a href="https://en.wikipedia.org/wiki/Metaprogramming">Metaprogramming</a>.</p>
+<p>There are five ways to use decorators and we will look at examples of each one.</p>
+<ul>
+<li>class declaration</li>
+<li>property</li>
+<li>method</li>
+<li>parameter</li>
+<li>accessor</li>
+</ul>
+<p>Decorators are very good at creating abstractions - almost too good. While it is tempting to create a decorator for all of the things, they are best suited for stable logic that needs to be duplicated in many places.</p>
+<h2 id="class-decorator">Class Decorator</h2>
+<p>A class decorator makes it possible to intercept the <code>constructor</code> of class. They are called when the class is declared, not when a new instance is instantiated.</p>
+<p>Side note - one of the most powerful characteristics of a decoractor is its ability to <em>reflect metadata</em>, but the casual user will rarely need this feature. It is more suitable for use in frameworks, like the Angular Compiler for example, that need to to analyze the codebase to build the final app bundle.</p>
+<h3 id="example">Example</h3>
+<p><strong>Real World Use Case:</strong> When a class is decorated you have to be careful with inheritence because its decendents will not inherit the decorators. Let&rsquo;s freeze the class to prevent inheritence completely.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_ng_component_ts</title><path d="M2.73,6.67,15.85,2V30L4.77,23.88Z" style="fill:#de3641"/><path d="M15.85,2,29.27,6.59,27.08,23.8,15.85,30Z" style="fill:#b13138"/><path d="M15.85,5.14l8.53,18.23H21.47l-1.82-4.16h-3.8V16.73h2.77L15.85,11l-2.33,5.73h2.33v2.48H12.38l-1.63,4.16H7.61Z" style="fill:#fff"/><path d="M27.41,19.65a2.81,2.81,0,0,1,1.41.81,3.72,3.72,0,0,1,.54.72s-1,.69-1.57,1.06a.5.5,0,0,1-.2-.22,1.28,1.28,0,0,0-1.06-.64.92.92,0,0,0-1.12.91.83.83,0,0,0,.1.42,2.23,2.23,0,0,0,1.31.88c1.62.7,2.31,1.16,2.74,1.81a3.28,3.28,0,0,1,.26,2.76A3,3,0,0,1,27.31,30a6.93,6.93,0,0,1-1.72,0,4.15,4.15,0,0,1-2.3-1.2,4,4,0,0,1-.59-.87l.21-.13.84-.48.65-.38.14.2a3,3,0,0,0,.86.82,2.1,2.1,0,0,0,2.2-.11,1,1,0,0,0,.13-1.25,3.72,3.72,0,0,0-1.55-.9A5.6,5.6,0,0,1,24,24.32a3,3,0,0,1-.62-1.13,4.53,4.53,0,0,1,0-1.44A2.76,2.76,0,0,1,25.7,19.6,5.73,5.73,0,0,1,27.41,19.65Zm-5.31.94v.93H19.16v8.36H17.08V21.52H14.14v-.91a8.9,8.9,0,0,1,0-.93h8v.92Z" style="fill:#007acc"/></svg></span> hook.component.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Frozen</span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">IceCream</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Frozen</span><span class="p">(</span><span class="kr">constructor</span><span class="o">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="kr">constructor</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="kr">constructor</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="nx">IceCream</span><span class="p">));</span> <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">FroYo</span> <span class="kr">extends</span> <span class="nx">IceCream</span> <span class="p">{}</span> <span class="c1">// error, cannot be extended
+</span></span></span></code></pre></div><h2 id="property-decorator">Property Decorator</h2>
+<p>All of the examples in this guide use <em>Decorator Factories</em>. This just means the decorator itself is wrapped in a function so we can pass custom arguments to it, i.e <code>@Cool('stuff')</code> Feel free to omit the outer function if you want to apply a decorator without arguments <code>@Cool</code> .</p>
+<p>Property decorators can be extremly useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familar with JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">PropertyDescriptors</a>.</p>
+<h3 id="example-1">Example</h3>
+<p>Let&rsquo;s override the flavor property to surround it in emojis. This allows us to set a regular string value, but run additional code on get/set as <em>middleware</em>, if you will.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_ng_component_ts</title><path d="M2.73,6.67,15.85,2V30L4.77,23.88Z" style="fill:#de3641"/><path d="M15.85,2,29.27,6.59,27.08,23.8,15.85,30Z" style="fill:#b13138"/><path d="M15.85,5.14l8.53,18.23H21.47l-1.82-4.16h-3.8V16.73h2.77L15.85,11l-2.33,5.73h2.33v2.48H12.38l-1.63,4.16H7.61Z" style="fill:#fff"/><path d="M27.41,19.65a2.81,2.81,0,0,1,1.41.81,3.72,3.72,0,0,1,.54.72s-1,.69-1.57,1.06a.5.5,0,0,1-.2-.22,1.28,1.28,0,0,0-1.06-.64.92.92,0,0,0-1.12.91.83.83,0,0,0,.1.42,2.23,2.23,0,0,0,1.31.88c1.62.7,2.31,1.16,2.74,1.81a3.28,3.28,0,0,1,.26,2.76A3,3,0,0,1,27.31,30a6.93,6.93,0,0,1-1.72,0,4.15,4.15,0,0,1-2.3-1.2,4,4,0,0,1-.59-.87l.21-.13.84-.48.65-.38.14.2a3,3,0,0,0,.86.82,2.1,2.1,0,0,0,2.2-.11,1,1,0,0,0,.13-1.25,3.72,3.72,0,0,0-1.55-.9A5.6,5.6,0,0,1,24,24.32a3,3,0,0,1-.62-1.13,4.53,4.53,0,0,1,0-1.44A2.76,2.76,0,0,1,25.7,19.6,5.73,5.73,0,0,1,27.41,19.65Zm-5.31.94v.93H19.16v8.36H17.08V21.52H14.14v-.91a8.9,8.9,0,0,1,0-.93h8v.92Z" style="fill:#007acc"/></svg></span> ice-cream.component.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IceCreamComponent</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@Emoji</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">flavor</span> <span class="o">=</span> <span class="s1">&#39;vanilla&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Property Decorator
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">Emoji() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span>: <span class="kt">Object</span><span class="p">,</span> <span class="nx">key</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">symbol</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">getter</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">setter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;updating flavor...&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">val</span> <span class="o">=</span> <span class="sb">`🍦 </span><span class="si">${</span><span class="nx">next</span><span class="si">}</span><span class="sb"> 🍦`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">get</span><span class="o">:</span> <span class="nx">getter</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">set</span><span class="o">:</span> <span class="nx">setter</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enumerable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">configurable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="method-decorator">Method Decorator</h2>
+<p>Method decoractors allow us override a method&rsquo;s function, change its control flow, and execute additional code before/after it runs.</p>
+<h3 id="example-2">Example</h3>
+<p>The following decoractor will show a confirm message in the browser before executing the method. If the user clicks cancel, it will be bypassed. Notice how we have two decoractors stacked below - they will be applied from top to bottom.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_ng_component_ts</title><path d="M2.73,6.67,15.85,2V30L4.77,23.88Z" style="fill:#de3641"/><path d="M15.85,2,29.27,6.59,27.08,23.8,15.85,30Z" style="fill:#b13138"/><path d="M15.85,5.14l8.53,18.23H21.47l-1.82-4.16h-3.8V16.73h2.77L15.85,11l-2.33,5.73h2.33v2.48H12.38l-1.63,4.16H7.61Z" style="fill:#fff"/><path d="M27.41,19.65a2.81,2.81,0,0,1,1.41.81,3.72,3.72,0,0,1,.54.72s-1,.69-1.57,1.06a.5.5,0,0,1-.2-.22,1.28,1.28,0,0,0-1.06-.64.92.92,0,0,0-1.12.91.83.83,0,0,0,.1.42,2.23,2.23,0,0,0,1.31.88c1.62.7,2.31,1.16,2.74,1.81a3.28,3.28,0,0,1,.26,2.76A3,3,0,0,1,27.31,30a6.93,6.93,0,0,1-1.72,0,4.15,4.15,0,0,1-2.3-1.2,4,4,0,0,1-.59-.87l.21-.13.84-.48.65-.38.14.2a3,3,0,0,0,.86.82,2.1,2.1,0,0,0,2.2-.11,1,1,0,0,0,.13-1.25,3.72,3.72,0,0,0-1.55-.9A5.6,5.6,0,0,1,24,24.32a3,3,0,0,1-.62-1.13,4.53,4.53,0,0,1,0-1.44A2.76,2.76,0,0,1,25.7,19.6,5.73,5.73,0,0,1,27.41,19.65Zm-5.31.94v.93H19.16v8.36H17.08V21.52H14.14v-.91a8.9,8.9,0,0,1,0-.93h8v.92Z" style="fill:#007acc"/></svg></span> ice-cream.component.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IceCreamComponent</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">toppings</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@Confirmable</span><span class="p">(</span><span class="s1">&#39;Are you sure?&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@Confirmable</span><span class="p">(</span><span class="s1">&#39;Are you super, super sure? There is no going back!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">addTopping</span><span class="p">(</span><span class="nx">topping</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">toppings</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">topping</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Method Decorator
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">Confirmable</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span>: <span class="kt">Object</span><span class="p">,</span> <span class="nx">key</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">symbol</span><span class="p">,</span> <span class="nx">descriptor</span>: <span class="kt">PropertyDescriptor</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="p">...</span> <span class="nx">args</span>: <span class="kt">any</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">const</span> <span class="nx">allow</span> <span class="o">=</span> <span class="nx">confirm</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="nx">allow</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">original</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">descriptor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="react-hooks-for-angular-">React Hooks for Angular 🤯</h2>
+<p>You&rsquo;ve probably heard that <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> are a game-changer for the web. Is there any chance Angular can catch up to produce code that is equally beautiful, succinct, and game-changing? Well, yes actually, and it has been able to do this from day one.</p>
+<figure><img src="img/react-hooks-gamechanger.png"
+         alt="React hooks game changer results"/>
+</figure>
+
+<h3 id="usestate-property-decorator">UseState Property Decorator</h3>
+<p>In react, the <em>useState</em> hook provides you with a reactive variable <code>count</code> and a setter <code>setCount</code>.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_reactjs</title><circle cx="16" cy="15.974" r="2.5" style="fill:#00d8ff"/><path d="M16,21.706a28.385,28.385,0,0,1-8.88-1.2,11.3,11.3,0,0,1-3.657-1.958A3.543,3.543,0,0,1,2,15.974c0-1.653,1.816-3.273,4.858-4.333A28.755,28.755,0,0,1,16,10.293a28.674,28.674,0,0,1,9.022,1.324,11.376,11.376,0,0,1,3.538,1.866A3.391,3.391,0,0,1,30,15.974c0,1.718-2.03,3.459-5.3,4.541A28.8,28.8,0,0,1,16,21.706Zm0-10.217a27.948,27.948,0,0,0-8.749,1.282c-2.8.977-4.055,2.313-4.055,3.2,0,.928,1.349,2.387,4.311,3.4A27.21,27.21,0,0,0,16,20.51a27.6,27.6,0,0,0,8.325-1.13C27.4,18.361,28.8,16.9,28.8,15.974a2.327,2.327,0,0,0-1.01-1.573,10.194,10.194,0,0,0-3.161-1.654A27.462,27.462,0,0,0,16,11.489Z" style="fill:#00d8ff"/><path d="M10.32,28.443a2.639,2.639,0,0,1-1.336-.328c-1.432-.826-1.928-3.208-1.327-6.373a28.755,28.755,0,0,1,3.4-8.593h0A28.676,28.676,0,0,1,16.71,5.995a11.376,11.376,0,0,1,3.384-2.133,3.391,3.391,0,0,1,2.878,0c1.489.858,1.982,3.486,1.287,6.859a28.806,28.806,0,0,1-3.316,8.133,28.385,28.385,0,0,1-5.476,7.093,11.3,11.3,0,0,1-3.523,2.189A4.926,4.926,0,0,1,10.32,28.443Zm1.773-14.7a27.948,27.948,0,0,0-3.26,8.219c-.553,2.915-.022,4.668.75,5.114.8.463,2.742.024,5.1-2.036a27.209,27.209,0,0,0,5.227-6.79,27.6,27.6,0,0,0,3.181-7.776c.654-3.175.089-5.119-.713-5.581a2.327,2.327,0,0,0-1.868.089A10.194,10.194,0,0,0,17.5,6.9a27.464,27.464,0,0,0-5.4,6.849Z" style="fill:#00d8ff"/><path d="M21.677,28.456c-1.355,0-3.076-.82-4.868-2.361a28.756,28.756,0,0,1-5.747-7.237h0a28.676,28.676,0,0,1-3.374-8.471,11.376,11.376,0,0,1-.158-4A3.391,3.391,0,0,1,8.964,3.9c1.487-.861,4.01.024,6.585,2.31a28.8,28.8,0,0,1,5.39,6.934,28.384,28.384,0,0,1,3.41,8.287,11.3,11.3,0,0,1,.137,4.146,3.543,3.543,0,0,1-1.494,2.555A2.59,2.59,0,0,1,21.677,28.456Zm-9.58-10.2a27.949,27.949,0,0,0,5.492,6.929c2.249,1.935,4.033,2.351,4.8,1.9.8-.465,1.39-2.363.782-5.434A27.212,27.212,0,0,0,19.9,13.74,27.6,27.6,0,0,0,14.755,7.1c-2.424-2.152-4.39-2.633-5.191-2.169a2.327,2.327,0,0,0-.855,1.662,10.194,10.194,0,0,0,.153,3.565,27.465,27.465,0,0,0,3.236,8.1Z" style="fill:#00d8ff"/></svg></span> hook.jsx
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Example</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Declare a new state variable, which we&#39;ll call &#34;count&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">You</span> <span class="nx">clicked</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span> <span class="nx">times</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Click</span> <span class="nx">me</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>We can achieve a <em>similar</em> results with a property decorator that will first define the <code>count</code> on the component - this is trival because Angular performs automatic change detection. We then use the name of this property to define a setter with the name of <code>setCount</code>. Usage looks like this:</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_ng_component_ts</title><path d="M2.73,6.67,15.85,2V30L4.77,23.88Z" style="fill:#de3641"/><path d="M15.85,2,29.27,6.59,27.08,23.8,15.85,30Z" style="fill:#b13138"/><path d="M15.85,5.14l8.53,18.23H21.47l-1.82-4.16h-3.8V16.73h2.77L15.85,11l-2.33,5.73h2.33v2.48H12.38l-1.63,4.16H7.61Z" style="fill:#fff"/><path d="M27.41,19.65a2.81,2.81,0,0,1,1.41.81,3.72,3.72,0,0,1,.54.72s-1,.69-1.57,1.06a.5.5,0,0,1-.2-.22,1.28,1.28,0,0,0-1.06-.64.92.92,0,0,0-1.12.91.83.83,0,0,0,.1.42,2.23,2.23,0,0,0,1.31.88c1.62.7,2.31,1.16,2.74,1.81a3.28,3.28,0,0,1,.26,2.76A3,3,0,0,1,27.31,30a6.93,6.93,0,0,1-1.72,0,4.15,4.15,0,0,1-2.3-1.2,4,4,0,0,1-.59-.87l.21-.13.84-.48.65-.38.14.2a3,3,0,0,0,.86.82,2.1,2.1,0,0,0,2.2-.11,1,1,0,0,0,.13-1.25,3.72,3.72,0,0,0-1.55-.9A5.6,5.6,0,0,1,24,24.32a3,3,0,0,1-.62-1.13,4.53,4.53,0,0,1,0-1.44A2.76,2.76,0,0,1,25.7,19.6,5.73,5.73,0,0,1,27.41,19.65Zm-5.31.94v.93H19.16v8.36H17.08V21.52H14.14v-.91a8.9,8.9,0,0,1,0-.93h8v.92Z" style="fill:#007acc"/></svg></span> hook.component.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BehaviorSubject</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Component</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">template</span><span class="o">:</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;p&gt;You clicked {{count.value}} times&lt;/p&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;button (click)=&#34;setCount(count.value + 1)&#34;&gt;Click Me&lt;/button&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  `</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">HookComponent</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@UseState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">setCount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And the decoractor implementation is just five lines of code. We just set an initial value, then find the cooresponding</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">UseState</span><span class="p">(</span><span class="nx">seed</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">seed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">target</span><span class="p">[</span><span class="sb">`set</span><span class="si">${</span><span class="nx">key</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^\w/</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span><span class="si">}</span><span class="sb">`</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="useeffect-method-decorator">UseEffect Method Decorator</h3>
+<p>The <a href="https://reactjs.org/docs/hooks-effect.html">effect hook</a> hook simply consolidates the component lifecycle of <code>componentDidMount</code> and <code>componentDidUpdate</code> into a single callback.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_reactjs</title><circle cx="16" cy="15.974" r="2.5" style="fill:#00d8ff"/><path d="M16,21.706a28.385,28.385,0,0,1-8.88-1.2,11.3,11.3,0,0,1-3.657-1.958A3.543,3.543,0,0,1,2,15.974c0-1.653,1.816-3.273,4.858-4.333A28.755,28.755,0,0,1,16,10.293a28.674,28.674,0,0,1,9.022,1.324,11.376,11.376,0,0,1,3.538,1.866A3.391,3.391,0,0,1,30,15.974c0,1.718-2.03,3.459-5.3,4.541A28.8,28.8,0,0,1,16,21.706Zm0-10.217a27.948,27.948,0,0,0-8.749,1.282c-2.8.977-4.055,2.313-4.055,3.2,0,.928,1.349,2.387,4.311,3.4A27.21,27.21,0,0,0,16,20.51a27.6,27.6,0,0,0,8.325-1.13C27.4,18.361,28.8,16.9,28.8,15.974a2.327,2.327,0,0,0-1.01-1.573,10.194,10.194,0,0,0-3.161-1.654A27.462,27.462,0,0,0,16,11.489Z" style="fill:#00d8ff"/><path d="M10.32,28.443a2.639,2.639,0,0,1-1.336-.328c-1.432-.826-1.928-3.208-1.327-6.373a28.755,28.755,0,0,1,3.4-8.593h0A28.676,28.676,0,0,1,16.71,5.995a11.376,11.376,0,0,1,3.384-2.133,3.391,3.391,0,0,1,2.878,0c1.489.858,1.982,3.486,1.287,6.859a28.806,28.806,0,0,1-3.316,8.133,28.385,28.385,0,0,1-5.476,7.093,11.3,11.3,0,0,1-3.523,2.189A4.926,4.926,0,0,1,10.32,28.443Zm1.773-14.7a27.948,27.948,0,0,0-3.26,8.219c-.553,2.915-.022,4.668.75,5.114.8.463,2.742.024,5.1-2.036a27.209,27.209,0,0,0,5.227-6.79,27.6,27.6,0,0,0,3.181-7.776c.654-3.175.089-5.119-.713-5.581a2.327,2.327,0,0,0-1.868.089A10.194,10.194,0,0,0,17.5,6.9a27.464,27.464,0,0,0-5.4,6.849Z" style="fill:#00d8ff"/><path d="M21.677,28.456c-1.355,0-3.076-.82-4.868-2.361a28.756,28.756,0,0,1-5.747-7.237h0a28.676,28.676,0,0,1-3.374-8.471,11.376,11.376,0,0,1-.158-4A3.391,3.391,0,0,1,8.964,3.9c1.487-.861,4.01.024,6.585,2.31a28.8,28.8,0,0,1,5.39,6.934,28.384,28.384,0,0,1,3.41,8.287,11.3,11.3,0,0,1,.137,4.146,3.543,3.543,0,0,1-1.494,2.555A2.59,2.59,0,0,1,21.677,28.456Zm-9.58-10.2a27.949,27.949,0,0,0,5.492,6.929c2.249,1.935,4.033,2.351,4.8,1.9.8-.465,1.39-2.363.782-5.434A27.212,27.212,0,0,0,19.9,13.74,27.6,27.6,0,0,0,14.755,7.1c-2.424-2.152-4.39-2.633-5.191-2.169a2.327,2.327,0,0,0-.855,1.662,10.194,10.194,0,0,0,.153,3.565,27.465,27.465,0,0,0,3.236,8.1Z" style="fill:#00d8ff"/></svg></span> hook.jsx
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Update the document title using the browser API
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="sb">`You clicked </span><span class="si">${</span><span class="nx">count</span><span class="si">}</span><span class="sb"> times`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span></code></pre></div><p>This is very easy to emulate with a method decorator because we can apply the function descriptor to Angular&rsquo;s equivelent <code>ngOnInit</code> and <code>ngAfterViewChecked</code> lifecycle hooks.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_ng_component_ts</title><path d="M2.73,6.67,15.85,2V30L4.77,23.88Z" style="fill:#de3641"/><path d="M15.85,2,29.27,6.59,27.08,23.8,15.85,30Z" style="fill:#b13138"/><path d="M15.85,5.14l8.53,18.23H21.47l-1.82-4.16h-3.8V16.73h2.77L15.85,11l-2.33,5.73h2.33v2.48H12.38l-1.63,4.16H7.61Z" style="fill:#fff"/><path d="M27.41,19.65a2.81,2.81,0,0,1,1.41.81,3.72,3.72,0,0,1,.54.72s-1,.69-1.57,1.06a.5.5,0,0,1-.2-.22,1.28,1.28,0,0,0-1.06-.64.92.92,0,0,0-1.12.91.83.83,0,0,0,.1.42,2.23,2.23,0,0,0,1.31.88c1.62.7,2.31,1.16,2.74,1.81a3.28,3.28,0,0,1,.26,2.76A3,3,0,0,1,27.31,30a6.93,6.93,0,0,1-1.72,0,4.15,4.15,0,0,1-2.3-1.2,4,4,0,0,1-.59-.87l.21-.13.84-.48.65-.38.14.2a3,3,0,0,0,.86.82,2.1,2.1,0,0,0,2.2-.11,1,1,0,0,0,.13-1.25,3.72,3.72,0,0,0-1.55-.9A5.6,5.6,0,0,1,24,24.32a3,3,0,0,1-.62-1.13,4.53,4.53,0,0,1,0-1.44A2.76,2.76,0,0,1,25.7,19.6,5.73,5.73,0,0,1,27.41,19.65Zm-5.31.94v.93H19.16v8.36H17.08V21.52H14.14v-.91a8.9,8.9,0,0,1,0-.93h8v.92Z" style="fill:#007acc"/></svg></span> hook.component.ts
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Component</span><span class="p">(...)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@UseEffect</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">onEffect() {</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="sb">`You clicked </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb"> times`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">/// Implementation Details:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">UseEffect() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">target</span><span class="p">.</span><span class="nx">ngOnInit</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">target</span><span class="p">.</span><span class="nx">ngAfterViewChecked</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#class-decorator">Class Decorator</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#property-decorator">Property Decorator</a>
+      <ul>
+        <li><a href="#example-1">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#method-decorator">Method Decorator</a>
+      <ul>
+        <li><a href="#example-2">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#react-hooks-for-angular-">React Hooks for Angular 🤯</a>
+      <ul>
+        <li><a href="#usestate-property-decorator">UseState Property Decorator</a></li>
+        <li><a href="#useeffect-method-decorator">UseEffect Method Decorator</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

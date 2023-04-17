@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>forms on Fireship</title>
+    <link>https://fireship.io/tags/forms/</link>
+    <description>Recent content in forms on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Apr 2020 15:14:17 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/forms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autosave Vue Forms with Firestore</title>
+      <link>https://fireship.io/lessons/vue-autosaving-forms-with-firestore/</link>
+      <pubDate>Tue, 07 Apr 2020 15:14:17 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/vue-autosaving-forms-with-firestore/</guid>
+      <description>Modern applications that accept complex user inputs often provide an automatic save action that runs in the background, such as Google Docs and Microsoft Office:
+Microsoft Office files are auto-saved
+The following lesson builds a reactive Vue form that automatically syncs the user&amp;rsquo;s input to a backend database - Firestore. It keeps track of the state of the form, and when modified, waits for a short debounce before writing the changes to the backend database.</description>
+    </item>
+    
+    <item>
+      <title>Auto-save Reactive Form with Firestore</title>
+      <link>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</link>
+      <pubDate>Mon, 28 May 2018 14:17:17 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</guid>
+      <description>Forms are one of the most critical, yet most cumbersome aspects of app development. They require a ton of HTML markup and require complex validation rules for a good user experience. Almost all forms must be synced to a backend database, leaving us faced a state management conundrum that is not always easy to solve. In this lesson, my goal is to provide you with a reliable solution for syncing your frontend forms to any backend database.</description>
+    </item>
+    
+    <item>
+      <title>Angular Reactive Forms Basics Guide</title>
+      <link>https://fireship.io/lessons/basics-reactive-forms-in-angular/</link>
+      <pubDate>Mon, 21 May 2018 14:03:18 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/basics-reactive-forms-in-angular/</guid>
+      <description>As part of the Angular Basics Series, we will be taking a comprehensive look at Reactive Forms from the ground up. The official documentation is a very long read, so this guide is designed to help you master the basics by focusing on the bare essential concepts you must know.
+Reactive Forms for PROs Advanced Auto-saving Firestore Form Email/Password Auth with Reactive Forms 1. Reactive Forms Fundamentals At this point, it is assumed that you have an existing Angular project started with the CLI v6+.</description>
+    </item>
+    
+  </channel>
+</rss>

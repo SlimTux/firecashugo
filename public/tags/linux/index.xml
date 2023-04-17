@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Fireship</title>
+    <link>https://fireship.io/tags/linux/</link>
+    <description>Recent content in linux on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Mar 2023 13:08:58 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Carta de achamento da America Portuguesa</title>
+      <link>https://fireship.io/lessons/ffmpeg-useful-techniques/</link>
+      <pubDate>Wed, 01 Mar 2023 13:08:58 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/ffmpeg-useful-techniques/</guid>
+      <description>Sobre a carta de Achamento do Brasil Questões 1. Como são descritos os Ameríndios? Pardos Bons rostos, bons narizes; Bem feitos. Sem-vergonhas(literalmente) 2. Que presentes lhe são dados Galinha(s) Ramal Sombreiro 3. Como se chamava o piloto? Afonso Lopes 4. Qual a importância dos pilotos neste texto? Eram o primeiro à tomar iniciativa nas expedições. 5. ø 6.Que costumes distintos surpreendem os portugues? Nudez &amp;amp; inocência. 7. Como é descrito o capitão Bem vestido, usava joias « &amp;ldquo;(&amp;hellip;), com um colar de ouro mui grande ao pescoço(&amp;hellip;) &amp;quot; » 8.</description>
+    </item>
+    
+    <item>
+      <title>Cron Example Schedules</title>
+      <link>https://fireship.io/snippets/crontab-crash-course/</link>
+      <pubDate>Mon, 08 Apr 2019 07:41:02 -0700</pubDate>
+      
+      <guid>https://fireship.io/snippets/crontab-crash-course/</guid>
+      <description>Cron is a long-running process used on Linux servers that ticks at specific times based on the crontab pattern (with a minimum of 1 minute of granularity). It is used to setup cronjobs, which are background tasks that get executed at a specific time or interval. Also, Firebase now has a time-triggered Cloud Function that can be set with crontab. The following guide will teach you how to schedule cronjobs in this format.</description>
+    </item>
+    
+  </channel>
+</rss>

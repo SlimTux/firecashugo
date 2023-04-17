@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine-learning on Fireship</title>
+    <link>https://fireship.io/tags/machine-learning/</link>
+    <description>Recent content in machine-learning on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Mar 2019 18:23:18 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BigQuery ML Quickstart</title>
+      <link>https://fireship.io/lessons/bigquery-ml-quickstart/</link>
+      <pubDate>Wed, 13 Mar 2019 18:23:18 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/bigquery-ml-quickstart/</guid>
+      <description>BigQuery is a serverless Data Warehouse that makes it easy to process and query massive amounts of data. It supports standard SQL queries in a web-based UI, via the command line, or with a variety of client libraries. In addition, it recently landed support for integrated machine learning, allowing you to build predictive models without data science skills.
+What can you do with Big Query?
+Stream data to business intelligence tools like Data Studio, Tableau, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

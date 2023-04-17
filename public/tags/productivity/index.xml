@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on Fireship</title>
+    <link>https://fireship.io/tags/productivity/</link>
+    <description>Recent content in productivity on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Nov 2021 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS Code Magic Tricks Course</title>
+      <link>https://fireship.io/courses/vscode-tricks/</link>
+      <pubDate>Tue, 02 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/</guid>
+      <description>The VS Code Magic Tricks course will teach you how to write code faster and make you a happier developer. It demonstrates dozens of small optimizations that result in long-term productivity gains as a programmer.
+🧠 What will I Learn? 👨‍🎤 Write better code faster 🎹 Edit code in rhythm with your keyboard 🕹️ Tweak settings for optimal productivity 🤖 Automate repetitive tasks 🦺 Avoid common pitfalls and bottlenecks 🎨 Leverage powerful extensions 🚀 Advanced IDE features like Docker &amp;amp; remote repos ⚡ Is the Course Updated?</description>
+    </item>
+    
+    <item>
+      <title>Firebase Emulator Advanced Usage Guide</title>
+      <link>https://fireship.io/lessons/firebase-emulator-advanced/</link>
+      <pubDate>Sun, 31 May 2020 19:11:38 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-emulator-advanced/</guid>
+      <description>The Firebase emulator suite allows developers to run a mock Firebase environment locally. Last week, Firebase released a new feature called the Emulator UI to visualize and manage Firestore (and Realtime DB) from the browser. The following lesson contains a variety of advanced techniques for setting up a Firebase development environment.
+🌠Did you know? The new @firebase Emulator UI makes Firestore available on the browser window...
+With a little bit of JS, you can extend the UI with your own custom stuff, like buttons to populate fake data.</description>
+    </item>
+    
+    <item>
+      <title>Web Development Setup Guide for Windows with Linux (WSL)</title>
+      <link>https://fireship.io/lessons/windows-10-for-web-dev/</link>
+      <pubDate>Fri, 03 Apr 2020 13:22:42 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/windows-10-for-web-dev/</guid>
+      <description>Historically, Windows has not been been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched Windows Subsystem for Linux or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps.
+Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified ELF64 binaries.</description>
+    </item>
+    
+  </channel>
+</rss>

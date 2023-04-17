@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google-calendar on Fireship</title>
+    <link>https://fireship.io/tags/google-calendar/</link>
+    <description>Recent content in google-calendar on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Sep 2018 17:55:33 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/google-calendar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the Google Calendar API</title>
+      <link>https://fireship.io/lessons/google-calendar-api-with-firebase/</link>
+      <pubDate>Mon, 24 Sep 2018 17:55:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/google-calendar-api-with-firebase/</guid>
+      <description>I use Google Calendar almost every day and really appreciate apps that can coordinate important events for me automatically. Today, we&amp;rsquo;ll learn how to integrate Google&amp;rsquo;s JavaScript API client with Firebase to make authenticated requests to the Calendar API on the behalf of a user. This article was inspired by the real-world requirements of a Broadway Life, a tour company in NYC and needs to perform full CRUD operations on their clients&amp;rsquo; calendar.</description>
+    </item>
+    
+  </channel>
+</rss>

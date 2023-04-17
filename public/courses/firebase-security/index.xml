@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firebase Security Course on Fireship</title>
+    <link>https://fireship.io/courses/firebase-security/</link>
+    <description>Recent content in Firebase Security Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Dec 2020 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/firebase-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firebase Security in 100 Seconds</title>
+      <link>https://fireship.io/courses/firebase-security/intro-firebase-security-100-seconds/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/intro-firebase-security-100-seconds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://fireship.io/courses/firebase-security/intro-get-started/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/intro-get-started/</guid>
+      <description>Important Links Project Source Code Security Rules Docs Firestore Data Modeling Course 1. Create a Firebase Project Create a Firebase project or use an existing one.
+2. Create a Frontend Project Create a frontend project or use an existing one. As a bare minimum requirement, simply initialize an NPM project using the command below.
+command line npm init -y # OR npx create-react-app myapp 3. Connect your Local Code to Firebase command line npm -g firebase-tools firebase-login firebase init # choose firestore, functions, storage, and emulators </description>
+    </item>
+    
+    <item>
+      <title>Match</title>
+      <link>https://fireship.io/courses/firebase-security/basics-paths/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/basics-paths/</guid>
+      <description> file_type_firebase firestore.rules match /users/jeffd23 { // Single document } match /users/{userId} { // Single Collection } match /posts/{postId=**} { // Recursive wildcard, includes all subcollections } </description>
+    </item>
+    
+    <item>
+      <title>Allow - Read, Write, &amp; Beyond</title>
+      <link>https://fireship.io/courses/firebase-security/basics-allow/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/basics-allow/</guid>
+      <description> file_type_firebase firestore.rules match /users/{docId=**} { allow read, write; allow get; allow list; allow create; allow update; allow delete; } </description>
+    </item>
+    
+    <item>
+      <title>Conditions</title>
+      <link>https://fireship.io/courses/firebase-security/basics-conditions/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/basics-conditions/</guid>
+      <description>See the full Firestore Rules Operators List</description>
+    </item>
+    
+    <item>
+      <title>Common Examples</title>
+      <link>https://fireship.io/courses/firebase-security/basics-examples/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/basics-examples/</guid>
+      <description> file_type_firebase firestore.rules match /users/{userId} { allow read: if request.auth.uid != null; allow write: if request.auth.uid == userId; } match /todos/{docId} { allow read: if resource.data.status == &amp;#39;published&amp;#39;; allow create: if request.auth.uid == request.resource.data.uid &amp;amp;&amp;amp; request.time == request.resource.data.createdAt; allow update: if request.auth.uid == resource.data.uid &amp;amp;&amp;amp; request.resource.data.keys().hasOnly([&amp;#39;text&amp;#39;, &amp;#39;status&amp;#39;]); } </description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://fireship.io/courses/firebase-security/advanced-functions/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/advanced-functions/</guid>
+      <description> file_type_firebase firestore.rules match /users/{userId} { allow read: if isLoggedIn(); allow write: if belongsTo(userId); } match /todos/{docId} { allow read: if resource.data.status == &amp;#39;published&amp;#39;; allow create: if canCreateTodo(); allow update: if belongsTo() &amp;amp;&amp;amp; request.resource.data.keys().hasOnly([&amp;#39;text&amp;#39;, &amp;#39;status&amp;#39;]); } function isLoggedIn() { return request.auth.uid != null; } function belongsTo(userId) { return request.auth.uid == userId || request.auth.uid == resource.data.uid; } function canCreateTodo() { let uid = request.auth.uid; let hasValidTimestamp = request.time == request.resource.data.createdAt; return belongsTo(uid) &amp;amp;&amp;amp; hasValidTimestamp; } </description>
+    </item>
+    
+    <item>
+      <title>Read Other Documents</title>
+      <link>https://fireship.io/courses/firebase-security/advanced-read-db/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/advanced-read-db/</guid>
+      <description> file_type_firebase firestore.rules get(/databases/$(database)/documents/users/$(request.auth.uid)) exists(/databases/$(database)/documents/users/$(SOME_DOC_ID)) </description>
+    </item>
+    
+    <item>
+      <title>Chat Example</title>
+      <link>https://fireship.io/courses/firebase-security/advanced-chat-example/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/advanced-chat-example/</guid>
+      <description>Firebase Rules for hypothertical chat application
+file_type_firebase firestore.rules rules_version = &amp;#39;2&amp;#39;; service cloud.firestore { match /databases/{database}/documents { match /{document=**} { allow read, write: if false; } match /messages/{docId} { allow read: if request.auth.uid != null; allow create: if canCreateMessage(); } function canCreateMessage() { let isSignedIn = request.auth.uid != null; let isOwner = request.auth.uid == request.resource.data.uid; let isNotTooLong = request.resource.data.text.size() &amp;lt; 255; let isNow = request.time == request.resource.data.createdAt; let isNotBanned = exists( /databases/$(database)/documents/banned/$(request.</description>
+    </item>
+    
+    <item>
+      <title>Role-based Auth Example</title>
+      <link>https://fireship.io/courses/firebase-security/advanced-roles-example/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/advanced-roles-example/</guid>
+      <description>file_type_firebase firestore.rules rules_version = &amp;#39;2&amp;#39;; service cloud.firestore { match /databases/{database}/documents { match /users/{userId} { allow read: if isSignedIn(); allow update, delete: if hasAnyRole([&amp;#39;admin&amp;#39;]); } match /posts/{postId} { allow read: if ( isSignedIn() &amp;amp;&amp;amp; resource.data.published ) || hasAnyRole([&amp;#39;admin&amp;#39;]); allow create: if isValidNewPost() &amp;amp;&amp;amp; hasAnyRole([&amp;#39;author&amp;#39;]); allow update: if isValidUpdatedPost() &amp;amp;&amp;amp; hasAnyRole([&amp;#39;author&amp;#39;, &amp;#39;editor&amp;#39;, &amp;#39;admin&amp;#39;]); allow delete: if hasAnyRole([&amp;#39;admin&amp;#39;]); } function isSignedIn() { return request.auth != null; } function hasAnyRole(roles) { return isSignedIn() &amp;amp;&amp;amp; get(/databases/$(database)/documents/users/$(request.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://fireship.io/courses/firebase-security/testing-setup/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/testing-setup/</guid>
+      <description>Create the files test/rules.test.js and test/helpers.js.
+Install Jest and the Firebase Testing Package.
+command line npm install --save-dev jest @firebase/rules-unit-testing firebase-admin Add the following script.
+file_type_npm package.json &amp;#34;scripts&amp;#34;: { &amp;#34;test&amp;#34;: &amp;#34;jest --env=node --forceExit&amp;#34;, }, </description>
+    </item>
+    
+    <item>
+      <title>Setup &amp; Teardown</title>
+      <link>https://fireship.io/courses/firebase-security/testing-helpers/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/testing-helpers/</guid>
+      <description>Create a file to manage setup and teardown for tests.
+file_type_js helpers.js const { loadFirestoreRules, initializeTestApp, clearFirestoreData, initializeAdminApp } = require(&amp;#39;@firebase/rules-unit-testing&amp;#39;); const { readFileSync } = require(&amp;#39;fs&amp;#39;); module.exports.setup = async (auth, data) =&amp;gt; { const projectId = `fireship-dev-17429`; const app = initializeTestApp({ projectId, auth }); // console.log(app.auth().currentUser) const db = app.firestore(); // Write mock documents before rules if (data) { const admin = initializeAdminApp({ projectId, }); for (const key in data) { const ref = admin.</description>
+    </item>
+    
+    <item>
+      <title>Write Tests</title>
+      <link>https://fireship.io/courses/firebase-security/testing-rules/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/testing-rules/</guid>
+      <description>command line firebase emulators:start file_type_js rules.test.js describe(&amp;#39;Database rules&amp;#39;, () =&amp;gt; { let db; // Applies only to tests in this describe block beforeAll(async () =&amp;gt; { db = await setup(mockUser, mockData); }); afterAll(async () =&amp;gt; { await teardown(); }); test(&amp;#39;deny when reading an unauthorized collection&amp;#39;, async () =&amp;gt; { const ref = db.collection(&amp;#39;secret-stuff&amp;#39;); expect( await assertFails( ref.get() ) ); }); test(&amp;#39;allow admin to read unpublished posts&amp;#39;, async () =&amp;gt; { const ref = db.</description>
+    </item>
+    
+    <item>
+      <title>Debugging Report</title>
+      <link>https://fireship.io/courses/firebase-security/testing-report/</link>
+      <pubDate>Fri, 20 Nov 2020 10:11:30 -0200</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/testing-report/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

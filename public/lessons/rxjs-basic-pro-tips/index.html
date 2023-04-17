@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Top Ten RxJS Concepts</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.9e4943d4.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/rxjs-basic-pro-tips/" />
+
+    <meta name="description" content="Code this, not that! RxJS Edition.">
+    <meta name="image" content="https://fireship.io/lessons/rxjs-basic-pro-tips/img/featured.png">
+
+    <meta property="og:title" content="Top Ten RxJS Concepts" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/rxjs-basic-pro-tips/" />
+    <meta property="og:image" content="https://fireship.io/lessons/rxjs-basic-pro-tips/img/featured.png" />
+    <meta property="og:description" content="Code this, not that! RxJS Edition." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Top Ten RxJS Concepts">
+    <meta name="twitter:description" content="Code this, not that! RxJS Edition.">
+    <meta name="twitter:image" content="https://fireship.io/lessons/rxjs-basic-pro-tips/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/rxjs-basic-pro-tips/" 
+    vimeo=""
+    youtube="ewcoEYS85Co"
+    free=""
+    next="https://fireship.io/lessons/flutter-slider-like-reflectly/" 
+    prev="https://fireship.io/lessons/vscode-cloud-coder-tensorflow/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-03-24 09:19:40 -0700 -0700" />
+			<meta itemprop="dateModified" content="2020-02-05 09:19:40 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/ewcoEYS85Co"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/ewcoEYS85Co" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="Code this, not that! RxJS Edition." />
+					<meta itemprop="uploadDate" content="2019-03-24 09:19:40 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Feb 5, 2020</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/rxjs"><span class="tag tag-rxjs">#rxjs</span></a>
+						
+							<a href="/tags/javascript"><span class="tag tag-javascript">#javascript</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/fireship-io/175-code-this-not-that-rxjs">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="top-ten-rxjs-concepts" class="gradient-text">
+					Top Ten RxJS Concepts
+				</h1>
+
+
+				<p>RxJS is one of the most difficult JavaScript libraries to learn, but also one of the most rewarding. The following lesson covers the concepts I consider most important to master, while avoiding common pitfalls.</p>
+<figure><img src="img/rxjs-trends.png"
+         alt="RxJS is one of the most popular functional JS libraries as of 2019, generating more NPM downloads than the big-three UI frameworks and continuing to grow fast"/><figcaption>
+            <p>RxJS is one of the most popular functional JS libraries as of 2019, generating more NPM downloads than the big-three UI frameworks and continuing to grow fast</p>
+        </figcaption>
+</figure>
+
+<p>In this lesson, I am going to teach you RxJS (Reactive Extensions for JavaScript) basics in 20 simple steps. My goal is to boil down complex RxJS concepts into the bare essentials. We&rsquo;re not going to cover every single operator and class - only the most commonly used ones.  It is going to be a lot easier to learn than you might think.</p>
+<h2 id="1-what-is-rxjs">1. What is RxJS?</h2>
+<p>There are different ways to think about RxJS depending on your background. To me, RxJs is &hellip;</p>
+<p>&hellip; a utility for handling asynchronous data streams.</p>
+<p>&hellip; just like functional vanilla JavaScript in many ways, but with the dimension of time added.</p>
+<p>&hellip; like a Promise that can resolve over and over again.</p>
+<p>I like to think of RxJS terminology in a highly simplified way.</p>
+<ol>
+<li>Observable - An <em>array</em>  that is built over time.</li>
+<li>Subscription - A <em>for loop</em>  that happens over time.</li>
+<li>Emit - When an Observable spits out a value because something subscribed to it.</li>
+<li>Operator - Functions that alter the the way Observables emit values.</li>
+</ol>
+<img src="/images/observable-animation.gif" alt="animation of rx observable" class="content-image" />
+<h3 id="excellent-resources">Excellent Resources</h3>
+<ul>
+<li><a href="http://rxmarbles.com/">RxMarbles</a> - A Visual Guide to Rx</li>
+<li><a href="https://www.learnrxjs.io/">LearnRxJS</a> - Simplified documentation.</li>
+</ul>
+<h2 id="2-create-observables---define-the-stream">2. Create Observables - Define the stream</h2>
+<p>There are many ways to create Observables. Remember, a stream can be anything. The most fundamental method is <code>create()</code>, which allows you to emit values to the subscriber by calling <code>next()</code>  in the function.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">observable</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">observer</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;hello&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;world&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// hello
+</span></span></span><span class="line"><span class="cl"><span class="c1">// world
+</span></span></span></code></pre></div><p>That&rsquo;s neat, but RxJS has some powerful helpers that allow us to create observables automatically.</p>
+<h3 id="observable-from-dom-events">Observable from DOM Events</h3>
+<p>Let&rsquo;s create an observable from mouse clicks.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">clicks</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">clicks</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">click</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">click</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// click around the web page...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// MouseEvent&lt;data&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// MouseEvent&lt;data&gt;
+</span></span></span></code></pre></div><h3 id="observable-from-promise">Observable from Promise</h3>
+<p>Many JavaScript libraries deal in Promises, which could pose an issue. Luckily, you can easily convert a promise to an observable with <code>fromPromise()</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;resolved!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">obsvPromise</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromPromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">obsvPromise</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// wail 1 second...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// resolved!
+</span></span></span></code></pre></div><p class="tip">You can also convert an observable right back to a promise using the `toPromise()` method. </p>
+<h3 id="observable-timer">Observable Timer</h3>
+<p>You can set timers. It completes when the timer runs out.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">timer</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">done</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ding!!!&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="observable-time-interval">Observable Time Interval</h3>
+<p>You can tell an observable to emit something for every interval.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">interval</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">i</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">// every second for eternity...
+</span></span></span></code></pre></div><h3 id="observable-of-static-values">Observable of Static Values</h3>
+<p>Lastly, we are going to create an observable from some static values. It completes immediately after emitting its values.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">mashup</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;anything&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;you&#39;</span><span class="p">,</span> <span class="s1">&#39;want&#39;</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="p">{</span><span class="nx">cool</span><span class="o">:</span> <span class="s1">&#39;stuff&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">mashup</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">val</span> <span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// anything
+</span></span></span><span class="line"><span class="cl"><span class="c1">// you,want
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 23
+</span></span></span><span class="line"><span class="cl"><span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1">// [object Object]
+</span></span></span></code></pre></div><h2 id="3-unsubscribe---turn-off-the-stream">3. Unsubscribe - Turn off the stream</h2>
+<p>When an Observable is done, it emits a <code>complete</code> notification.</p>
+<p>You need to <strong>know when your Observable completes</strong>, otherwise your streams might flood the available memory in your app. If you have a continuous stream, you need to shut it off at some point.</p>
+<p>Some observables complete automatically, so there is no need to unsubscribe (but it doesn&rsquo;t hurt if you do). You can find out if an observable is complete by calling <code>finally()</code>. For example at timer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">timer</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">finally</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All done!&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// wait 1 second...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// All done!
+</span></span></span></code></pre></div><p>Others will run forever, such as interval&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">interval</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">finally</span><span class="p">(()</span>  <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All done!&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">// and so on...
+</span></span></span></code></pre></div><p>You can turn them off by keeping the subscription in its own variable, then calling <code>unsubscribe()</code>.You can also complete Observables with operators as we will see later.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subscription</span> <span class="o">=</span> <span class="nx">interval</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">subscription</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// &#39;All Done&#39;
+</span></span></span></code></pre></div><h2 id="4-hot-vs-cold-observables">4. Hot vs Cold Observables</h2>
+<p>This is somewhat confusing topic that should be really simple. Check out Ben Lesh&rsquo;s post on <a href="https://medium.com/@benlesh/hot-vs-cold-observables-f8094ed53339">Hot vs. Cold Observables on Medium</a></p>
+<ul>
+<li><strong>Cold Observables</strong> start emitting or creating values only when the subscription starts, like a typical YouTube video. Each subscriber will see the same sequence (or pattern) of events from start to finish.</li>
+<li><strong>Hot Observables</strong> are always being updated with new values, like a live stream on YouTube. When you subscribe you start with the most recent value and only see future changes.</li>
+</ul>
+<h3 id="cold-observable-example">Cold Observable Example</h3>
+<p>We know an Observable is cold if we subscribe at the same time, but get a different value.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">cold</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="p">(</span><span class="nx">observer</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">cold</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber A: </span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nx">cold</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber B: </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Subscriber A: 0.2298339030
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Subscriber B: 0.9720023832
+</span></span></span></code></pre></div><p>They both subscribed to the same Observable with different results. This happens because the cold Observable doesn&rsquo;t generate the random number until after the subscription starts.</p>
+<h3 id="hot-observable-example">Hot Observable Example</h3>
+<p>A hot observable gets its values from an outside source. We can make it <em>hot</em> by simply moving the random number outside of the observable creation function.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">hot</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">observer</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="nx">x</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">hot</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber A: </span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hot</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber B: </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Subscriber A: 0.312580103
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Subscriber B: 0.312580103
+</span></span></span></code></pre></div><p>But how do we make an already cold observable hot? We can make a cold Observable hot by simply calling <code>publish()</code> on it. This will allow the subscribers to share the same values in realtime. To make it start emitting values, you call <code>connect()</code> after the subscription has started.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">cold</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="p">(</span><span class="nx">observer</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">hot</span> <span class="o">=</span> <span class="nx">cold</span><span class="p">.</span><span class="nx">publish</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">hot</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber A: {a}`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hot</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Subscriber B: {b}`</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">hot</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">/// Subscriber A: 0.7122882102
+</span></span></span><span class="line"><span class="cl"><span class="c1">/// Subscriber B: 0.7122882102
+</span></span></span></code></pre></div><h2 id="5-map---control-the-emitted-values">5. Map - Control the Emitted Values</h2>
+<p>The single most powerful RxJS operator is <code>map</code>. It allows you to modify the emitted values based any logic you desire. It&rsquo;s the chef&rsquo;s knife of RxJS operators - you will use it often.</p>
+<p>Here we have an observable of numbers, let&rsquo;s map them to their logarithm.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">numbers</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span> <span class="p">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 2.3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 4.6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 6.9
+</span></span></span></code></pre></div><p>Another common use of <code>map</code> is converting a JSON response from an API to a JavaScript object.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">apiCall</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">json</span> <span class="p">=&gt;</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// emit as JS object, rather than useless JSON string
+</span></span></span></code></pre></div><p>Similar operators: <code>mapTo</code></p>
+<h2 id="6-do---just-do-it">6. Do - Just do it</h2>
+<p>The <code>do</code> operator allows you to run code at any point in the Observable, without producing side effects on the emitted values. This is handy for debugging or for any situation where you want to run code outside of the Observable scope.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">names</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;Simon&#39;</span><span class="p">,</span> <span class="s1">&#39;Garfunkle&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">names</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">do</span><span class="p">(</span><span class="nx">name</span>  <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;original value&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="nx">name</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">do</span><span class="p">(</span><span class="nx">name</span>  <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;uppercase value&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Simon
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// SIMON
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// Garfunkle
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// GARFUNKLE
+</span></span></span></code></pre></div><h2 id="7-filter---use-only-the-good-stuff">7. Filter - Use only the Good Stuff</h2>
+<p>Filter will only emit values if they meet a certain condition. Let&rsquo;s say we have an Observable of tweets, but only want to show tweets from a certain user.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tweet</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="nx">arrayOfTweetObjects</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">tweet</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">tweet</span> <span class="p">=&gt;</span> <span class="nx">tweet</span><span class="p">.</span><span class="nx">user</span> <span class="o">==</span> <span class="s1">&#39;@angularfirebase&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="8-first-last---when-the-order-counts">8. First, Last - When the order counts</h2>
+<p>There are times when you might only care about the first or last element of an Observable.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">names</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;Richard&#39;</span><span class="p">,</span> <span class="s1">&#39;Erlich&#39;</span><span class="p">,</span> <span class="s1">&#39;Dinesh&#39;</span><span class="p">,</span> <span class="s1">&#39;Gilfoyle&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">names</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">first</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Richard
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">names</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">last</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Gilfoyle
+</span></span></span></code></pre></div><h2 id="9-debounce-and-throttle---handle-stream-overload">9. Debounce and Throttle - Handle Stream Overload</h2>
+<p>Sometimes you might be dealing with a stream that that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often.</p>
+<ol>
+<li>Throttle - Give me the first value, then wait X time.</li>
+<li>Debounce - Wait X time, then give me the last value.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">mouseEvents</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;mousemove&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">mouseEvents</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">throttleTime</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// MouseEvent&lt;data&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// wait 1 second...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">mouseEvents</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">debounceTime</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// wait 1 second...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// MouseEvent&lt;data&gt;
+</span></span></span></code></pre></div><h2 id="10-scan---keep-a-running-total">10. Scan - Keep a Running Total</h2>
+<p>Scan sounds scary, but works just like <code>reduce</code> for Arrays in JavaScript. It keeps track of the accumulated total of emitted values, so you can combine the emitted values from an observable together.</p>
+<p>Let&rsquo;s imagine you&rsquo;re building a game that records a high score. We can simulate this with mouse clicks and assign a random score to each click.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">clicks</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">clicks</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">scan</span><span class="p">((</span><span class="nx">totalScore</span><span class="p">,</span> <span class="nx">current</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">totalScore</span> <span class="o">+</span> <span class="nx">current</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span></code></pre></div><p>The result is a high score that increases after each click.</p>
+<p class="success">Scan is a great tool for the Redux pattern when combining states. think `scan( (current, new) => {...current, ...new } )` 
+<p>Learn more about using <a href="https://angularfirebase.com/lessons/angular-ngrx-redux-starter-guide/">Redux with Angular</a>.</p>
+</p>
+<h2 id="11-switchmap---get-value-from-observable-a-then-emit-observable-b">11. SwitchMap - Get value from Observable A, then emit Observable B</h2>
+<p><code>switchMap</code> is commonly required when dealing with async data from a database or API call. For example, you need to get a user ID from an observable, then use it to query the database. In this example, we reset an interval after each mouse click.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">clicks</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">clicks</span><span class="p">.</span><span class="nx">switchMap</span><span class="p">(</span><span class="nx">click</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">i</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+</span></span></code></pre></div><p>RxJS also provides similar operators <code>mergeMap</code> and <code>concatMap</code>, which have subtle differences, but <code>switchMap</code> is generally considered the best default for this type of behavior.</p>
+<h2 id="12-takeuntil---get-values-until-youre-told-not-to">12. TakeUntil - Get values until you&rsquo;re told not to</h2>
+<p>As I mentioned in section 3, you need to unsubscribe for data responsibily. A clever way to handle subscriptions is with <code>takeUntil()</code>, which will complete the Observable when a second <em>notifier</em> Observable emits a value.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">notifier</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">interval</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">takeUntil</span><span class="p">(</span><span class="nx">notifier</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">finally</span><span class="p">(()</span>  <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Complete!&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">i</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Complete!
+</span></span></span></code></pre></div><h2 id="13-takewhile---get-values-while-the-conditions-are-right">13. TakeWhile - Get values while the conditions are right</h2>
+<p>The <code>takeWhile()</code> operator will complete the observable when a certain condintion is is true. It&rsquo;s like going speed dating until you find the perfect matching partner.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">names</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;Sharon&#39;</span><span class="p">,</span> <span class="s1">&#39;Sue&#39;</span><span class="p">,</span> <span class="s1">&#39;Sally&#39;</span><span class="p">,</span> <span class="s1">&#39;Steve&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">names</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">takeWhile</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="nx">name</span> <span class="o">!=</span> <span class="s1">&#39;Sally&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">finally</span><span class="p">(()</span>  <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Complete! I found Sally&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">i</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+</span></span></code></pre></div><h2 id="14-buffer---collect-values-then-emit-as-array">14. Buffer - Collect values, then emit as Array</h2>
+<p>Buffer is similar to debounce and throttle, but rather than filtering out data, it accumulates it into an array, then emits the array. There are many ways to buffer, but here we are going to use <code>bufferTime()</code> and <code>bufferCount()</code>, to buffer based on time or quantity.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">mouseEvents</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;mousemove&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">mouseEvents</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">timeStamp</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">bufferTime</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">batch</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="nx">batch</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// second 1 - [...values]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// second 2 - [...values]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">mouseEvents</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">bufferCount</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">batch</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="nx">batch</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// [...values] length 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// [...values] length 5
+</span></span></span></code></pre></div><h2 id="15-zip---combine-in-unison">15. Zip - Combine in unison</h2>
+<p>Zip works well when you have complimentary Observables that you know have an equal number of values. It will combine the values by index location and emit them as a combined array.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">yin</span>   <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;peanut butter&#39;</span><span class="p">,</span> <span class="s1">&#39;wine&#39;</span><span class="p">,</span><span class="s1">&#39;rainbows&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">yang</span>  <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;jelly&#39;</span><span class="p">,</span> <span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;unicorns&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">combo</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">zip</span><span class="p">(</span><span class="nx">yin</span><span class="p">,</span> <span class="nx">yang</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">combo</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">arr</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// peanut butter, jelly
+</span></span></span><span class="line"><span class="cl"><span class="c1">// wine, cheese
+</span></span></span><span class="line"><span class="cl"><span class="c1">// rainbows, unicorns
+</span></span></span></code></pre></div><h2 id="16-forkjoin---merge-wait-for-completion-emit-last-values-together">16. ForkJoin - Merge, wait for completion, emit last values together</h2>
+<p>I think people like <code>forkJoin()</code> because of it&rsquo;s cool name, but it seems to confuse people and shows up on StackOverflow way more than it should. It&rsquo;s similar to <code>zip()</code>, but it waits for all observables to complete then emits only the last values together.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">yin</span>   <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;peanut butter&#39;</span><span class="p">,</span> <span class="s1">&#39;wine&#39;</span><span class="p">,</span><span class="s1">&#39;rainbows&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">yang</span>  <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;jelly&#39;</span><span class="p">,</span> <span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;unicorns&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">yang</span> <span class="o">=</span> <span class="nx">yang</span><span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">combo</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">forkJoin</span><span class="p">(</span><span class="nx">yin</span><span class="p">,</span> <span class="nx">yang</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">combo</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">arr</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// wait 2 seconds...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// rainbows, unicorns
+</span></span></span></code></pre></div><p class="tip">The `forkJoin()` operator is commonly used to combine multiple Promises that must all be resolved before sending data to the UI.</p>
+<h2 id="17-catch---handle-errors-gracefully">17. Catch - Handle errors gracefully</h2>
+<p>We can&rsquo;t forget to catch errors. Naturally, RxJS has a <code>catch()</code> operator for just that purpose. It will</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">observable</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">observer</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;good&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;great&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;grand&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="s1">&#39;catch me!&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span> <span class="s1">&#39;wonderful&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">observable</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">(</span> <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Error caught: </span><span class="si">${</span><span class="nx">err</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// good
+</span></span></span><span class="line"><span class="cl"><span class="c1">// great
+</span></span></span><span class="line"><span class="cl"><span class="c1">// grand
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Error caught: catch me!
+</span></span></span></code></pre></div><h2 id="18-retry---never-give-up">18. Retry - Never give up</h2>
+<p>Let&rsquo;s say we get an error from an API on the initial request - it might just be a fluke. Let&rsquo;s give it a couple more tries before we give up and complete the Observable.</p>
+<p>The basic <code>retry()</code> operator will try right away as many times as you want.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">observable</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">(</span> <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Error caught: </span><span class="si">${</span><span class="nx">err</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">retry</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span></code></pre></div><p>You can also use the <code>retryWhen()</code> operator to add some sophistication to a retry.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">observable</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">(</span> <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Error caught: </span><span class="si">${</span><span class="nx">err</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">retryWhen</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;server overload please try again&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">subscribe</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="19-subject---an-observable-that-talks-to-subscribers">19. Subject - An Observable that talks to subscribers</h2>
+<p>An RxJS <code>Subject</code> is just an Observable with the ability to call <code>next()</code> on itself to emit new values - in other words, it is an event emitter.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Subject</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subA</span> <span class="o">=</span> <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Sub A: </span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subB</span> <span class="o">=</span> <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Sub B: </span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Sub A: Hello
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub B: Hello
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub A: World
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub B: World
+</span></span></span></code></pre></div><h2 id="20-multicast---share-values-not-side-effects">20. MultiCast - Share values, not side effects</h2>
+<p>Subjects allow you broadcast values from a shared source, while limiting side effects to only one occurrence. You start with a regular Observable, then multicast it to a Subject to be consumed by the end user. This magic happens because a single shared subscription is created to the underlying observable.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">observable</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">clicks</span> <span class="o">=</span> <span class="nx">observable</span>
+</span></span><span class="line"><span class="cl">                 <span class="p">.</span><span class="k">do</span><span class="p">(</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;SIDE EFFECT!!&#39;</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">multicast</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Subject</span><span class="p">()</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subA</span> <span class="o">=</span> <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Sub A: </span><span class="si">${</span><span class="nx">c</span><span class="p">.</span><span class="nx">timeStamp</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">subB</span> <span class="o">=</span> <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">print</span><span class="p">(</span><span class="sb">`Sub B: </span><span class="si">${</span><span class="nx">c</span><span class="p">.</span><span class="nx">timeStamp</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">subject</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// SIDE EFFECT!!
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub A: 2687.62
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub B: 2687.62
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// SIDE EFFECT!!
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub A: 4295.11
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Sub B: 4295.11
+</span></span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<div class="vid vid-center">
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2LCo926NFLI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div>
+
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

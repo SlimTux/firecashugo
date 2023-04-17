@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git &amp; GitHub Full Course on Fireship</title>
+    <link>https://fireship.io/courses/git/</link>
+    <description>Recent content in Git &amp; GitHub Full Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 May 2022 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is git?</title>
+      <link>https://fireship.io/courses/git/basics-what-is-git/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-what-is-git/</guid>
+      <description> Who invent Git? </description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>https://fireship.io/courses/git/basics-install/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-install/</guid>
+      <description>Check your machine&amp;rsquo;s current git version:
+command line git config --global user.name &amp;#34;Jeff Delaney&amp;#34; git config --global user.email &amp;#34;hello@fireship.io&amp;#34; Set a Username &amp;amp; Email command line git config --list Windows Installation On Windows, I recommend downloading Git for Windows. In addition, you may want to use git-bash as your terminal (like me), but that is optional - and check out bash in 100 seconds.
+Mac Installation On MacOS, I recommend installing git with Homebrew.</description>
+    </item>
+    
+    <item>
+      <title>git init</title>
+      <link>https://fireship.io/courses/git/basics-init/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-init/</guid>
+      <description>Crate a new git repository:
+command line git init How do you un-initialize a git repo? git provides a tools like init to start a repo, but how do you remove git from a project? </description>
+    </item>
+    
+    <item>
+      <title>git status</title>
+      <link>https://fireship.io/courses/git/basics-status/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-status/</guid>
+      <description>View the current status of a repository.
+command line git commit status git status provides a detailed commit history of your repo </description>
+    </item>
+    
+    <item>
+      <title>git add</title>
+      <link>https://fireship.io/courses/git/basics-add/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-add/</guid>
+      <description> What do we call the area for files that will be part of the next commit? Add an entire working directory to the staging area:
+command line git add . Add a single file:
+command line git add somefile.txt Remove a file from the staging area:
+command line git reset . </description>
+    </item>
+    
+    <item>
+      <title>git commit</title>
+      <link>https://fireship.io/courses/git/basics-commit/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-commit/</guid>
+      <description> How might you preview or try a commit before making it official? Commit staged files to a repository
+command line git commit -m &amp;#34;initial commit 🚀&amp;#34; Tip: Add files and commit in a single command
+command line git commit -a -m &amp;#34;additional commit&amp;#34; # or git commit -am &amp;#34;additional commit&amp;#34; Use git log to see the history of commits:
+git log </description>
+    </item>
+    
+    <item>
+      <title>VS Code Tips</title>
+      <link>https://fireship.io/courses/git/basics-vscode/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/basics-vscode/</guid>
+      <description>Which term describes the changes between the working tree and previously comitted files? VS Code is a powerful tool for working with git. You can use it to run commands without the CLI, sync it up to GitHub, and to manage your git repositories. Learn more in the official docs.</description>
+    </item>
+    
+    <item>
+      <title>git remote</title>
+      <link>https://fireship.io/courses/git/remote-remote/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-remote/</guid>
+      <description> What is the parent company of GitHub? List Remotes List current remotes in the local repo:
+command line git remote Create a new remote command line git remote add origin &amp;lt;url-to-your-github-repo&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>git push</title>
+      <link>https://fireship.io/courses/git/remote-push/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-push/</guid>
+      <description>git push is kinda like saying... Use git push to upload your local code to GitHub.
+command line git push origin master Note: the -u flag is used to set origin as the upstream remote in your git config so git pull can be used without any arguments in the future.</description>
+    </item>
+    
+    <item>
+      <title>git merge</title>
+      <link>https://fireship.io/courses/git/remote-merge/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-merge/</guid>
+      <description> What is the most common merge strategy? Fetch and merge code from the remote repository.
+command line git fetch git merge origin/master </description>
+    </item>
+    
+    <item>
+      <title>git pull</title>
+      <link>https://fireship.io/courses/git/remote-pull/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-pull/</guid>
+      <description> What is a common alternative to git pull? Combine the fetch &amp;amp; merge from the previous section with the pull command.
+command line git pull </description>
+    </item>
+    
+    <item>
+      <title>git clone</title>
+      <link>https://fireship.io/courses/git/remote-clone/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-clone/</guid>
+      <description>git clone creates remote-tracking branches in the cloned repo? Clone a remote repository to your local machine and optionally change the name of the director
+command line git clone &amp;lt;repo-url&amp;gt; &amp;lt;local-directory&amp;gt; Practice Just for fun, clone this repo and run it on your local machine.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Codespaces</title>
+      <link>https://fireship.io/courses/git/remote-codespaces/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/remote-codespaces/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git branch</title>
+      <link>https://fireship.io/courses/git/collab-branch/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/collab-branch/</guid>
+      <description> What is a more politically correct name for the master branch? List out branches:
+command line git branch Create a new branch:
+command line git branch awesome Delete a branch
+command line git branch -d awesome </description>
+    </item>
+    
+    <item>
+      <title>git checkout</title>
+      <link>https://fireship.io/courses/git/collab-checkout/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/collab-checkout/</guid>
+      <description> Which flag automatically creates a new branch during checkout? Move into a branch
+command line git checkout awesome Create a new branch and move into it:
+command line git checkout -b awesome </description>
+    </item>
+    
+    <item>
+      <title>Merge Conflicts</title>
+      <link>https://fireship.io/courses/git/collab-merge-conflicts/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/collab-merge-conflicts/</guid>
+      <description>Which flag allows you to safely quit the merge conflit process? How Merge Conflicts Happen Merge conflicts happen when two commits affect the same line of code at the same time.
+Feature branch modifies line 5 and commits. Master branch modifies line 5 and commits. Master branch tries to merge feature branch. Here&amp;rsquo;s how a merge conflict looks from the command line:
+command line git branch feature # make some changes git commit -am &amp;#34;awesome branch stuff&amp;#34; git checkout master # make some changes to same code git commit -am &amp;#34;master branch stuff&amp;#34; git merge feature # CONFLICT!</description>
+    </item>
+    
+    <item>
+      <title>Fork</title>
+      <link>https://fireship.io/courses/git/collab-fork/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/collab-fork/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pull Request</title>
+      <link>https://fireship.io/courses/git/collab-pull-request/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/collab-pull-request/</guid>
+      <description>The stickers are gone, but feel free to submit a pull request on GitHub for practice.</description>
+    </item>
+    
+    <item>
+      <title>git reset</title>
+      <link>https://fireship.io/courses/git/advanced-reset/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-reset/</guid>
+      <description>Unstage all staged files.
+command line git reset Rollback to a previous commit, BUT keep your changes in the working directory.
+command line git reset &amp;lt;commit-ID&amp;gt; Rollback to a previous commit AND discard all changes. Be careful with this one.
+command line git reset &amp;lt;commit-ID&amp;gt; --hard </description>
+    </item>
+    
+    <item>
+      <title>git revert</title>
+      <link>https://fireship.io/courses/git/advanced-revert/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-revert/</guid>
+      <description>Undo a commit with a new commit
+command line git revert &amp;lt;commit-ID&amp;gt; -m &amp;#34;reverting last commit&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>git commit --amend</title>
+      <link>https://fireship.io/courses/git/advanced-amend/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-amend/</guid>
+      <description>Update the message on your last commit:
+command line git commit --amend -m &amp;#34;better message&amp;#34; Include a file you forgot on your last commit.
+command line git add &amp;lt;your-file&amp;gt; git commit --amend --no-edit </description>
+    </item>
+    
+    <item>
+      <title>git stash</title>
+      <link>https://fireship.io/courses/git/advanced-stash/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-stash/</guid>
+      <description>Basic way to create and apply a stash
+command line git stash git stash pop Manage your stashes more easily by giving them a name:
+command line git stash save coolstuff List out all stashes:
+command line git stash list Apply a stash based on its index:
+command line git stash apply 1 </description>
+    </item>
+    
+    <item>
+      <title>git rebase</title>
+      <link>https://fireship.io/courses/git/advanced-rebase/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-rebase/</guid>
+      <description>Rebase From a feature branch, rebase the latest changes from the master branch.
+command line git checkout feature git rebase master </description>
+    </item>
+    
+    <item>
+      <title>Squash</title>
+      <link>https://fireship.io/courses/git/advanced-squash/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-squash/</guid>
+      <description>Start an interactive rebase from a feature, then choose the squash commend to flatten your commits into a single message.
+command line git rebase master --interactive </description>
+    </item>
+    
+    <item>
+      <title>GitHub Actions</title>
+      <link>https://fireship.io/courses/git/advanced-actions/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-actions/</guid>
+      <description>Also see the GitHub Actions Guide</description>
+    </item>
+    
+    <item>
+      <title>Advanced Git Tips</title>
+      <link>https://fireship.io/courses/git/advanced-bonus-tips/</link>
+      <pubDate>Sun, 05 Sep 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/advanced-bonus-tips/</guid>
+      <description>Let&amp;rsquo;s wrap up the course with a fun breakdown of some advanced git techniques that will increase your producivity.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pro on Fireship</title>
+    <link>https://fireship.io/tags/pro/</link>
+    <description>Recent content in Pro on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/tags/pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern JavaScript Full Course</title>
+      <link>https://fireship.io/courses/js/</link>
+      <pubDate>Fri, 11 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/js/</guid>
+      <description>The JavaScript Course teaches you how to build modern applications with vanilla JavaScript - no React, no TypeScript, no Frameworks - just plain old JavaScript.
+🦄 What will I learn? This course is focusd on the basics of JavaScript - the world&amp;rsquo;s most commonly used programming language. Here&amp;rsquo;s what you&amp;rsquo;ll get out of it&amp;hellip;
+👶 The Basics of JavaScript 👨‍🎤 Advanced concepts broken down in a quick no-BS format 📰 Prepare for JS interviews by coding algorithms 🧪 Test Driven Development with Vitest ⚔️ Debugging and Error Handling 🎨 Build a text-to-image API with Node.</description>
+    </item>
+    
+    <item>
+      <title>React Supabase Full Course</title>
+      <link>https://fireship.io/courses/supabase/</link>
+      <pubDate>Fri, 11 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/</guid>
+      <description>The Supabase Course is a project-based course that builds a Reddit-inspired web app from scratch with Supabase, PostgreSQL, and React.
+🦄 What will I learn? The goal of this course is to provide you with a solid foundation for building fullstack Supabase apps on the web. Here&amp;rsquo;s a quick summary of what you can expect to learn&amp;hellip;
+👨‍🎤 Master the Basics of Supabase ⚛ Build interactive UI components with React 💪 Type-safe queries with TypeScript 👨‍🚀 User Authentication and Row-level Security 📊 Data modeling in a relational SQL database 👨‍🔬 Advanced Postgres techniques like Triggers and Functions 🎭 End-to-end testing with Playwright 🚀 Full-stack deployment breakdown Ant Wilson @AntWilson While working with Zack on preparing the course, he pointed out some stuff in Supabase that I didn’t even know about!</description>
+    </item>
+    
+    <item>
+      <title>Next.js Firebase Full Course</title>
+      <link>https://fireship.io/courses/react-next-firebase/</link>
+      <pubDate>Sun, 11 Sep 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/react-next-firebase/</guid>
+      <description>Next.js Firebase - The Full Course takes you from zero to a production-ready hybrid-rendered webapp. Learn how to build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js
+🦄 What will I build? You will build a full-stack Social Blogging Platform inspired by sites like 🌈 DEV.to and Medium. Authors can create content under a custom username, then publish publicly with SEO-friendly rendering, while readers can heart or like posts in realtime.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firebase</title>
+      <link>https://fireship.io/courses/flutter-firebase/</link>
+      <pubDate>Fri, 15 Jul 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase/</guid>
+      <description>Flutter Firebase - The Full Course will take you from zero to a complex production-ready iOS or Android app using real-world cloud infrastructure.
+⚡ What will I build? Updated Sep 15th, 2022 Flutter v3.1
+This is a project-based course that will teach you how to build a multiple choice quiz app, inspired by apps like Duolingo and QuizUp. The app implements user authentication (Sign in with Google or Apple), tracks quiz progress in Firestore, uses dynamic animations, and shares data between screens.</description>
+    </item>
+    
+    <item>
+      <title>Dart 101</title>
+      <link>https://fireship.io/courses/dart/</link>
+      <pubDate>Tue, 05 Jul 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/dart/</guid>
+      <description>Dart - The Full Course is designed to teach you the fundamentals of the Dart language to prepare you for a successful journey into Flutter.
+🦄 What will I learn? This course provides a tour of Dart and teaches essential concepts for Flutter developers. Here&amp;rsquo;s what you&amp;rsquo;ll get out of it&amp;hellip;
+👨‍🎤 Become confident with the Dart language 🐦 Get Prepared for Flutter 🦺 Master null-safety 🦾 Learn how to use the Dart CLI 🕹️ Practice OOP and Functional Programming Concepts 🌊 Asynchronous programming with Futures &amp;amp; Streams 🤔 Is this Course Right for Me?</description>
+    </item>
+    
+    <item>
+      <title>Git &amp; GitHub Full Course</title>
+      <link>https://fireship.io/courses/git/</link>
+      <pubDate>Sun, 15 May 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/git/</guid>
+      <description>The Git &amp;amp; GitHub Full Course teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands on approach to learn the basics of version control from the command line with around 1 hour of video content and exercises.
+🦄 What will I learn? This course will teach the basics of Git and GitHub - essential tools used by virtually every software engineer on the planet.</description>
+    </item>
+    
+    <item>
+      <title>React - The full course</title>
+      <link>https://fireship.io/courses/react/</link>
+      <pubDate>Tue, 22 Feb 2022 11:11:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/react/</guid>
+      <description>React - The Full Course is unlike any other React course on the Internet. It provides a fast-paced introduction to essential concepts, then puts them into practice by building multiple fun and challenging full-stack apps from scratch.
+What will I learn? 👨‍🎤 Everything you need to be productive with React ⚡ Breakdown of key concepts in 100 Seconds 📚 Design patterns and best practices 🎣 Component composition and custom hooks 🚀 Lazy loading with Suspense 📱 How to build Progressive Web Apps (PWAs) 🎨 Animation with Framer Motion 🐕 Advanced data fetching with SWR and React Query ⚛️ Complex dynamic forms with React Final Form 🔥 Manage realtime data with Firestore 📰 SSR with Next.</description>
+    </item>
+    
+    <item>
+      <title>Riverpod with Firebase</title>
+      <link>https://fireship.io/lessons/firebase-riverpod-flutter/</link>
+      <pubDate>Sat, 27 Nov 2021 13:45:48 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-riverpod-flutter/</guid>
+      <description>Riverpod is a reactive state-management library for Flutter that can simplify the way global data is shared throughout your application. It is especially useful with Firebase because it allows to you easily join Streams together, like a Firestore document with a Firebase Auth user.
+The following tutorial demonstrates how to use Riverpod to manage Firebase Auth state and relational realtime data in Firestore.
+Learning Objectives
+Riverpod Basics w/ Firebase Listen to the current user&amp;rsquo;s auth state Join realtime Firestore data based on current user&amp;rsquo;s UID Setup This tutorial assumes you have already installed Firebase into your app.</description>
+    </item>
+    
+    <item>
+      <title>VS Code Magic Tricks Course</title>
+      <link>https://fireship.io/courses/vscode-tricks/</link>
+      <pubDate>Tue, 02 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vscode-tricks/</guid>
+      <description>The VS Code Magic Tricks course will teach you how to write code faster and make you a happier developer. It demonstrates dozens of small optimizations that result in long-term productivity gains as a programmer.
+🧠 What will I Learn? 👨‍🎤 Write better code faster 🎹 Edit code in rhythm with your keyboard 🕹️ Tweak settings for optimal productivity 🤖 Automate repetitive tasks 🦺 Avoid common pitfalls and bottlenecks 🎨 Leverage powerful extensions 🚀 Advanced IDE features like Docker &amp;amp; remote repos ⚡ Is the Course Updated?</description>
+    </item>
+    
+    <item>
+      <title>Stripe Payments JavaScript Course</title>
+      <link>https://fireship.io/courses/stripe-js/</link>
+      <pubDate>Mon, 25 Oct 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/stripe-js/</guid>
+      <description>This course has been deprecated. A completely new Stripe course will replace this content in the near future (Spring 2023). The Stripe Payments JavaScript Course is a project-based guide to building fullstack payment solutions on the web with Node.js and React.
+The goal is to provide a solid foundation for app monetization 💸 by implementing common use-cases with Stripe APIs including Checkout, Payment Intents, and Billing.
+Updated May 11th, 2020 Stripe API v2020-03-02</description>
+    </item>
+    
+    <item>
+      <title>React Native Firebase Chat Demo</title>
+      <link>https://fireship.io/lessons/react-native-firebase-chat-demo/</link>
+      <pubDate>Thu, 30 Sep 2021 13:18:57 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/react-native-firebase-chat-demo/</guid>
+      <description>React Native is one of the most productive ways to build a cross-platform mobile app, especially for developers with a background in JavaScript. It has provides excellent support for Firebase with the React Native Firebase package
+In the following lesson, we will build a basic chat app with React Native and Firebase. It allows a user to sign in with Google and then access a group chat room. The user can read a realtime feed of recent chat messages via Firestore and post new messages into the chat.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firebase Chat Demo</title>
+      <link>https://fireship.io/lessons/flutter-firebase-chat-demo/</link>
+      <pubDate>Thu, 30 Sep 2021 12:19:06 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/flutter-firebase-chat-demo/</guid>
+      <description>Flutter makes it possible to build high-performance cross-platform apps with sound type safety thanks to the Dart programming language. It provides excellent support for Firebase with official plugins maintained by Google.
+In the following lesson, we will build a basic chat app with Flutter and Firebase. It allows a user to sign in with Google and then access a group chat room. The user can read a realtime feed of recent chat messages via Firestore and post new messages into the chat.</description>
+    </item>
+    
+    <item>
+      <title>Realtime Charts with D3</title>
+      <link>https://fireship.io/lessons/realtime-charts-d3-firebase/</link>
+      <pubDate>Mon, 20 Sep 2021 10:31:56 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/realtime-charts-d3-firebase/</guid>
+      <description>D3.js, or Data Driven Documents, is a powerful tool for building charts with JavaScript, CSS, and SVG. It&amp;rsquo;s a library that takes data as an input outputs dynamic, interactive, and beautiful visualizations. In this tutorial, we&amp;rsquo;ll build an animated realtime chart that changes its appearance when a new data point is added to Firestore.
+Example of the realtime chart you will build in this tutorial
+Project Setup Install D3 &amp;amp; Firebase Create a new project with Vite, then install D3 and Firebase.</description>
+    </item>
+    
+    <item>
+      <title>Animated Notifications with Framer Motion</title>
+      <link>https://fireship.io/lessons/framer-motion-advanced-notifications/</link>
+      <pubDate>Sun, 12 Sep 2021 16:17:44 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/framer-motion-advanced-notifications/</guid>
+      <description>Learn advanced Framer Motion techniques by creating an animated notification feed from scratch. We dive into concepts like transitions, spring animations, SVGs, and drag gestures to create dismissible notifications.
+⚠️ This is the sequel to the Framer Motion Basics Tutorial. Make sure to watch that one first!
+🚀 Try out the live demo
+Notification Basic Notification Start by creating a basic animated notification using a motion.li component. Feel free to experiment with the notificationVariants object to customize the animation result.</description>
+    </item>
+    
+    <item>
+      <title>Firebase v9 Migration</title>
+      <link>https://fireship.io/lessons/firebase-v9-migration/</link>
+      <pubDate>Thu, 02 Sep 2021 12:10:52 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-v9-migration/</guid>
+      <description>The Firebase team recently released a new web SDK that utilizes tree-shaking in order to lower JavaScript bundle sizes when used with module bundlers like Webpack and Rollup. At a high level, it works by only importing the functions/classes/code that we actually NEED, versus importing entire modules like auth, firestore, and so on. The Fireship site was able to reduce its JavaScript bundle size by ~35% 🤯 by upgrading to the new version.</description>
+    </item>
+    
+    <item>
+      <title>Custom Usernames in Firebase</title>
+      <link>https://fireship.io/lessons/custom-usernames-firebase/</link>
+      <pubDate>Sat, 23 Jan 2021 11:51:52 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/custom-usernames-firebase/</guid>
+      <description>Firebase assigns each user a unique ID upon signing up, but many apps require users to choose their own custom unique username, which is not an out-of-box feature in Firebase. Think of apps like Twitter or Medium, where each user’s profile can be visited on a user like example.com/{username}. The following lesson demonstrates how to securely create and validate custom usernames for Firebase users by combining Cloud Firestore.
+Demo of custom usernames in Firebase</description>
+    </item>
+    
+    <item>
+      <title>Firebase Security Course</title>
+      <link>https://fireship.io/courses/firebase-security/</link>
+      <pubDate>Wed, 02 Dec 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/firebase-security/</guid>
+      <description>Firebase Security - The Full Course will teach you how to write, organize, and test Firestore security rules. The goal is to prepare developers for the safe and secure launch of a Firebase project.
+🛡️ What will I Learn? Firestore security fundamentals. How to audit a Firebase app for security vulnerabilities. Common use-cases including role-based auth, access-control lists, and more. Advanced techniques and code optimization tips Unit testing and debugging reports 🤔 Is this Course Right for Me?</description>
+    </item>
+    
+    <item>
+      <title>Fulltext Search on Firebase with Meilisearch</title>
+      <link>https://fireship.io/lessons/meilisearch-firebase-google-cloud/</link>
+      <pubDate>Fri, 28 Aug 2020 08:14:16 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/meilisearch-firebase-google-cloud/</guid>
+      <description>A common issue that developers face with NoSQL databases (and SQL to a lesser extent) is a lack of full-text search capabilities. If you want to build a performant typeahead search box or handle multi-property filtering on a collection, you’ll find it frustratingly difficult to implement in Firestore - it’s just not the right database for the job. There are many good solutions, like Algolia and ElasticSearch, but they can be expensive and/or complex to manage.</description>
+    </item>
+    
+    <item>
+      <title>Firebase Emulator Advanced Usage Guide</title>
+      <link>https://fireship.io/lessons/firebase-emulator-advanced/</link>
+      <pubDate>Sun, 31 May 2020 19:11:38 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-emulator-advanced/</guid>
+      <description>The Firebase emulator suite allows developers to run a mock Firebase environment locally. Last week, Firebase released a new feature called the Emulator UI to visualize and manage Firestore (and Realtime DB) from the browser. The following lesson contains a variety of advanced techniques for setting up a Firebase development environment.
+🌠Did you know? The new @firebase Emulator UI makes Firestore available on the browser window...
+With a little bit of JS, you can extend the UI with your own custom stuff, like buttons to populate fake data.</description>
+    </item>
+    
+    <item>
+      <title>Access Google APIs for Users with OAuth 2.0</title>
+      <link>https://fireship.io/lessons/google-apis-node-tutorial/</link>
+      <pubDate>Sat, 23 May 2020 00:33:26 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/google-apis-node-tutorial/</guid>
+      <description>How do you make APIs calls to a Google service on behalf of a user? The following lesson demonstrates how to get permission from a user with OAuth 2.0 to make authenticated requests to Google APIs from a backend Node.js server like Firebase Cloud Functions.
+Examples of common use cases might include:
+Upload a file to a user&amp;rsquo;s Google Drive Make an appointment on a user&amp;rsquo;s Google Calendar Access a user&amp;rsquo;s infrastructure on Google Cloud Platform 💡 Note: This lesson covers server-side OAuth.</description>
+    </item>
+    
+    <item>
+      <title>Google Secret Manager with Firebase</title>
+      <link>https://fireship.io/lessons/secret-manager-with-firebase/</link>
+      <pubDate>Wed, 15 Apr 2020 13:08:29 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/secret-manager-with-firebase/</guid>
+      <description>Secret Manager is a new service on Google Cloud that allows us to store and version sensitive data like private API keys and passwords, then access it from any cloud service. It provides encryption, audit logging, versioning, and IAM roles for secure fine-grained control over sensitive information.
+A common use-case for a Firebase apps is the management of secret API keys in a Cloud Function. The following lesson will teach you how add secrets via the Google Cloud console, then read them from a Firebase Cloud Function with Node.</description>
+    </item>
+    
+    <item>
+      <title>Multifactor Auth with Firebase (2FA)</title>
+      <link>https://fireship.io/lessons/two-factor-auth-firebase/</link>
+      <pubDate>Sat, 04 Apr 2020 13:49:27 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/two-factor-auth-firebase/</guid>
+      <description>How do you handle two-step verification (2FA) or multifactor authentication (MFA) in Firebase? Until recently, the answer was you can&amp;rsquo;t. Thankfully, in 2020 we can implement multifactor auth flows in Firebase with Google Cloud Identity Platform. The following tutorial demonstrates an optional multifactor auth flow that works like this&amp;hellip;
+Sign up with email/password and require email verification. Opt-in to MFA and register phone number(s). Attempt login from a new device. Verify SMS text code verification.</description>
+    </item>
+    
+    <item>
+      <title>The Vue Firebase Project Course</title>
+      <link>https://fireship.io/courses/vue/</link>
+      <pubDate>Wed, 01 Apr 2020 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/vue/</guid>
+      <description>🎤 What will I build? The Vue Firebase Project Course will teach you the basics of full-stack web development by building a chat prototype from scratch.
+You will build a realtime 💬 walkie-talkie style chat app with the ability to record and upload audio from the device - inspired by the popular Voxer mobile app.
+💡 What will I Learn? In this course you will learn&amp;hellip;
+Fundamentals of of Vue components and reactivity Dynamic Vue routing User authentication with Firebase (Anonymous, Email/Password) Usage of the Vuefire Package Vue Composition API Chat Features in Firestore Record audio on the web Upload files to Firebase Storage 🤔 Is this Course Right for Me?</description>
+    </item>
+    
+    <item>
+      <title>Firestore Rate Limiting</title>
+      <link>https://fireship.io/lessons/how-to-rate-limit-writes-firestore/</link>
+      <pubDate>Sat, 30 Nov 2019 08:11:12 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/how-to-rate-limit-writes-firestore/</guid>
+      <description>Rate limiting is the process of blocking access to cloud resources after a certain threshold has been reached. Firestore bills based on the quantity of reads and writes, but does not currently provide a way to block IPs or set explicit rate limits with Security Rules. So how do you prevent a DDoS attack or a disgruntled user from spamming the app with unnecessary records.
+The following examples are based on an app that needs to&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Advanced Firebase Auth with Custom Claims</title>
+      <link>https://fireship.io/lessons/firebase-custom-claims-role-based-auth/</link>
+      <pubDate>Mon, 23 Sep 2019 08:11:12 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/firebase-custom-claims-role-based-auth/</guid>
+      <description>Firebase allows developers to modify authentication ID tokens to provide fine-grained system access to authorized users. The follow lesson adds custom claims to the Firebase user record to build a role-based access control feature that is secured with Firestore rules.
+Set Custom Claims from the Command Line It is not possible (currently) to add custom claims from the Firebase Console. This means we need to write some code with Firebase Admin.</description>
+    </item>
+    
+    <item>
+      <title>Flutter Firebase - The Full Course</title>
+      <link>https://fireship.io/courses/flutter-firebase-v1/</link>
+      <pubDate>Sat, 24 Aug 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/flutter-firebase-v1/</guid>
+      <description>Flutter Firebase - The Full Course Version 1 will take you from zero to a complex production-ready iOS or Android app using real-world cloud infrastructure.
+⚠️ This course uses Flutter version 1. Checkout the latest version of Flutter Firebase course for version 2+.</description>
+    </item>
+    
+    <item>
+      <title>Ionic 4 Firebase Master Course</title>
+      <link>https://fireship.io/courses/ionic/</link>
+      <pubDate>Sat, 24 Aug 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/</guid>
+      <description>The Ionic4 Master Course will teach you the fundamentals of full-stack cross-platform app development, using the combined powers of Angular &amp;amp; Firebase.
+🗿 What will I build? This is a project-based course that starts from zero and works up to an authenticated realtime todo list with push notifications. While that may not sound super exciting, it provides an ideal foundation to showcase the UI features offered by Ionic and connent them to live cloud infrastructure.</description>
+    </item>
+    
+    <item>
+      <title>The Angular Firebase Project Course</title>
+      <link>https://fireship.io/courses/angular/</link>
+      <pubDate>Sat, 24 Aug 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/</guid>
+      <description>🍱 What will I build? The Angular Firebase PWA Course will teach you how to build a complex progressive web app with Angular 12 (ivy), Material Design, and Firebase. It starts from absolute basics and eventually culminates with the deployment of a server-rendered PWA on Google Cloud Run.
+You will build a full-stack Kanban (看板) storyboard app inspired by Trello. Authenticated users can create, sort, update, and delete boards with all interaction persisted in Firestore.</description>
+    </item>
+    
+    <item>
+      <title>Using the Google Calendar API</title>
+      <link>https://fireship.io/lessons/google-calendar-api-with-firebase/</link>
+      <pubDate>Mon, 24 Sep 2018 17:55:33 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/google-calendar-api-with-firebase/</guid>
+      <description>I use Google Calendar almost every day and really appreciate apps that can coordinate important events for me automatically. Today, we&amp;rsquo;ll learn how to integrate Google&amp;rsquo;s JavaScript API client with Firebase to make authenticated requests to the Calendar API on the behalf of a user. This article was inspired by the real-world requirements of a Broadway Life, a tour company in NYC and needs to perform full CRUD operations on their clients&amp;rsquo; calendar.</description>
+    </item>
+    
+    <item>
+      <title>Auto-save Reactive Form with Firestore</title>
+      <link>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</link>
+      <pubDate>Mon, 28 May 2018 14:17:17 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/auto-save-reactive-forms-with-firestore/</guid>
+      <description>Forms are one of the most critical, yet most cumbersome aspects of app development. They require a ton of HTML markup and require complex validation rules for a good user experience. Almost all forms must be synced to a backend database, leaving us faced a state management conundrum that is not always easy to solve. In this lesson, my goal is to provide you with a reliable solution for syncing your frontend forms to any backend database.</description>
+    </item>
+    
+    <item>
+      <title>Test Firebase Cloud Functions with Jest</title>
+      <link>https://fireship.io/lessons/testing-cloud-functions-in-firebase/</link>
+      <pubDate>Wed, 23 May 2018 14:25:19 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/testing-cloud-functions-in-firebase/</guid>
+      <description>Firebase Cloud Functions makes building a serverless backend easy and fun, but the proper way to write unit tests in this environment is not exactly clear. In this episode, I will show you how to setup a testing environment for your functions and use Jest to implement unit tests.
+Jest is my preferred testing framework for Cloud Functions, but the official docs use Mocha, Sinon, and Chai. Either approach works.</description>
+    </item>
+    
+    <item>
+      <title>Build an Angular Library With NgPackagr</title>
+      <link>https://fireship.io/lessons/build-an-angular-library-with-ngpackagr/</link>
+      <pubDate>Wed, 02 May 2018 13:55:36 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/build-an-angular-library-with-ngpackagr/</guid>
+      <description>In this lesson, I will show you how to build an Angular Library from scratch using NgPackagr. My main motivation for this article is that Google Analytics recently changed their main API to gtag.js, but solid Angular libraries were lacking, so I decided to build one from scratch. NgPackagr made the bundling process very easy.
+Angular packages are standardized by the Angular Package Format, but generating this output manually is difficult.</description>
+    </item>
+    
+    <item>
+      <title>CSV to Firestore</title>
+      <link>https://fireship.io/lessons/import-csv-json-or-excel-to-firestore/</link>
+      <pubDate>Sun, 25 Mar 2018 17:34:22 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/import-csv-json-or-excel-to-firestore/</guid>
+      <description>If you want to migrate your existing database to Firestore, you might be wondering&amp;hellip; How do I import JSON or CSV to Firestore?. In this lesson, I will provide you with a reliable pipeline for reading raw data and parsing it to a writable format for Firestore.
+Everybody has different data modeling needs, so I will teach you how to quickly roll out your own NodeJS CSV-to-Firestore command line import tool.</description>
+    </item>
+    
+    <item>
+      <title>Typeahead Autocomplete with Firestore</title>
+      <link>https://fireship.io/lessons/typeahead-autocomplete-with-firestore/</link>
+      <pubDate>Tue, 20 Feb 2018 14:40:30 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/typeahead-autocomplete-with-firestore/</guid>
+      <description>In this lesson, we will build a basic typeahead or autocomplete system using nothing but Firestore. It relies on an object/map data structure that exposes some of the more advanced query patterns available to us. The database contains a collection of movie documents, and our goal is to build a search form that will auto-populate results based on the movie&amp;rsquo;s title.
+Typeahead demo using only Firestore
+Method 1: Offset with the Magic uf8ff Character A few months ago I created a RealtimeDB Autocomplete lesson that uses &#39;\uf8ff&#39;, which is a very high Unicode point.</description>
+    </item>
+    
+    <item>
+      <title>Angular Reactive Forms Async Validation</title>
+      <link>https://fireship.io/lessons/async-form-validation-in-firebase-enforce-uniqueness/</link>
+      <pubDate>Sat, 10 Feb 2018 15:40:26 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/async-form-validation-in-firebase-enforce-uniqueness/</guid>
+      <description>Reactive form validation can be a complex and difficult feature to implement, especially if you need to validate fields asynchronously. Angular ships with a few built-in validators, but they can only take you so far&amp;hellip;
+Today, we are building a custom async validator that can verify username uniqueness in Firebase Firestore. My goal is to show you async validator for your reactive forms that you can apply to virtually any backend data source.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Data Modeling with Firestore by Example</title>
+      <link>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</link>
+      <pubDate>Mon, 05 Feb 2018 15:31:37 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/advanced-firestore-nosql-data-structure-examples/</guid>
+      <description>In the previous lesson, we learned the fundamentals of relational data modeling with Firestore. Today I want to push further and look at several more practical examples. In addition to data modeling, we will look at techniques like duplication, aggregation, composite keys, bucketing, and more.
+Keep in mind, Firestore is still in beta. Firebase engineers hinted at some really cool features on the roadmap (geo queries, query by array of ids) - I&#39;ll be sure to keep you posted :)</description>
+    </item>
+    
+    <item>
+      <title>Extract Text from Images</title>
+      <link>https://fireship.io/lessons/advanced-cloud-vision-ocr-text-extraction/</link>
+      <pubDate>Fri, 02 Feb 2018 15:08:13 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/advanced-cloud-vision-ocr-text-extraction/</guid>
+      <description>The following lesson uses the Cloud Vision API on Google Cloud to extract text from raw images. This is a highly sought-after feature in business applications that still work with non-digitized text documents.
+The Cloud Vision Node.js documentation is a good reference to keep by your side.
+Getting Started You actually don&amp;rsquo;t need a frontend app to experiment with this technology - just a Firebase storage bucket. I recommend creating a dedicated bucket for the invocation of cloud functions.</description>
+    </item>
+    
+    <item>
+      <title>Material Data Tables With Firestore</title>
+      <link>https://fireship.io/lessons/material-data-tables-with-firestore/</link>
+      <pubDate>Tue, 12 Dec 2017 05:49:37 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/material-data-tables-with-firestore/</guid>
+      <description>In this lesson, I will show you how to build an Angular Material data datable that is sortable and filterable, while maintaining a realtime connection with Firestore. A dialog modal will be used share data between material components and update documents in Firestore.
+This tutorial also makes suggestions for performance optimization when dealing with hundreds rows in the view. The end result is a table that&amp;hellip;
+Uses Firebase/Firestore as the data source.</description>
+    </item>
+    
+    <item>
+      <title>PWA Performance Optimization Tips</title>
+      <link>https://fireship.io/lessons/pwa-performance-optimization-angular/</link>
+      <pubDate>Sat, 25 Nov 2017 12:27:11 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/pwa-performance-optimization-angular/</guid>
+      <description>The following lesson contains a handful of tips and ideas aimed at optimizing the Lighthouse PWA performance score. Any good optimization starts with a solid analysis, so I will also provide you with some advanced tools for analyzing the performance for your progressive web app.
+High Performance PWAs with Angular PWA performance is largely dependent on the way you design your app. In this demo, I am following the PRPL pattern from Polymer as closely as possible.</description>
+    </item>
+    
+    <item>
+      <title>CSV Exports from Firestore</title>
+      <link>https://fireship.io/lessons/csv-exports-from-firestore-database-with-cloud-functions/</link>
+      <pubDate>Tue, 14 Nov 2017 12:13:53 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/csv-exports-from-firestore-database-with-cloud-functions/</guid>
+      <description>A common business requirement for a professional app is to export data as comma separated values, or CSV format. Data formatted this way can be used by spreadsheet software like Microsoft Excel and Google Docs, but it can also be used as input to many popular machine learning libraries. It this lesson, I will show you how to export a Firestore collection in CSV format using Firebase Cloud Functions and a Storage Bucket.</description>
+    </item>
+    
+    <item>
+      <title>Middleware for Rendertron</title>
+      <link>https://fireship.io/lessons/seo-angular-part-2-firebase-cloud-functions-middleware-for-rendertron/</link>
+      <pubDate>Wed, 08 Nov 2017 11:57:04 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/seo-angular-part-2-firebase-cloud-functions-middleware-for-rendertron/</guid>
+      <description>In Angular SEO Part 1, I introduced the awesomeness of Headless Chrome and Rendertron. The only thing missing is the middleware that can determine if incoming traffic is a bot or a regular user. Rendertron has officially supported Express middleware or you can create your own from scratch using Firebase Cloud Functions. As you will see, it&amp;rsquo;s not all that difficult.
+This method works really well with Firebase and here&amp;rsquo;s why&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Build a Weather App with Angular</title>
+      <link>https://fireship.io/lessons/weather-app-with-the-angular-http-client-and-dark-sky-api/</link>
+      <pubDate>Mon, 09 Oct 2017 11:07:52 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/weather-app-with-the-angular-http-client-and-dark-sky-api/</guid>
+      <description>In this lesson, you will learn how to retrieve weather data from an API and use it in a frontend Angular app. A secure backend built with Firebase Cloud Functions will make the HTTP request to ensure sensitive data is not exposed in Angular.
+The end result looks like this, but you will have access to whole bunch of weather data to completely customize the user experience.
+Weather forecasting app demo</description>
+    </item>
+    
+    <item>
+      <title>Secure Firebase Cloud Functions for Authenticated Users</title>
+      <link>https://fireship.io/lessons/secure-firebase-cloud-functions/</link>
+      <pubDate>Wed, 27 Sep 2017 07:08:09 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/secure-firebase-cloud-functions/</guid>
+      <description>Learn more in the Cloud Functions Master Course.
+In this lesson, I will show you how to run Firebase Cloud Functions ONLY when users are authenticated with a valid user ID.
+Endpoint security is critical - especially if using a paid 3rd party API like SendGrid or Twilio. There are certain situations where only want a function to run if the user is currently authenticated. For example, you may have a function that sends transactional email to a user via SendGrid.</description>
+    </item>
+    
+    <item>
+      <title>Push Notifications on the Web</title>
+      <link>https://fireship.io/lessons/push-messages-with-firestore/</link>
+      <pubDate>Tue, 01 Aug 2017 05:14:39 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/push-messages-with-firestore/</guid>
+      <description>A few months ago, I released a video covering Firebase Cloud Messaging (FCM) with the Realtime Database. Today, I am going to update this code with the following improvements:
+Save FCM tokens in Firestore. Send Firebase push messages to multiple devices simultaneously. Angular 5 firebase cloud messaging demo in angular
+Setting Up Firebase Cloud Messaging in Angular There are several steps you must take in Angular to get started with cloud messaging.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Data Modeling</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/</link>
+      <pubDate>Thu, 16 May 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/</guid>
+      <description>The Firestore Data Modeling Course provides a foundation for modeling data relationships in NoSQL, while optimizing queries for performance, cost, and complexity. Determining the the optimal data model in Cloud Firestore is not an easy task because you need to anticipate your app&amp;rsquo;s UI/UX requirements in advance. Failure to consider the tradeoffs between various data models could lead to poor app performance and/or unnecessary cloud computing expenses. The goal of this course is to teach you the concepts necessary to make good decisions related to data modeling that minimize costs and maximize read performance.</description>
+    </item>
+    
+  </channel>
+</rss>
