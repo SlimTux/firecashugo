@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>i18n on Fireship</title>
+    <link>https://fireship.io/tags/i18n/</link>
+    <description>Recent content in i18n on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Aug 2018 17:35:41 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Multiple Sites to Firebase Hosting</title>
+      <link>https://fireship.io/lessons/deploy-multiple-sites-to-firebase-hosting/</link>
+      <pubDate>Wed, 29 Aug 2018 17:35:41 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/deploy-multiple-sites-to-firebase-hosting/</guid>
+      <description>Firebase hosting recently announced support for multiple hosting targets within a single project. I am thrilled to see this feature because it is such a common requirement for real world apps. For example, you might have two separate apps - one for customers, one for admin employees - both of which share the same database and functions. In the past, we would have to get clever with deployment by either sharing the same URL or juggling multiple projects.</description>
+    </item>
+    
+  </channel>
+</rss>

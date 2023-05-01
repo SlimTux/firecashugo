@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Angular Firebase Project Course on Fireship</title>
+    <link>https://fireship.io/courses/angular/</link>
+    <description>Recent content in The Angular Firebase Project Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2019 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/angular/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular Beginner Project</title>
+      <link>https://fireship.io/courses/angular/start-angular-beginner-tutorial/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/start-angular-beginner-tutorial/</guid>
+      <description>Brand New to Angular? The following beginner-level tutorial teaches you how to build a Tic-Tac-Toe game with Angular. It&amp;rsquo;s not part of the full course, but rather a gentle intro project to get acquainted with the Angular ecosystem. It is completely optional.
+Tic-Tac-Toe Source Code
+Example of the final tic-tac-toe PWA deployed in this section
+Recommended Lessons You may also find the following lessons useful for mastering the basics of Angular.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/angular/basics-resources/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-resources/</guid>
+      <description>Course Resources Firestarter Source Code Angular Docs AngularFire Docs Highly Recommended Supplementary Videos While not required, I highly recommend watching the following YouTube videos to get familiar with RxJS and TypeScript.
+TypeScript - The Basics RxJS Top Ten Concepts Social Slack Chat YouTube &amp;amp; Twitter </description>
+    </item>
+    
+    <item>
+      <title>CLI</title>
+      <link>https://fireship.io/courses/angular/basics-cli/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-cli/</guid>
+      <description>The Angular CLI provides a powerful set of tools that can bundle your app with webpack, generate boilerplate code, and configure third-party extensions.
+Getting Started command line npm install -g @angular/cli ng --version ng help ng generate component --help ng new my-app code my-app </description>
+    </item>
+    
+    <item>
+      <title>Anatomy</title>
+      <link>https://fireship.io/courses/angular/basics-anatomy-of-angular/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-anatomy-of-angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Components</title>
+      <link>https://fireship.io/courses/angular/basics-components/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-components/</guid>
+      <description>Components, Directive, and Pipes This video below originally appeared at Angular Components - Ten Basic Concepts. It was originally produced for Angular v6, but the core concepts are identical.
+Component Composition Cross-component communication is one of the most useful concepts to master when working component-based UIs. This video below originally appeared as Sharing Data between Components and provides a reference when sharing data between components.
+Bonus Video </description>
+    </item>
+    
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://fireship.io/courses/angular/basics-services/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-services/</guid>
+      <description>Generate a Service command line ng g service clock Use-Cases for Services Services can inject shared data and methods into your components. They are also useful for writing code that maintains a DRY separation of concerns.
+Shared state. Services can connect data between components and are especially useful when components are not in a child/parent relationship. Shared logic. Stateless services that define common methods used in multiple components. </description>
+    </item>
+    
+    <item>
+      <title>Modules</title>
+      <link>https://fireship.io/courses/angular/basics-modules/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/basics-modules/</guid>
+      <description> command line ng generate module cool Get comfortable with declarations, imports, and exports.
+file_type_ng_component_ts some.module.ts @NgModule({ // Components defined in this module declarations: [ FooComponent ], // Components used in this module imports: [ CommonModule ], // Components that can be imported by other modules exports: [ FooComponent ], }) </description>
+    </item>
+    
+    <item>
+      <title>App Overview</title>
+      <link>https://fireship.io/courses/angular/app-primer/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-primer/</guid>
+      <description>Recommended: Clone the source code as a reference.
+Start a New Project Start a new project and make sure to use routing and scss for styles.
+command line ng new firestarter </description>
+    </item>
+    
+    <item>
+      <title>Meet Angular Material</title>
+      <link>https://fireship.io/courses/angular/app-material/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-material/</guid>
+      <description>We&amp;rsquo;re ready to start building the app! It&amp;rsquo;s ideal to kick off any new project with a solid foundation for design. An app that looks good from the day one will keep you happy and motivated throughout the development process.
+Steps Step 1 - Install Angular Material Install Angular Material command line ng add @angular/material Step 2 - Customize your Theme Colors (Optional) Customize your Theme Generate a Color Pallette Example of a custom color pallette.</description>
+    </item>
+    
+    <item>
+      <title>Schematics</title>
+      <link>https://fireship.io/courses/angular/app-schematics/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-schematics/</guid>
+      <description>Schematics provide sophisticated code blueprints using the Angular CLI, with many recipes included for Angular Material.
+For example, you could replace the component command from the last video with:
+command line ng generate @angular/material:nav shared/shell </description>
+    </item>
+    
+    <item>
+      <title>Shared Module</title>
+      <link>https://fireship.io/courses/angular/app-shared-module/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-shared-module/</guid>
+      <description>Create a shared module to avoid duplicate imports and exports of common Angular Material features.
+The SharedModule exports all declarations and modules so they can be consumed in other feature modules.
+Steps Step 1 - Create a Module command line ng g module shared Add it to the app module. It will be imported by all features in this app.
+file_type_ng_component_ts app.module.ts import { SharedModule } from &amp;#39;./shared/shared.module&amp;#39;; @NgModule({ declarations: [ AppComponent ], imports: [ BrowserModule, AppRoutingModule, BrowserAnimationsModule, SharedModule // &amp;lt;-- here ], providers: [], bootstrap: [AppComponent] }) export class AppModule { } Step 2 - Consolidate Imports Avoid duplication by consolidating your imports with the the spread syntax.</description>
+    </item>
+    
+    <item>
+      <title>App Navigation Shell</title>
+      <link>https://fireship.io/courses/angular/app-shell/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-shell/</guid>
+      <description>Add a basic navigation shell to the app and make it responsive on mobile.
+Steps Step 1 - Update the App Component Nesting components inside each other is known as transclusion.
+file_type_html app.component.html &amp;lt;app-shell&amp;gt; &amp;lt;router-outlet&amp;gt;&amp;lt;/router-outlet&amp;gt; &amp;lt;/app-shell&amp;gt; Shell Breakpoint Logic Make your navigation responsive by listening to breakpoints.
+file_type_ng_component_ts shell.component.ts import { Component } from &amp;#39;@angular/core&amp;#39;; import { BreakpointObserver, Breakpoints } from &amp;#39;@angular/cdk/layout&amp;#39;; import { Observable } from &amp;#39;rxjs&amp;#39;; import { map, shareReplay } from &amp;#39;rxjs/operators&amp;#39;; @Component({ selector: &amp;#39;app-shell&amp;#39;, templateUrl: &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>https://fireship.io/courses/angular/app-routing/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-routing/</guid>
+      <description>Learn routing basics in Angular and the usage of the routerLink directive in templates.
+Steps Step 1 - Generate a Component Generate home page component that is loaded by the router.
+command line ng g component home-page Step 2 - Register it in the Router file_type_ng_component_ts app-routing.module.ts import { NgModule } from &amp;#39;@angular/core&amp;#39;; import { Routes, RouterModule } from &amp;#39;@angular/router&amp;#39;; import { HomePageComponent } from &amp;#39;./home-page/home-page.component&amp;#39;; const routes: Routes = [ { path: &amp;#39;&amp;#39;, component: HomePageComponent } ]; @NgModule({ imports: [RouterModule.</description>
+    </item>
+    
+    <item>
+      <title>Firebase Setup</title>
+      <link>https://fireship.io/courses/angular/app-firebase-setup/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/app-firebase-setup/</guid>
+      <description>See this snippet for guided setup instructions or reference the official docs.</description>
+    </item>
+    
+    <item>
+      <title>Lazy Loaded Login Feature</title>
+      <link>https://fireship.io/courses/angular/user-feature-module/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/user-feature-module/</guid>
+      <description>Create a lazy-loaded feature module to handle user sign-in and related tasks.
+Steps Step 1 Generate a feature module with routing and add a component to it.
+command line ng g module user --routing ng g component user/login-page Step 2 - Update the User Routes Add the component to the user module routes.
+file_type_ng_component_ts user-routing.module.ts import { NgModule } from &amp;#39;@angular/core&amp;#39;; import { Routes, RouterModule } from &amp;#39;@angular/router&amp;#39;; import { LoginPageComponent } from &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Google SignIn</title>
+      <link>https://fireship.io/courses/angular/user-google-signin-directive/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/user-google-signin-directive/</guid>
+      <description>Steps Step 1 - Generate the Google Signin Directive command line ng g directive user/google-signin The directive listens to the click event on the host element to trigger the signin process in Firebase.
+Event Types
+file_type_ng_component_ts google-signin.directive.ts import { Directive, HostListener } from &amp;#39;@angular/core&amp;#39;; import { AngularFireAuth } from &amp;#39;@angular/fire/auth&amp;#39;; import firebase from &amp;#39;firebase/app; @Directive({ selector: &amp;#39;[appGoogleSignin]&amp;#39; }) export class GoogleSigninDirective { constructor(private afAuth: AngularFireAuth) {} @HostListener(&amp;#39;click&amp;#39;) onclick() { this.afAuth.signInWithPopup(new firebase.</description>
+    </item>
+    
+    <item>
+      <title>Email Password Auth</title>
+      <link>https://fireship.io/courses/angular/user-email-pass/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/user-email-pass/</guid>
+      <description>Official Reactive Forms Docs Steps Step 1 - Initial Setup command line ng g component user/email-login Your user module should look similer to this:
+file_type_ng_component_ts user.module.ts import { ReactiveFormsModule } from &amp;#39;@angular/forms&amp;#39;; import { EmailLoginComponent } from &amp;#39;./email-login/email-login.component&amp;#39;; @NgModule({ declarations: [LoginPageComponent, GoogleSigninDirective, EmailLoginComponent], imports: [ CommonModule, UserRoutingModule, SharedModule, ReactiveFormsModule ] }) export class UserModule { } Make sure to declare the form in the login page for unauthenticated users.</description>
+    </item>
+    
+    <item>
+      <title>Auth Guard</title>
+      <link>https://fireship.io/courses/angular/user-auth-guard/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/user-auth-guard/</guid>
+      <description>Use a router guard to protect routes from unauthorized users and show a snackbar error message.
+Steps Step 1 - Generate the Guard command line ng g guard user/auth file_type_ng_component_ts auth.guard.ts import { Injectable } from &amp;#39;@angular/core&amp;#39;; import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from &amp;#39;@angular/router&amp;#39;; import { AngularFireAuth } from &amp;#39;@angular/fire/auth&amp;#39;; import { SnackService } from &amp;#39;../services/snack.service&amp;#39;; @Injectable({ providedIn: &amp;#39;root&amp;#39; }) export class AuthGuard implements CanActivate { constructor( private afAuth: AngularFireAuth, private snack: SnackService ) {} async canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot ): Promise&amp;lt;boolean&amp;gt; { const user = await this.</description>
+    </item>
+    
+    <item>
+      <title>Kanban Module</title>
+      <link>https://fireship.io/courses/angular/kanban-module/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-module/</guid>
+      <description>Setup another lazy-loaded feature module for the development of Kanban boards.
+command line ng g module kanban --routing ng g component kanban/board-list Add the necessary imports to the kanban module.
+file_type_ng_component_ts kanban.module.ts import { NgModule } from &amp;#39;@angular/core&amp;#39;; import { CommonModule } from &amp;#39;@angular/common&amp;#39;; import { KanbanRoutingModule } from &amp;#39;./kanban-routing.module&amp;#39;; import { SharedModule } from &amp;#39;../shared/shared.module&amp;#39;; import { FormsModule } from &amp;#39;@angular/forms&amp;#39;; import { DragDropModule } from &amp;#39;@angular/cdk/drag-drop&amp;#39;; import { MatButtonToggleModule } from &amp;#39;@angular/material/button-toggle&amp;#39;; import { MatDialogModule } from &amp;#39;@angular/material/dialog&amp;#39;; @NgModule({ declarations: [], imports: [ CommonModule, KanbanRoutingModule, SharedModule, FormsModule, DragDropModule, MatDialogModule, MatButtonToggleModule, ] }) export class KanbanModule { } Lazy-load the kanban module.</description>
+    </item>
+    
+    <item>
+      <title>Firestore Data Model</title>
+      <link>https://fireship.io/courses/angular/kanban-firestore-data/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-firestore-data/</guid>
+      <description>Model the data in Firestore for the Kanban feature.
+Learn more about Data Modeling in Firestore.
+Data Model file_type_ng_component_ts board.model.ts export interface Board { id?: string; title?: string; priority?: number; tasks?: Task[]; } export interface Task { description?: string; label?: &amp;#39;purple&amp;#39; | &amp;#39;blue&amp;#39; | &amp;#39;green&amp;#39; | &amp;#39;yellow&amp;#39; | &amp;#39;red&amp;#39; | &amp;#39;gray&amp;#39;; } Firestore Security Rules file_type_firebase firebase rules rules_version = &amp;#39;2&amp;#39;; service cloud.firestore { match /databases/{database}/documents { match /boards/{document} { allow read; allow create: if requestMatchesUID(); allow update: if resourceMatchesUID() &amp;amp;&amp;amp; requestMatchesUID(); allow delete: if resourceMatchesUID(); } function requestMatchesUID() { return request.</description>
+    </item>
+    
+    <item>
+      <title>Database Service</title>
+      <link>https://fireship.io/courses/angular/kanban-database-service/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-database-service/</guid>
+      <description>Separate all database logic into a dedicated service.
+Database Service file_type_ng_component_ts database.service.ts import { Injectable } from &amp;#39;@angular/core&amp;#39;; import { AngularFireAuth } from &amp;#39;@angular/fire/auth&amp;#39;; import { AngularFirestore } from &amp;#39;@angular/fire/firestore&amp;#39;; import firebase from &amp;#39;firebase/app&amp;#39;; import { switchMap, map } from &amp;#39;rxjs/operators&amp;#39;; import { Board, Task } from &amp;#39;./board.model&amp;#39;; @Injectable({ providedIn: &amp;#39;root&amp;#39; }) export class BoardService { constructor(private afAuth: AngularFireAuth, private db: AngularFirestore) {} /** * Creates a new board for the current user */ async createBoard(data: Board) { const user = await this.</description>
+    </item>
+    
+    <item>
+      <title>CDK Drag and Drop</title>
+      <link>https://fireship.io/courses/angular/kanban-drag-drop/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-drag-drop/</guid>
+      <description>Use the Angular CDK Drag and Drop Module to enable reordering of Kanban boards and tasks.
+Steps Step 1 - Initial Setup command line ng g c kanban/board-list ng g c kanban/board Point the kanban router to the board list
+file_type_ng_component_ts kanban-routing.module.ts import { BoardListComponent } from &amp;#39;./board-list/board-list.component&amp;#39;; const routes: Routes = [ { path: &amp;#39;&amp;#39;, component: BoardListComponent } ]; Step 2 - Board List file_type_ng_component_ts board-list.component.ts import { Component, OnInit, OnDestroy } from &amp;#39;@angular/core&amp;#39;; import { CdkDragDrop, moveItemInArray } from &amp;#39;@angular/cdk/drag-drop&amp;#39;; import { Subscription } from &amp;#39;rxjs&amp;#39;; import { Board } from &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Drag and Drop Animation</title>
+      <link>https://fireship.io/courses/angular/kanban-animation/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-animation/</guid>
+      <description>Animate the the CDK Drag &amp;amp; Drop elements using CSS transitions.
+Full Styles board.scss boards-list.scss Animation Styles Board List file_type_html board-list.component.scss .cdk-drag-placeholder { opacity: 0.2; width: 350px; border: 5px dashed gray; margin: 0 10px; } .cdk-drag-animating { transition: transform 300ms ease; } .cdk-drop-list-dragging .cdk-drag { transition: transform 300ms ease; } Board file_type_html board.component.scss .cdk-drag-placeholder { opacity: 0.5; } .cdk-drag-animating { transition: transform 300ms ease; } .cdk-drop-list-dragging .cdk-drag { transition: transform 300ms ease; } .</description>
+    </item>
+    
+    <item>
+      <title>Dialogs</title>
+      <link>https://fireship.io/courses/angular/kanban-dialogs/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-dialogs/</guid>
+      <description>Use Material dialogs to create and update the data associated with boards and tasks.
+Steps Generate the Dialogs command line ng g c kanban/dialogs/board-dialog --flat --entry-component -s -t ng g c kanban/dialogs/task-dialog --flat --entry-component -s -t Step 2 - Board Dialog Create the board dialog component.
+file_type_ng_component_ts board-dialog.component.ts import { Component, Inject } from &amp;#39;@angular/core&amp;#39;; import { MatDialogRef, MAT_DIALOG_DATA } from &amp;#39;@angular/material/dialog&amp;#39;; @Component({ selector: &amp;#39;app-board-dialog&amp;#39;, template: ` &amp;lt;h1 mat-dialog-title&amp;gt;Board&amp;lt;/h1&amp;gt; &amp;lt;div mat-dialog-content&amp;gt; &amp;lt;p&amp;gt;What shall we call this board?</description>
+    </item>
+    
+    <item>
+      <title>Delete Button</title>
+      <link>https://fireship.io/courses/angular/kanban-delete-button/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/kanban-delete-button/</guid>
+      <description>Create a delete button that confirms the operation before sending the write to the database.
+Steps Step 1 - Generate the Component command line ng g c shared/delete-button Step 2 - Delete Button Component The delete button component is just UI (dumb component), meaning it only emits an event with the user&amp;rsquo;s delete intention. The parent component handles the actual database write.
+file_type_ng_component_ts delete-button.component.ts import { Component, Output, EventEmitter } from &amp;#39;@angular/core&amp;#39;; @Component({ selector: &amp;#39;app-delete-button&amp;#39;, templateUrl: &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Server-side Rendering - What? Why? How?</title>
+      <link>https://fireship.io/courses/angular/ssr-concepts/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/ssr-concepts/</guid>
+      <description>Determine the best rendering strategy for your use-case. You may not need SSR at all if the app does not care about search engine bots or social media link bots.
+Strategies Server-side Rendering (SSR) Renders the app on every request Requires a NodeJS server Prerendering Renders the app at build-time Can be deployed to Firebase Hosting Routes must be known in advance </description>
+    </item>
+    
+    <item>
+      <title>SEO Service</title>
+      <link>https://fireship.io/courses/angular/ssr-seo-service/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/ssr-seo-service/</guid>
+      <description>Create a customers module that uses dynamic routing and generates SEO metatags based on a Firestore document query.
+Steps Generate Resources command line ng g module customers --routing ng g c customers/detail-page ng g c customers/list-page ng g s services/seo Routing file_type_ng_component_ts customers-routing.module.ts import { NgModule } from &amp;#39;@angular/core&amp;#39;; import { Routes, RouterModule } from &amp;#39;@angular/router&amp;#39;; import { ListPageComponent } from &amp;#39;./list-page/list-page.component&amp;#39;; import { DetailPageComponent } from &amp;#39;./detail-page/detail-page.component&amp;#39;; const routes: Routes = [ { path: &amp;#39;&amp;#39;, component: ListPageComponent }, { path: &amp;#39;:id&amp;#39;, component: DetailPageComponent } ]; @NgModule({ imports: [RouterModule.</description>
+    </item>
+    
+    <item>
+      <title>Angular Universal with NestJS</title>
+      <link>https://fireship.io/courses/angular/ssr-nest/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/ssr-nest/</guid>
+      <description>Create a server module using Angular Universal with the NestJS schematic.
+Nest Universal Schematic
+Steps Add Universal and Nest command line ng add @nestjs/ng-universal npm run build:ssr npm run serve:ssr file_type_ng_component_ts server/main.ts import { NestFactory } from &amp;#39;@nestjs/core&amp;#39;; import { ApplicationModule } from &amp;#39;./app.module&amp;#39;; async function bootstrap() { const app = await NestFactory.create(ApplicationModule); app.setGlobalPrefix(&amp;#39;api&amp;#39;); await app.listen(process.env.PORT || 8080); // &amp;lt;-- update this line } bootstrap(); </description>
+    </item>
+    
+    <item>
+      <title>Prerendering</title>
+      <link>https://fireship.io/courses/angular/ssr-prerendering/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/ssr-prerendering/</guid>
+      <description>Create a script that can prerender specific routes using Angular Universal.
+Note, make sure you have enabled Universal with the schematic from the previous video or with ng add @nestjs/ng-universal.
+command line npm install --save-dev fs-extra http-server@0.9.0 package.json Scripts Add the following scripts to your package.json.
+file_type_npm package.json // ... &amp;#34;scripts&amp;#34;: { &amp;#34;build:prerender&amp;#34;: &amp;#34;npm run build:client-and-server-bundles &amp;amp;&amp;amp; node prerender.js&amp;#34;, &amp;#34;serve:prerender&amp;#34;: &amp;#34;http-server dist/browser -c-1&amp;#34; } Prerender Script file_type_js prerender.js require(&amp;#39;zone.js/dist/zone-node&amp;#39;); require(&amp;#39;reflect-metadata&amp;#39;); const { join } = require(&amp;#39;path&amp;#39;); const { enableProdMode } = require(&amp;#39;@angular/core&amp;#39;); // Import module map for lazy loading const { provideModuleMap } = require(&amp;#39;@nguniversal/module-map-ngfactory-loader&amp;#39;); const { renderModuleFactory } = require(&amp;#39;@angular/platform-server&amp;#39;); // leave this as require(), imported via webpack const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`.</description>
+    </item>
+    
+    <item>
+      <title>Angular Universal on Google Cloud Run</title>
+      <link>https://fireship.io/courses/angular/ssr-deploy-cloud-run/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/angular/ssr-deploy-cloud-run/</guid>
+      <description>Deploy Angular Universal to Google Cloud Run and connect it to Firebase hosting. Make sure Google Cloud SDK is installed on your local machine. Cloud Run is a solid choice, because it gives you a fully-managed &amp;ldquo;serverless&amp;rdquo; runtime using a Docker container - not to mention a generous free tier.
+Dockerize the App file_type_docker Dockerfile FROM node:10 WORKDIR usr/src/app COPY package*.json ./ RUN npm install # Copy local angular/nest code to the container COPY .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ionic 4 Firebase Master Course on Fireship</title>
+    <link>https://fireship.io/courses/ionic/</link>
+    <description>Recent content in Ionic 4 Firebase Master Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2019 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/ionic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/ionic/intro-resources/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-resources/</guid>
+      <description>How to Follow this Course You should clone the project source code as a reference. However, I recommend that you create your own project from scratch, then pause after each video and write some code. You will get the most out of a project-based course like this when you learn by doing. Experiment with your own code throughout the process and break things.
+Resources Bookmark these pages:
+Project The soruce code if the source of truth for this project.</description>
+    </item>
+    
+    <item>
+      <title>What is Ionic</title>
+      <link>https://fireship.io/courses/ionic/intro-what-ionic/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-what-ionic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Migration from Ionic v3 to v4</title>
+      <link>https://fireship.io/courses/ionic/intro-ionic3-migration-tips/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-ionic3-migration-tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ionic Setup</title>
+      <link>https://fireship.io/courses/ionic/intro-ionic-setup/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-ionic-setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firebase Setup</title>
+      <link>https://fireship.io/courses/ionic/intro-setup-firebase/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-setup-firebase/</guid>
+      <description>Native Tooling Overview </description>
+    </item>
+    
+    <item>
+      <title>AngularFire Setup</title>
+      <link>https://fireship.io/courses/ionic/intro-angular-setup/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/intro-angular-setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Organization</title>
+      <link>https://fireship.io/courses/ionic/basics-code-organization/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-code-organization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Components</title>
+      <link>https://fireship.io/courses/ionic/basics-components/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-components/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Component APIs</title>
+      <link>https://fireship.io/courses/ionic/basics-component-apis/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-component-apis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Routing and Navigation</title>
+      <link>https://fireship.io/courses/ionic/basics-routing-navigation/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-routing-navigation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ionic Storage</title>
+      <link>https://fireship.io/courses/ionic/basics-storage/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Themes</title>
+      <link>https://fireship.io/courses/ionic/basics-css-themes/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-css-themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Router Guards</title>
+      <link>https://fireship.io/courses/ionic/basics-router-guards/</link>
+      <pubDate>Sat, 13 Jul 2019 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/basics-router-guards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Primer</title>
+      <link>https://fireship.io/courses/ionic/users-primer/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-primer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anonymous Auth</title>
+      <link>https://fireship.io/courses/ionic/users-anonymous/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-anonymous/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>User Profile</title>
+      <link>https://fireship.io/courses/ionic/users-user-profile/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-user-profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OAuth Web</title>
+      <link>https://fireship.io/courses/ionic/users-oauth-web/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-oauth-web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OAuth Native</title>
+      <link>https://fireship.io/courses/ionic/users-oauth-native/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-oauth-native/</guid>
+      <description>Note: If you run into bugs at this point building your app for Android, you may need to follow the steps outlined in this video:</description>
+    </item>
+    
+    <item>
+      <title>User Router Guard</title>
+      <link>https://fireship.io/courses/ionic/users-router-guard/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/users-router-guard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Primer</title>
+      <link>https://fireship.io/courses/ionic/app-primer/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-primer/</guid>
+      <description>Not sure how to structure your database? You may also want to check out the Firestore Data Modeling Course.</description>
+    </item>
+    
+    <item>
+      <title>Database Service</title>
+      <link>https://fireship.io/courses/ionic/app-database-service/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-database-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firestore Queries</title>
+      <link>https://fireship.io/courses/ionic/app-query/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-query/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observable Loop</title>
+      <link>https://fireship.io/courses/ionic/app-loop/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-loop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Update Data</title>
+      <link>https://fireship.io/courses/ionic/app-update/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom Events</title>
+      <link>https://fireship.io/courses/ionic/app-ion-segment/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-ion-segment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filter Data</title>
+      <link>https://fireship.io/courses/ionic/app-filter-data/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-filter-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modal</title>
+      <link>https://fireship.io/courses/ionic/app-modal/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-modal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reactive Forms</title>
+      <link>https://fireship.io/courses/ionic/app-reactive-form/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-reactive-form/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Routing</title>
+      <link>https://fireship.io/courses/ionic/app-dynamic-routes/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-dynamic-routes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Rules</title>
+      <link>https://fireship.io/courses/ionic/app-security/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/app-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FCM Primer</title>
+      <link>https://fireship.io/courses/ionic/fcm-primer/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/fcm-primer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud Functions</title>
+      <link>https://fireship.io/courses/ionic/fcm-cloud-functions/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/fcm-cloud-functions/</guid>
+      <description>You might also find the Firebase Cloud Functions Master Course useful for more complex serverless integrations.</description>
+    </item>
+    
+    <item>
+      <title>Web Notifications</title>
+      <link>https://fireship.io/courses/ionic/fcm-web/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/fcm-web/</guid>
+      <description>Bonus Video </description>
+    </item>
+    
+    <item>
+      <title>Native Notifications</title>
+      <link>https://fireship.io/courses/ionic/fcm-native/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/fcm-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Deployment</title>
+      <link>https://fireship.io/courses/ionic/deploy-web/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/deploy-web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS Deployment</title>
+      <link>https://fireship.io/courses/ionic/deploy-ios/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/deploy-ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android Deployment</title>
+      <link>https://fireship.io/courses/ionic/deploy-android/</link>
+      <pubDate>Thu, 11 Nov 2021 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/ionic/deploy-android/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

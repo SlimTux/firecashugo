@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deckgl on Fireship</title>
+    <link>https://fireship.io/tags/deckgl/</link>
+    <description>Recent content in deckgl on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Oct 2019 07:53:34 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/deckgl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deck.gl Google Maps Tutorial</title>
+      <link>https://fireship.io/lessons/deckgl-google-maps-tutorial/</link>
+      <pubDate>Tue, 29 Oct 2019 07:53:34 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/deckgl-google-maps-tutorial/</guid>
+      <description>Have you ever tried to load thousands of datapoints into Google Maps? It probably didn&amp;rsquo;t go very well from a performance standpoint. Deck.gl is a library that solves this problem by running expensive computations on the GPU with WebGL. This means you can run realtime 3D visualizations on datasets with millions of geographic points.
+In the following lesson, you will learn how to add high-performance data overlays to Google Maps based on a dataset of 140,000+ incidents of gun violence in the United States.</description>
+    </item>
+    
+  </channel>
+</rss>

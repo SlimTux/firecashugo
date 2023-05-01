@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dialogflow on Fireship</title>
+    <link>https://fireship.io/tags/dialogflow/</link>
+    <description>Recent content in dialogflow on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Aug 2019 09:45:18 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/dialogflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a Chatbot With Dialogflow</title>
+      <link>https://fireship.io/lessons/build-a-chatbot-with-dialogflow/</link>
+      <pubDate>Mon, 12 Aug 2019 09:45:18 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/build-a-chatbot-with-dialogflow/</guid>
+      <description>Chatbots make it possible for the average developer to deliver excellent (and affordable) customer service at scale - Building conversational experiences has never been easier thanks to the Dialogflow conversation platform.
+Dialogflow is a free tool on Google Cloud for creating voice and text conversational interfaces. It uses Natural Language Processing NLP technology, allowing you to create experiences similar to Google Assistant or Amazon Alexa. In following lesson creates a chatbot from scratch in the three main steps:</description>
+    </item>
+    
+  </channel>
+</rss>

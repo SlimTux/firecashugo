@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Relational Data Fetching</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.08af547b.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+
+    
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/courses/flutter-firebase/firestore-relational/" />
+
+    <meta name="description" content="Fetch data associated to the current user">
+    <meta name="image" content="https://fireship.io/img/default-cover.png">
+
+    <meta property="og:title" content="Relational Data Fetching" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/courses/flutter-firebase/firestore-relational/" />
+    <meta property="og:image" content="https://fireship.io/img/default-cover.png" />
+    <meta property="og:description" content="Fetch data associated to the current user" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Relational Data Fetching">
+    <meta name="twitter:description" content="Fetch data associated to the current user">
+    <meta name="twitter:image" content="https://fireship.io/img/default-cover.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/courses/flutter-firebase/firestore-relational/" 
+    vimeo="645765678"
+    youtube=""
+    free=""
+    next="https://fireship.io/courses/flutter-firebase/firestore-write/" 
+    prev="https://fireship.io/courses/flutter-firebase/firestore-fetch/">
+  </global-data>
+
+    
+	<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+	
+
+	<main
+		class="container flex flex-col-reverse md:flex-row">
+		
+		<navbar-toggle>
+			
+			<ul class="sticky top-0 h-screen overflow-auto scrollbar mr-4 pb-10 pr-4 min-w-[300px]" id="sidebar">
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">⚡</i>
+							<h3 class="text-gray3">Getting Started</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-flutter-100s/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="true" route="/courses/flutter-firebase/intro-flutter-100s/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Flutter Explained in 100 Seconds
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:20</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-resources/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/intro-resources/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Resources
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">1:42</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-flutter-setup/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/intro-flutter-setup/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Installation and Setup
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:20</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-flutter-create/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/intro-flutter-create/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Flutter Create
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:06</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-vscode/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/intro-vscode/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Editor Tricks
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:33</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/intro-dev-tools/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/intro-dev-tools/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Dev Tools
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:14</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">🐣</i>
+							<h3 class="text-gray3">Basic Training</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/basic-training/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="true" route="/courses/flutter-firebase/basic-training/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Flutter Basics Tutorial
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">12:05</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/basic-async/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/basic-async/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Async Widgets
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">1:45</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/basic-provider/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/basic-provider/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Provider
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:17</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">🎫</i>
+							<h3 class="text-gray3">Let&#39;s Build an App</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-demo-app-tour/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="true" route="/courses/flutter-firebase/project-demo-app-tour/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									App Tour
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">1:38</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-firebase-setup/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-firebase-setup/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Firebase setup
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:30</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-organization/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-organization/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Project Organization
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:19</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-routing/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-routing/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Routing
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:32</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-themes/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-themes/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Themes
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:14</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-google-fonts/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-google-fonts/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Google Fonts
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">0:45</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/project-bottom-nav/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/project-bottom-nav/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Bottom Navigation Bar
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:51</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">🌊</i>
+							<h3 class="text-gray3">User Authentication</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/auth-stream/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/auth-stream/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Auth Stream
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:18</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/auth-login-screen/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/auth-login-screen/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Login Screen
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:53</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/auth-google/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/auth-google/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Google Sign In
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:15</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/auth-apple/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/auth-apple/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Sign in with Apple
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">0:00</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">💽</i>
+							<h3 class="text-gray3">Firestore</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/firestore-data-model/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/firestore-data-model/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Database Model
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:00</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/firestore-json-serializable/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/firestore-json-serializable/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									JSON Serializable
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:20</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/firestore-fetch/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/firestore-fetch/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Basic Data Fetching
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:55</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 active-chapter" href="https://fireship.io/courses/flutter-firebase/firestore-relational/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/firestore-relational/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Relational Data Fetching
+								</span>
+
+								
+									<div id="activeChapter" class="ml-5">🔥</div>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/firestore-write/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/firestore-write/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Write to Firestore
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">1:47</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">📳</i>
+							<h3 class="text-gray3">Core UI</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-screen/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-screen/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Topics Grid
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:12</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-hero-animation/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-hero-animation/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Hero Animation
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:08</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-stream-provider/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-stream-provider/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Stream Provider
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">2:16</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-drawer/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-drawer/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Dynamic Drawer
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:59</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-profile/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-profile/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									User Profile
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">1:33</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/topics-progress-bar/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/topics-progress-bar/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Animated Progress Bar
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:00</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">✨</i>
+							<h3 class="text-gray3">Quiz UI</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/quiz-state/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/quiz-state/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									State Management with Provider
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:09</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/quiz-page-view/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/quiz-page-view/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Dynamic Screens
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:47</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/quiz-bottom-sheet/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/quiz-bottom-sheet/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Bottom Sheet
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">3:12</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">🙌</i>
+							<h3 class="text-gray3">Release</h3>
+						</li>
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/release-android/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/release-android/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Google Play
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:23</span>
+								
+							</div>
+						</a>
+					</li>
+				
+
+					
+					
+
+					
+					<li>
+						<a class="text-gray4 hover:text-gray1 " href="https://fireship.io/courses/flutter-firebase/release-ios/">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="" route="/courses/flutter-firebase/release-ios/"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									Apple App Store
+								</span>
+
+								
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">4:16</span>
+								
+							</div>
+						</a>
+					</li>
+				
+			</ul>
+
+			<ul slot="collapse" class="cursor-pointer sticky top-0">
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">⚡</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">🐣</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">🎫</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">🌊</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">💽</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">📳</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">✨</i>
+						</div>
+					
+				
+
+					
+					
+				
+
+					
+					
+				
+
+					
+					
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">🙌</i>
+						</div>
+					
+				
+
+					
+					
+				
+			</ul>
+		</navbar-toggle>
+
+		
+		<article class="prose dark:prose-invert pt-1 mx-auto px-3 md:px-8 min-w-0 max-w-none w-full">
+
+		
+				<video-player free=""></video-player>
+		
+
+		<nav class="flex items-center py-6 px-4 bg-black bg-opacity-20 shadow-lg mb-6">
+			<div class="flex flex-col items-center">
+				<autoplay-toggle></autoplay-toggle>
+			
+				<span class="text-xs relative bottom-1">autoplay</span>
+			</div>
+
+			<div class="ml-auto">
+				
+					<a class="btn btn-transparent" href="/courses/flutter-firebase/firestore-fetch/">👈</a>
+				
+
+				<a class="btn btn-transparent" href="/courses/flutter-firebase/">🏠</a>
+
+				
+					<a class="btn btn-transparent" href="/courses/flutter-firebase/firestore-write/">👉</a>
+				
+			</div>
+
+			<div class="ml-auto w-16 px-4 text-center">
+
+					<mark-complete slot="granted" quiz="" free=""></mark-complete>
+			</div>
+		</nav>
+
+
+
+		<header class="border-b-2 border-dashed border-gray6 mb-6">
+			<h1>
+				👁️‍🗨️
+				<span class="gradient-text inline-block mb-0">Relational Data Fetching</span>
+			</h1>
+			<p class="text-sm mt-1 text-gray4">Fetch data associated to the current user</p>
+		</header>
+
+		<section>
+			<h2 id="relational-data-fetching">Relational Data Fetching</h2>
+<p>The pattern below is useful for listening to a realtime stream that depends on the current user&rsquo;s UID. The <code>switchmap</code> extension method from RxDart is an essential tool for combining two streams.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_flutter</title><polyline points="15.383 18.316 18.744 15.042 27.093 15.042 19.697 22.438 15.383 18.316 15.383 18.316 15.383 18.316 15.383 18.316 15.383 18.316" style="fill:#40d0fd"/><polygon points="4.907 16.125 9.106 20.424 27.093 2.287 18.744 2.287 4.907 16.125" style="fill:#41d0fd;isolation:isolate"/><polygon points="11.176 22.479 15.435 26.675 19.697 22.438 15.383 18.316 11.176 22.479" style="fill:#1fbcfd"/><polygon points="15.435 26.675 19.697 22.438 26.989 29.813 18.593 29.813 15.435 26.675" style="fill:#095a9d"/><polygon points="15.435 26.675 19.406 25.354 18.068 24.057 15.435 26.675" style="fill:#0e5199"/></svg></span> firestore.dart
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">FirestoreService</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">/// Listens to current user&#39;s report document in Firestore
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Report</span><span class="o">&gt;</span> <span class="n">streamReport</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">AuthService</span><span class="p">().</span><span class="n">userStream</span><span class="p">.</span><span class="n">switchMap</span><span class="p">((</span><span class="n">user</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">_db</span><span class="p">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;reports&#39;</span><span class="p">).</span><span class="n">doc</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">uid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ref</span><span class="p">.</span><span class="n">snapshots</span><span class="p">().</span><span class="n">map</span><span class="p">((</span><span class="n">doc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Report</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">data</span><span class="p">()</span><span class="o">!</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Stream</span><span class="p">.</span><span class="n">fromIterable</span><span class="p">([</span><span class="n">Report</span><span class="p">()]);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+		</section>
+
+		<div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"></div>
+
+		<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+	</main>
+
+    
+      
+    
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

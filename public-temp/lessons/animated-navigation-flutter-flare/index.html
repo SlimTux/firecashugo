@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Flutter Flare 2D Animation Basics</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/index.08af547b.css" />
+    <script type="module" defer src="/svelte/index.7e2b9467.js" /></script>
+
+    
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    
+
+ 
+
+
+
+
+    <link rel="canonical" href="https://fireship.io/lessons/animated-navigation-flutter-flare/" />
+
+    <meta name="description" content="Build an animated navigation menu in Flutter with Flare2D">
+    <meta name="image" content="https://fireship.io/lessons/animated-navigation-flutter-flare/img/featured.png">
+
+    <meta property="og:title" content="Flutter Flare 2D Animation Basics" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://fireship.io/lessons/animated-navigation-flutter-flare/" />
+    <meta property="og:image" content="https://fireship.io/lessons/animated-navigation-flutter-flare/img/featured.png" />
+    <meta property="og:description" content="Build an animated navigation menu in Flutter with Flare2D" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="Flutter Flare 2D Animation Basics">
+    <meta name="twitter:description" content="Build an animated navigation menu in Flutter with Flare2D">
+    <meta name="twitter:image" content="https://fireship.io/lessons/animated-navigation-flutter-flare/img/featured.png">
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="https://fireship.io/lessons/animated-navigation-flutter-flare/" 
+    vimeo=""
+    youtube="hwBUU9CP4qI"
+    free=""
+    next="https://fireship.io/lessons/vscode-cloud-coder-tensorflow/" 
+    prev="https://fireship.io/lessons/firebase-microservices-with-cloud-run/">
+  </global-data>
+
+    
+<nav class="flex justify-between container p-6 md:p-8">
+  <a
+    class="flex justify-center items-center text-center w-12 h-12 logo-gif"
+    href="/"
+  >
+    <img id="logo" src="/img/logo.svg" alt="logo" />
+    <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
+  </a>
+
+  <ul class="flex justify-center items-center">
+    <if-pro>
+      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      </li>
+    </if-pro>
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">Resources</a>
+    </li>
+    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
+      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">Activities</a>
+    </li>
+    <li class="ml-2">
+      <modal-action type="open" name="search">
+        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+          <span class="text-gray2 w-4 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+          <span class="mr-12">Search</span>
+          <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
+        </button>
+        <button class="flex md:hidden">
+          <span class="text-gray2 w-6 mx-2">
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fk-search fk-w-16 fk-9x">
+<g class="fk-group"><path fill="currentColor" d="M208 80a128 128 0 1 1-90.51 37.49A127.15 127.15 0 0 1 208 80m0-80C93.12 0 0 93.12 0 208s93.12 208 208 208 208-93.12 208-208S322.88 0 208 0z" class="fk-secondary"></path><path fill="currentColor" d="M504.9 476.7L476.6 505a23.9 23.9 0 0 1-33.9 0L343 405.3a24 24 0 0 1-7-17V372l36-36h16.3a24 24 0 0 1 17 7l99.7 99.7a24.11 24.11 0 0 1-.1 34z" class="fk-primary">
+</path></g></svg></span>
+        </button>
+        </modal-action>
+      </li>
+    <li class="ml-2 mr-6 relative">
+      <if-user>
+        <a href="/dashboard">
+          <user-avatar></user-avatar>
+        </a>
+        <modal-action slot="signed-out" name="signin" type="open">
+          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+            login
+          </button>
+          <button class="flex md:hidden">
+            <span class="text-gray2 w-6 mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+</span>
+          </button>
+        </modal-action>
+      </if-user>
+    </li>
+
+
+  </ul>
+</nav>
+
+
+    
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="2019-04-02 11:00:35 -0700 -0700" />
+			<meta itemprop="dateModified" content="2019-04-02 11:00:35 -0700 -0700" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				
+				
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/hwBUU9CP4qI"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/hwBUU9CP4qI" />
+					<meta itemprop="thumbnailUrl" content="" />
+					<meta itemprop="description" content="Build an animated navigation menu in Flutter with Flare2D" />
+					<meta itemprop="uploadDate" content="2019-04-02 11:00:35 -0700 -0700" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				
+
+				
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					
+					
+					<a class="flex items-center no-underline" itemprop="author" name="Jeff Delaney" href="/contributors/jeff-delaney/">
+						<img class="w-10 h-10 rounded-full block" src="/contributors/img/jeff-delaney.webp" alt="Jeff Delaney avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By Jeff Delaney</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">Apr 2, 2019</time>
+						</span>
+	
+					</a>
+
+					
+					<span>
+						
+							<a href="/tags/flutter"><span class="tag tag-flutter">#flutter</span></a>
+						
+							<a href="/tags/flare2d"><span class="tag tag-flare2d">#flare2d</span></a>
+						
+							<a href="/tags/animation"><span class="tag tag-animation">#animation</span></a>
+						
+
+						
+							<a class="btn btn-transparent ml-4" href="https://github.com/fireship-io/177-flare-flutter-giphy-navbar">
+								Source Code
+							</a>
+						
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="flutter-flare-2d-animation-basics" class="gradient-text">
+					Flutter Flare 2D Animation Basics
+				</h1>
+
+
+				<p>Whenever I see an awesome UI element in a native app my first question is <em>How do I make that in Flutter?</em>. That&rsquo;s exactly what I asked when I downloaded the <a href="https://giphy.com/apps">Giphy</a> Android app recently, which has runs a colorful and fun animation for each icon in the bottom navbar.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/328094871" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>These animations are complex. Hypothetically, they could be created in Flutter natively with a custom painter, but that would be very challenging and painful. Thankfully, we have <a href="https://www.2dimensions.com/about-flare">Flare 2D</a> a design tool that makes it easy to create complex animations with vector graphics and run them in Flutter&rsquo;s rendering engine at 60+ FPS.</p>
+<h2 id="part-1-create-animated-icons-with-flare-2d">Part 1: Create Animated Icons with Flare 2D</h2>
+<p>Access the files used in this lesson on my <a href="https://www.2dimensions.com/a/delaneyphx/files/recent/all">Flare profile</a> or from the project github repo.</p>
+<p>First, we need to create some awesome animated graphics with Flare. Create a free account, then complete the tasks below. These tasks represent the skills you need to have in Flare to re-create Giphy&rsquo;s animated icons.</p>
+<p>I highly recommend memorizing the following hotkeys.</p>
+<ul>
+<li><code>T</code> translate or move shapes around.</li>
+<li><code>S</code> scale or resize shapes.</li>
+<li><code>R</code> rotate shapes.</li>
+<li>Hold <code>space</code> to drag around the screen.</li>
+<li><code>ctrl+Z</code> to undo.</li>
+</ul>
+<h3 id="draw-a-shape">Draw a Shape</h3>
+<p>Flare provides a basic set of design tools that we can use to draw vector graphics. You can also design your graphics in a different tool, like Figma or Sketch for example, then import them into Flare.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Draw a basic star shape using the star tool.</li>
+<li>Center it on the artboard and have it take up as much space on the Y axis as possible.</li>
+<li>Remove the stroke and adjust the fill color.</li>
+</ol>
+<figure><img src="img/flare-star.png"
+         alt="Draw a star"/><figcaption>
+            <p>Draw a star</p>
+        </figcaption>
+</figure>
+
+<h3 id="animate-the-fill-color">Animate the Fill Color</h3>
+<p>We can animate almost anything on the shape. Let&rsquo;s get familiar with the animation timeline by animating the color of the star from gray to yellow.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Switch to animation mode.</li>
+<li>Change the untitled animation name to <em>go</em> (this will be important when we get the Flutter code).</li>
+<li>Create a keyframe by selecting the diamond next to the fill control.</li>
+<li>Scrub the timeline to the end and change the fill color. A new keyfame would be added automatically.</li>
+<li>Press play. You just created an animation.</li>
+</ol>
+<figure><img src="img/flare-star-animated.png"
+         alt="Animate the fill color of the star"/><figcaption>
+            <p>Animate the fill color of the star</p>
+        </figcaption>
+</figure>
+
+<h3 id="animate-transformations---translate-scale-rotate">Animate Transformations - Translate, Scale, Rotate</h3>
+<p>An easy way to bring your shapes to life is by animating size, movement, and rotation angle.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Create keyframes for rotation and scale.</li>
+<li>Adjust the key interpolation to make to ease the timing.</li>
+</ol>
+<figure><img src="img/flare-star-rotate.png"
+         alt="Animate the rotation of the star and change the key interpolation to cubic"/><figcaption>
+            <p>Animate the rotation of the star and change the key interpolation to cubic</p>
+        </figcaption>
+</figure>
+
+<h3 id="animate-the-shape">Animate the Shape</h3>
+<p>We can also animate the verticies of the star to to transform it into a completely different shape.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Add a keyframe to edit verticies.</li>
+<li>Click &ldquo;edit verticies&rdquo;, scrub to a different time,  move the verticies to automatically add a keyframe.</li>
+</ol>
+<figure><img src="img/flare-star-vert.png"
+         alt="Use the verticies to change and animate the points of the shape"/><figcaption>
+            <p>Use the verticies to change and animate the points of the shape</p>
+        </figcaption>
+</figure>
+
+<h3 id="animate-the-stroke-for-a-hand-drawn-effect">Animate the Stroke for a Hand-Drawn Effect</h3>
+<p>Stroke animations make it easy to look like you are drawing a shape by hand.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Give the shape a stroke.</li>
+<li>Set the end of  the stroke to 0% until it is invisible.</li>
+<li>Animate the end value to give it a drawing effect.</li>
+</ol>
+<figure><img src="img/flare-animated-stroke.png"
+         alt="Animate the stroke end from 0% to 100%"/><figcaption>
+            <p>Animate the stroke end from 0% to 100%</p>
+        </figcaption>
+</figure>
+
+<h3 id="animate-the-position-in-a-clipping-mask">Animate the Position in a Clipping Mask</h3>
+<p>Clipping masks allow you to make shapes disappear behind another shape. A clipping mask is like installing a window on the house - you can only see the contents inside its boundaries.</p>
+<p><strong>Tasks</strong></p>
+<ol>
+<li>Create a new shape that covers the star.</li>
+<li>Select the star, then click <em>clipping box</em>, then select the new shape.</li>
+<li>Go into animation mode and animate the position of the star.</li>
+</ol>
+<figure><img src="img/flare-star-clip.png"
+         alt="Create another shape to serve as a clipping box for the star."/><figcaption>
+            <p>Create another shape to serve as a clipping box for the star.</p>
+        </figcaption>
+</figure>
+
+<h2 id="part-2---flutter-flare-integration">Part 2 - Flutter Flare Integration</h2>
+<p>Flare provides package that makes it dead simple to use our animations into an iOS or Android app with Flutter. Run to <code>flutter create your_project</code> to get started. The end goal is to build a usable animated icon navigation menu like the demo below:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/328094871" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<h3 id="add-flare_flutter-to-pubspecyaml">Add flare_flutter to pubspec.yaml</h3>
+<p>Add <a href="https://pub.dartlang.org/packages/flare_flutter">flare_flutter</a> to the <code>pubspec.yaml</code>.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_light_yaml</title><path d="M2,12.218c.755,0,1.51-.008,2.264,0l.053.038Q5.7,13.638,7.078,15.014c.891-.906,1.8-1.794,2.7-2.7.053-.052.11-.113.192-.1.608,0,1.215,0,1.823,0a1.4,1.4,0,0,1,.353.019c-.7.67-1.377,1.369-2.069,2.05L5.545,18.8c-.331.324-.648.663-.989.975-.754.022-1.511.007-2.266.007,1.223-1.209,2.431-2.433,3.658-3.637C4.627,14.841,3.318,13.525,2,12.218Z" style="fill:#fbc02d"/><path d="M12.7,12.218c.613,0,1.226,0,1.839,0q0,3.783,0,7.566c-.611,0-1.222.012-1.832-.008,0-1.664,0-3.329,0-4.994-1.6,1.607-3.209,3.2-4.811,4.8-.089.08-.166.217-.305.194-.824-.006-1.649,0-2.474,0Q8.916,16,12.7,12.218Z" style="fill:#fbc02d"/><path d="M14.958,12.22c.47-.009.939,0,1.409,0,.836.853,1.69,1.689,2.536,2.532q1.268-1.267,2.539-2.532.7,0,1.4,0-.008,3.784,0,7.567c-.471,0-.943.006-1.414,0q.008-2.387,0-4.773c-.844.843-1.676,1.7-2.526,2.536-.856-.835-1.687-1.695-2.532-2.541,0,1.594-.006,3.188.006,4.781-.472,0-.943.005-1.415,0Q14.958,16,14.958,12.22Z" style="fill:#fbc02d"/><path d="M23.259,12.217c.472,0,.944-.007,1.416,0q-.007,3.083,0,6.166c1.26,0,2.521,0,3.782,0,.063.006.144-.012.191.045.448.454.907.9,1.353,1.354q-3.371.007-6.741,0Q23.267,16,23.259,12.217Z" style="fill:#fbc02d"/></svg></span> build.yaml
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">dependencies</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flutter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l">flutter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">flare_flutter</span><span class="p">:</span><span class="w"> </span><span class="l">any</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">flutter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uses-material-design</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">assets</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span>- <span class="l">assets/  </span><span class="w">
+</span></span></span></code></pre></div><h3 id="export-your-animations-to-flutter">Export your Animations to Flutter</h3>
+<p>Export the animations to a folder named <code>assets</code> in the root of your project.</p>
+<figure><img src="img/flare-export-screen.png"
+         alt="Export the binary file from Flare"/><figcaption>
+            <p>Export the binary file from Flare</p>
+        </figcaption>
+</figure>
+
+<h3 id="define-a-class-for-the-menu-item">Define a Class for the Menu Item</h3>
+<p>There are many different ways to build a menu in flutter, but we&rsquo;re going to build our navigation menu from scratch. The data for each menu item can be abstracted into a class.</p>
+<ul>
+<li><code>name</code> is the filename of the <em>.flr</em> asset</li>
+<li><code>color</code> controls the line above the icon</li>
+<li><code>x</code> is the X-axis alignment of the item (-1 is far left, 1 is far right).</li>
+</ul>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">MenuItem</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="kt">String</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="n">Color</span> <span class="n">color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">MenuItem</span><span class="p">({</span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">color</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">x</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="animating-the-colored-top-bar">Animating the Colored Top Bar</h3>
+<p>Our navigation menu is wrapped in a StatefulWidget to keep track of the currently selected item. Here&rsquo;s a breakdown of each important line of code.</p>
+<ol>
+<li>Set a default menu item on <code>initState</code>.</li>
+<li>Define a <a href="https://fireship.io/lessons/flutter-widget-positioning-guide/">Stack</a>. The first element is an container for the colored , while the second item is the navigation menu row..</li>
+<li>Create an <a href="https://www.youtube.com/watch?v=yI-8QHpGIP4&amp;vl=en">AnimatedContainer</a> that takes up 20% of the screen width and is aligned to the active menu item.</li>
+<li>Define a <em>Row</em> to hold the Flare graphics that uses <code>spaceAround</code> alignment on the main axis.</li>
+</ol>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">NavBar</span> <span class="kd">extends</span> <span class="n">StatefulWidget</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">createState</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">NavBarState</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">NavBarState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">NavBar</span><span class="o">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">List</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="p">(</span><span class="nl">x:</span> <span class="o">-</span><span class="m">1.0</span><span class="p">,</span> <span class="nl">name:</span> <span class="s1">&#39;house&#39;</span><span class="p">,</span> <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">lightBlue</span><span class="p">[</span><span class="m">100</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="p">(</span><span class="nl">x:</span> <span class="o">-</span><span class="m">0.5</span><span class="p">,</span> <span class="nl">name:</span> <span class="s1">&#39;planet&#39;</span><span class="p">,</span> <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">purple</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="p">(</span><span class="nl">x:</span> <span class="m">0.0</span><span class="p">,</span> <span class="nl">name:</span> <span class="s1">&#39;camera&#39;</span><span class="p">,</span> <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">greenAccent</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="p">(</span><span class="nl">x:</span> <span class="m">0.5</span><span class="p">,</span> <span class="nl">name:</span> <span class="s1">&#39;heart&#39;</span><span class="p">,</span> <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">pink</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="p">(</span><span class="nl">x:</span> <span class="m">1.0</span><span class="p">,</span> <span class="nl">name:</span> <span class="s1">&#39;head&#39;</span><span class="p">,</span> <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">yellow</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">MenuItem</span> <span class="n">active</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="n">override</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="n">initState</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">active</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="m">0</span><span class="p">];</span> <span class="c1">// &lt;-- 1. Activate a menu item
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">@</span><span class="n">override</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">w</span> <span class="o">=</span> <span class="n">MediaQuery</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Container</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">height:</span> <span class="m">80</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">color:</span> <span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">child:</span> <span class="n">Stack</span><span class="p">(</span>    <span class="c1">//  &lt;-- 2. Define a stack
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nl">children:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">          <span class="n">AnimatedContainer</span><span class="p">(</span>  <span class="c1">//  &lt;-- 3. Animated top bar
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nl">duration:</span> <span class="n">Duration</span><span class="p">(</span><span class="nl">milliseconds:</span> <span class="m">200</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">alignment:</span> <span class="n">Alignment</span><span class="p">(</span><span class="n">active</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="m">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">child:</span> <span class="n">AnimatedContainer</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">duration:</span> <span class="n">Duration</span><span class="p">(</span><span class="nl">milliseconds:</span> <span class="m">1000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">height:</span> <span class="m">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">width:</span> <span class="n">w</span> <span class="o">*</span> <span class="m">0.2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">color:</span> <span class="n">active</span><span class="p">.</span><span class="n">color</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">Container</span><span class="p">(</span>  <span class="c1">// &lt;-- 4. Main menu row
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nl">child:</span> <span class="n">Row</span><span class="p">(</span>   
+</span></span><span class="line"><span class="cl">              <span class="nl">mainAxisAlignment:</span> <span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">spaceAround</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">crossAxisAlignment:</span> <span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">end</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nl">children:</span> <span class="n">items</span><span class="p">.</span><span class="n">map</span><span class="p">((</span><span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">_flare</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>  <span class="c1">// &lt;-- 5. Flare graphic will go here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="animating-the-flare-graphics">Animating the Flare Graphics</h3>
+<p>In this final section, we define a method that will turn the Flare animations into tap-able buttons that change the state of the widget. This can be achieved with a <code>setState</code> call from a <em>GestureDetector</em>, as we do not want Material ink splashes in this demo.</p>
+<p>The <em>FlareActor</em> is a widget from the flare_flutter package that that will run the specified animation when the state changes.</p>
+<p>Remember, we defined the animation name as <em>go</em> in the Flare editor before exporting the file. By default, the animation name is <em>Untitled</em>.</p>
+
+
+<div class="file-name">
+  <span class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>file_type_dartlang</title><path d="M16.739,2.037a1.314,1.314,0,0,0-.916.377l-.013.01L7.22,7.389l8.566,8.566v.006l10.3,10.3,1.963-3.536L20.968,5.728l-3.3-3.3a1.307,1.307,0,0,0-.927-.388Z" style="fill:#66c3fa"/><path d="M7.25,7.35,2.288,15.931l-.01.013a1.322,1.322,0,0,0-.378.919,1.3,1.3,0,0,0,.387.924L6.4,21.9l16.084,6.327,3.636-2.02-.1-.1-.025,0-10.083-10.1H15.9L7.25,7.35Z" style="fill:#215896"/><path d="M7.192,7.362l8.764,8.773h.013l10.087,10.1,3.839-.732L29.9,14.14l-4.054-3.973a6.521,6.521,0,0,0-3.624-1.616l0-.044L7.192,7.362Z" style="fill:#235997"/><path d="M7.256,7.411l8.768,8.768v.013L26.116,26.284l-.734,3.839H14.022l-3.971-4.056a6.522,6.522,0,0,1-1.614-3.625l-.044,0L7.256,7.411Z" style="fill:#58b6f0"/></svg></span> main.dart
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl">  <span class="n">Widget</span> <span class="n">_flare</span><span class="p">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">GestureDetector</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">child:</span> <span class="n">AspectRatio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nl">aspectRatio:</span> <span class="m">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nl">child:</span> <span class="n">Padding</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">padding:</span> <span class="n">EdgeInsets</span><span class="p">.</span><span class="n">only</span><span class="p">(</span><span class="nl">top:</span> <span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="nl">child:</span> <span class="n">FlareActor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;assets/</span><span class="si">${</span><span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s1">.flr&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">alignment:</span> <span class="n">Alignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">fit:</span> <span class="n">BoxFit</span><span class="p">.</span><span class="n">contain</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nl">animation:</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">active</span><span class="p">.</span><span class="n">name</span> <span class="o">?</span> <span class="s1">&#39;go&#39;</span> <span class="o">:</span> <span class="s1">&#39;idle&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="nl">onTap:</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setState</span><span class="p">(()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">active</span> <span class="o">=</span> <span class="n">item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div>
+
+				
+			</section>
+
+			<section id="qna" class="my-12 flex flex-col justify-between items-center">
+    <h2 class="text-2xl mb-4">Questions? Let's chat</h2>
+    <a href="https://discord.gg/SpDdJ3qaKK" class="btn btn-purple btn-lg btn-glow btn-display mx-auto"><span class="w-8 mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></span> Open Discord</a>
+    <div class="mt-3">
+        <discord-count></discord-count>
+    </div>
+</section>
+
+		</article>
+		
+		
+		<aside class="tableOfContents">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#part-1-create-animated-icons-with-flare-2d">Part 1: Create Animated Icons with Flare 2D</a>
+      <ul>
+        <li><a href="#draw-a-shape">Draw a Shape</a></li>
+        <li><a href="#animate-the-fill-color">Animate the Fill Color</a></li>
+        <li><a href="#animate-transformations---translate-scale-rotate">Animate Transformations - Translate, Scale, Rotate</a></li>
+        <li><a href="#animate-the-shape">Animate the Shape</a></li>
+        <li><a href="#animate-the-stroke-for-a-hand-drawn-effect">Animate the Stroke for a Hand-Drawn Effect</a></li>
+        <li><a href="#animate-the-position-in-a-clipping-mask">Animate the Position in a Clipping Mask</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-2---flutter-flare-integration">Part 2 - Flutter Flare Integration</a>
+      <ul>
+        <li><a href="#add-flare_flutter-to-pubspecyaml">Add flare_flutter to pubspec.yaml</a></li>
+        <li><a href="#export-your-animations-to-flutter">Export your Animations to Flutter</a></li>
+        <li><a href="#define-a-class-for-the-menu-item">Define a Class for the Menu Item</a></li>
+        <li><a href="#animating-the-colored-top-bar">Animating the Colored Top Bar</a></li>
+        <li><a href="#animating-the-flare-graphics">Animating the Flare Graphics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		
+	</div>
+
+
+</main>
+
+    
+<footer class="container text-center my-6 p-8 text-gray3">
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+    <div class="pt-10">Find an issue with this page? <a class="text-blue-500" href="https://github.com/fireship-io/fireship.io/tree/master/content/">Fix it on GitHub</a></div>
+
+    <div class="py-3">
+        Need help? Email <a href="mailto:henrique.castro.24@colegioplanalto.pt"><strong class="text-white font-bold">School-email</strong></a>
+    </div>
+    <div class="flex justify-center items-center my-2">
+        <a href="https://www.youtube.com/c/Fireship"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgyoutube  "><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" ></path></svg></i></a>
+        <a href="https://twitter.com/fireship_dev"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svgtwitter  "><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" ></path></svg></i></a>
+        <a href="https://github.com/fireship-io"><i class="w-6 inline-block mx-2"><svg aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svggithub "><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" ></path></svg></i></a>
+        <a href="https://discord.gg/SpDdJ3qaKK"><i class="w-6 inline-block mx-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg></i></a>
+    </div>
+
+    <h6>Helpful Links</h6>
+
+    <div class="py-3">
+        <a href="/courses">Activities</a> | 
+        <a href="/lessons">Resources</a> | 
+        <a href="/snippets">Snippets</a> | 
+        <a href="/tags">Tags</a> | 
+        <a href="/contributors">Contrib</a> |
+        <a href="/privacy">Privacy</a> | 
+        <a href="/terms">Terms</a>
+    </div>
+
+    
+    <div class="text-xs">
+        Copyleft 2023<br> 
+    </div>
+
+</footer>
+
+
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+    <hi-mom></hi-mom>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

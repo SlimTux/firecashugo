@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>supabase on Fireship</title>
+    <link>https://fireship.io/tags/supabase/</link>
+    <description>Recent content in supabase on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/tags/supabase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Supabase Full Course</title>
+      <link>https://fireship.io/courses/supabase/</link>
+      <pubDate>Fri, 11 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/</guid>
+      <description>The Supabase Course is a project-based course that builds a Reddit-inspired web app from scratch with Supabase, PostgreSQL, and React.
+🦄 What will I learn? The goal of this course is to provide you with a solid foundation for building fullstack Supabase apps on the web. Here&amp;rsquo;s a quick summary of what you can expect to learn&amp;hellip;
+👨‍🎤 Master the Basics of Supabase ⚛ Build interactive UI components with React 💪 Type-safe queries with TypeScript 👨‍🚀 User Authentication and Row-level Security 📊 Data modeling in a relational SQL database 👨‍🔬 Advanced Postgres techniques like Triggers and Functions 🎭 End-to-end testing with Playwright 🚀 Full-stack deployment breakdown Ant Wilson @AntWilson While working with Zack on preparing the course, he pointed out some stuff in Supabase that I didn’t even know about!</description>
+    </item>
+    
+  </channel>
+</rss>

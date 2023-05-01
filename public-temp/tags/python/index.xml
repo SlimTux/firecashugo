@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Fireship</title>
+    <link>https://fireship.io/tags/python/</link>
+    <description>Recent content in Python on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Feb 2022 15:31:36 +0100</lastBuildDate><atom:link href="https://fireship.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code This, Not That - Python Edition</title>
+      <link>https://fireship.io/lessons/code-this-not-that-python-edition/</link>
+      <pubDate>Sun, 20 Feb 2022 15:31:36 +0100</pubDate>
+      
+      <guid>https://fireship.io/lessons/code-this-not-that-python-edition/</guid>
+      <description>Introduction Python is one of the most popular languages in the world. It has many practical applications including web development, desktop apps, IoT, data analysis, and machine learning. This lesson contains ten tips that will make your code more pythonic.
+To make life simpler, we’ll use the following key to denote a few categories
+💩 - code that you should avoid. 🤔 - code that is generally ok, but ignores built-in language features.</description>
+    </item>
+    
+    <item>
+      <title>BigQuery ML Quickstart</title>
+      <link>https://fireship.io/lessons/bigquery-ml-quickstart/</link>
+      <pubDate>Wed, 13 Mar 2019 18:23:18 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/bigquery-ml-quickstart/</guid>
+      <description>BigQuery is a serverless Data Warehouse that makes it easy to process and query massive amounts of data. It supports standard SQL queries in a web-based UI, via the command line, or with a variety of client libraries. In addition, it recently landed support for integrated machine learning, allowing you to build predictive models without data science skills.
+What can you do with Big Query?
+Stream data to business intelligence tools like Data Studio, Tableau, etc.</description>
+    </item>
+    
+    <item>
+      <title>ML Engine Tutorial with Python</title>
+      <link>https://fireship.io/lessons/serverless-machine-learning-with-python-and-firebase-cloud-functions/</link>
+      <pubDate>Mon, 01 Oct 2018 18:03:42 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/serverless-machine-learning-with-python-and-firebase-cloud-functions/</guid>
+      <description>Building a predictive model is only half the battle when it comes to machine learning - you also need a way for clientside apps to consume it and add value to the user experience. Today we&amp;rsquo;re going to wire up a collection of Google Cloud services to train and deploy a Python-based ML model to the cloud. The following lesson is designed for product-minded developers who want to get an idea of the end-to-end ML process in the cloud.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firestore Data Modeling on Fireship</title>
+    <link>https://fireship.io/courses/firestore-data-modeling/</link>
+    <description>Recent content in Firestore Data Modeling on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 May 2019 09:12:30 -0800</lastBuildDate><atom:link href="https://fireship.io/courses/firestore-data-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/intro-course-resources/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/intro-course-resources/</guid>
+      <description>Course Resources Query Code Snippets on Github Cloud Firestore Docs Social Slack Chat YouTube &amp;amp; Twitter Additional Resources Get to Know Cloud Firestore Data Modeling AngularFirebase.com Cloud Functions Master Course </description>
+    </item>
+    
+    <item>
+      <title>What is Firestore</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/intro-what-is-firestore/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/intro-what-is-firestore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firestore vs SQL</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/intro-relational-data-sql-vs-nosql/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/intro-relational-data-sql-vs-nosql/</guid>
+      <description>Focus on how you will access the data from the app for a specific view or screen, NOT the most efficient normalized structure. Favor efficient reads over efficient writes.</description>
+    </item>
+    
+    <item>
+      <title>Data Types</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-datatypes/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-datatypes/</guid>
+      <description>Learn more about Firestore&amp;rsquo;s supported data types</description>
+    </item>
+    
+    <item>
+      <title>Techniques</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-collections-documents/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-collections-documents/</guid>
+      <description> Embed. Model data directly on a document. Root collection. Normalize data into separate collections, then reference document IDs. Subcollection. Nest data in a collection under a document. Bucket. Separate data into multiple documents, but embed as much as possible. </description>
+    </item>
+    
+    <item>
+      <title>Read</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-read-documents/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-read-documents/</guid>
+      <description>Use the helper function below to query an array of document IDs. This is especially useful when you have a many-to-many data model that references IDs from a separate collection.
+file_type_js firestore.js // Helper: Reads an array of IDs from a collection concurrently const readIds = async (collection, ids) =&amp;gt; { const reads = ids.map(id =&amp;gt; collection.doc(id).get() ); const result = await Promise.all(reads); return result.map(v =&amp;gt; v.data()); } </description>
+    </item>
+    
+    <item>
+      <title>Query</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-query-collections/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-query-collections/</guid>
+      <description>Examples of how to make queries in Firestore that resemble SQL.
+file_type_js firestore.js // Basic Where const rangeQuery = db.collection(&amp;#39;users&amp;#39;).where(&amp;#39;age&amp;#39;, &amp;#39;&amp;gt;=&amp;#39;, 21); // AND const andQuery = db.collection(&amp;#39;users&amp;#39;) .where(&amp;#39;age&amp;#39;, &amp;#39;==&amp;#39;, 21) .where(&amp;#39;sex&amp;#39;, &amp;#39;==&amp;#39;, &amp;#39;M&amp;#39;) // OR const q1 = db.collection(&amp;#39;users&amp;#39;).where(&amp;#39;age&amp;#39;, &amp;#39;==&amp;#39;, 21); const q2 = db.collection(&amp;#39;users&amp;#39;).where(&amp;#39;age&amp;#39;, &amp;#39;==&amp;#39;, 25); // NOT const not1 = db.collection(&amp;#39;users&amp;#39;).where(&amp;#39;age&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, 21); const not2 = db.collection(&amp;#39;users&amp;#39;).where(&amp;#39;age&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, 21); </description>
+    </item>
+    
+    <item>
+      <title>Indexes</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-indexes/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-indexes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/basics-security/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/basics-security/</guid>
+      <description> file_type_firebase rules.json service cloud.firestore { match /databases/{database}/documents { match /{document=**} { allow read, write: if false; } match /accounts/{id} { allow read, write: if false; } match /users/{id} { allow read, write: if id == request.auth.uid; } match /profiles/{id} { allow read; allow write: if id == request.auth.uid; } } } </description>
+    </item>
+    
+    <item>
+      <title>Cardinality</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/relational-cardinality/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/relational-cardinality/</guid>
+      <description>Consider the cardinality or maximum size of a set. A loose rule to follow is&amp;hellip;
+One-to-Few. Embed. One-to-Hundreds. Bucket. One-to-Billions. Collection. </description>
+    </item>
+    
+    <item>
+      <title>One-to-One</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/relational-one-to-one/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/relational-one-to-one/</guid>
+      <description> file_type_js firestore.js const userId = &amp;#39;ayn-rand&amp;#39;; // 1. Embedded, all data contained on single document, One-to-few const authorWithAccount = db.collection(&amp;#39;authors&amp;#39;).doc(userId) // 2. Shared Document ID const author = db.collection(&amp;#39;authors&amp;#39;).doc(userId) const account = db.collection(&amp;#39;account&amp;#39;).doc(userId); // 3. Join related documents with different IDs, const getAccount = async (userId) =&amp;gt; { const snapshot = await db.collection(&amp;#39;authors&amp;#39;).doc(userId).get(); const user = snapshot.data(); return db.collection(&amp;#39;accounts&amp;#39;).doc(user.accountId) } </description>
+    </item>
+    
+    <item>
+      <title>One-to-Many</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/relational-one-to-many/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/relational-one-to-many/</guid>
+      <description> file_type_js firestore.js const authorId = &amp;#39;dr-seuss&amp;#39;; // 4. Embedded One-to-Many const authorWithBooks = db.collection(&amp;#39;authors&amp;#39;).doc(authorId) // 5. Subcollection const books = db.collection(&amp;#39;authors&amp;#39;).doc(authorId).collection(&amp;#39;books&amp;#39;); // 6. Root Collection, requires index const booksFrom1971 = db.collection(&amp;#39;books&amp;#39;) .where(&amp;#39;author&amp;#39;, &amp;#39;==&amp;#39;, authorId) .where(&amp;#39;published&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, 1971); </description>
+    </item>
+    
+    <item>
+      <title>Many-to-Many</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/relational-many-to-many/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/relational-many-to-many/</guid>
+      <description>file_type_js firestore.js const authorId = &amp;#39;dr-seuss&amp;#39;; const bookId = &amp;#39;lorax&amp;#39;; // 7. Middle Man Collection const userReviews = db.collection(&amp;#39;reviews&amp;#39;).where(&amp;#39;author&amp;#39;, &amp;#39;==&amp;#39;, authorId); const bookReviews = db.collection(&amp;#39;reviews&amp;#39;).where(&amp;#39;book&amp;#39;, &amp;#39;==&amp;#39;, bookId); // Single read with composite key const specificReview = db.collection(&amp;#39;reviews&amp;#39;).doc(`${bookId}_${authorId}`); // 8. Map // Reviews embadded on books const bookWithReviews = db.collection(&amp;#39;books&amp;#39;).doc(bookId); const userReviews = db.collection(&amp;#39;books&amp;#39;).orderBy(&amp;#39;reviews.jeff-delaney&amp;#39;); // 9. Array const books = db.collection(&amp;#39;books&amp;#39;).where(&amp;#39;categories&amp;#39;, &amp;#39;array-contains&amp;#39;, &amp;#39;fiction&amp;#39;); // 10. Bucket // Get a collection of documents with an array of IDs const getLikedBooks = async() =&amp;gt; { // Get books through user likes const userLikes = await db.</description>
+    </item>
+    
+    <item>
+      <title>Duplication</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/advanced-duplication/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/advanced-duplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aggregation</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/advanced-aggregation/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/advanced-aggregation/</guid>
+      <description>Cloud Functions Master Course - Firestore Section</description>
+    </item>
+    
+    <item>
+      <title>Votes</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/models-votes/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/models-votes/</guid>
+      <description>A data model suitable for Votes, Hearts, Likes, etc</description>
+    </item>
+    
+    <item>
+      <title>Role-Based Authorization</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/models-roles/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/models-roles/</guid>
+      <description>Sample Firestore rules for Role-based Authorization where the user document determines the access level.
+file_type_firebase rules.json match /posts/{document} { function getRoles() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles; } allow read; allow update: if getRoles().hasAny([&amp;#39;admin&amp;#39;, &amp;#39;editor&amp;#39;]) == true; allow write: if getRoles().hasAny([&amp;#39;admin&amp;#39;]) == true; } </description>
+    </item>
+    
+    <item>
+      <title>Access Control List</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/models-access-control-list/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/models-access-control-list/</guid>
+      <description>Sample Firestore security rules for an Access Control List (ACL), where the content determines which users have authorization.
+file_type_firebase rules.json match /posts/{document} { allow read; allow write: if resource.data.members.hasAny(request.auth.uid); } example of an Access Control List in Firestore</description>
+    </item>
+    
+    <item>
+      <title>Hierarchy</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/models-tree/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/models-tree/</guid>
+      <description> file_type_js firestore.js const topLevel = db.collection(&amp;#39;comments&amp;#39;).where(&amp;#39;parent&amp;#39;, &amp;#39;==&amp;#39;, false); const level = db.collection(&amp;#39;comments&amp;#39;).where(&amp;#39;parent&amp;#39;, &amp;#39;==&amp;#39;, id) const traverseAll = (id) =&amp;gt; { const tree = db.collection(&amp;#39;comments&amp;#39;) .where(&amp;#39;parent&amp;#39;, &amp;#39;&amp;gt;=&amp;#39;, id) .where(&amp;#39;parent&amp;#39;, &amp;#39;&amp;lt;=&amp;#39;, `${id}~`) } </description>
+    </item>
+    
+    <item>
+      <title>Follower Feed</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/models-social-feed/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/models-social-feed/</guid>
+      <description>The code below uses this data model to follow/unfollow users &amp;amp; query the most recent posts from users that are being followed.
+file_type_js firestore.js import { db } from &amp;#39;./config&amp;#39;; import firebase from &amp;#39;firebase/app; const remove = firebase.firestore.FieldValue.arrayRemove; const union = firebase.firestore.FieldValue.arrayUnion; export const follow = (followed, follower) =&amp;gt; { const followersRef = db.collection(&amp;#39;followers&amp;#39;).doc(followed); followersRef.update({ users: union(follower) }); } // 2. Unfollow User export const unfollow = (followed, follower) =&amp;gt; { const followersRef = db.</description>
+    </item>
+    
+    <item>
+      <title>Top Five</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/bonus-top-five/</link>
+      <pubDate>Tue, 16 Apr 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/bonus-top-five/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collection Group Queries</title>
+      <link>https://fireship.io/courses/firestore-data-modeling/bonus-collection-group/</link>
+      <pubDate>Thu, 16 May 2019 09:12:30 -0800</pubDate>
+      
+      <guid>https://fireship.io/courses/firestore-data-modeling/bonus-collection-group/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

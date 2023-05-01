@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on Fireship</title>
+    <link>https://fireship.io/tags/redis/</link>
+    <description>Recent content in redis on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jan 2022 19:49:05 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fulltext Search with Redis and Next.js</title>
+      <link>https://fireship.io/lessons/redis-nextjs/</link>
+      <pubDate>Mon, 10 Jan 2022 19:49:05 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/redis-nextjs/</guid>
+      <description>Redis is an in-memory key-value store that is often used as a cache to make traditional databases faster. However, it has evolved into a multimodel database capable of fulltext search, graph relationships, AI workloads, and more.
+In the following tutorial, we use Next.js and Redis Enterprise Cloud to build a webapp that can store JSON data in the cloud, then query it with results that update instantly in the UI.</description>
+    </item>
+    
+  </channel>
+</rss>

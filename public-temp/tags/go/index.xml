@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Fireship</title>
+    <link>https://fireship.io/tags/go/</link>
+    <description>Recent content in Go on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Aug 2021 07:27:03 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Go in 100 Lines</title>
+      <link>https://fireship.io/lessons/learn-go-in-100-lines/</link>
+      <pubDate>Sat, 28 Aug 2021 07:27:03 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/learn-go-in-100-lines/</guid>
+      <description>Introduction Go is an open-source programming language developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is often described as &amp;ldquo;C for the 21st century&amp;rdquo;, however, it borrows important ideas from several other languages like ALGOL, Pascal, Modula-2, Oberon, CSP, and others. At its core, Go relies on simplicity, reliability, and efficiency to overcome the shortcomings of its ancestors. Go has garbage collection, a package system, first-class functions, lexical scope, immutable strings that rely on UTF-8, and an awesome concurrency model.</description>
+    </item>
+    
+  </channel>
+</rss>

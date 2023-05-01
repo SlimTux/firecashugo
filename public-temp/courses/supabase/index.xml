@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React Supabase Full Course on Fireship</title>
+    <link>https://fireship.io/courses/supabase/</link>
+    <description>Recent content in React Supabase Full Course on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 10:23:30 -0900</lastBuildDate><atom:link href="https://fireship.io/courses/supabase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meet Zack</title>
+      <link>https://fireship.io/courses/supabase/intro-zack/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/intro-zack/</guid>
+      <description>More Content from Zack Subscribe to the Supaship YouTube Channel Follow Zack on Twitter </description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://fireship.io/courses/supabase/intro-resources/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/intro-resources/</guid>
+      <description>Essentials Live App: https://supaship.io Demo of our course&amp;rsquo;s endpoint (note: auth will not work): https://supaship-course-demo.netlify.app Github repo: https://github.com/fireship-io/supaship.io Branch showing the end state of our course: https://github.com/fireship-io/supaship.io/tree/course-end-point Official Resources Supabase Docs: https://supabase.com/docs Playwright Docs: https://playwright.dev/docs/intro React Docs: https://reactjs.org/ React Router Docs: https://reactrouter.com/en/main Tailwind Docs: https://tailwindcss.com/ Vite Docs: https://vitejs.dev/guide/ Docker installation: https://docs.docker.com/get-docker/ Postgres installation: https://www.postgresql.org/download/ For Questions Zack&amp;rsquo;s Twitter: https://www.twitter.com/zackderose Fireship Discord: https://discord.gg/SpDdJ3qaKK Supaship Live: https://www.youtube.com/@Supaship6000 Dependencies &amp;#34;dependencies&amp;#34;: { &amp;#34;@supabase/auth-ui-react&amp;#34;: &amp;#34;^0.2.6&amp;#34;, &amp;#34;@supabase/supabase-js&amp;#34;: &amp;#34;^2.</description>
+    </item>
+    
+    <item>
+      <title>Supabase in 100 Seconds</title>
+      <link>https://fireship.io/courses/supabase/intro-supbase-100-seconds/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/intro-supbase-100-seconds/</guid>
+      <description> What is the biggest different between Supabase and Firebase? </description>
+    </item>
+    
+    <item>
+      <title>React Primer</title>
+      <link>https://fireship.io/courses/supabase/intro-react-basics/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/intro-react-basics/</guid>
+      <description>Which Hook is used to run code when a component is first mounted to the DOM? Optional This video was originally released on YouTube and is intended to be a primer for React. It is not required to build the main demo app in the course.</description>
+    </item>
+    
+    <item>
+      <title>Supabase Primer</title>
+      <link>https://fireship.io/courses/supabase/intro-supabase-basics/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/intro-supabase-basics/</guid>
+      <description>What type of authentication mechanism does Supabase use by default? Optional: Supabase Project The video in this section contains a simplifed project designed to showcase the various features of Supabase. You can follow along with the video, or you can skip ahead to the next section if you already feel comfortable with the platform.</description>
+    </item>
+    
+    <item>
+      <title>Frontend Setup</title>
+      <link>https://fireship.io/courses/supabase/setup-repo/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/setup-repo/</guid>
+      <description>Vite getting started guide: https://vitejs.dev/guide/</description>
+    </item>
+    
+    <item>
+      <title>Supabase CLI</title>
+      <link>https://fireship.io/courses/supabase/setup-supabase/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/setup-supabase/</guid>
+      <description> What does DDL stand for? Resources Supabase Architecture: https://supabase.com/docs/architecture Supabase CLI Docs: https://supabase.com/docs/reference/cli Create your Prod Supabase instance by creating an account on supabase: https://app.supabase.com Commands To install supbase cli:
+yarn add supabase To initialize a local supabase project:
+npx supabase init To start your local supabase instance:
+npx supabase start To create a new migration file:
+npx supabase migration new &amp;lt;migration name&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Playwright E2E Testing</title>
+      <link>https://fireship.io/courses/supabase/setup-playwright/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/setup-playwright/</guid>
+      <description>What is the main way End-to-End testing differs from unit testing? Playwright docs: https://playwright.dev/docs/intro
+To initialize playwrigh in your repo:
+yarn create playwright Updates to the playwright.config.ts file:
+const config = { // only change the following properties webServer: { command: &amp;#34;yarn dev&amp;#34;, port: 1337, // should match the port you gave in our vite.config file reuseExisitingServer: true, }, fullyParallel: false, projects: [ { name: &amp;#34;Google Chrome&amp;#34;, use: { channel: &amp;#34;chrome&amp;#34;, }, }, { name: &amp;#34;Mobile Chrome&amp;#34;, use: { .</description>
+    </item>
+    
+    <item>
+      <title>Styling</title>
+      <link>https://fireship.io/courses/supabase/setup-styling/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/setup-styling/</guid>
+      <description> Tailwind Docs: https://tailwindcss.com/ Tailwind installation docs: https://tailwindcss.com/docs/installation output.css file (if you want to just use my pre-built styles): https://github.com/fireship-io/supaship.io/blob/course-end-point/output.css Command to watch source code to update tailwind styles:
+npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch </description>
+    </item>
+    
+    <item>
+      <title>Routing and Layout</title>
+      <link>https://fireship.io/courses/supabase/app-routing/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-routing/</guid>
+      <description>In React Router, all routes must be nested inside which component? React Router docs: https://reactrouter.com/en/main
+Command to install react router:
+yarn add react-router-dom Initial routing in the App.tsx file:
+const router = createBrowserRouter([ { path: &amp;#34;/&amp;#34;, element: &amp;lt;Layout /&amp;gt;, children: [ { path: &amp;#34;&amp;#34;, element: &amp;lt;MessageBoard /&amp;gt;, children: [ { path: &amp;#34;:pageNumber&amp;#34;, element: &amp;lt;AllPosts /&amp;gt;, }, { path: &amp;#34;post/:postId&amp;#34;, element: &amp;lt;PostView /&amp;gt;, }, ], }, { path: &amp;#34;welcome&amp;#34;, element: &amp;lt;Welcome /&amp;gt;, loader: welcomeLoader, }, ], }, ]); function App() { return &amp;lt;RouterProvider router={router} /&amp;gt;; } export default App; function Layout() { &amp;lt;&amp;gt; &amp;lt;NavBar /&amp;gt; &amp;lt;Outlet /&amp;gt; &amp;lt;/&amp;gt;; } Our starting NavBar component:</description>
+    </item>
+    
+    <item>
+      <title>Connect to Supabase</title>
+      <link>https://fireship.io/courses/supabase/app-client/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-client/</guid>
+      <description>Command to install Supabase React Auth helper:
+yarn add @supabase/auth-ui-react Command to install Supabase JS Client:
+yarn add @supabase/supabase-js supa-client.ts
+import { createClient } from &amp;#34;@supabase/supabase-js&amp;#34;; const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_API_URL; const supabaseKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY; export const supaClient = createClient(supabaseUrl, supabaseKey); Supabase JS Client Reference Docs: https://supabase.com/docs/reference/javascript</description>
+    </item>
+    
+    <item>
+      <title>Database Tables</title>
+      <link>https://fireship.io/courses/supabase/app-tables/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-tables/</guid>
+      <description> Which Postgres constraint is used to match against a regular expression? Resources Command to create a migration file from your current local Supabase state:
+npx supabase db diff --use-migra --file=&amp;lt;name of the migration&amp;gt; SQL to create our user profile table:
+create table user_profiles ( user_id uuid primary key references auth.users (id) not null, username text unique not null CONSTRAINT proper_username CHECK (username ~* &amp;#39;^[a-zA-Z0-9_]+$&amp;#39;) CONSTRAINT username_length CHECK (char_length(username) &amp;gt; 3 and char_length(username) &amp;lt; 15) ); </description>
+    </item>
+    
+    <item>
+      <title>Row Level Security</title>
+      <link>https://fireship.io/courses/supabase/app-rls/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-rls/</guid>
+      <description>Supabase docs on RLS: https://supabase.com/docs/guides/auth/row-level-security</description>
+    </item>
+    
+    <item>
+      <title>Enable RLS</title>
+      <link>https://fireship.io/courses/supabase/app-rls-enable/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-rls-enable/</guid>
+      <description>Turning on RLS via SQL:
+alter table &amp;lt;table name&amp;gt; enable row level security RLS Policies for the user_profile table:
+CREATE POLICY &amp;#34;all can see&amp;#34; ON &amp;#34;public&amp;#34;.&amp;#34;user_profiles&amp;#34; AS PERMISSIVE FOR SELECT TO public USING (true); CREATE POLICY &amp;#34;users can insert&amp;#34; ON &amp;#34;public&amp;#34;.&amp;#34;user_profiles&amp;#34; AS PERMISSIVE FOR INSERT TO public WITH CHECK (auth.uid() = user_id); CREATE POLICY &amp;#34;owners can update&amp;#34; ON &amp;#34;public&amp;#34;.&amp;#34;user_profiles&amp;#34; AS PERMISSIVE FOR UPDATE TO public USING (auth.uid()=user_id) WITH CHECK (auth.uid()=user_id); </description>
+    </item>
+    
+    <item>
+      <title>Generate Types</title>
+      <link>https://fireship.io/courses/supabase/app-typescript/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/app-typescript/</guid>
+      <description>Command to generate typscript types:
+npx supabase gen types typescript --local &amp;gt; ./src/database.types.ts </description>
+    </item>
+    
+    <item>
+      <title>Signup Flow Tests</title>
+      <link>https://fireship.io/courses/supabase/auth-signup-tests/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/auth-signup-tests/</guid>
+      <description>Experiment with the live site: https://supaship.io
+Sign-up-flow e2e tests in source code: https://github.com/fireship-io/supaship.io/blob/course-end-point/e2e/sign-up-flow.spec.ts
+e2e/sign-up-flow.spec.ts:
+import { test, expect } from &amp;#34;@playwright/test&amp;#34;; import { login, setupE2eTest, signUp } from &amp;#34;./utils&amp;#34;; test.describe(&amp;#34;User auth&amp;#34;, () =&amp;gt; { const userEmail = &amp;#34;test@test.io&amp;#34;; const userPassword = &amp;#34;test123456&amp;#34;; const userName = &amp;#34;testuser&amp;#34;; test.beforeEach(setupE2eTest); test.beforeEach(async ({ page }) =&amp;gt; { await page.goto(&amp;#34;http://localhost:1337&amp;#34;); }); test(&amp;#34;new user can signup&amp;#34;, async ({ browser, page }) =&amp;gt; { await signUp(page, userEmail, userPassword, userName); }); test(&amp;#34;after signing up, user can login from another machine&amp;#34;, async ({ browser, page, }) =&amp;gt; { await signUp(page, userEmail, userPassword, userName); const newMachine = await browser.</description>
+    </item>
+    
+    <item>
+      <title>Session Hook</title>
+      <link>https://fireship.io/courses/supabase/auth-hook/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/auth-hook/</guid>
+      <description>use-session.ts:
+import { RealtimeChannel, Session } from &amp;#34;@supabase/supabase-js&amp;#34;; import { useEffect, useState } from &amp;#34;react&amp;#34;; import { supaClient } from &amp;#34;./supa-client&amp;#34;; export interface UserProfile { username: string; avatarUrl?: string; } export interface SupashipUserInfo { session: Session | null; profile: UserProfile | null; } export function useSession(): SupashipUserInfo { const [userInfo, setUserInfo] = useState&amp;lt;SupashipUserInfo&amp;gt;({ profile: null, session: null, }); const [channel, setChannel] = useState&amp;lt;RealtimeChannel | null&amp;gt;(null); useEffect(() =&amp;gt; { supaClient.auth.getSession().then(({ data: { session } }) =&amp;gt; { setUserInfo({ .</description>
+    </item>
+    
+    <item>
+      <title>User Context</title>
+      <link>https://fireship.io/courses/supabase/auth-context/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/auth-context/</guid>
+      <description>After this lesson, your App.tsx should look like this:
+import { createContext } from &amp;#34;react&amp;#34;; import { createBrowserRouter, RouterProvider, Outlet } from &amp;#34;react-router-dom&amp;#34;; import MessageBoard from &amp;#34;./MessageBoard&amp;#34;; import AllPosts from &amp;#34;./AllPosts&amp;#34;; import PostView from &amp;#34;./PostView&amp;#34;; import Welcome, { welcomeLoader } from &amp;#34;./Welcome&amp;#34;; import NavBar from &amp;#34;./NavBar&amp;#34;; import { SupashipUserInfo, useSession } from &amp;#34;./use-session&amp;#34;; const router = createBrowserRouter([ /* routing hasn&amp;#39;t changed */ ]); function App() { return &amp;lt;RouterProvider router={router} /&amp;gt;; } export default App; export const UserContext = createContext&amp;lt;SupashipUserInfo&amp;gt;({ session: null, profile: null, }); function Layout() { const supashipUserInfo = useSession(); return ( &amp;lt;&amp;gt; &amp;lt;UserContext.</description>
+    </item>
+    
+    <item>
+      <title>Login Screen</title>
+      <link>https://fireship.io/courses/supabase/auth-login/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/auth-login/</guid>
+      <description>Login Components Updated NavBar.tsx:
+import { useContext } from &amp;#34;react&amp;#34;; import { Link } from &amp;#34;react-router-dom&amp;#34;; import { UserContext } from &amp;#34;./App&amp;#34;; import Login from &amp;#34;./Login&amp;#34;; import UserMenu from &amp;#34;./UserMenu&amp;#34;; export default function NavBar() { const { session } = useContext(UserContext); return ( &amp;lt;&amp;gt; &amp;lt;nav className=&amp;#34;nav-bar&amp;#34;&amp;gt; &amp;lt;Link className=&amp;#34;nav-logo-link&amp;#34; to=&amp;#34;/&amp;#34;&amp;gt; &amp;lt;img id=&amp;#34;logo&amp;#34; className=&amp;#34;nav-logo&amp;#34; src=&amp;#34;https://supaship.io/supaship_logo_with_text.svg&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;/Link&amp;gt; &amp;lt;ul className=&amp;#34;nav-right-list&amp;#34;&amp;gt; &amp;lt;li className=&amp;#34;nav-message-board-list-item&amp;#34;&amp;gt; &amp;lt;Link to=&amp;#34;/1&amp;#34; className=&amp;#34;nav-message-board-link&amp;#34;&amp;gt; message board &amp;lt;/Link&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li className=&amp;#34;nav-auth-item&amp;#34;&amp;gt; {session?.user ?</description>
+    </item>
+    
+    <item>
+      <title>Custom Usernames</title>
+      <link>https://fireship.io/courses/supabase/auth-usernames/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/auth-usernames/</guid>
+      <description>Updated listenToUserProfileChanges() function in use-session.ts:
+sync function listenToUserProfileChanges(userId: string) { const { data } = await supaClient .from(&amp;#34;user_profiles&amp;#34;) .select(&amp;#34;*&amp;#34;) .filter(&amp;#34;user_id&amp;#34;, &amp;#34;eq&amp;#34;, userId); if (data?.[0]) { setUserInfo({ ...userInfo, profile: data?.[0] }); } else { // this else clause is all you need to add! setReturnPath(); navigate(&amp;#34;/welcome&amp;#34;); } return supaClient .channel(`public:user_profiles`) .on( &amp;#34;postgres_changes&amp;#34;, { event: &amp;#34;*&amp;#34;, schema: &amp;#34;public&amp;#34;, table: &amp;#34;user_profiles&amp;#34;, filter: `user_id=eq.${userId}`, }, (payload) =&amp;gt; { setUserInfo({ ...userInfo, profile: payload.new as UserProfile }); } ) .</description>
+    </item>
+    
+    <item>
+      <title>Message Board Tests</title>
+      <link>https://fireship.io/courses/supabase/msg-board/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-board/</guid>
+      <description>Look to future in the live version of the site: https://supaship.io
+Links to e2e tests for the message board:
+https://github.com/fireship-io/supaship.io/blob/course-end-point/e2e/message-board.spec.ts https://github.com/fireship-io/supaship.io/blob/course-end-point/e2e/up-voting.spec.ts e2e/message-board.spec.ts
+import test, { expect, Page } from &amp;#34;@playwright/test&amp;#34;; import { createComment, createPost, login, setupE2eTest, signUp, } from &amp;#34;./utils&amp;#34;; const testUserEmail = &amp;#34;test@test.io&amp;#34;; const testUserPassword = &amp;#34;test123567&amp;#34;; const testUserName = &amp;#34;test&amp;#34;; test.describe(&amp;#34;Message Board&amp;#34;, () =&amp;gt; { test.beforeEach(setupE2eTest); test.beforeEach(async ({ page }) =&amp;gt; { page.goto(&amp;#34;http://localhost:1337&amp;#34;); }); test.describe(&amp;#34;not logged in&amp;#34;, () =&amp;gt; { test(&amp;#34;can see message board, but cannot interact&amp;#34;, async ({ page }) =&amp;gt; { const messageBoardSignIn = page.</description>
+    </item>
+    
+    <item>
+      <title>Postgres Extensions</title>
+      <link>https://fireship.io/courses/supabase/msg-postgres-ext/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-postgres-ext/</guid>
+      <description>Postgres ltree documentation: https://www.postgresql.org/docs/current/ltree.html
+Adding an extension via sql:
+create extension &amp;lt;extension name&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Normalized Data Modeling</title>
+      <link>https://fireship.io/courses/supabase/msg-data-model/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-data-model/</guid>
+      <description>Link to final state of the original-ddl.sql: https://github.com/fireship-io/supaship.io/blob/course-end-point/supabase/migrations/20221116184131_original-ddl.sql
+original-ddl.sql:
+create extension ltree; create table user_profiles ( user_id uuid primary key references auth.users (id) not null, username text unique not null CONSTRAINT proper_username CHECK (username ~* &amp;#39;^[a-zA-Z0-9_]+$&amp;#39;) CONSTRAINT username_length CHECK (char_length(username) &amp;gt; 3 and char_length(username) &amp;lt; 15) ); create table posts ( id uuid primary key default uuid_generate_v4() not null, user_id uuid references auth.users (id) not null, created_at timestamp with time zone default now() not null, path ltree not null ); create table post_score ( post_id uuid primary key references posts (id) not null, score int not null ); create table post_contents ( id uuid primary key default uuid_generate_v4() not null, user_id uuid references auth.</description>
+    </item>
+    
+    <item>
+      <title>Post List</title>
+      <link>https://fireship.io/courses/supabase/msg-all-posts/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-all-posts/</guid>
+      <description>AllPosts.tsx:
+import { useContext, useEffect, useState } from &amp;#34;react&amp;#34;; import { Link, useParams } from &amp;#34;react-router-dom&amp;#34;; import { UserContext } from &amp;#34;./App&amp;#34;; import { castVote } from &amp;#34;./cast-vote&amp;#34;; import { CreatePost } from &amp;#34;./CreatePost&amp;#34;; import { GetPostsResponse } from &amp;#34;./database.types&amp;#34;; import { supaClient } from &amp;#34;./supa-client&amp;#34;; import { timeAgo } from &amp;#34;./time-ago&amp;#34;; import { UpVote } from &amp;#34;./UpVote&amp;#34;; import { usePostScore } from &amp;#34;./use-post-score&amp;#34;; export function AllPosts() { const { session } = useContext(UserContext); const { pageNumber } = useParams(); const [bumper, setBumper] = useState(0); const [posts, setPosts] = useState&amp;lt;GetPostsResponse[]&amp;gt;([]); const [myVotes, setMyVotes] = useState&amp;lt; Record&amp;lt;string, &amp;#34;up&amp;#34; | &amp;#34;down&amp;#34; | undefined&amp;gt; &amp;gt;({}); useEffect(() =&amp;gt; { const queryPageNumber = pageNumber ?</description>
+    </item>
+    
+    <item>
+      <title>Post Detail</title>
+      <link>https://fireship.io/courses/supabase/msg-detail/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-detail/</guid>
+      <description>Post.tsx:
+import { useContext, useEffect, useMemo, useRef, useState } from &amp;#34;react&amp;#34;; import { useParams } from &amp;#34;react-router-dom&amp;#34;; import { UserContext } from &amp;#34;./App&amp;#34;; import { castVote } from &amp;#34;./cast-vote&amp;#34;; import { GetSinglePostWithCommentResponse } from &amp;#34;./database.types&amp;#34;; import { supaClient } from &amp;#34;./supa-client&amp;#34;; import { timeAgo } from &amp;#34;./time-ago&amp;#34;; import { UpVote } from &amp;#34;./UpVote&amp;#34;; import { usePostScore } from &amp;#34;./use-post-score&amp;#34;; import { SupashipUserInfo } from &amp;#34;./use-session&amp;#34;; export interface Post { id: string; author_name: string; title: string; content: string; score: number; created_at: string; path: string; } export interface Comment { id: string; author_name: string; content: string; score: number; created_at: string; path: string; comments: Comment[]; } interface PostDetailData { post: GetSinglePostWithCommentResponse | null; comments: GetSinglePostWithCommentResponse[]; myVotes?</description>
+    </item>
+    
+    <item>
+      <title>Upvotes</title>
+      <link>https://fireship.io/courses/supabase/msg-upvotes/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/msg-upvotes/</guid>
+      <description>cast-vote.ts:
+import { supaClient } from &amp;#34;./supa-client&amp;#34;; export async function castVote({ postId, userId, voteType, onSuccess = () =&amp;gt; {}, }: { postId: string; userId: string; voteType: &amp;#34;up&amp;#34; | &amp;#34;down&amp;#34;; onSuccess?: () =&amp;gt; void; }) { await supaClient.from(&amp;#34;post_votes&amp;#34;).upsert( { post_id: postId, user_id: userId, vote_type: voteType, }, { onConflict: &amp;#34;post_id,user_id&amp;#34; } ); onSuccess(); } use-post-score.ts
+import { RealtimeChannel } from &amp;#34;@supabase/supabase-js&amp;#34;; import { useEffect, useState } from &amp;#34;react&amp;#34;; import { supaClient } from &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Database Deployment</title>
+      <link>https://fireship.io/courses/supabase/deploy-db/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/deploy-db/</guid>
+      <description>Command to link to your production db (requires your DB password and your access token):
+npx supabase link --project-ref=&amp;lt;ref in your supabase url&amp;gt; --password=&amp;lt;db password&amp;gt; Link to create a new access token: https://app.supabase.com/account/tokens
+Command to store your access token:
+npx supabase login Command to push your local migrations to production (requires DB password):
+npx supabase db push Command to generate new migration file on your local instance:
+npx supabase migration new &amp;lt;migration name&amp;gt; Command to check what migrations will be pushed before you push them (requires DB password):</description>
+    </item>
+    
+    <item>
+      <title>Authentication Deployment</title>
+      <link>https://fireship.io/courses/supabase/deploy-auth/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/deploy-auth/</guid>
+      <description> Link to Supabase auth providers: https://supabase.com/docs/guides/auth Link to Supaship GCP OAuth walktrhough (with timestamp): https://www.youtube.com/watch?v=tUm1AlaMcMQ&amp;amp;t=350s Supabase Google Guide: https://supabase.com/docs/guides/auth/auth-google </description>
+    </item>
+    
+    <item>
+      <title>Web Deployment</title>
+      <link>https://fireship.io/courses/supabase/deploy-web/</link>
+      <pubDate>Sun, 20 Nov 2022 10:23:30 -0900</pubDate>
+      
+      <guid>https://fireship.io/courses/supabase/deploy-web/</guid>
+      <description>Netlify: https://app.netlify.com/
+Your public/netlify.toml file:
+[[redirects]] from = &amp;#34;/*&amp;#34; to = &amp;#34;/index.html&amp;#34; status = 200 </description>
+    </item>
+    
+  </channel>
+</rss>

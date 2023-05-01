@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>authentication on Fireship</title>
+    <link>https://fireship.io/tags/authentication/</link>
+    <description>Recent content in authentication on Fireship</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Feb 2021 15:42:55 -0700</lastBuildDate><atom:link href="https://fireship.io/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invite-Only Firebase Phone Auth</title>
+      <link>https://fireship.io/lessons/invite-only-firebase-phone-auth/</link>
+      <pubDate>Wed, 24 Feb 2021 15:42:55 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/invite-only-firebase-phone-auth/</guid>
+      <description>The meteoric rise of Clubhouse from a mostly unknown app to 10M weekly users demonstrates the power of #FOMO - fear of missing out. No, you can&amp;rsquo;t just download the app and start having fun. It uses an invite-only authentication system that requires a current user to invite you to the club with your phone number. Once you&amp;rsquo;re in, you&amp;rsquo;re granted two invites to send to your friends, creating a pyramid of organic user growth.</description>
+    </item>
+    
+    <item>
+      <title>Custom Usernames in Firebase</title>
+      <link>https://fireship.io/lessons/custom-usernames-firebase/</link>
+      <pubDate>Sat, 23 Jan 2021 11:51:52 -0700</pubDate>
+      
+      <guid>https://fireship.io/lessons/custom-usernames-firebase/</guid>
+      <description>Firebase assigns each user a unique ID upon signing up, but many apps require users to choose their own custom unique username, which is not an out-of-box feature in Firebase. Think of apps like Twitter or Medium, where each user’s profile can be visited on a user like example.com/{username}. The following lesson demonstrates how to securely create and validate custom usernames for Firebase users by combining Cloud Firestore.
+Demo of custom usernames in Firebase</description>
+    </item>
+    
+  </channel>
+</rss>
