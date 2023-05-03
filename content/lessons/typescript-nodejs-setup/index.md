@@ -10,8 +10,8 @@ tags:
     - node
 
 youtube: H91aqUHn8sE
-github: https://github.com/fireship-io/nodejs-typescript-starter
+github: https://slimtux.github.io/School/#/
 ---
 
-[Old**failed**Blog](https://slimtux.github.io/School/#/)
+# [Old**failed**Blog](https://slimtux.github.io/School/#/)
 

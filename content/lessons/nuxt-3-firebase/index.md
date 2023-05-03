@@ -24,6 +24,8 @@ pro: true
 #    rxdart: 0.20
 ---
 
+# Even bigger [disapointment](https://gigachad.mataroa.blog/)
+
 Nuxt3 hit release candidate [recently](https://nuxtjs.org/announcements/nuxt3-rc/) with a variety of awesome new features. But you might be wondering... how do I use Nuxt3 with Firebase? There is no documented best practice as of today, so I put together a demo that is capable of server-side rendering (SSR) via Firestore, followed by hydration to secure realtime data on the client. This gives a website the benefits SEO-friendly HTML, without sacrificing the power the realtime data updates after the initial page load. 
 
 ## Initial Setup
