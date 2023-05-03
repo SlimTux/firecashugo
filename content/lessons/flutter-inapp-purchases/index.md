@@ -23,7 +23,6 @@ versions:
    in_app_purchase: 0.2.0+1
 ---
 
-
 Flutter recently launched official support for In App Purchases (IAP) and provides a unified plugin for both iOS and Android. Native mobile apps that collect payments for digital goods on the Apple App Store and/or Google Play Store are typically required to use the [In App Purchases](https://developer.apple.com/in-app-purchase/) API, which means services like Stripe and Paypal are out of the question (with the exception of payments for physically shipped goods). In reality, In App Purchases are far more lucrative for digital products, with the game Candy Crush generating [$4MM in revenue per day in 2018](https://venturebeat.com/2019/01/09/sensor-tower-candy-crush-players-spent-an-average-of-4-2-million-a-day-in-2018/). The following lesson will show you how to get started with the [in_app_purchase](https://github.com/flutter/plugins/tree/master/packages/in_app_purchase) plugin to accept payments, microtransactions, and subscriptions from both stores. 
 
 {{< figure src="img/in-app-purchases-demo.gif" caption="Demo of a consumable In App Purchase in Flutter on the Google Play Store" >}}
