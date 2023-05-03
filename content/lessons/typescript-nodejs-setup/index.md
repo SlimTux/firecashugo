@@ -4,7 +4,7 @@ lastmod: 2022-11-26T14:42:50-07:00
 publishdate: 2022-11-26T14:42:50-07:00
 author: Jeff Delaney
 draft: false
-description: How to configure a new Node.js project with TypeScript and ES Modules
+description: __previous__ blog
 tags: 
     - typescript
     - node
