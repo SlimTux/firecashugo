@@ -13,15 +13,15 @@ youtube: 26Mayv5JPz0
 
 # [Informatics] First draft
 
-### :bulb:I cannot garantee that this project will turn out as i expect. This will be my first time in this type of activity.
+### 💡I cannot garantee that this project will turn out as i expect. This will be my first time in this type of activity.
 
-## :sunglasses: Red-Piling classes 
+## 😎 Red-Piling classes 
 
-### Raise awareness over how people are being exploited ( without their knowlodge).
+### Raise awareness over how people are being exploited (without their knowlodge).
 
 This classes will be for general software and privacy knowlodge.
 
-## :feet: Roadmap
+## 🐾 Roadmap
 
 1. Ask class-mates what are they think about the project.
 2. Ask permission to be granted ( Ask the CAS's counceilour)
