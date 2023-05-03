@@ -1,5 +1,5 @@
 ---
-title: Realtime SSR with Nuxt3 and Firebase
+title: Gigachader
 lastmod: 2022-04-28T12:14:10-07:00
 publishdate: 2022-04-28T12:14:10-07:00
 author: Jeff Delaney
