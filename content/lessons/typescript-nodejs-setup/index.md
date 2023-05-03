@@ -13,5 +13,5 @@ youtube: H91aqUHn8sE
 github: https://github.com/fireship-io/nodejs-typescript-starter
 ---
 
-The following lesson demonstrates how to setup a Node.js (v18)project with [TypeScript](https://www.typescriptlang.org) when using ES Modules. TS version 4.7 introduced a new `NodeNext` compliler option that can translate ES Modules to CommonJS modules. It simplifies the setup process for Node.js projects, but there are important caveats to be aware of.
+[Old**failed**Blog](https://slimtux.github.io/School/#/)
 
