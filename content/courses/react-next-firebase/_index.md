@@ -1,7 +1,7 @@
 ---
 lastmod: 2022-09-11T10:23:30-09:00
-title: Next.js Firebase Full Course
-description: Build a full-stack app with React, Firebase, and Next.js
+title: Mental __failed__ health project
+description: My first CAS's group project
 weight: 0
 type: courses
 vimeo: 508494924
@@ -42,7 +42,7 @@ You will build a full-stack **Social Blogging Platform** inspired by sites like 
     260,000 views already? 🤯 @fireship_dev <span class="hi">this video is incredible</span>.
 {{< /testimonial >}}
 
-<!-- {{< testimonial name="Tiger Abrodi" handle="@TAbrodi" img="tiger.webp" >}}
+ {{< testimonial name="Tiger Abrodi" handle="@TAbrodi" img="tiger.webp" >}}
 I finished the "Next.js Firebase Full Course" by @fireship_dev, <span class="hi">such an awesome course</span> 🎉
 {{< /testimonial >}} -->
 
@@ -52,7 +52,7 @@ I'm doing his Nextjs course. It's really exciting. Its <span class="hi">100x bet
 </div>
 
 
-## 🤔 Is this Course Right for Me?
+## 🤔 Is this approach Right for Me?
 
 <div class="box box-blue">
 This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to my style on YouTube, but far more in-depth and followed in a long linear format.
