@@ -1,17 +1,13 @@
- ##  w
+ ##  Firecas
 
 The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
-
-## Contributing
-
-All static content is managed with Hugo in the `content` dir. You can easily fix typos by modifying the markdown directly in GitHub. 
 
 ### How to Run it
 
 First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
 
 ```
-git clone <this-repo>
+gh clone https://github.com/SlimTux/firecashugo
 npm install
 npm start
 ```
@@ -44,6 +40,20 @@ Now use it in anywhere in your HTML or Markdown.
 ```html
 <hi-mom greeting="i made a web component"></hi-mom>
 ```
+## Create content to it.
+```
+cd firecashugo/content/lessons 
+ nvim 
+upload an thumbnail in the .../lessons/"some_post"/img
+```
+## Upload-it
+```md 
++ << git add ".">>
++ << git commit -m "s">>
++ << git pull >>
++ << git push>>
+```
+
 
 **Note:** A weird caveat with Svelte web components is that all styles must be encapsulated. You can use Tailwind, BUT only with `@apply` in the component. Global styles will not work.
 
