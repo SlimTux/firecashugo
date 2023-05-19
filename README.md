@@ -1,13 +1,14 @@
- ##  Firecas
-
-The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
-
 ### How to Run it
 
 First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
+```
+paru -S hugo-extended-cli
+sudo pacman -S hugo-extended-cli
+```
 
 ```
 gh clone https://github.com/SlimTux/firecashugo
+cd firecashugo
 npm install
 npm start
 ```
@@ -48,10 +49,10 @@ upload an thumbnail in the .../lessons/"some_post"/img
 ```
 ## Upload-it
 ```md 
-+ << git add ".">>
-+ << git commit -m "s">>
-+ << git pull >>
-+ << git push>>
+ << git add .>>
+ << git commit -m "s">>
+ << git pull >>
+ << git push>>
 ```
 
 
