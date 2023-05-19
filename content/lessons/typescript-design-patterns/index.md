@@ -18,7 +18,6 @@ youtube: tv-_1er1mWI
 ---
 
 # Recomendações literárias
-### 1. «"Elementos de retórica literária", Heinrich Lausberg»
 ### 2. «"E-dicionário",Carlos Reis»
 
 # TPC
