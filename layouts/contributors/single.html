@@ -5,8 +5,9 @@
   <main class="container prose dark:prose-invert"> 
     <section class="text-center">
       <h1 class="gradient-text">{{ .Title }}</h1>
-            <span style="display:block" class="note">It **works!**</span>
-
+{{% markdown %}}
+This is [markdown](https://daringfireball.net/projects/markdown/syntax#html).
+{{% /markdown %}}
       
       {{ $authorImg := (print "/contributors/img/"  (.RelPermalink | path.Base) ".webp") }}
       
