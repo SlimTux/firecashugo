@@ -5,7 +5,6 @@
   <main class="container prose dark:prose-invert"> 
     <section class="text-center">
       <h1 class="gradient-text">{{ .Title }}</h1>
-
       {{ $authorImg := (print "/contributors/img/"  (.RelPermalink | path.Base) ".webp") }}
       
       <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full max-w-xs">
