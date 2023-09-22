@@ -21,7 +21,7 @@ tags:
 
 Today i went to my second driving class. It was about how much alcohool can someone drink before drive. It is forbiden to drive within an alcohool's rate equal or superior to 0.5g/l (Grains per liter) for experiencied driver, but after the teacher explained that new drivers can only have a 0.2g/l she remembered to ask for our documents.
 
-```
+```markdown
 **here is the climax**
 ```
 
